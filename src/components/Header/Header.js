@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Header.scss';
-import { APP_LOGO } from 'constants/Image';
+import { LOGO } from 'constants/Image';
 import DropDownMenu from 'components/DropDownMenu/DropDownMenu';
 
 const dropDownItems = [
@@ -25,7 +25,7 @@ export default function Header(props) {
                     <div className="flex items-center justify-between h-16">
                         <div className=" flex items-center">
                             <a className="flex-shrink-0" href="/">
-                                <img className="h-10 w-20" src={APP_LOGO} alt="logo" />
+                                <img className="h-10 w-20" src={LOGO.APP_LOGO} alt="logo" />
                             </a>
                         </div>
 

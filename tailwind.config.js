@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       backgroundImage: theme => ({
         'btn-gradient': 'linear-gradient(169deg, #5560ff 17%, #aa52a1 63%, #ff4343 100%)',
+        
       })
     },
     boxShadow: {
