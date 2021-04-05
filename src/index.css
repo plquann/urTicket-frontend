@@ -1,18 +1,52 @@
 /* ./src/index.css */
+:root {
+  --color-primary: #001232;
+  --color-secondary: #0a1e5e;
+  /* ... */
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+.btn-large {
+  @apply inline-block bg-btn-gradient rounded-full py-3 px-12 uppercase;
+}
+
+
+
+*::-webkit-scrollbar-track {
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
+  background-color: #808080;
+}
+
+*::-webkit-scrollbar {
+  width: 4px;
+  background-color: #afacac;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #000000;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: white;
+  background-color: var(--color-primary);
+  font-size: 16px;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
