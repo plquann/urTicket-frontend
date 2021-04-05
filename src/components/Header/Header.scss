@@ -1,0 +1,55 @@
+/* .header {
+  .header__button {
+    background-image: linear-gradient(
+      169deg,
+      #5560ff 17%,
+      #aa52a1 63%,
+      #ff4343 100%
+    );
+    padding: 10px 49px;
+    font-weight: 600;
+    border-radius: 25px;
+    display: inline-block;
+
+    &:hover {
+      box-shadow: 0px 10px 15px 0px rgba(59, 55, 188, 0.5);
+    }
+  }
+} */
+
+/* .header-label::before {
+  content: "";
+  background: #31d7a9;
+  width: calc(100% - 10px);
+  height: 2px;
+
+ 
+  top: calc(100% + 10px);
+  position: absolute;
+  
+  transform: scaleX(0);
+  transition: all ease 0.3s;
+  transform-origin: left;
+} */
+
+@layer components {
+
+  .header-label {
+    @apply text-base font-bold uppercase  px-3 py-2 relative inline-block;
+  }
+  
+  .header-label::before {
+    content: "";
+    background: #31d7a9;
+    @apply w-0 h-0 absolute -bottom-1.5 left-0;
+  }
+  
+  .header-label:hover::before{
+    @apply w-full h-0.5 transition-all duration-200 ease-in origin-left;
+  }
+  
+  .header-label.active::before{
+    @apply w-full h-0.5;
+  }
+
+}

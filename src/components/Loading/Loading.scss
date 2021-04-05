@@ -1,0 +1,79 @@
+// .preloader {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   z-index: 9999;
+//   width: 100%;
+//   height: 100%;
+//   background: #001232;
+//   overflow: hidden;
+
+//   .preloader-inner {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+
+//     transform: translate(-50%, -50%);
+
+//     .preloader-icon {
+//       width: 72px;
+//       height: 72px;
+//       display: inline-block;
+//       padding: 0px;
+
+//       span {
+//         position: absolute;
+//         display: inline-block;
+//         width: 72px;
+//         height: 72px;
+//         border-radius: 100%;
+//         background: #31d7a9;
+//         animation: preloader-fx 1.6s linear infinite;
+
+//         &:last-child {
+//           animation-delay: -0.8s;
+//         }
+//       }
+//     }
+//   }
+// }
+
+@layer components {
+  .loading__preloader {
+    @apply fixed inset-0 z-50 w-full h-full overflow-hidden;
+  }
+
+  .loading__inner {
+    @apply absolute top-2/4 left-2/4 transform -translate-x-1/2 -translate-y-1/2;
+  }
+
+  .loading__icon {
+    @apply w-16 h-16 inline-block p-0;
+  }
+
+  .loading__icon--item {
+    @apply absolute inline-block w-20 h-20 rounded-full;
+    background: #31d7a9;
+    animation: preloader-fx 1.6s linear infinite;
+    &:last-child{
+      animation-delay: -0.8s;
+    }
+  }
+
+  .loading__overlay{
+    @apply fixed inset-0 z-10 block;
+    animation: fadeIn;
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+
+@keyframes preloader-fx {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1, 1);
+    opacity: 0;
+  }
+}

@@ -1,19 +1,19 @@
 import React from 'react';
-import  './Loading.css';
+import './Loading.scss';
 
 export default function Loading() {
     return (
-        <div>
-            <div className="preloader">
-                <div className="preloader-inner">
-                    <div className="preloader-icon">
-                        <span ></span>
-                        <span ></span>
+        <div className="loading">
+            <div className="loading__preloader">
+                <div className="loading__inner">
+                    <div className="loading__icon">
+                        <span className="loading__icon--item"></span>
+                        <span className="loading__icon--item"></span>
                     </div>
                 </div>
             </div>
 
-            <div className="overlay" ></div>          
+            <div className="loading__overlay" ></div>
         </div>
     )
 }

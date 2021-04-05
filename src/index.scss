@@ -9,11 +9,11 @@
 @tailwind components;
 @tailwind utilities;
 
-.btn-large {
-  @apply inline-block bg-btn-gradient rounded-full py-3 px-12 uppercase;
+@layer components {
+  .btn-large {
+    @apply inline-block bg-btn-gradient rounded-full py-3 px-12 uppercase font-bold transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 hover:shadow-btn-shadow;
+  }
 }
-
-
 
 *::-webkit-scrollbar-track {
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
@@ -27,11 +27,6 @@
 
 *::-webkit-scrollbar-thumb {
   background-color: #000000;
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 body {

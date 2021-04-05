@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { routes } from 'routes';
 import Loading from 'components/Loading/Loading';
-import './App.css'
+import './App.scss'
 
 // console.log("routes", routes);
 

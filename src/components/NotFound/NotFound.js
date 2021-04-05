@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image_BG } from 'constants/Image';
-import './NotFound.css';
+import './NotFound.scss';
 import { useHistory } from 'react-router';
 
 export default function NotFound() {
@@ -19,10 +19,7 @@ export default function NotFound() {
                     </div>
                     <h3 className="notfound__title text-2xl font-semibold mb-12 uppercase">Oops.. looks like you got lost :( </h3>
                     <button className="notfound__btn 
-                                        inline-block 
-                                        bg-btn-gradient 
-                                        rounded-full 
-                                        py-5 px-8 
+                                        btn-large 
                                         transition duration-500 ease-in-out 
                                         transform hover:-translate-y-1 hover:scale-110 hover:shadow-btn-shadow uppercase"
                             onClick={handleClick}
