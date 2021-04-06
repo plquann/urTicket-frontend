@@ -169,10 +169,32 @@
   }
 
   .footer__wrapper__top {
-    @apply grid grid-cols-3 gap-4;
+    @apply grid grid-cols-3 gap-4 border-b border-gray-500 pb-5;
   }
 
-  .wrapper__top__social{
-      @apply col-end-4 grid grid-cols-5 gap-4;
+  .wrapper__top__social {
+    @apply col-end-4  grid grid-cols-5 gap-4;
+  }
+  .social__item {
+    @apply flex items-center justify-center w-10 h-10 border border-solid rounded-full border-gray-600 col-end-auto;
+    &:hover {
+      @apply transition duration-500 ease-in-out;
+    }
+  }
+
+  .footer__wrapper__bottom {
+    @apply grid grid-cols-3 gap-4 mt-5  pb-5;
+    color: #dbe2fb;
+
+    .footer__icon__partner {
+      @apply grid grid-cols-5 gap-4;
+      .icon__partner {
+        @apply rounded-full h-10 w-10 ;
+      }
+    }
+  }
+
+  .info__link{
+    @apply text-lg my-4 tracking-wide;
   }
 }
