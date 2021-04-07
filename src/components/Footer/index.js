@@ -115,8 +115,8 @@ export default function Footer() {
                         </div>
                     </div>
                     <p className="text-center text-gray-300 tracking-wider">
-                    Copyright © 2021. Project by QuanKhs 
-                    <a href="http://github.com/quanKhs"><i class="fab fa-github"></i></a>
+                        Copyright © 2021. Project by QuanKhs
+                    <a href="http://github.com/quanKhs"><i className="fab fa-github ml-2"></i></a>
                     </p>
                 </div>
             </footer>

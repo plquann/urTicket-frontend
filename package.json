@@ -1,6 +1,9 @@
 {
+  "author": "PhamLuongQuan",
   "name": "ur-ticket",
   "version": "0.1.0",
+  "description": "Online Ticket Booking Website",
+  "license": "ISC",
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.1.1",

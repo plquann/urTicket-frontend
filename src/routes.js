@@ -1,8 +1,8 @@
 import { lazy } from 'react';
 
-const Movie = lazy(() => import('features/Movie/Movie'));
-const NotFound = lazy(() => import('components/NotFound/NotFound'));
-const Admin = lazy(() => import('features/Admin/Admin'))
+const Movie = lazy(() => import('features/Movie'));
+const NotFound = lazy(() => import('components/NotFound'));
+const Admin = lazy(() => import('features/Admin'))
 export const routes = [
     {
         exact: true,

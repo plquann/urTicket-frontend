@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Header.scss';
 import { LOGO } from 'constants/Image';
-import DropDownMenu from 'components/DropDownMenu/DropDownMenu';
+import DropDownMenu from 'components/DropDownMenu';
 
 const dropDownItems = [
     {
