@@ -4,8 +4,7 @@ import { IMAGE_BG, LOGO, LOGO_PARTNER, SVG_IMAGES } from 'constants/Image';
 
 export default function Footer() {
     return (
-        <div>
-            <footer className="footer w-full py-8">
+        <footer className="footer w-full py-8">
                 <div className="footer__newsletter">
                     <div className="newsletter__container bg-img" style={{ backgroundImage: `url(${IMAGE_BG.NEWSLETTER_BG})` }}>
                         <div className="newsletter__wrapper">
@@ -24,7 +23,7 @@ export default function Footer() {
                     <div className="footer__wrapper__top border-b pb-5 border-gray-400 mb-5">
                         <div className="wrapper__top__logo col-start-1 col-end-2">
                             <a href="/">
-                                <img src={LOGO.FOOTER_LOGO} alt="footer" />
+                                <img src={LOGO.APP_LOGO} alt="footer" />
                             </a>
                         </div>
 
@@ -120,7 +119,6 @@ export default function Footer() {
                     </p>
                 </div>
             </footer>
-        </div>
     )
 }
 

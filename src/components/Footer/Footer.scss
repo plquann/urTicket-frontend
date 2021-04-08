@@ -31,7 +31,7 @@
   .newsletter__form__input {
     @apply relative w-full h-12 pr-40 pl-5 
         border-solid border rounded-3xl 
-        focus:outline-none focus:ring-4 focus:ring-indigo-300 focus:ring-opacity-50;
+        focus:outline-none ;
     color: #99abe2;
     border-color: rgba(255, 255, 255, 0.4);
     box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1);

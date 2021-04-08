@@ -1,0 +1,35 @@
+@layer components {
+  .search-tab::before {
+    @apply opacity-80 absolute inset-0;
+    background-image: linear-gradient(0deg, #0f5ae0 0%, #7400ba 100%);
+    content: "";
+  }
+  .tab-area {
+    box-shadow: 0px 5px 15px 0px rgba(44, 41, 157, 0.5);
+  }
+  .tab-area::before {
+    @apply absolute bg-black opacity-40 w-full top-0 left-0;
+    content: "";
+    height: calc(100% + 1px);
+  }
+  .form-group {
+    @apply mb-5 relative;
+  }
+  .search__movie {
+    @apply border-b border-solid rounded-none p-0 h-11 w-full bg-transparent focus:outline-none;
+    border-color: #9eb1eb;
+   
+  }
+  .ticket-search-form .form-group button {
+    @apply outline-none bg-transparent absolute top-0 right-0;
+    color: #90a5e8;
+  }
+  .ticket-search-form .form-group .thumb {
+    @apply w-10 h-10 rounded-full overflow-hidden mr-3;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
+  }
+
+  select option {
+    @apply text-black;
+  }
+}

@@ -1,0 +1,27 @@
+@layer components {
+  .movie__card {
+    @apply rounded-lg overflow-hidden;
+
+    .movie__card__img {
+      @apply relative overflow-hidden;
+    }
+
+    .movie__card__content {
+      @apply px-5 py-0;
+      background-color: #032055;
+
+      .movie__card__title {
+        @apply py-6 px-0 capitalize border-b border-dashed text-2xl;
+        border-color: #11326f;
+      }
+
+      .movie__card__rating {
+        @apply grid grid-cols-3 gap-4 py-4 px-0;
+
+        .card__rating_item {
+          @apply grid grid-cols-2 gap-1;
+        }
+      }
+    }
+  }
+}

@@ -2,6 +2,13 @@ import NotFoundBG from 'assets/images/404.png';
 import Logo from 'assets/images/favicon.png';
 import FooterLogo from 'assets/images/footer/footer-logo.png';
 import NewslaterBG from 'assets/images/newslater/newslater-bg01.jpg';
+import MovieIMG from 'assets/images/movie/movie1.jpg';
+import Tomato from 'assets/images/movie/tomato.png';
+import Cake from 'assets/images/movie/cake.png';
+import searchthums from 'assets/images/ticket/cinema.png';
+import searchBackground from 'assets/images/ticket/ticket-bg01.jpg';
+
+export const SEARCH_BG = searchBackground;
 
 export const IMAGE_BG = {
     NOTFOUND_BG: NotFoundBG,
@@ -10,8 +17,13 @@ export const IMAGE_BG = {
 };
 
 export const ICONS = {
-
+    TOMATO: Tomato,
+    CAKE: Cake,
 };
+
+export const THUMS = searchthums;
+
+export const MOVIE_IMG = MovieIMG;
 
 export const LOGO = {
     APP_LOGO: Logo,
