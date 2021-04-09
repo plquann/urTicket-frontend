@@ -19,7 +19,7 @@ export default function Header(props) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <div className="header">
+        <header className="header fixed top-0 left-0 z-50 w-full bg-secondary">
             <nav className="bg-secondary dark:bg-gray-800 text-center">
                 <div className="max-w-7xl mx-auto px-8">
                     <div className="flex items-center justify-between h-16">
@@ -100,6 +100,6 @@ export default function Header(props) {
                 )}
 
             </nav>
-        </div>
+        </header>
     )
 }

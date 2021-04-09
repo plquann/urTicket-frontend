@@ -13,11 +13,11 @@ export default function NotFound() {
     return (
         <div>
             <section className="notfound">
-                <div className="container-lg mx-auto">
-                    <div className="notfound__thumb">
+                <div className="notfound__container mx-auto">
+                    <div className="notfound__container__img">
                         <img className="w-3/4 mx-auto py-5" src={IMAGE_BG.NOTFOUND_BG} alt={404} />
                     </div>
-                    <h3 className="notfound__title">Oops.. looks like you got lost :( </h3>
+                    <h3 className="notfound__container__title">Oops.. looks like you got lost :( </h3>
                     <button className="notfound__btn btn-large"
                             onClick={handleClick}
                     >

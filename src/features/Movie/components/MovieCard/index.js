@@ -20,13 +20,13 @@ export default function MovieCard(props) {
                             <div className="flex items-center ">
                                 <img className="max-w-full" src={ICONS.TOMATO} alt="movie" />
                             </div>
-                            <span className="font-semibold text-lg -ml-3">88%</span>
+                            <span className="font-semibold text-lg ml-2">88%</span>
                         </li>
                         <li className="card__rating_item">
                             <div className="flex items-center ">
                                 <img className="max-w-full" src={ICONS.CAKE} alt="movie" />
                             </div>
-                            <span className="font-semibold text-lg -ml-3">88%</span>
+                            <span className="font-semibold text-lg ml-2">88%</span>
                         </li>
                     </ul>
                 </div>

@@ -7,6 +7,8 @@ import Tomato from 'assets/images/movie/tomato.png';
 import Cake from 'assets/images/movie/cake.png';
 import searchthums from 'assets/images/ticket/cinema.png';
 import searchBackground from 'assets/images/ticket/ticket-bg01.jpg';
+import prevArrow from 'assets/images/arrow/back-session.png';
+import nextArrow from 'assets/images/arrow/next-session.png';
 
 export const SEARCH_BG = searchBackground;
 
@@ -14,6 +16,11 @@ export const IMAGE_BG = {
     NOTFOUND_BG: NotFoundBG,
     NEWSLETTER_BG: NewslaterBG,
 
+};
+
+export const ARROW_CAROUSEL ={
+    PREV_ARROW: prevArrow,
+    NEXT_ARROW: nextArrow,
 };
 
 export const ICONS = {

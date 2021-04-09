@@ -1,11 +1,17 @@
 @layer components {
   .notfound {
     @apply min-h-screen  py-12 text-center items-center justify-center;
-  }
-  .notfound__title {
-    @apply text-2xl font-semibold mb-12 uppercase;
-  }
-  .notfound__thumb {
-    @apply max-w-screen-lg mx-auto;
+
+    &__container{
+      @apply mx-auto;
+
+      &__img{
+        @apply max-w-screen-lg mx-auto;
+      }
+
+      &__title{
+        @apply text-2xl font-semibold mb-12 uppercase;
+      }
+    }
   }
 }
