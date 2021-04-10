@@ -29,10 +29,10 @@ export default function MovieSearch() {
                 <div className="search-tab bg-img py-7 px-8 relative" style={{ backgroundImage: "url(/images/ticket-bg01.jpg)" }}>
                     <div className="grid grid-cols-2 mb-10">
                         <div className="search-ticket-header relative">
-                            <h6 className="category text-lg mb-4 font-semibold uppercase">
+                            <h6 className="category text-lg mb-3 font-semibold uppercase" style={{ color: '#31d7a9' }}>
                                 welcome to UR TICKET
                                 </h6>
-                            <h3 className="title text-2xl font-bold uppercase">what are you looking for</h3>
+                            <h3 className="title text-2xl font-bold uppercase text-white">what are you looking for</h3>
                         </div>
                         <div className="button-booking justify-self-end relative">
                             <button className="btn-large">Booking Now</button>
@@ -49,9 +49,9 @@ export default function MovieSearch() {
                                     <div className="thumb mr-3">
                                         <img className="w-full" src={THUMS} alt="ticket" />
                                     </div>
-                                    <span className="font-medium" style={{color: '#31d7a9'}}>Cinema</span>
+                                    <span className="font-medium" style={{ color: '#31d7a9' }}>Cinema</span>
                                     <select className="w-25 text-white text-lg py-2 px-3 border-none bg-transparent focus:outline-none" name="animals">
-                                        {cinema.map((item, index)=>{
+                                        {cinema.map((item, index) => {
                                             return <option value={item.value} key={index}>{item.value}</option>
                                         })}
                                     </select>
@@ -60,9 +60,9 @@ export default function MovieSearch() {
                                     <div className="thumb mr-3">
                                         <img className="w-full" src={THUMS} alt="ticket" />
                                     </div>
-                                    <span className="font-medium" style={{color: '#31d7a9'}}>Date</span>
+                                    <span className="font-medium" style={{ color: '#31d7a9' }}>Date</span>
                                     <select className="w-25 text-white text-lg py-2 px-3 border-none bg-transparent focus:outline-none" name="animals">
-                                    {date.map((item, index)=>{
+                                        {date.map((item, index) => {
                                             return <option value={item.value} key={index}>{item.value}</option>
                                         })}
                                     </select>
@@ -71,9 +71,9 @@ export default function MovieSearch() {
                                     <div className="thumb mr-3">
                                         <img className="w-full" src={THUMS} alt="ticket" />
                                     </div>
-                                    <span className="font-medium" style={{color: '#31d7a9'}}>Showtime</span>
+                                    <span className="font-medium" style={{ color: '#31d7a9' }}>Showtime</span>
                                     <select className="w-25 text-white text-lg py-2 px-3 border-none bg-transparent focus:outline-none" name="animals">
-                                    {Showtimes.map((item, index)=>{
+                                        {Showtimes.map((item, index) => {
                                             return <option value={item.value} key={index}>{item.value}</option>
                                         })}
                                     </select>

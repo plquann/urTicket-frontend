@@ -1,10 +1,11 @@
 import React from 'react';
 
 export default function ArrowCarousel(props) {
-    const { className, style, onClick, arrowImg } = props;
+    const { className, style, onClick, arrowImg, isCustom } = props;
+
     return (
         <div
-            className={className}
+            className={isCustom ? isCustom : className}
             style={{ ...style }}
             onClick={onClick}
         >

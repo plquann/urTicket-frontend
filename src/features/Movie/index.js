@@ -1,10 +1,12 @@
 import Footer from 'components/Footer';
 import Header from 'components/Header';
-import MovieCard from 'features/Movie/components/MovieCard';
+import Pagination from 'components/Pagination';
+
 
 import React from 'react';
-import MovieCarousel from './components/MovieCarousel';
+import MovieCarousel from './components/MovieBannerCarousel';
 import MovieSearch from './components/MovieSearch';
+import Tabs from './components/Tabs';
 
 export default function Movie() {
     return (
@@ -12,13 +14,8 @@ export default function Movie() {
             <Header />
             <MovieCarousel />
             <MovieSearch />
-            <div className="max-w-screen-lg mx-auto grid grid-flow-col grid-cols-4 gap-4">
-                {[1, 2, 3, 4].map((item, index) => {
-                    return (
-                        <MovieCard key={index} item={item} />
-                    )
-                })}
-            </div>
+            <Tabs />
+            <Pagination/>
             <Footer />
         </div>
     )

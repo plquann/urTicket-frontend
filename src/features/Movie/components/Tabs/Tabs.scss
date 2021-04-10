@@ -1,0 +1,21 @@
+.section-header-2 .tab-menu li {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 30px;
+    border: 1px solid #11326f;
+    padding: 9px 27px;
+    border-radius: 25px;
+    margin: 0 5px 10px;
+    -webkit-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+}
+
+.section-header-2 .tab-menu li.active {
+    background: -webkit-linear-gradient(169deg, #5560ff 0%, #ff4343 100%);
+}
+
+.section-header-2 .tab-menu li:hover {
+    -webkit-box-shadow: 0px 10px 15px 0px rgba(59, 55, 188, 0.5);
+    box-shadow: 0px 10px 15px 0px rgba(59, 55, 188, 0.5);
+}

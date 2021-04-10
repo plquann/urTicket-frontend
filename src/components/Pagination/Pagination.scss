@@ -1,0 +1,17 @@
+@layer components {
+  .pagination {
+    @apply text-lg my-0 mx-4 text-center;
+
+    &__btn {
+      @apply inline-block my-0 mx-4;
+      color: #7a89bb;
+      &:hover {
+        color: #ffffff;
+      }
+      &.active {
+        @apply w-10 h-10 text-center leading-10 rounded-full text-white;
+        background: linear-gradient(169deg, #5560ff 0%, #ff4343 100%);
+      }
+    }
+  }
+}
