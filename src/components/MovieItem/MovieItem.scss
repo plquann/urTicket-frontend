@@ -1,0 +1,52 @@
+@layer components {
+  .movie__item {
+    @apply grid grid-cols-4 gap-4;
+
+    &__content {
+      @apply col-span-3 pl-5;
+
+      .title {
+        @apply text-3xl font-bold mb-5 uppercase -mt-1.5;
+      }
+      .duration {
+        @apply text-base;
+        color: #31d7a9;
+      }
+      .summary {
+        @apply text-base mb-3;
+      }
+      .release {
+        @apply text-white mb-2;
+      }
+
+      .rating {
+        @apply grid grid-cols-5 gap-4 py-4 px-0 mb-1;
+        .item {
+          @apply flex flex-row;
+        }
+      }
+      .genres {
+        span {
+          @apply inline-block pr-5 border-r-2 border-solid border-gray-400 mr-5 mb-4;
+        }
+      }
+    }
+
+    .react-item {
+      a {
+        @apply flex flex-wrap items-center;
+        .thumb {
+          @apply flex w-8 h-8 p-1 items-center justify-center rounded-full mr-3;
+          background-color: #032055;
+        }
+      }
+    }
+
+    .booking {
+      padding: 16px 0;
+      border-top: 1px solid #1e3251;
+      border-bottom: 1px solid #1e3251;
+      
+    }
+  }
+}

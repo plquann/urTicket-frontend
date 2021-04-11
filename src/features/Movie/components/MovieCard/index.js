@@ -1,6 +1,6 @@
 import React from 'react';
 import './MovieCard.scss';
-import {MOVIE_IMG, ICONS} from 'constants/Image';
+import { MOVIE_IMG, ICONS } from 'constants/Image';
 
 export default function MovieCard(props) {
     return (
@@ -8,7 +8,7 @@ export default function MovieCard(props) {
             <div className="movie__card__wrapper">
                 <div className="movie__card__img">
                     <a href="#0" className="block">
-                        <img className="w-full" src={MOVIE_IMG} alt="movie" />
+                        <img className="w-full" src={MOVIE_IMG[Math.floor(Math.random() * 12) + 1]} alt="movie" />
                     </a>
                 </div>
                 <div className="movie__card__content">
@@ -33,5 +33,5 @@ export default function MovieCard(props) {
             </div>
         </div>
 
-)
+    )
 }

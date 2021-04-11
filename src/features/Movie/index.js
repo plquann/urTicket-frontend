@@ -1,6 +1,8 @@
 import FilterDate from 'components/FilterDate';
+import FilterSort from 'components/FilterSort';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
+import MovieItem from 'components/MovieItem';
 import Pagination from 'components/Pagination';
 
 
@@ -13,14 +15,17 @@ import Tabs from './components/Tabs';
 export default function Movie() {
     return (
         <div className="w-full h-full">
-            <Header />
+            {/* <Header />
             <MovieCarousel />
             <MovieSearch />
             <Tabs />
             <FilterCinema />
-            <FilterDate/>
-            <Pagination/>
-            <Footer />
+            <FilterDate /> */}
+            {/* <FilterSort /> */}
+            {/* <Pagination />
+            <Footer /> */}
+
+            <MovieItem />
         </div>
     )
 }

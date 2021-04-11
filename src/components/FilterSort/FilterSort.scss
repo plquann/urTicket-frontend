@@ -1,0 +1,35 @@
+@layer components {
+  .filter__sort {
+    @apply max-w-screen-lg mx-auto rounded-md py-5 px-2.5 border border-solid mb-7;
+    border-color: rgba(163, 177, 198, 0.151);
+
+    &__wrapper {
+      @apply flex flex-wrap justify-between items-center;
+
+      &__left {
+        @apply flex flex-wrap -mr-7 -mb-2.5;
+
+        .item {
+          @apply flex flex-wrap items-center mr-7 mb-2.5;
+        }
+      }
+
+      &__right {
+        @apply flex flex-wrap mb-2.5 justify-end items-center;
+
+        li {
+          @apply mr-5 border border-solid rounded-3xl w-16 h-10 text-lg leading-10 text-center cursor-pointer p-0;
+          color: #4c63ad;
+          border-color: rgba(163, 177, 198, 0.151);
+
+          &:last-child {
+            @apply mr-0;
+          }
+          &.active {
+            color: #31d7a9;
+          }
+        }
+      }
+    }
+  }
+}
