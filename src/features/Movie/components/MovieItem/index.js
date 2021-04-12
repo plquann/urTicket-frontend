@@ -8,7 +8,7 @@ export default function MovieItem() {
         <div className="movie__item max-w-screen-lg mx-auto mt-5">
             <div className="movie__item__thumb c-thumb">
                 <a href="movie-details.html" className="w-100" >
-                    <img className="w-100 h-100 bg-img rounded-t-md" src={MOVIE_IMG[Math.floor(Math.random() * 12) + 1]} alt="movie" />
+                    <img className="w-100 h-100 bg-img rounded-t-md" src={MOVIE_IMG[Math.floor(Math.random() * 11)]} alt="movie" />
                 </a>
             </div>
             <div className="movie__item__content h-100">

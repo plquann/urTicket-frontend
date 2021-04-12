@@ -1,61 +1,30 @@
-.carousel {
-  cursor: pointer;
-  &:hover {
+@layer components {
+  .carousel {
+    cursor: pointer;
+
+    &:hover {
+      .playTrailer {
+        opacity: 1;
+      }
+    }
     .playTrailer {
-      opacity: 1 !important;
-    }
-  }
-  .carousel-inner {
-    position: relative;
-  }
-  .playTrailer {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1);
-    color: white !important;
-    border-radius: 50%;
-    opacity: 0;
-    transition: all 0.8s;
-    cursor: pointer !important;
-    i {
-      padding: 25px;
-      border: 2px solid white;
-      border-radius: 50%;
-      color: white;
-      cursor: pointer !important;
-      transition: all 0.5s;
-      font-size: 25px;
-      transform: scale(1);
-      &:hover {
-        transform: scale(1.1);
-        cursor: pointer !important;
-      }
-      @media screen and (max-width: "768px") {
-        font-size: 20px;
-        padding: 20px;
-        &:hover {
-          transform: scale(1.1);
-        }
+      @apply absolute top-1/2 left-1/2
+        scale-100 text-white rounded-full opacity-0 transition duration-700 cursor-pointer;
+      transform: translate(-50%, -50%);
+      i {
+        @apply border-2 border-solid border-white rounded-full text-white 
+          cursor-pointer transition-all scale-100 hover:scale-110;
+        padding: 25px;
+        font-size: 25px;
       }
     }
-  }
-  .slides {
-    .slick-prev {
-      position: absolute;
-      top: 50%;
-      z-index: 1;
-      left: 30px;
-      width: 50px;
-      height: 50px;
-    }
-    .slick-next {
-      position: absolute;
-      top: 50%;
-      right: 50px;
-      z-index: 1;
-      width: 50px;
-      height: 50px;
+    .slides {
+      .slick-prev {
+        @apply absolute top-1/2 z-10 left-7 w-12 h-12;
+      }
+      .slick-next {
+        @apply absolute top-1/2 z-10 right-12 w-12 h-12;
+      }
     }
   }
 }

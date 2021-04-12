@@ -8,7 +8,7 @@ export default function MovieCard(props) {
             <div className="movie__card__wrapper">
                 <div className="movie__card__img">
                     <a href="#0" className="block">
-                        <img className="w-full" src={MOVIE_IMG[Math.floor(Math.random() * 12) + 1]} alt="movie" />
+                        <img className="w-full" src={MOVIE_IMG[Math.floor(Math.random() * 11)]} alt="movie" />
                     </a>
                 </div>
                 <div className="movie__card__content">
