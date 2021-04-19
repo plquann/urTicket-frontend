@@ -16,6 +16,8 @@ import MovieIMG11 from 'assets/images/movie/movie11.jpg';
 import MovieIMG12 from 'assets/images/movie/movie12.jpg';
 import Tomato from 'assets/images/movie/tomato.png';
 import Cake from 'assets/images/movie/cake.png';
+import TomatoLG from 'assets/images/movie/tomato2.png';
+import CakeLG from 'assets/images/movie/cake2.png';
 import Heart from 'assets/images/icons/heart.png';
 import Book from 'assets/images/icons/book.png';
 import playBTN from 'assets/images/icons/play-button.png';
@@ -23,6 +25,9 @@ import searchthums from 'assets/images/ticket/cinema.png';
 import searchBackground from 'assets/images/ticket/ticket-bg01.jpg';
 import prevArrow from 'assets/images/arrow/back-session.png';
 import nextArrow from 'assets/images/arrow/next-session.png';
+import bannerMovie1 from 'assets/images/banner/banner03.jpg';
+import bannerMovie2 from 'assets/images/banner/bannerkong.jpg';
+
 
 export const SEARCH_BG = searchBackground;
 
@@ -30,6 +35,12 @@ export const IMAGE_BG = {
     NOTFOUND_BG: NotFoundBG,
     NEWSLETTER_BG: NewslaterBG,
 
+};
+
+export const BANNER_BG = {
+    BANNER_1: bannerMovie1,
+    BANNER_2: bannerMovie2,
+    
 };
 
 export const ARROW_CAROUSEL = {
@@ -40,6 +51,8 @@ export const ARROW_CAROUSEL = {
 export const ICONS = {
     TOMATO: Tomato,
     CAKE: Cake,
+    TOMATO_LG: TomatoLG,
+    CAKE_LG: CakeLG,
     BOOK: Book,
     HEART: Heart,
     PLAY_BTN: playBTN,

@@ -11,12 +11,16 @@ import FilterCinema from './components/FilterCinema';
 import MovieCarousel from './components/MovieBannerCarousel';
 import MovieSearch from './components/MovieSearch';
 import Tabs from './components/Tabs';
+import MovieBackDrop from './components/MovieBackDrop';
+import WrapperDetails from './components/WrapperDetails';
 
 export default function Movie() {
     return (
-        <div className="w-full h-full">
+        <div className="w-full h-screen">
             <Header />
-            <MovieCarousel />
+            <MovieBackDrop />
+            <WrapperDetails />
+            {/* <MovieCarousel />
             <MovieSearch />
             <Tabs />
             <FilterCinema />
@@ -24,9 +28,9 @@ export default function Movie() {
             <FilterSort />
             <MovieItem />
             <Pagination />
-            <Footer />
+            <Footer /> */}
 
-            
+
         </div>
     )
 }

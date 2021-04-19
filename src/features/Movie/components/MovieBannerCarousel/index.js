@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
 import './MovieBannerCarousel.scss';
 import { ARROW_CAROUSEL } from 'constants/Image';
 import ArrowCarousel from 'components/ArrowCarousel';
