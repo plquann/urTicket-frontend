@@ -1,5 +1,8 @@
 import React from 'react';
 import { MOVIE_IMG, ICONS } from 'constants/Image'
+import PhotosPreview from '../PhotosPreview';
+import "slick-carousel/slick/slick.css"
+import Details from '../Details';
 
 export default function WrapperDetails() {
     return (
@@ -11,7 +14,7 @@ export default function WrapperDetails() {
                 <div className="details-banner-content col-span-3">
                     <h3 className="title text-4xl mb-2 font-bold ">VENUS</h3>
                     <div className="tags text-lg mb-4">
-                        <span style={{ color: '#9aace5', fontSize:'14px'}}>C18 - NO CHILDREN UNDER 18 YEARS OLD</span>
+                        <span style={{ color: '#9aace5', fontSize: '14px' }}>C18 - NO CHILDREN UNDER 18 YEARS OLD</span>
                     </div>
 
                     <div className="genres mb-3.5">
@@ -38,7 +41,8 @@ export default function WrapperDetails() {
                             <li className="my-1 mx-2"><a href="#0" className="px-1 inline-block text-sm" style={{ color: '#cfcfcf', transition: 'all ease 0.3s' }}><i className="fab fa-google-plus-g" /></a></li>
                         </ul>
                     </div>
-                    <div className="review-and-booking flex flex-wrap justify-between items-center py-12 ">
+
+                    <div className="review-and-booking flex flex-wrap justify-between items-center py-12 " style={{ color: '#dbe2fb' }}>
                         <div className="review flex flex-wrap ">
                             <div className="item my-2.5 mx-4 text-center">
                                 <div className="item-header flex flex-wrap items-center justify-center mb-4">
@@ -94,8 +98,9 @@ export default function WrapperDetails() {
                         </div>
                     </div>
 
+                    <PhotosPreview />
+                    <Details />
                 </div>
-
             </div>
         </div>
     )

@@ -1,0 +1,30 @@
+@layer components {
+  .custom__slides {
+    @apply relative;
+
+    .arrow {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: -4.8em;
+      cursor: pointer;
+      color: #283a60;
+      transition: all ease 0.3s;
+      &:hover {
+        color: #31d7a9;
+      }
+    }
+
+    .left__arrow {
+      right: 30px;
+    }
+
+    .right__arrow {
+      right: 0;
+    }
+
+    .slick-slider {
+      transition: all 1s ease 0s;
+    }
+  }
+}

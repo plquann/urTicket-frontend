@@ -1,0 +1,16 @@
+@layer components {
+  .backdrop {
+    @apply w-full relative top-0 left-0;
+    background-position: 50% 0;
+    height: 500px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      top: 0;
+      bottom: 0;
+      background-color: rgba(2, 13, 24, 0.75);
+    }
+  }
+}

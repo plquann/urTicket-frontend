@@ -14,6 +14,7 @@ import Tabs from './components/Tabs';
 import MovieBackDrop from './components/MovieBackDrop';
 import WrapperDetails from './components/WrapperDetails';
 
+
 export default function Movie() {
     return (
         <div className="w-full h-screen">
@@ -29,6 +30,8 @@ export default function Movie() {
             <MovieItem />
             <Pagination />
             <Footer /> */}
+
+
 
 
         </div>

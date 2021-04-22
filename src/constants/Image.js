@@ -14,6 +14,14 @@ import MovieIMG9 from 'assets/images/movie/movie9.jpg';
 import MovieIMG10 from 'assets/images/movie/movie10.jpg';
 import MovieIMG11 from 'assets/images/movie/movie11.jpg';
 import MovieIMG12 from 'assets/images/movie/movie12.jpg';
+
+import MovieDetail1 from 'assets/images/movie/movie-details01.jpg';
+import MovieDetail2 from 'assets/images/movie/movie-details02.jpg';
+import MovieDetail3 from 'assets/images/movie/movie-details03.jpg';
+import MovieDetail4 from 'assets/images/movie/movie-details04.jpg';
+import MovieDetail5 from 'assets/images/movie/movie-details05.jpg';
+import MovieDetail6 from 'assets/images/movie/movie-details06.jpg';
+
 import Tomato from 'assets/images/movie/tomato.png';
 import Cake from 'assets/images/movie/cake.png';
 import TomatoLG from 'assets/images/movie/tomato2.png';
@@ -23,11 +31,23 @@ import Book from 'assets/images/icons/book.png';
 import playBTN from 'assets/images/icons/play-button.png';
 import searchthums from 'assets/images/ticket/cinema.png';
 import searchBackground from 'assets/images/ticket/ticket-bg01.jpg';
+
 import prevArrow from 'assets/images/arrow/back-session.png';
 import nextArrow from 'assets/images/arrow/next-session.png';
+import rightArrow from 'assets/images/arrow/right-arrow.png';
+import leftArrow from 'assets/images/arrow/left-arrow.png';
+
 import bannerMovie1 from 'assets/images/banner/banner03.jpg';
 import bannerMovie2 from 'assets/images/banner/bannerkong.jpg';
 
+import cast1 from 'assets/images/cast/cast01.jpg';
+import cast2 from 'assets/images/cast/cast02.jpg';
+import cast3 from 'assets/images/cast/cast03.jpg';
+import cast4 from 'assets/images/cast/cast04.jpg';
+import cast5 from 'assets/images/cast/cast05.jpg';
+import cast6 from 'assets/images/cast/cast06.jpg';
+import cast7 from 'assets/images/cast/cast07.jpg';
+import cast8 from 'assets/images/cast/cast08.jpg';
 
 export const SEARCH_BG = searchBackground;
 
@@ -40,12 +60,14 @@ export const IMAGE_BG = {
 export const BANNER_BG = {
     BANNER_1: bannerMovie1,
     BANNER_2: bannerMovie2,
-    
+
 };
 
 export const ARROW_CAROUSEL = {
     PREV_ARROW: prevArrow,
     NEXT_ARROW: nextArrow,
+    RIGHT_ARROW: rightArrow,
+    LEFT_ARROW: leftArrow,
 };
 
 export const ICONS = {
@@ -73,6 +95,25 @@ export const MOVIE_IMG = [
     MovieIMG10,
     MovieIMG11,
     MovieIMG12,
+];
+
+export const MOVIE_PHOTO = [
+    MovieDetail1,
+    MovieDetail2,
+    MovieDetail3,
+    MovieDetail4,
+    MovieDetail5,
+    MovieDetail6,
+];
+export const CAST_PHOTO = [
+    cast1,
+    cast2,
+    cast3,
+    cast4,
+    cast5,
+    cast6,
+    cast7,
+    cast8,
 ];
 
 export const LOGO = {

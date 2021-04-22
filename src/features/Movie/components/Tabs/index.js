@@ -5,7 +5,7 @@ import TabButton from '../TabButton';
 import TabContent from '../TabContent';
 import MovieItemCarousel from '../MovieItemCarousel';
 
-export default function Page() {
+export default function Tabs() {
     return (
         <div className="max-w-screen-lg mx-auto justify-center items-center">
             <TabGroup numTabs={2} direction={TabGroup.direction.HORIZONTAL}>
