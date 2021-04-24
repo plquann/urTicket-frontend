@@ -1,5 +1,5 @@
 import Icons from 'components/Icons';
-import { CAST_PHOTO } from 'constants/Image';
+import { CAST_PHOTO } from 'constants/image';
 import React from 'react';
 import './ReviewDetails.scss';
 

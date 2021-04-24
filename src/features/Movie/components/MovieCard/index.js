@@ -1,6 +1,6 @@
 import React from 'react';
 import './MovieCard.scss';
-import { MOVIE_IMG, ICONS } from 'constants/Image';
+import { MOVIE_IMG, ICONS } from 'constants/image';
 
 export default function MovieCard(props) {
     return (

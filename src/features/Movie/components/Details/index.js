@@ -34,24 +34,24 @@ export default function Details() {
                     index={0}
                     className="transition-all transform ease-in-out"
                     activeClassName="opacity-100 duration-1000 translate-x-0 "
-                    inactiveClassName="absolute opacity-0 -translate-x-2 "
+                    inactiveClassName="absolute opacity-0 -translate-x-2 top-0 -left-full w-full"
                 >
-                    <Scenarios />
-                    <Cast />
-                    <Crew />
+                    <div className="content">
+                        <Scenarios />
+                        <Cast />
+                        <Crew />
+                    </div>
                 </TabGroup.TabPanel>
 
                 <TabGroup.TabPanel
                     index={1}
                     className="transition-all transform ease-in-out"
                     activeClassName=" opacity-100 duration-1000 translate-x-0 "
-                    inactiveClassName="absolute opacity-0 -translate-x-2"
+                    inactiveClassName="absolute opacity-0 -translate-x-2 top-0 -left-full w-full"
                 >
-                    <ReviewDetails />
-                    <ReviewDetails />
-                    <ReviewDetails />
-                    <ReviewDetails />
-                    <ReviewDetails />
+                    <div className="content">
+                        <ReviewDetails />
+                    </div>
 
                 </TabGroup.TabPanel>
             </TabGroup>

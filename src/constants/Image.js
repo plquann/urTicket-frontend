@@ -134,7 +134,7 @@ export const LOGO_PARTNER = [
     { link: '#', name: 'START_LIGHT', img: `${domain}STARLIGHT.png` },
     { link: '#', name: 'DDC', img: `${domain}dongdacinema.png` },
     { link: '#', name: 'DCINE', img: `${domain}dcine.png` },
-    { link: '#', name: 'MOMO', img: `${domain}momo.png` },
+    { link: '#', name: 'MOMO', img: `${domain}momo.png`, description: 'Transact first time with MoMo and get ticket with $1 within and cashback up to 50% for next time.' },
     { link: '#', name: 'PAYOO', img: `${domain}payoo.jpg` },
     { link: '#', name: 'ZALOPAY', img: `${domain}zalopay_icon.png` },
     { link: '#', name: 'VCBANK', img: `${domain}VCB.png` },

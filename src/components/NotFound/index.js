@@ -1,5 +1,5 @@
 import React from 'react';
-import { IMAGE_BG } from 'constants/Image';
+import { IMAGE_BG } from 'constants/image';
 import './NotFound.scss';
 import { useHistory } from 'react-router';
 

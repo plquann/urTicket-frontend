@@ -25,6 +25,7 @@
 *::-webkit-scrollbar-track {
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
   background-color: #808080;
+  border-radius: 10px;
 }
 
 *::-webkit-scrollbar {
@@ -38,6 +39,7 @@
 
 body {
   margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -48,6 +50,7 @@ body {
   font-size: 16px;
   line-height: 28px;
   overflow-x: hidden;
+  vertical-align: middle;
 }
 
 code {

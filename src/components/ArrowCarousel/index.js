@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function ArrowCarousel(props) {
     const { className, style, onClick, arrowImg, isCustom, arrowSVG } = props;
-    console.log("🚀 ~ arrowSVG", arrowSVG);
+    // console.log("🚀 ~ arrowSVG", arrowSVG);
 
     return (
         <div

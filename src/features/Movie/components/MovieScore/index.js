@@ -1,5 +1,5 @@
 import React from 'react';
-import { ICONS } from 'constants/Image'
+import { ICONS } from 'constants/image'
 
 export default function MovieScore() {
     return (

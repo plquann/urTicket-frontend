@@ -1,6 +1,6 @@
 import React from 'react';
 import Select from 'react-select';
-import { THUMS, SEARCH_BG } from 'constants/Image';
+import { THUMS, SEARCH_BG } from 'constants/image';
 import './MovieSearch.scss';
 
 const cinema = [

@@ -1,6 +1,6 @@
 import React from 'react';
 import './MovieItem.scss';
-import { MOVIE_IMG, ICONS } from 'constants/Image';
+import { MOVIE_IMG, ICONS } from 'constants/image';
 import { randomGenres } from 'constants/genres';
 
 export default function MovieItem() {

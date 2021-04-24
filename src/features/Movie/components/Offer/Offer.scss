@@ -1,0 +1,24 @@
+@layer components {
+  .offer {
+    border: 1px dashed #1f3253;
+    @apply rounded-lg px-5 pt-5 pb-7 mb-7;
+
+    &__logo {
+      margin-bottom: 10px;
+      img{
+          width: 50px;
+          height: 50px;
+          border-radius: 100%;
+      }
+    }
+    &__content {
+      p {
+        @apply text-white font-normal mb-1;
+      }
+      span {
+        color: #9aace5;
+        @apply text-sm leading-3 -mb-2;
+      }
+    }
+  }
+}

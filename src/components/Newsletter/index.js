@@ -1,6 +1,6 @@
 import React from 'react';
 import './Newsletter.scss';
-import { IMAGE_BG } from 'constants/Image';
+import { IMAGE_BG } from 'constants/image';
 
 export default function Newsletter() {
     return (

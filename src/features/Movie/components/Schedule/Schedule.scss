@@ -1,0 +1,47 @@
+@layer components {
+  .schedule {
+    background-color: #01173f;
+    @apply flex flex-wrap;
+
+    .theater-list {
+      @apply w-1/4 grid grid-flow-row capitalize;
+      li {
+        @apply flex items-center;
+        padding: 30px 10px;
+        
+      }
+    }
+
+    .showtimes {
+      @apply w-3/4 grid grid-rows-6;
+
+      .date {
+        @apply inline-flex overflow-auto items-center;
+
+        &::-webkit-scrollbar {
+          height: 2px;
+          background-color: #afacac;
+        }
+        &::-webkit-scrollbar-thumb {
+          background-color: #11326f;
+        }
+
+        .item {
+          @apply flex-shrink-0 text-center;
+          width: calc(100% / 6);
+          padding: 0 10px;
+        }
+      }
+      .theater {
+        @apply row-span-5;
+        &__item {
+          padding: 20px 20px 10px 20px;
+          
+        }
+        ul {
+          @apply grid grid-cols-5 gap-4;
+        }
+      }
+    }
+  }
+}

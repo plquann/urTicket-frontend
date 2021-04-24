@@ -1,5 +1,5 @@
 import React from 'react';
-import { CAST_PHOTO } from 'constants/Image';
+import { CAST_PHOTO } from 'constants/image';
 import CustomCarousel from 'components/CustomCarousel';
 
 const crew = [

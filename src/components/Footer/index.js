@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.scss';
-import { LOGO, LOGO_PARTNER, SVG_IMAGES } from 'constants/Image';
+import { LOGO, LOGO_PARTNER, SVG_IMAGES } from 'constants/image';
 import Newsletter from 'components/Newsletter';
 
 export default function Footer() {

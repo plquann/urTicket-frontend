@@ -1,5 +1,5 @@
 import React from 'react';
-import { CAST_PHOTO } from 'constants/Image';
+import { CAST_PHOTO } from 'constants/image';
 import CustomCarousel from 'components/CustomCarousel';
 
 const cast = [
@@ -15,7 +15,7 @@ const cast = [
 
 export default function Cast() {
     return (
-        <div className="cast mb-4 w-full">
+        <div className="cast mb-4 w-full h-auto">
             <div className="title pb-3 mb-10" style={{ borderBottom: '1px dashed #11326f' }}>
                 <h3 className="text-2xl font-semibold">CAST</h3>
             </div>

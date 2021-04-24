@@ -1,5 +1,5 @@
 import ArrowCarousel from 'components/ArrowCarousel';
-import { ARROW_CAROUSEL } from 'constants/Image';
+import { ARROW_CAROUSEL } from 'constants/image';
 import useModal from 'hooks/useModal';
 import React from 'react';
 import Slider from 'react-slick';
