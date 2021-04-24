@@ -1,8 +1,5 @@
-import React from 'react'
+import React from 'react';
 import { TabGroup } from '@statikly/funk';
-import MovieGrid from '../MovieGrid'
-import TabButton from '../TabButton';
-import TabContent from '../TabContent';
 import MovieItemCarousel from '../MovieItemCarousel';
 
 export default function Tabs() {
@@ -17,14 +14,29 @@ export default function Tabs() {
                     <div className="flex justify-self-end">
                         {['NOW SHOWING', 'COMING SOON'].map((item, index) => {
                             return (
-                                <TabButton index={index} title={item} />
+                                <TabGroup.Tab
+                                    index={index}
+                                    className="py-2 px-14 mb-2 font-bold uppercase rounded-full transition ease-in duration-300 mx-2 focus:outline-none hover:shadow-btn-shadow"
+                                    activeClassName="bg-btn-gradient"
+                                    inactiveClassName="text-white"
+                                    style={{ border: "1px solid #11326f" }}
+                                >
+                                    {item}
+                                </TabGroup.Tab>
                             )
                         })}
                     </div>
                 </TabGroup.TabList>
                 {[0, 1].map((item, index) => {
                     return (
-                        <TabContent index={index} content={<MovieItemCarousel />} />
+                        <TabGroup.TabPanel
+                            index={index}
+                            className="py-16 transition transform duration-700 "
+                            activeClassName="opacity-100 translate-x-0"
+                            inactiveClassName="absolute opacity-0 -translate-x-2"
+                        >
+                            <MovieItemCarousel />
+                        </TabGroup.TabPanel>
                     )
                 })}
             </TabGroup>

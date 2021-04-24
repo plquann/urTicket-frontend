@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import Slider from 'react-slick';
-import './MovieBannerCarousel.scss';
-import { ARROW_CAROUSEL } from 'constants/Image';
 import ArrowCarousel from 'components/ArrowCarousel';
-import TrailerModal from '../TrailerModal';
+import { ARROW_CAROUSEL } from 'constants/Image';
 import useModal from 'hooks/useModal';
+import React from 'react';
+import Slider from 'react-slick';
+ 
+import TrailerModal from '../TrailerModal';
+import './MovieBannerCarousel.scss';
 
 const settings = {
     dots: false,

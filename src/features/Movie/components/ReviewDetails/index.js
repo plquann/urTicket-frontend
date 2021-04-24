@@ -37,12 +37,12 @@ export default function ReviewDetails() {
                     and majority of Avengers: Endgame (2019) takes place 5 years later in 2023..
                 </p>
                 <div className="react">
-                    <div className="like flex flex-wrap items-center mr-6">
-                        <Icons className="h-7 w-7 mr-2" name="Like" fill="#31d7a9" />
+                    <div className="like inline-flex space-x-1 items-center mr-6">
+                        <Icons className="h-7 w-7" name="Like" fill="#31d7a9" />
                         <span>(8)</span>
                     </div>
-                    <div className="dislike flex flex-wrap items-center mr-6">
-                        <Icons className="h-6 w-6 mr-2" name="Dislike" fill="#f1481f" />
+                    <div className="dislike inline-flex space-x-1 items-center mr-6">
+                        <Icons className="h-6 w-6 mt-2" name="Dislike" fill="#f1481f" />
                         <span>(2)</span>
                     </div>
                     <div className="report flex items-center">

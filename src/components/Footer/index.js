@@ -5,7 +5,7 @@ import Newsletter from 'components/Newsletter';
 
 export default function Footer() {
     return (
-        <footer className="footer w-full py-8">
+        <footer className="footer">
             <Newsletter />
             <div className="footer__wrapper">
                 <div className="footer__wrapper__top">

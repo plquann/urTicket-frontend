@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Slider from 'react-slick';
 import './MovieItemCarousel.scss';
 import { ARROW_CAROUSEL } from 'constants/Image';

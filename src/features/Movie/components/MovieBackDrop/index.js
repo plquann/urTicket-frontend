@@ -4,8 +4,7 @@ import './MovieBackDrop.scss';
 
 export default function MovieBackDrop() {
     return (
-        <div className="backdrop bg-img" style={{ backgroundImage: `url(${BANNER_BG.BANNER_2})` }} >
-
+        <div className="backdrop bg-img relative" style={{ backgroundImage: `url(${BANNER_BG.BANNER_2})`, zIndex: '-1' }} >
         </div>
     )
 }

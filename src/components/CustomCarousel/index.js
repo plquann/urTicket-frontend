@@ -37,7 +37,7 @@ export default function CustomCarousel(props) {
                         <div className="info mb-3">
                             <h6 className="text-lg font-semibold mb-1 capitalize line-clamp-1 px-3">{item.name}</h6>
                             <span className="block text-sm mb-2 capitalize" style={{ color: '#31d7a9' }}>{item.pos}</span>
-                            {item.character ? <p><span>as</span><span className="text-sm capitalize ml-1" style={{ color: '#9aace5' }}> {item.character}</span></p> : ''}
+                            {item.character ? <p style={{ color: '#9aace5' }}><span>as</span><span className="text-sm capitalize ml-1" > {item.character}</span></p> : ''}
                         </div>
                     </div>
                 )

@@ -15,7 +15,7 @@ const cast = [
 
 export default function Cast() {
     return (
-        <div className="cast mb-4">
+        <div className="cast mb-4 w-full">
             <div className="title pb-3 mb-10" style={{ borderBottom: '1px dashed #11326f' }}>
                 <h3 className="text-2xl font-semibold">CAST</h3>
             </div>

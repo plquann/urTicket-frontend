@@ -15,7 +15,7 @@ const crew = [
 
 export default function Crew() {
     return (
-        <div className="crew mb-4">
+        <div className="crew mb-4 w-full">
             <div className="title pb-3 mb-10" style={{ borderBottom: '1px dashed #11326f' }}>
                 <h3 className="text-2xl font-semibold">CREW</h3>
             </div>

@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import Slider from "react-slick";
 import { MOVIE_PHOTO } from 'constants/Image';
+import "slick-carousel/slick/slick.css";
 import './PhotosPreview.scss';
 
 export default function PhotosPreview() {
@@ -13,13 +14,12 @@ export default function PhotosPreview() {
         swipeToSlide: true,
         autoplay: false,
         autoplaySpeed: 3000,
-        infinite: true,    
+        infinite: true,
     };
 
     return (
-        <div className="w-full photos__preview mb-14">
+        <div className="w-full photos__preview mb-10">
             <h3 className="text-2xl font-bold mb-4">PHOTOS</h3>
-            
             <Slider {...settings}>
                 {MOVIE_PHOTO.map((photo, index) => {
                     return (

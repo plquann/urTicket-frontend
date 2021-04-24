@@ -25,7 +25,7 @@ const colourStyles = {
         borderRadius: '20px',
         padding: '0 20px',
         color: '#ffffff',
-        marginLeft: '10px'
+        marginLeft: '10px',
 
     }),
     option: (styles, { data, isDisabled, isFocused, isSelected }) => {
@@ -40,7 +40,7 @@ const colourStyles = {
         textAlign: 'center',
     }),
     input: styles => ({ ...styles, ':hover': { ...styles, fontWeight: 'bold' } }),
-    valueContainer: styles => ({ ...styles, paddingRight: '40px' }),
+    valueContainer: styles => ({ ...styles, paddingRight: '40px', width: '120px', textAlign: 'center' }),
     indicatorSeparator: styles => ({ ...styles, width: '0px' }),
     placeholder: styles => ({ ...styles }),
     singleValue: (styles, { data }) => ({ ...styles, color: '#ffffff', paddingLeft: '10px', paddingRight: '10px', overflow: '' }),
