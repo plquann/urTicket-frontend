@@ -143,6 +143,7 @@ export const LOGO_PARTNER = [
     { link: '#', name: 'VTBANK', img: `${domain}VIETTINBANK.png` },
     { link: '#', name: 'GO', img: `${domain}123go.png` },
     { link: '#', name: 'LABAN', img: `${domain}laban.png` },
+    { link: '#', name: 'CGV', img: `https://www.cgv.vn/skin/frontend/cgv/default/images/cgvlogo.png` }
 ];
 
 export const SVG_IMAGES = {

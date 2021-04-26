@@ -1,0 +1,75 @@
+@layer components {
+  .slide-explore {
+    @apply flex items-center overflow-hidden relative;
+    height: 700px;
+
+    .bg {
+      @apply p-8 transform skew-x-6 absolute pl-80 -left-32 h-full;
+      background-color: rgba(black, 0.6);
+      width: 55%;
+      transform-origin: 0 100%;
+
+      &::before {
+        @apply w-full h-full absolute top-0 left-0 pointer-events-none transform skew-x-12;
+        content: "";
+        background-color: inherit;
+      }
+    }
+
+    .details {
+      @apply p-20 pl-40 z-10;
+      //z-index: 100;
+
+      h5 {
+        @apply text-3xl font-medium mb-2;
+      }
+
+      p {
+        @apply inline-block text-xl text-gray-500 mb-8 mr-20;
+      }
+
+      button {
+        @apply px-5 py-2 uppercase mr-4 bg-transparent transition duration-300 ease-in cursor-pointer outline-none rounded-full mt-8;
+        &:hover {
+          color: #fff;
+          @apply transform hover:-translate-y-1 hover:scale-110;
+        }
+      }
+    }
+
+    .illustration {
+
+      div {
+        height: 25rem;
+        width: 18rem;
+        border-radius: 3rem;
+        background-color: #ffff;
+        position: relative;
+        transform: skewX(-10deg);
+
+        @media only screen and (max-width: 800px) {
+          height: 20rem;
+          width: 15rem;
+        }
+
+        &::after,
+        &::before {
+          content: "";
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          border-radius: 3rem;
+          top: 0;
+          left: 0;
+        }
+
+        &::after {
+          transform: translate(4rem, -1rem);
+        }
+        &::before {
+          transform: translate(2rem, -2rem);
+        }
+      }
+    }
+  }
+}

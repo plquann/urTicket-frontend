@@ -1,0 +1,65 @@
+@layer components {
+  $b1cd: #500033;
+  $b1cl: #ff0077;
+  $b2cd: #000050;
+  $b2cl: #0033ff;
+  $b3cd: #00501d;
+  $b3cl: #00ff44;
+  $b4cd: #554d00;
+  $b4cl: #ff4e00;
+  $b5cd: #300050;
+  $b5cl: #8000ff;
+  $black: #000;
+  $white: #fff;
+  $grey: #b5b4b4;
+
+  @mixin color_render($DC, $LC) {
+    .illustration .inner {
+      background-color: $LC;
+      &::after,
+      &::before {
+        background-color: rgba($LC, 0.4);
+      }
+    }
+    button {
+      background-color: $LC;
+    }
+  }
+
+  .movie-explore {
+    @apply relative w-full;
+    height: 700px;
+
+    .prev,
+    .next {
+      @apply w-16 cursor-pointer transition duration-300 ease-linear absolute top-1/2 opacity-40;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+    .prev {
+      @apply left-4 transform -translate-y-1/2 z-50;
+    }
+
+    .next {
+      @apply right-4 transform -translate-y-1/2 z-50;
+    }
+
+    .box-1 {
+      @include color_render($b1cd, $b1cl);
+    }
+    .box-2 {
+      @include color_render($b2cd, $b2cl);
+    }
+    .box-3 {
+      @include color_render($b3cd, $b3cl);
+    }
+    .box-4 {
+      @include color_render($b4cd, $b4cl);
+    }
+    .box-5 {
+      @include color_render($b5cd, $b5cl);
+    }
+  }
+}

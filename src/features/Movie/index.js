@@ -7,13 +7,14 @@ import MovieItem from 'features/Movie/components/MovieItem';
 import React from 'react';
 import FilterCinema from './components/FilterCinema';
 import MovieCarousel from './components/MovieBannerCarousel';
+import MovieExplore from './components/MovieExplore';
 import MovieSearch from './components/MovieSearch';
 import Tabs from './components/Tabs';
 
 export default function Movie() {
     return (
         <div className="w-full">
-            <Header />
+            {/* <Header />
             <MovieCarousel />
             <MovieSearch />
             <Tabs />
@@ -22,7 +23,8 @@ export default function Movie() {
             <FilterSort />
             <MovieItem />
             <Pagination />
-            <Footer />
+            <Footer /> */}
+            <MovieExplore />
         </div>
     )
 }

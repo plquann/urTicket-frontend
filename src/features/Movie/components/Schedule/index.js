@@ -1,12 +1,14 @@
+import Icons from "components/Icons";
 import React from "react";
 import './Schedule.scss';
+import { LOGO_PARTNER } from 'constants/image';
 
 const listDay = () => {
     const arrDays = [];
     const day = new Date();
     let dayFormat = new Date(day.getFullYear(), day.getMonth(), day.getDate());
 
-    arrDays.push(dayFormat);
+    arrDays.push(new Date(dayFormat));
 
     for (let i = 0; i < 10; i++) {
         dayFormat.setDate(dayFormat.getDate() + 1);
@@ -20,14 +22,15 @@ const listDay = () => {
 
 export default function Schedule(props) {
     return (
-        <div className="schedule max-w-screen-md mx-auto my-10">
+        <div className="schedule max-w-screen-md mx-auto my-10 " >
             <ul className="theater-list ">
-                <li>cgv cinemas</li>
-                <li>lotte cinemas</li>
-                <li>bhd star cineplex</li>
-                <li>galaxy cinemas</li>
-                <li>mega gs</li>
-                <li>beta cinemas</li>
+                <li className="active"><img src={LOGO_PARTNER[20].img} alt="movie System" /><span>cgv cinemas</span></li>
+                <li><img src={LOGO_PARTNER[3].img} alt="movie System" /><span>lotte cinemas</span></li>
+                <li><img src={LOGO_PARTNER[0].img} alt="movie System" /><span>bhd star cineplex</span></li>
+                <li><img src={LOGO_PARTNER[1].img} alt="movie System" /><span>galaxy cinemas</span></li>
+                <li><img src={LOGO_PARTNER[4].img} alt="movie System" /><span>mega gs</span></li>
+                <li><img src={LOGO_PARTNER[5].img} alt="movie System" /><span>beta cinemas</span></li>
+
             </ul>
             <div className="showtimes">
                 <div className="date ">
@@ -44,42 +47,56 @@ export default function Schedule(props) {
 
                 <div className="theater">
                     <div className="theater__item">
-                        <p>CGV Tran Quang Khai</p>
+                        <p><Icons name="Location" /><span>CGV Tran Quang Khai</span></p>
                         <ul className="time">
-                            <li className="time__item">09:40</li>
-                            <li className="time__item active">13:45</li>
-                            <li className="time__item">15:45</li>
-                            <li className="time__item">19:50</li>
+                            <li className="time__item">09:40<span className="ml-2 text-gray-400 opacity-70 text-sm">~11:30</span></li>
+                            <li className="time__item active">13:45<span className="ml-2 text-gray-400 opacity-70 text-sm">~15:25</span></li>
+                            <li className="time__item">15:45<span className="ml-2 text-gray-400 opacity-70 text-sm">~17:10</span></li>
+                            <li className="time__item">19:50<span className="ml-2 text-gray-400 opacity-70 text-sm">~21:50</span></li>
+                            <li className="time__item">21:00<span className="ml-2 text-gray-400 opacity-70 text-sm">~23:15</span></li>
                         </ul>
                     </div>
 
                     <div className="theater__item">
-                        <p>CGV Aeon Tan Phu</p>
+                        <p><Icons name="Location" /><span>CGV Aeon Tan Phu</span></p>
                         <ul className="time">
-                            <li className="time__item">09:40</li>
-                            <li className="time__item active">13:45</li>
-                            <li className="time__item">15:45</li>
-                            <li className="time__item">19:50</li>
+                            <li className="time__item">09:40<span className="ml-2 text-gray-400 opacity-70 text-sm">~11:30</span></li>
+                            <li className="time__item active">13:45<span className="ml-2 text-gray-400 opacity-70 text-sm">~15:25</span></li>
+                            <li className="time__item">15:45<span className="ml-2 text-gray-400 opacity-70 text-sm">~17:10</span></li>
+                            <li className="time__item">19:50<span className="ml-2 text-gray-400 opacity-70 text-sm">~21:50</span></li>
+                            <li className="time__item">21:00<span className="ml-2 text-gray-400 opacity-70 text-sm">~23:15</span></li>
                         </ul>
                     </div>
 
                     <div className="theater__item">
-                        <p>CGV Landmark 81</p>
+                        <p><Icons name="Location" /><span>CGV Landmark 81</span></p>
                         <ul className="time">
-                            <li className="time__item">09:40</li>
-                            <li className="time__item active">13:45</li>
-                            <li className="time__item">15:45</li>
-                            <li className="time__item">19:50</li>
+                            <li className="time__item">09:40<span className="ml-2 text-gray-400 opacity-70 text-sm">~11:30</span></li>
+                            <li className="time__item active">13:45<span className="ml-2 text-gray-400 opacity-70 text-sm">~15:25</span></li>
+                            <li className="time__item">15:45<span className="ml-2 text-gray-400 opacity-70 text-sm">~17:10</span></li>
+                            <li className="time__item">19:50<span className="ml-2 text-gray-400 opacity-70 text-sm">~21:50</span></li>
+                            <li className="time__item">21:00<span className="ml-2 text-gray-400 opacity-70 text-sm">~23:15</span></li>
                         </ul>
                     </div>
 
                     <div className="theater__item">
-                        <p>CGV Van Hanh Mall</p>
+                        <p><Icons name="Location" /><span>CGV Van Hanh Mall</span></p>
                         <ul className="time">
-                            <li className="time__item">09:40</li>
-                            <li className="time__item active">13:45</li>
-                            <li className="time__item">15:45</li>
-                            <li className="time__item">19:50</li>
+                            <li className="time__item">09:40<span className="ml-2 text-gray-400 opacity-70 text-sm">~11:30</span></li>
+                            <li className="time__item active">13:45<span className="ml-2 text-gray-400 opacity-70 text-sm">~15:25</span></li>
+                            <li className="time__item">15:45<span className="ml-2 text-gray-400 opacity-70 text-sm">~17:10</span></li>
+                            <li className="time__item">19:50<span className="ml-2 text-gray-400 opacity-70 text-sm">~21:50</span></li>
+                            <li className="time__item">21:00<span className="ml-2 text-gray-400 opacity-70 text-sm">~23:15</span></li>
+                        </ul>
+                    </div>
+                    <div className="theater__item">
+                        <p><Icons name="Location" /><span>CGV Van Hanh Mall</span></p>
+                        <ul className="time">
+                            <li className="time__item">09:40<span className="ml-2 text-gray-400 opacity-70 text-sm">~11:30</span></li>
+                            <li className="time__item active">13:45<span className="ml-2 text-gray-400 opacity-70 text-sm">~15:25</span></li>
+                            <li className="time__item">15:45<span className="ml-2 text-gray-400 opacity-70 text-sm">~17:10</span></li>
+                            <li className="time__item">19:50<span className="ml-2 text-gray-400 opacity-70 text-sm">~21:50</span></li>
+                            <li className="time__item">21:00<span className="ml-2 text-gray-400 opacity-70 text-sm">~23:15</span></li>
                         </ul>
                     </div>
                 </div>
