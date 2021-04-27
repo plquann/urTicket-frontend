@@ -1,31 +1,4 @@
 @layer components {
-  $b1cd: #500033;
-  $b1cl: #ff0077;
-  $b2cd: #000050;
-  $b2cl: #0033ff;
-  $b3cd: #00501d;
-  $b3cl: #00ff44;
-  $b4cd: #554d00;
-  $b4cl: #ff4e00;
-  $b5cd: #300050;
-  $b5cl: #8000ff;
-  $black: #000;
-  $white: #fff;
-  $grey: #b5b4b4;
-
-  @mixin color_render($DC, $LC) {
-    .illustration .inner {
-      background-color: $LC;
-      &::after,
-      &::before {
-        background-color: rgba($LC, 0.4);
-      }
-    }
-    button {
-      background-color: $LC;
-    }
-  }
-
   .movie-explore {
     @apply relative w-full;
     height: 700px;
@@ -46,20 +19,27 @@
       @apply right-4 transform -translate-y-1/2 z-50;
     }
 
-    .box-1 {
-      @include color_render($b1cd, $b1cl);
-    }
-    .box-2 {
-      @include color_render($b2cd, $b2cl);
-    }
-    .box-3 {
-      @include color_render($b3cd, $b3cl);
-    }
-    .box-4 {
-      @include color_render($b4cd, $b4cl);
-    }
-    .box-5 {
-      @include color_render($b5cd, $b5cl);
+    .custom-dot {
+      @apply w-3/5 absolute bg-transparent left-1/2 bottom-0 transform -translate-x-1/2 text-center text-lg p-2.5 z-50;
+
+      ul {
+        @apply m-0 grid grid-cols-5 gap-4;
+
+        li {
+          div {
+            @apply py-4 px-8 cursor-pointer transition duration-300 ease-linear opacity-25;
+            border-top: 3px solid #fff;
+            &:hover {
+              opacity: 0.6;
+            }
+          }
+          &.slick-active {
+            div {
+              opacity: 1;
+            }
+          }
+        }
+      }
     }
   }
 }

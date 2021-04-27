@@ -9,12 +9,13 @@ import './MovieExplore.scss';
 
 export default function MovieExplore() {
     const settings = {
-        dots: false,
+        dots: true,
         infinite: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
         className: 'movie-explore',
+
         nextArrow: <ArrowCarousel
             isCustom={'next'}
             arrowSVG={<Icons name='Next' />}
@@ -23,6 +24,9 @@ export default function MovieExplore() {
             isCustom={'prev'}
             arrowSVG={<Icons name='Prev' />}
         />,
+        customPaging: i => <div>{i + 1}</div>,
+        appendDots: dots => <div><ul> {dots} </ul></div>,
+        dotsClass: 'custom-dot',
     };
 
     return (

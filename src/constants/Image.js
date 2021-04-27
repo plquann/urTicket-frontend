@@ -48,8 +48,10 @@ import cast5 from 'assets/images/cast/cast05.jpg';
 import cast6 from 'assets/images/cast/cast06.jpg';
 import cast7 from 'assets/images/cast/cast07.jpg';
 import cast8 from 'assets/images/cast/cast08.jpg';
+import explore from 'assets/images/poster_explore.jpg';
 
 export const SEARCH_BG = searchBackground;
+export const MOVIE_EXPLORE = explore;
 
 export const IMAGE_BG = {
     NOTFOUND_BG: NotFoundBG,

@@ -19,26 +19,47 @@
     .details {
       @apply p-20 pl-40 z-10;
       //z-index: 100;
-
-      h5 {
-        @apply text-3xl font-medium mb-2;
+      .title {
+        @apply text-3xl font-bold mb-2 uppercase -mt-1.5;
+      }
+      .duration {
+        @apply text-base mb-2;
+        color: #31d7a9;
+      }
+      .summary {
+        @apply text-base mb-3;
+      }
+      .release {
+        @apply text-white mb-2;
       }
 
-      p {
-        @apply inline-block text-xl text-gray-500 mb-8 mr-20;
+      .rating {
+        @apply grid grid-cols-5 gap-4 py-2 px-0 mb-1;
+        .item {
+          @apply flex flex-row;
+        }
       }
-
-      button {
-        @apply px-5 py-2 uppercase mr-4 bg-transparent transition duration-300 ease-in cursor-pointer outline-none rounded-full mt-8;
-        &:hover {
-          color: #fff;
-          @apply transform hover:-translate-y-1 hover:scale-110;
+      .genres {
+        a {
+          @apply inline-block border-2 font-medium text-xs uppercase px-3.5 py-2 rounded-3xl transition-all duration-300 ease-in-out mr-4;
+          color: "#9aace5";
+          border-color: rgba(168, 177, 198, 0.2);
+          &:hover {
+            @apply bg-gray-600;
+          }
+        }
+      }
+      .btn {
+        button {
+          @apply uppercase px-3.5 py-2 bg-gray-600 text-white rounded-xl focus:outline-none opacity-75;
+          &:hover {
+            opacity: 1;
+          }
         }
       }
     }
 
     .illustration {
-
       div {
         height: 25rem;
         width: 18rem;
@@ -46,11 +67,12 @@
         background-color: #ffff;
         position: relative;
         transform: skewX(-10deg);
+        margin-left: 10rem;
 
-        @media only screen and (max-width: 800px) {
-          height: 20rem;
-          width: 15rem;
-        }
+        // @media only screen and (max-width: 800px) {
+        //   height: 20rem;
+        //   width: 15rem;
+        // }
 
         &::after,
         &::before {
@@ -58,16 +80,20 @@
           position: absolute;
           height: 100%;
           width: 100%;
+          background: url(../../assets/images/poster_explore.jpg);
+          background-position:top left;
+          background-repeat: no-repeat;
+          background-size: cover;
           border-radius: 3rem;
           top: 0;
           left: 0;
         }
 
         &::after {
-          transform: translate(4rem, -1rem);
+          transform: translate(6rem, -2rem);
         }
         &::before {
-          transform: translate(2rem, -2rem);
+          transform: translate(3rem, -3rem);
         }
       }
     }
