@@ -1,7 +1,11 @@
 import { COMBO_FOOD } from 'constants/food';
 import { BANNER_BG, SCREEN, SEAT } from 'constants/image'
 import React from 'react';
-import './Booking.scss';
+// import './Booking.scss';
+import FormPayment from './components/FormPayment';
+import FormPromo from './components/FormPromo';
+import Info from './components/Info';
+import Payment from './components/Payment';
 
 const initArr = () => {
     const arr = [];
@@ -215,94 +219,11 @@ export default function Booking() {
             </div>
 
             <div className="check__out w-1/2 mx-auto my-5">
-                <div className="checkout-widget checkout-contact">
-                    <h5 className="title">Share your Contact  Details </h5>
-                    <form className="checkout-contact-form">
-                        <div className="form-group">
-                            <input type="text" placeholder="Full Name" />
-                        </div>
-                        <div className="form-group">
-                            <input type="text" placeholder="Enter your Mail" />
-                        </div>
-                        <div className="form-group">
-                            <input type="text" placeholder="Enter your Phone Number " />
-                        </div>
-                        <div className="form-group">
-                            <input type="submit" defaultValue="Continue" className="custom-button" />
-                        </div>
-                    </form>
-                </div>
+                <Info />
 
-                <div className="promo checkout-widget checkout-contact">
-                    <h5 className="title">Promo Code </h5>
-                    <form className="checkout-contact-form">
-                        <div className="form-group">
-                            <input type="text" placeholder="Please enter promo code" />
-                        </div>
-                        <div className="form-group">
-                            <input type="submit" defaultValue="Verify" className="custom-button" />
-                        </div>
-                    </form>
-                </div>
+                <FormPromo />
 
-                <div className=" payment checkout-widget checkout-card mb-0">
-                    <h5 className="title">Payment Option </h5>
-                    <ul className="payment-option">
-                        <li className="active">
-                            <a href="#0">
-                                <img src="./assets/images/payment/card.png" alt="payment" />
-                                <span>Credit Card</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#0">
-                                <img src="./assets/images/payment/card.png" alt="payment" />
-                                <span>Debit Card</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#0">
-                                <img src="./assets/images/payment/paypal.png" alt="payment" />
-                                <span>paypal</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <h6 className="subtitle">Enter Your Card Details </h6>
-                    <form className="payment-card-form">
-                        <div className="form-group w-100">
-                            <label htmlFor="card1">Card Details</label>
-                            <input type="text" id="card1" />
-                            <div className="right-icon">
-                                <i className="flaticon-lock" />
-                            </div>
-                        </div>
-                        <div className="form-group w-100">
-                            <label htmlFor="card2"> Name on the Card</label>
-                            <input type="text" id="card2" />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="card3">Expiration</label>
-                            <input type="text" id="card3" placeholder="MM/YY" />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="card4">CVV</label>
-                            <input type="text" id="card4" placeholder="CVV" />
-                        </div>
-                        <div className="form-group check-group">
-                            <input id="card5" type="checkbox" defaultChecked />
-                            <label htmlFor="card5">
-                                <span className="title">QuickPay</span>
-                                <span className="info">Save this card information to my Boleto  account and make faster payments.</span>
-                            </label>
-                        </div>
-                        <div className="form-group">
-                            <input type="submit" className="custom-button" defaultValue="make payment" />
-                        </div>
-                    </form>
-                    <p className="notice">
-                        By Clicking "Make Payment" you agree to the <a href="#0">terms and conditions</a>
-                    </p>
-                </div>
+                <Payment />
 
             </div>
 

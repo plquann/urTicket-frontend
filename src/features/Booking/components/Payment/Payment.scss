@@ -1,0 +1,25 @@
+@layer components {
+  li.active {
+    a::before {
+      position: absolute;
+      content: "";
+      background-color: #032055;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      top: -20px;
+      right: -20px;
+    }
+    a::after {
+      position: absolute;
+      content: "";
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      top: -15px;
+      right: -15px;
+      background: url(../../../../assets/images/check.png) no-repeat center center;
+      background-size: cover;
+    }
+  }
+}
