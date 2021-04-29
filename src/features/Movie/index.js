@@ -1,5 +1,5 @@
-import FilterDate from 'components/FilterDate';
-import FilterSort from 'components/FilterSort';
+import FilterDate from 'features/Movie/components/FilterDate';
+
 import Footer from 'components/Footer';
 import Header from 'components/Header';
 import Pagination from 'components/Pagination';
@@ -14,17 +14,18 @@ import Tabs from './components/Tabs';
 export default function Movie() {
     return (
         <div className="w-full">
-            {/* <Header />
+            <Header />
             <MovieCarousel />
             <MovieSearch />
             <Tabs />
-            <FilterCinema />
-            <FilterDate />
-            <FilterSort />
-            <MovieItem />
-            <Pagination />
-            <Footer /> */}
-            <MovieExplore />
+            <div className="view-all text-center">
+                <a href="/home">
+                    <button className="bg-btn-gradient text-xl px-12 py-4 rounded-full -mt-16 uppercase focus:outline-none">
+                        View All
+                    </button>
+                </a>
+            </div>
+            <Footer />
         </div>
     )
 }

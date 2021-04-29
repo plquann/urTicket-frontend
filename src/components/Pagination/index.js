@@ -3,7 +3,7 @@ import './Pagination.scss';
 
 export default function Pagination() {
     return (
-        <div className="pagination">
+        <div className="pagination mt-5">
             <button className="pagination__btn"><i className="fas fa-angle-double-left text-sm" /><span className="ml-1">Prev</span></button>
             <button className="pagination__btn">1</button>
             <button className="pagination__btn">2</button>

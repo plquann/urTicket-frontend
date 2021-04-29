@@ -1,3 +1,4 @@
+import { randomGenres } from 'constants/genres';
 import React from 'react';
 
 export default function MovieInfo() {
@@ -10,10 +11,16 @@ export default function MovieInfo() {
                 </div>
 
                 <div className="genres mb-3.5">
-                    <a href="#0" className="inline-block border border-solid text-xs uppercase px-3.5 py-2 rounded-3xl transition-all duration-300 ease-in-out mr-4" style={{ color: '#9aace5', borderColor: 'rgba(168,177,198,0.2)' }}>horror</a>
-                    <a href="#0" className="inline-block border border-solid text-xs uppercase px-3.5 py-2 rounded-3xl transition-all duration-300 ease-in-out mr-4" style={{ color: '#9aace5', borderColor: 'rgba(168,177,198,0.2)' }}>horror</a>
-                    <a href="#0" className="inline-block border border-solid text-xs uppercase px-3.5 py-2 rounded-3xl transition-all duration-300 ease-in-out mr-4" style={{ color: '#9aace5', borderColor: 'rgba(168,177,198,0.2)' }}>horror</a>
-                    <a href="#0" className="inline-block border border-solid text-xs uppercase px-3.5 py-2 rounded-3xl transition-all duration-300 ease-in-out mr-4" style={{ color: '#9aace5', borderColor: 'rgba(168,177,198,0.2)' }}>horror</a>
+                    {randomGenres().map((genre, index) => {
+                        return(
+                        <a  key={index}
+                            href="#0"
+                            className="inline-block border border-solid text-xs uppercase px-3.5 py-2 rounded-3xl transition-all duration-300 ease-in-out mr-4"
+                            style={{ color: '#9aace5', borderColor: 'rgba(168,177,198,0.2)' }}
+                        >
+                            {genre}
+                        </a>)
+                    })}
                 </div>
             </div>
             <div className="social__duration flex flex-wrap">

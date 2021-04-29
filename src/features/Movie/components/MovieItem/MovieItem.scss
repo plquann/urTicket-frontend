@@ -1,12 +1,12 @@
 @layer components {
   .movie__item {
-    @apply grid grid-cols-4 gap-4;
+    @apply grid grid-cols-4 gap-4 ;
 
     &__content {
       @apply col-span-3 pl-5;
 
       .title {
-        @apply text-3xl font-bold mb-5 uppercase -mt-1.5;
+        @apply text-2xl font-bold mb-2 uppercase -mt-1.5;
       }
       .duration {
         @apply text-base;

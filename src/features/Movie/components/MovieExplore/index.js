@@ -33,7 +33,7 @@ export default function MovieExplore() {
         <Slider {...settings}>
             {[1, 2, 3, 4, 5].map((item, index) => {
                 return (
-                    <CustomSlide index={index} className={`box-${item}`} />
+                    <CustomSlide key={index} index={index} className={`box-${item}`} />
                 )
             })}
         </Slider>

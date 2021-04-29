@@ -1,0 +1,44 @@
+@layer components {
+  .trailer-content {
+    width: 967px;
+    height: 544px;
+    background: #000;
+    padding: 0;
+    border: none;
+    animation: anvil 0.3s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;
+
+    .modal > .close {
+      cursor: pointer;
+      position: absolute;
+      display: block;
+      width: 30px;
+      height: 30px;
+      line-height: 28px;
+      right: -10px;
+      top: -20px;
+      font-size: 28px;
+      background: transparent;
+      border-radius: 18px;
+      border: 1px solid #cfcece;
+      outline: none;
+    }
+  }
+
+  @keyframes anvil {
+    0% {
+      transform: scale(1) translateY(0px);
+      opacity: 0;
+      box-shadow: 0 0 0 rgba(241, 241, 241, 0);
+    }
+    1% {
+      transform: scale(0.96) translateY(10px);
+      opacity: 0;
+      box-shadow: 0 0 0 rgba(241, 241, 241, 0);
+    }
+    100% {
+      transform: scale(1) translateY(0px);
+      opacity: 1;
+      box-shadow: 0 0 500px rgba(241, 241, 241, 0);
+    }
+  }
+}

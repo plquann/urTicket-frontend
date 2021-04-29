@@ -3,7 +3,7 @@ import './FilterCinema.scss';
 
 export default function FilterCinema() {
     return (
-        <div className="filter__cinema mx-auto" >
+        <div className="filter__cinema " >
             <p className="filter__cinema__title">Cinema System</p>
             <div className="filter__cinema__wrapper">
                 <div className="filter__cinema__wrapper__item">

@@ -50,9 +50,18 @@ import cast7 from 'assets/images/cast/cast07.jpg';
 import cast8 from 'assets/images/cast/cast08.jpg';
 import explore from 'assets/images/poster_explore.jpg';
 
+import Screen from 'assets/images/movie/screen-thumb.png';
+import seat1 from 'assets/images/movie/seat01.png';
+import seat2 from 'assets/images/movie/seat02.png';
+// import seat_book from 'assets/images/movie/seat';
+
+export const SEAT = {
+    SEAT: seat1, 
+    SEAT_COUPLE: seat2,
+}
 export const SEARCH_BG = searchBackground;
 export const MOVIE_EXPLORE = explore;
-
+export const SCREEN = Screen;
 export const IMAGE_BG = {
     NOTFOUND_BG: NotFoundBG,
     NEWSLETTER_BG: NewslaterBG,

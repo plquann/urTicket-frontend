@@ -5,10 +5,10 @@ import { randomGenres } from 'constants/genres';
 
 export default function MovieItem() {
     return (
-        <div className="movie__item max-w-screen-lg mx-auto mt-5">
+        <div className="movie__item w-full mt-5 mb-10">
             <div className="movie__item__thumb c-thumb">
                 <a href="movie-details.html" className="w-100" >
-                    <img className="w-100 h-100 bg-img rounded-t-md" src={MOVIE_IMG[Math.floor(Math.random() * 11)]} alt="movie" />
+                    <img className="w-full h-full bg-img rounded-t-md" src={MOVIE_IMG[Math.floor(Math.random() * 11)]} alt="movie" />
                 </a>
             </div>
             <div className="movie__item__content h-100">
@@ -17,7 +17,7 @@ export default function MovieItem() {
                 </h5>
                 <p className="duration">2hrs 50 min</p>
                 <p className="summary line-clamp-2">During World War II, Steve Rogers is a sickly man from Brooklyn who's transformed into super-soldier Captain America to aid in the war effort. Rogers must stop the Red Skull – Adolf Hitler's ruthless head of weaponry, and the leader of an organization that intends to use a mysterious device of untold powers for world domination.</p>
-               
+
                 <div className="genres">
                     {randomGenres().map((genre, index) => {
                         return <span key={index}>{genre}</span>
@@ -51,7 +51,7 @@ export default function MovieItem() {
                                 <span>Like</span>
                             </a>
                         </div>
-                        
+
                         <div className="react-item">
                             <a href="#0" className="popup-video">
                                 <div className="thumb">
@@ -62,7 +62,7 @@ export default function MovieItem() {
                         </div>
 
                         <div className="react-item col-start-4">
-                            <a href="#0">
+                            <a href="/booking">
                                 <div className="thumb">
                                     <img src={ICONS.BOOK} alt="icons" />
                                 </div>

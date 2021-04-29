@@ -13,9 +13,9 @@ function App() {
       <Suspense fallback={Loading()}>
         <BrowserRouter>
           <Switch>
-            {routes.map(({ component: Component, path, ...rest }) => {
+            {routes.map(({ component: Component, path, ...rest }, index) => {
               return (
-                <Route component={Component} path={path} key={path} {...rest} />
+                <Route component={Component} path={path} key={index} {...rest} />
               );
             })}
           </Switch>

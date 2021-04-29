@@ -15,6 +15,7 @@ export default function Tabs() {
                         {['NOW SHOWING', 'COMING SOON'].map((item, index) => {
                             return (
                                 <TabGroup.Tab
+                                    key={index}
                                     index={index}
                                     className="py-2 px-14 mb-2 font-bold uppercase rounded-full transition ease-in duration-300 mx-2 focus:outline-none hover:shadow-btn-shadow"
                                     activeClassName="bg-btn-gradient"
@@ -30,6 +31,7 @@ export default function Tabs() {
                 {[0, 1].map((item, index) => {
                     return (
                         <TabGroup.TabPanel
+                            key={index}
                             index={index}
                             className="py-16 transition transform duration-700 "
                             activeClassName="opacity-100 translate-x-0"

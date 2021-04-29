@@ -1,9 +1,9 @@
 @layer components {
   .pagination {
-    @apply text-lg my-0 mx-4 text-center;
+    @apply text-lg  mx-4 text-center;
 
     &__btn {
-      @apply inline-block my-0 mx-4;
+      @apply inline-block my-0 mx-4 focus:outline-none;
       color: #7a89bb;
       &:hover {
         color: #ffffff;

@@ -1,10 +1,10 @@
 import ArrowCarousel from 'components/ArrowCarousel';
 import { ARROW_CAROUSEL } from 'constants/image';
-import useModal from 'hooks/useModal';
 import React from 'react';
 import Slider from 'react-slick';
- 
-import TrailerModal from '../TrailerModal';
+import 'reactjs-popup/dist/index.css';
+import PopupTrailer from '../PopupTrailer';
+
 import './MovieBannerCarousel.scss';
 
 const settings = {
@@ -42,11 +42,9 @@ const photos = [
         url: 'https://s3img.vcdn.vn/123phim/2021/04/nguoi-nhan-ban-seobok-16177781610725.png',
         link: 'https://www.youtube.com/watch?v=-BQPKD7eozY'
     }
-]
+];
 
 export default function MovieBannerCarousel() {
-    const { toggle, visible } = useModal();
-
     return (
         <section className="carousel max-w-full relative mt-16">
             <Slider {...settings}>
@@ -54,14 +52,18 @@ export default function MovieBannerCarousel() {
                     return (
                         <div key={index} className="carousel-inner w-full relative ">
                             <img src={photo.url} alt="img-carousel" className="w-full mx-auto" />
-                            <button className="playTrailer" onClick={toggle}>
-                                <i className="fa fa-play" id="viewTrailer" />
-                            </button>
-                            <TrailerModal visible={visible} toggle={toggle} />
+
+                            <PopupTrailer
+                                open={<button className="button playTrailer">
+                                    <i className="fa fa-play" id="viewTrailer" />
+                                </button>}
+                                idVideo={`pRfmrE0ToTo`}
+                            />
                         </div>
                     )
                 })}
             </Slider>
+
         </section>
     )
 }

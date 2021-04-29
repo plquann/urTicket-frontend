@@ -1,9 +1,9 @@
 @layer components {
   .newsletter {
-    @apply max-w-screen-lg mx-auto pb-32;
+    @apply max-w-screen-lg mx-auto pb-8;
 
     &__container {
-      @apply rounded-2xl overflow-hidden relative px-5 py-14 text-center;
+      @apply rounded-2xl overflow-hidden relative px-5 py-10 text-center;
       &::after {
         @apply absolute opacity-70 inset-0 rounded-2xl;
         content: "";

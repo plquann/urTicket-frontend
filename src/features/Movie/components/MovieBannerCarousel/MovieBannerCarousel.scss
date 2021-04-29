@@ -9,7 +9,7 @@
     }
     .playTrailer {
       @apply absolute top-1/2 left-1/2
-        scale-100 text-white rounded-full opacity-0 transition duration-700 cursor-pointer;
+        scale-100 text-white rounded-full opacity-0 transition duration-700 cursor-pointer outline-none;
       transform: translate(-50%, -50%);
       i {
         @apply border-2 border-solid border-white rounded-full text-white 

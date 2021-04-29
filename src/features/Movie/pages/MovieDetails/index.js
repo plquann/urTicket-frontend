@@ -11,9 +11,8 @@ export default function MovieDetails() {
             <Header />
             <MovieBackDrop />
             <WrapperInfo />
-
-            <Schedule/>
-            {/* <Footer /> */}
+            <Schedule />
+            <Footer />
         </div>
     )
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import Dislike from './Dislike';
+import Filter from './Filter';
 import Heart from './Heart';
 import Like from './Like';
 import LocationMarker from './LocationMarker';
@@ -30,6 +31,8 @@ const Icons = props => {
             return <Next {...props} />;
         case "Prev":
             return <Prev {...props} />;
+        case "Filter":
+            return <Filter {...props} />;
         default:
             return;
     }
