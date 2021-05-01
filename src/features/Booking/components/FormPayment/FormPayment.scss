@@ -1,0 +1,28 @@
+@layer components {
+  .form__payment {
+    color: #dbe2fb;
+
+    input {
+      @apply w-full h-10 px-2 text-lg placeholder-gray-200 placeholder-opacity-20 border rounded-lg focus:outline-none bg-transparent;
+      border-color: #11326f;
+    }
+    label {
+      @apply inline-block mb-2 text-lg;
+    }
+
+    &__field {
+      @apply flex flex-wrap;
+
+      .namecard {
+        @apply w-full px-2;
+      }
+
+      &--agree {
+        @apply flex flex-wrap items-center;
+        input {
+          @apply w-5 h-5 bg-transparent mr-4;
+        }
+      }
+    }
+  }
+}

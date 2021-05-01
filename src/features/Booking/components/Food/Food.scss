@@ -1,0 +1,11 @@
+@layer components {
+  .food {
+    @apply w-full mx-auto mt-8;
+    &__title {
+      @apply text-center mb-6;
+      h2{
+          @apply text-5xl font-bold uppercase mb-3;
+      }
+    }
+  }
+}

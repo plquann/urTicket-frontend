@@ -1,0 +1,38 @@
+@layer components {
+  .screen {
+    @apply w-full;
+
+    &__area {
+      @apply w-3/12 text-2xl text-center mx-auto my-8 py-4 relative;
+      &::before {
+        content: "";
+        @apply absolute top-0 left-1/2 w-4/5 h-0.5 transform -translate-x-1/2;
+        background: #213a69;
+      }
+      &::after {
+        content: "";
+        @apply absolute bottom-0 left-1/2 w-full h-0.5 transform -translate-x-1/2;
+        background: #213a69;
+      }
+    }
+    &__img {
+      @apply max-w-xl mx-auto my-8;
+    }
+    &__wrapper {
+      @apply max-w-screen-lg mx-auto pt-10;
+      &__row {
+        @apply flex space-x-10 mb-8 justify-center items-center;
+        ul {
+          @apply flex flex-wrap space-x-4;
+        }
+      }
+
+      &__couple {
+        @apply flex space-x-6 mb-5 justify-center items-center;
+        ul {
+          @apply flex flex-wrap space-x-9;
+        }
+      }
+    }
+  }
+}

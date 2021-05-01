@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import './FormPayment.scss';
 
 export default function FormPayment() {
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -8,163 +9,66 @@ export default function FormPayment() {
 
     return (
         <>
-            {/* <form onSubmit={handleSubmit(onSubmit)}>
-                <input type="text" placeholder="Card Details" {...register("Card Details", { required: true, maxLength: 80 })} />
-                <input type="text" placeholder="Name on the Card" {...register("Name on the Card", { required: true, maxLength: 100 })} />
-                <input type="datetime-local" placeholder="Expiration" {...register("Expiration", { required: true, pattern: /^\S+@\S+$/i })} />
-                <input type="text" placeholder="CVV" {...register("CVV", { required: true, maxLength: 12 })} />
-                <input type="submit" />
-            </form> */}
-
-            <form className="space-y-4 ">
-                <div
-                    className="form-group flex flex-wrap"
-
-                >
-
-                    <div className="w-full">
-                        <label
-                            className="inline-block mb-2 text-lg" htmlFor="formGridCode_card"
-                            style={{
-                                color: '#dbe2fb',
-                            }}
-                        >Card number</label>
+            <form className="form__payment" onSubmit={handleSubmit(onSubmit)}>
+                <div className="form__payment__field  space-y-4">
+                    <div className="cardpayment w-full">
+                        <label htmlFor="formGridCode_card">Card Details</label>
                         <input
-                            className="w-full h-10 px-3 text-lg placeholder-gray-200 placeholder-opacity-20 border rounded-lg focus:outline-none" type="text" id="formGridCode_card"
-                            style={{
-                                border: '1px solid #11326f',
-                                color: '#dbe2fb',
-                                borderRadius: '10px',
-                                height: '60px',
-                                fontSize: '20px',
-                                backgroundColor: 'transparent',
-                            }}
-
+                            id="formGridCode_card"
+                            type="text"
+                            {...register("Card Details", { required: true, maxLength: 80 })}
                         />
                     </div>
                 </div>
-                <div className="flex flex-wrap -mx-2 space-y-4 md:space-y-0">
-                    <div
-                        className="form-group w-full px-2 md:w-1/2"
 
-                    >
-
-                        <label
-                            className="inline-block mb-2 text-lg" htmlFor="formGridCode_name"
-                            style={{
-                                color: '#dbe2fb',
-                            }}>First name</label>
+                <div className="form__payment__field  -mx-2 space-y-4 md:space-y-0">
+                    <div className="namecard">
+                        <label htmlFor="formGridCode_name">Name on the Card</label>
                         <input
-                            className="w-full h-10 px-3 text-lg placeholder-gray-200 placeholder-opacity-20 border rounded-lg focus:outline-none" type="text" id="formGridCode_name"
-                            style={{
-                                border: '1px solid #11326f',
-                                color: '#dbe2fb',
-                                borderRadius: '10px',
-                                height: '60px',
-                                fontSize: '20px',
-                                backgroundColor: 'transparent',
-                            }}
-
-                        />
-                    </div>
-                    <div
-                        className="form-group w-full px-2 md:w-1/2"
-
-                    >
-
-                        <label
-                            className="inline-block mb-2 text-lg" htmlFor=" formGridCode_last"
-                            style={{
-                                color: '#dbe2fb',
-                            }}>Last name</label>
-                        <input
-                            className="w-full h-10 px-3 text-lg placeholder-gray-200 placeholder-opacity-20 border rounded-lg focus:outline-none" type="text" id="formGridCode_last"
-                            style={{
-                                border: '1px solid #11326f',
-                                color: '#dbe2fb',
-                                borderRadius: '10px',
-                                height: '60px',
-                                fontSize: '20px',
-                                backgroundColor: 'transparent',
-                            }}
-
+                            id="formGridCode_name"
+                            type="text"
+                            {...register("Name on the Card", { required: true, maxLength: 100 })}
                         />
                     </div>
                 </div>
-                <div className="flex flex-wrap -mx-2 space-y-4 md:space-y-0">
-                    <div
-                        className="form-group w-full px-2 md:w-1/3"
 
-                    >
-
-                        <label
-                            className="inline-block mb-2 text-lg" htmlFor=" formGridCode_month"
-                            style={{
-                                color: '#dbe2fb',
-                            }}>Month</label>
+                <div className="form__payment__field -mx-2 space-y-4 md:space-y-0">
+                    <div className="w-full px-2 md:w-1/3">
+                        <label htmlFor="formGridCode_month">Month</label>
                         <input
-                            className="w-full h-10 px-3 text-lg placeholder-gray-200 placeholder-opacity-20 border rounded-lg focus:outline-none" type="text" id="formGridCode_month"
-                            style={{
-                                border: '1px solid #11326f',
-                                color: '#dbe2fb',
-                                borderRadius: '10px',
-                                height: '60px',
-                                fontSize: '20px',
-                                backgroundColor: 'transparent',
-                            }}
-
+                            id=" formGridCode_month"
+                            type="text"
+                            {...register("month", { required: true, maxLength: 2 })}
                         />
                     </div>
-                    <div
-                        className="form-group w-full px-2 md:w-1/3"
-
-                    >
-
-                        <label
-                            className="inline-block mb-2 text-lg" htmlFor=" formGridCode_year"
-                            style={{
-                                color: '#dbe2fb',
-                            }}>Year</label>
+                    <div className="w-full px-2 md:w-1/3">
+                        <label htmlFor=" formGridCode_year">Year</label>
                         <input
-                            className="w-full h-10 px-3 text-lg placeholder-gray-200 placeholder-opacity-20 border rounded-lg focus:outline-none" type="text" id="formGridCode_year"
-                            style={{
-                                border: '1px solid #11326f',
-                                color: '#dbe2fb',
-                                borderRadius: '10px',
-                                height: '60px',
-                                fontSize: '20px',
-                                backgroundColor: 'transparent',
-                            }}
-
+                            id=" formGridCode_year"
+                            type="text"
+                            {...register("year", { required: true, maxLength: 4 })}
                         />
                     </div>
-                    <div
-                        className="form-group w-full px-2 md:w-1/3"
-
-                    >
-
-                        <label
-                            className="inline-block mb-2 text-lg" htmlFor=" formGridCode_cvc"
-                            style={{
-                                color: '#dbe2fb',
-                            }}>CVC</label>
+                    <div className="w-full px-2 md:w-1/3">
+                        <label htmlFor=" formGridCode_cvc">CVC</label>
                         <input
-                            className="w-full h-10 px-3 text-lg placeholder-gray-200 placeholder-opacity-20 border rounded-lg focus:outline-none" type="text" id="formGridCode_cvc"
-                            style={{
-                                border: '1px solid #11326f',
-                                color: '#dbe2fb',
-                                borderRadius: '10px',
-                                height: '60px',
-                                fontSize: '20px',
-                                backgroundColor: 'transparent',
-                            }}
-
-
+                            id=" formGridCode_cvc"
+                            type="text"
+                            {...register("CVV", { required: true, maxLength: 12 })}
                         />
                     </div>
+                </div>
+                <div className="form__payment__field--agree mt-5">
+                    <input
+                        {...register("agree", { required: true })}
+                        type="radio"
+                        value="Yes"
+                    />
+                    <span className="notice">
+                        By Clicking "Make Payment" you agree to the <a href="#0">terms and conditions</a>
+                    </span>
                 </div>
             </form>
-
         </>
     );
 }

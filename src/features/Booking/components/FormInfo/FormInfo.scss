@@ -1,0 +1,31 @@
+@layer components {
+  .form__info {
+    .name__email {
+      @apply flex flex-wrap -mx-2 space-y-4 md:space-y-0;
+      .name,
+      .email {
+        @apply w-1/2 px-2 mb-6;
+      }
+    }
+
+    .phone__process {
+      @apply flex flex-wrap -mx-2 space-y-4 md:space-y-0 mb-6;
+      .phone,
+      .process {
+        @apply w-1/2 px-2;
+      }
+      .process {
+        @apply flex items-end;
+        div {
+          @apply w-full h-1 bg-green-500 rounded-full;
+        }
+      }
+    }
+
+    input {
+      @apply w-full focus:outline-none h-10 border-none rounded-none p-0 text-xl bg-transparent;
+      color: #dbe2fb;
+      border-bottom: 1px solid #11326f;
+    }
+  }
+}

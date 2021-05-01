@@ -1,0 +1,29 @@
+@layer components {
+  .form__promo {
+    @apply p-8 mb-8;
+    background: #032055;
+    h1 {
+      @apply text-2xl mb-6 font-semibold pb-6 border-b border-dashed;
+      border-color: #11326f;
+    }
+    form {
+      & > div {
+        @apply flex flex-wrap -mx-2 space-y-4 md:space-y-0 mb-4;
+        .promo {
+          @apply w-full px-2 md:w-1/2 mt-4;
+        }
+        .process {
+          @apply w-full  px-2 md:w-1/2 flex items-end;
+          div {
+            @apply w-full h-1 bg-green-500 rounded-full;
+          }
+        }
+      }
+    }
+    input {
+      @apply w-full h-10 border-none rounded-none p-0 text-xl bg-transparent focus:outline-none;
+      color: #dbe2fb;
+      border-bottom: 1px solid #11326f;
+    }
+  }
+}

@@ -52,10 +52,8 @@ export default function Payment() {
             </ul>
             <h6 className="subtitle mb-3.5 text-xl font-semibold">Enter Your Card Details </h6>
             <FormPayment />
+
             
-            <p className="notice">
-                By Clicking "Make Payment" you agree to the <a href="#0">terms and conditions</a>
-            </p>
         </div>
     )
 }

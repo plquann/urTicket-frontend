@@ -1,0 +1,51 @@
+@layer components {
+  .summary {
+    @apply w-3/12 mx-auto p-8 pb-5 border;
+    background-color: #032055;
+    border-color: #11326f;
+
+    &__title {
+      @apply text-2xl pb-5 mb-5 font-semibold text-center border-b border-dashed;
+      border-color: #11326f;
+    }
+
+    ul {
+      @apply pb-4 border-b border-dashed;
+      border-color: #11326f;
+      li {
+        @apply flex flex-wrap;
+      }
+      .title {
+        @apply uppercase text-xl font-semibold my-4;
+      }
+      .total {
+        @apply text-xl font-semibold mt-5 justify-end;
+      }
+    }
+
+    &__amount {
+      @apply my-4 border-b border-dashed;
+      border-color: #11326f;
+      .total,
+      .vat,
+      .payment {
+        @apply flex flex-wrap justify-between text-lg font-semibold;
+      }
+
+      .vat {
+        @apply text-sm font-normal;
+        color: #9aace5;
+      }
+      .payment {
+        @apply text-xl my-4;
+      }
+    }
+
+    &__button {
+      @apply text-center mt-2 pt-4;
+      button {
+        @apply p-2 rounded-full uppercase font-bold;
+      }
+    }
+  }
+}

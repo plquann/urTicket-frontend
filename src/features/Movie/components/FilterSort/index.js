@@ -1,4 +1,3 @@
-import Showing from 'features/Booking/components/Showing';
 import React from 'react';
 import Select from 'react-select';
 import './FilterSort.scss';
