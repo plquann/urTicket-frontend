@@ -3,7 +3,7 @@
     color: #dbe2fb;
 
     input {
-      @apply w-full h-10 px-2 text-lg placeholder-gray-200 placeholder-opacity-20 border rounded-lg focus:outline-none bg-transparent;
+      @apply w-full h-10 px-2 mb-4 text-lg placeholder-gray-200 placeholder-opacity-20 border rounded-lg focus:outline-none bg-transparent;
       border-color: #11326f;
     }
     label {

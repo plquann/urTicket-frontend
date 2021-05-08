@@ -6,7 +6,7 @@ import './Screen.scss';
 
 const initArr = () => {
     const arr = [];
-    for (let i = 0; i < 14; i++) {
+    for (let i = 0; i < 12; i++) {
         arr.push(i + 1);
     }
 
@@ -39,13 +39,13 @@ export default function Screen() {
                     </div>
                 ))}
 
-                <p className="screen__area" style={{ color: '#31d7a9' }}>COUPLE SEAT</p>
+                <p className="screen__area">COUPLE SEAT</p>
 
                 {['G', 'H'].map((row, index) => (
                     <div key={index} className="screen__wrapper__couple">
                         <span>{row}</span>
                         <ul>
-                            {[1, 2, 3, 4, 5, 6, 7].map((col, index) => (
+                            {[1, 2, 3, 4, 5, 6].map((col, index) => (
                                 <li key={index} className="relative">
                                     <CoupleSeat index={col} row={row} />
                                 </li>

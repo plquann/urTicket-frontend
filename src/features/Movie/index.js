@@ -13,7 +13,7 @@ import Tabs from './components/Tabs';
 
 export default function Movie() {
     return (
-        <div className="w-full">
+        <div className="w-full" >
             <Header />
             <MovieCarousel />
             <MovieSearch />

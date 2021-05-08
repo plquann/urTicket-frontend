@@ -1,7 +1,7 @@
 @layer components {
   .summary {
-    @apply w-3/12 mx-auto p-8 pb-5 border;
-    background-color: #032055;
+    @apply w-full mx-auto p-8 pb-5 border mt-8 ;
+    background-color: rgba(15, 21, 26, 0.8);
     border-color: #11326f;
 
     &__title {

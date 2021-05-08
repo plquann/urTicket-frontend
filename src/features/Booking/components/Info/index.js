@@ -3,11 +3,12 @@ import FormInfo from '../FormInfo'
 
 export default function Info() {
     return (
-        <div
+        <div className="border"
             style={{
                 padding: '30px',
                 marginBottom: '30px',
-                background: '#032055',
+                backgroundColor: 'rgba(15, 21, 26, 0.8)',
+                borderColor: '#11326f'
             }}
         >
             <h5

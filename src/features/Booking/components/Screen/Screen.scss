@@ -3,7 +3,8 @@
     @apply w-full;
 
     &__area {
-      @apply w-3/12 text-2xl text-center mx-auto my-8 py-4 relative;
+      @apply w-3/12 text-2xl text-center mx-auto my-6 py-2 relative;
+      color: #31d7a9;
       &::before {
         content: "";
         @apply absolute top-0 left-1/2 w-4/5 h-0.5 transform -translate-x-1/2;
@@ -16,10 +17,10 @@
       }
     }
     &__img {
-      @apply max-w-xl mx-auto my-8;
+      @apply max-w-xl mx-auto mt-6 mb-2;
     }
     &__wrapper {
-      @apply max-w-screen-lg mx-auto pt-10;
+      @apply w-full pt-8;
       &__row {
         @apply flex space-x-10 mb-8 justify-center items-center;
         ul {

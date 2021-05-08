@@ -8,7 +8,7 @@ export default function FormPromo() {
     console.log(errors);
 
     return (
-        <div className="form__promo">
+        <div className="form__promo border" style={{ borderColor: '#11326f' }}>
             <h1 className="title">Promo Code</h1>
 
             <form onSubmit={handleSubmit(onSubmit)}>

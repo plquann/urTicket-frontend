@@ -1,7 +1,7 @@
 @layer components {
   .form__promo {
     @apply p-8 mb-8;
-    background: #032055;
+    background-color: rgba(15, 21, 26, 0.8);
     h1 {
       @apply text-2xl mb-6 font-semibold pb-6 border-b border-dashed;
       border-color: #11326f;

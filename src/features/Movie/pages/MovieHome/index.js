@@ -14,7 +14,7 @@ import Icons from 'components/Icons'
 
 export default function MovieHome() {
     return (
-        <div className="w-full h-full">
+        <div className="w-full h-full" >
             {/* <Header /> */}
             <MovieExplore />
             <MovieSearch />
