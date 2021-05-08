@@ -1,0 +1,47 @@
+@layer components {
+  .signin {
+    @apply w-full h-screen bg-center bg-no-repeat bg-cover py-16;
+    &__wrapper {
+      @apply max-w-lg mx-auto px-12 py-12;
+      background-color: rgba(68, 90, 153, 0.051);
+      box-shadow: 0px 0px 29.4px 0.6px rgba(0, 0, 0, 0.5);
+
+      &__greeting {
+        @apply text-center mb-8;
+        span {
+          @apply block text-2xl font-medium text-green-500 mb-3;
+        }
+        h2 {
+          @apply text-4xl font-bold;
+        }
+      }
+
+      &__option {
+        @apply text-center;
+        .signup {
+          @apply text-lg mb-6;
+          a {
+            color: #31d7a9;
+          }
+        }
+        .or {
+          @apply overflow-hidden mb-2;
+          span {
+            &::before,
+            &::after {
+              @apply absolute opacity-50 h-0.5 w-96 top-2.5;
+              content: "";
+              background-color: #bdbdbd;
+            }
+            &::before {
+              right: calc(100% + 30px);
+            }
+            &::after {
+              left: calc(100% + 30px);
+            }
+          }
+        }
+      }
+    }
+  }
+}

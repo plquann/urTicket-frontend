@@ -59,6 +59,8 @@ import seat2 from 'assets/images/movie/seat02.png';
 import card from 'assets/images/payment/card.png';
 import paypal from 'assets/images/payment/paypal.png';
 
+import account_bg from 'assets/images/account/account-bg.jpg';
+
 export const PAYMENT = {
     CARD: card,
     PAYPAL: paypal,
@@ -68,6 +70,8 @@ export const SEAT = {
     SEAT: seat1,
     SEAT_COUPLE: seat2,
 }
+
+export const ACCOUNT_BG = account_bg;
 export const SEARCH_BG = searchBackground;
 export const MOVIE_EXPLORE = explore;
 export const SCREEN = Screen;

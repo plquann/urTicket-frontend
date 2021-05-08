@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.1.1",
+    "@hookform/resolvers": "^2.4.0",
     "@reduxjs/toolkit": "^1.5.1",
     "@statikly/funk": "^0.3.0",
     "@tailwindcss/line-clamp": "^0.2.0",
@@ -28,7 +29,8 @@
     "redux": "^4.0.5",
     "slick-carousel": "^1.8.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.4",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^1.0.1",
+    "yup": "^0.32.9"
   },
   "scripts": {
     "start": "craco start",

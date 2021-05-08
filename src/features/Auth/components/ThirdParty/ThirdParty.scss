@@ -1,0 +1,22 @@
+@layer components {
+  .third-party {
+    @apply flex flex-wrap justify-center;
+    li {
+      padding: 8px;
+      a {
+        @apply inline-block w-10 h-10 leading-10 text-center rounded-full border text-white transition duration-500 ease-in-out bg-transparent;
+        border-color: rgba(255, 255, 255, 0.1);
+
+        &:hover {
+          border-color: #001232;
+          background-image: -webkit-linear-gradient(
+            169deg,
+            #5560ff 17%,
+            #aa52a1 63%,
+            #ff4343 100%
+          );
+        }
+      }
+    }
+  }
+}

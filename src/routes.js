@@ -9,7 +9,8 @@ const Booking = lazy(() => import('features/Booking'));
 const CheckOut = lazy(() => import('features/Booking/pages/CheckOut'));
 const OrderFood = lazy(() => import('features/Booking/pages/OrderFood'));
 const SeatPlan = lazy(() => import('features/Booking/pages/SeatPlan'));
-
+const SignIn = lazy(() => import('features/Auth/pages/SignIn'));
+const Register = lazy(() => import('features/Auth/pages/Register'));
 
 export const routes = [
     {
@@ -51,6 +52,16 @@ export const routes = [
         exact: true,
         path: "/checkout",
         component: CheckOut,
+    },
+    {
+        exact: true,
+        path: "/signin",
+        component: SignIn,
+    },
+    {
+        exact: true,
+        path: "/register",
+        component: Register,
     },
     {
         component: NotFound,
