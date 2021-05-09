@@ -19,7 +19,7 @@ export default function Register() {
 
                 <div className="register__wrapper__option">
                     <div className="signin">
-                        Already have an account?  <a href="1">Login</a>
+                        Already have an account?  <a href="1">Login now</a>
                     </div>
                     <div className="or"><span className="relative">OR</span></div>
                     <ThirdParty />

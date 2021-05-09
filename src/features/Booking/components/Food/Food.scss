@@ -1,11 +1,14 @@
 @layer components {
   .food {
-    @apply w-full mx-auto mt-8;
-    &__title {
-      @apply text-center mb-6;
-      h2{
-          @apply text-5xl font-bold uppercase mb-3;
-      }
+    @apply w-full mx-auto mt-8 row-span-5 overflow-auto;
+    height: 700px;
+    
+    &::-webkit-scrollbar {
+      background-color: #afacac;
+      @apply w-2.5 rounded-lg;
+    }
+    &::-webkit-scrollbar-thumb {
+      @apply bg-gray-800 rounded-lg;
     }
   }
 }

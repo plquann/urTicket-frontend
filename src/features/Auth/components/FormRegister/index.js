@@ -1,8 +1,9 @@
-import React, { useRef } from 'react';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
+import React from 'react';
 import * as yup from "yup";
-import './FormRegister.scss';
+import Form from 'components/Form';
+import InputField from 'components/InputField';
+import CheckBox from 'components/CheckBox';
+import ButtonSubmit from 'components/ButtonSubmit';
 
 const validationSchema = yup.object().shape({
     userName: yup.string()
@@ -21,65 +22,21 @@ const validationSchema = yup.object().shape({
 });
 
 export default function FormRegister() {
-    const { register, handleSubmit, formState: { errors } } = useForm({
-        resolver: yupResolver(validationSchema)
-    });
-
-    const onSubmit = async data => {
-        alert(JSON.stringify(data));
+    const onSubmitForm = (data) => {
+        console.log('🚀 ~ file: index.js ~ line 27 ~ FormRegister ~ data', data);
     };
 
     return (
-        <form className="register__form" onSubmit={e => e.preventDefault()}>
-            <div className="form-group">
-                <label >USER NAME<span> *</span></label>
-                <input
-                    type="text"
-                    {...register("userName", { required: true })}
-                />
-                <p className="invalid-feedback">{errors.userName?.message}</p>
-            </div>
-            <div className="form-group">
-                <label >EMAIL<span> *</span></label>
-                <input
-                    type="text"
-                    {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
-                />
-                <p className="invalid-feedback">{errors.email?.message}</p>
-            </div>
+        <>
+            <Form onSubmit={onSubmitForm} validationSchema={validationSchema}>
+                <InputField name="userName" type="text" label="USER NAME" />
+                <InputField name="email" type="text" label="EMAIL" />
+                <InputField name="password" type="password" label="PASSWORD" />
+                <InputField name="confirmPassword" type="password" label="CONFIRM PASSWORD" />
+                <CheckBox name="acceptTerms" label="I Agree To The Terms, Privacy Policy And Fees" />
 
-            <div className="form-group">
-                <label >PASSWORD<span> *</span></label>
-                <input
-                    name="password"
-                    type="password"
-                    {...register('password')}
-                />
-                <p className="invalid-feedback">{errors.password?.message}</p>
-
-            </div>
-            <div className="form-group">
-                <label >CONFIRM PASSWORD<span> *</span></label>
-                <input
-                    name="confirmPassword"
-                    type="password"
-                    {...register('confirmPassword')}
-                />
-                <p className="invalid-feedback">{errors.confirmPassword?.message}</p>
-
-            </div>
-            <div className="form-group checkgroup">
-                <input type="checkbox" {...register("acceptTerms", { required: true })} />
-                <label >I Agree To The Terms, Privacy Policy And Fees</label>
-                <p className="invalid-feedback">{errors.acceptTerms?.message}</p>
-            </div>
-            <div className="btn-submit text-center mb-4">
-                <button
-                    type="submit"
-                    className="bg-btn-gradient px-10 py-3 rounded"
-                    onClick={handleSubmit(onSubmit)}
-                >SIGN UP</button>
-            </div>
-        </form>
+                <ButtonSubmit name="REGISTER" />
+            </Form>
+        </>
     );
 }

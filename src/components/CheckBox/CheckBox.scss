@@ -1,0 +1,22 @@
+@layer components {
+  .form-checkbox {
+    @apply flex flex-wrap transform -translate-y-4 content-center;
+    color: #6d7bba;
+    input {
+      @apply w-4 h-0 rounded-full relative cursor-pointer;
+      &:checked::after {
+        content: "\f00c";
+      }
+      &::after {
+        @apply absolute -bottom-6 w-4 h-4 rounded-full text-white text-xs font-semibold text-center leading-4;
+        background: #3d34c3;
+        font-family: "Font Awesome 5 Free";
+        content: "";
+      }
+    }
+    label {
+      @apply pl-1.5 mb-0 mr-auto cursor-pointer;
+      max-width: calc(100% - 15px);
+    }
+  }
+}

@@ -3,8 +3,9 @@ import { lazy } from 'react';
 const Movie = lazy(() => import('features/Movie'));
 const NotFound = lazy(() => import('components/NotFound'));
 const Admin = lazy(() => import('features/Admin'));
-const Details = lazy(() => import('features/Movie/pages/MovieDetails'));
-const MovieHome = lazy(() => import('features/Movie/pages/MovieHome'));
+const Details = lazy(() => import('features/Movie/pages/Details'));
+const Explore = lazy(() => import('features/Movie/pages/Explore'));
+const News = lazy(() => import('features/Movie/pages/News'));
 const Booking = lazy(() => import('features/Booking'));
 const CheckOut = lazy(() => import('features/Booking/pages/CheckOut'));
 const OrderFood = lazy(() => import('features/Booking/pages/OrderFood'));
@@ -30,8 +31,13 @@ export const routes = [
     },
     {
         exact: true,
-        path: "/home",
-        component: MovieHome,
+        path: "/explore",
+        component: Explore,
+    },
+    {
+        exact: true,
+        path: "/news",
+        component: News,
     },
     {
         exact: true,

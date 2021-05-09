@@ -1,0 +1,23 @@
+@layer components {
+  .form-group {
+    @apply mb-6;
+    label {
+      @apply cursor-pointer inline-block uppercase;
+      color: rgba(255, 255, 255, 0.7);
+      span {
+        color: #f1481f;
+      }
+    }
+    input {
+      @apply w-full h-9  border-b bg-transparent rounded-none outline-none overflow-visible placeholder-gray-400 placeholder-opacity-50;
+      border-color: #23334f;
+    }
+    .invalid-feedback {
+      @apply font-medium text-red-500;
+      &::before {
+        display: inline;
+        content: "⚠ ";
+      }
+    }
+  }
+}

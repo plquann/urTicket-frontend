@@ -16,10 +16,11 @@ export default function SignIn() {
                 <div className="signin__wrapper__form">
                     <FormSignin />
                 </div>
+                <a href="#0" className="forget-pass">Forget Password</a>
 
                 <div className="signin__wrapper__option">
                     <div className="signup">
-                        Don't have an account? <a href="sign-up.html">sign up now</a>
+                        Don't have an account? <a href="sign-up.html">Sign up now</a>
                     </div>
                     <div className="or"><span className="relative">OR</span></div>
                     <ThirdParty />

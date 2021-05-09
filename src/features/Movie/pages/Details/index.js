@@ -5,7 +5,7 @@ import WrapperInfo from 'features/Movie/components/WrapperInfo';
 import Footer from 'components/Footer';
 import Schedule from 'features/Movie/components/Schedule';
 
-export default function MovieDetails() {
+export default function Details() {
     return (
         <div className="w-full ">
             <Header />

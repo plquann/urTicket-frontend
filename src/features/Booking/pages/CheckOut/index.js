@@ -7,15 +7,19 @@ import React, { Fragment } from 'react'
 
 export default function CheckOut() {
     return (
-        <div className="bg-gray-900" style={{ backgroundColor: 'var(--color-secondary)' }}>
+        <div className="bg-gray-900 check-payment" style={{ backgroundColor: 'var(--color-secondary)' }}>
             <Header />
-            <div className="booking max-w-screen-xl mx-auto grid grid-cols-3 gap-4">
-                <div className="mt-16 col-span-2">
+            <div className="check-payment__title text-center my-5">
+                <h2 className="text-5xl font-bold uppercase mb-3">Yeah! Almost finished</h2>
+                <p className="text-lg">We need your payment information to complete the booking</p>
+            </div>
+            <div className="max-w-screen-xl mx-auto grid grid-cols-3 gap-4 mt-10">
+                <div className="col-span-2">
                     <Info />
                     <FormPromo />
                     <Payment />
                 </div>
-                <div className="mt-9">
+                <div className="">
                     <BookingSummary />
                 </div>
             </div>

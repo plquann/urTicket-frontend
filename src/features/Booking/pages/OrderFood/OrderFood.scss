@@ -1,0 +1,10 @@
+@layer components {
+  .order-food {
+    &__title {
+      @apply text-center my-4;
+      h2 {
+        @apply text-5xl font-bold uppercase mb-3;
+      }
+    }
+  }
+}
