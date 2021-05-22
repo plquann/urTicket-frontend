@@ -1,0 +1,52 @@
+$neutral-medal: #d1d7da;
+$bronze-medal: #df7e08;
+@layer components {
+  .quiz-medal {
+    @apply mt-7 ml-7  mb-4 relative;
+    &__circle {
+      @apply relative w-14 h-14 rounded-full font-medium text-3xl text-white text-center
+        align-middle border z-10;
+
+      line-height: 46px;
+      border-width: 0.2em;
+      box-shadow: inset 0 0 0 darken($neutral-medal, 15%),
+        2px 2px 0 rgba(0, 0, 0, 0.08);
+      border-color: lighten(adjust-hue($neutral-medal, 10), 10%);
+      text-shadow: 2px 2px 0 darken($neutral-medal, 20%);
+      background: linear-gradient(
+        to bottom right,
+        $neutral-medal 50%,
+        darken($neutral-medal, 5%) 50%
+      );
+
+      &.quiz-medal__circle--bronze {
+        box-shadow: inset 0 0 0 darken($bronze-medal, 15%),
+          2px 2px 0 rgba(0, 0, 0, 0.08);
+        border-color: lighten(adjust-hue($bronze-medal, 10), 10%);
+        text-shadow: 0 0 4px darken($bronze-medal, 20%);
+        background: linear-gradient(
+          to bottom right,
+          $bronze-medal 50%,
+          darken($bronze-medal, 5%) 50%
+        );
+      }
+    }
+    &__ribbon {
+      @apply block absolute border w-0 h-10 top-12;
+      content: "";
+      border-width: 6px 10px;
+
+      &--left {
+        border-color: #fc402d #fc402d transparent #fc402d;
+        left: 8px;
+        transform: rotate(20deg) translateZ(-32px);
+      }
+      &--right {
+        left: 28px;
+        border-color: darken(#fc402d, 10%) darken(#fc402d, 10%) transparent
+          darken(#fc402d, 10%);
+        transform: rotate(-20deg) translateZ(-48px);
+      }
+    }
+  }
+}

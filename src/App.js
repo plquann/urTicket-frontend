@@ -4,6 +4,8 @@ import { routes } from 'routes';
 import Loading from 'components/Loading';
 import './App.scss';
 import "slick-carousel/slick/slick.css";
+import HomeTemplate from 'templates/HomeTemplate';
+
 
 // console.log("routes", routes);
 
@@ -15,7 +17,7 @@ function App() {
           <Switch>
             {routes.map(({ component: Component, path, ...rest }, index) => {
               return (
-                <Route component={Component} path={path} key={index} {...rest} />
+                <HomeTemplate component={Component} path={path} key={index} {...rest} />
               );
             })}
           </Switch>

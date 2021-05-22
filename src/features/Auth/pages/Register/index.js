@@ -2,6 +2,7 @@ import { ACCOUNT_BG } from 'constants/image'
 import FormRegister from 'features/Auth/components/FormRegister'
 import ThirdParty from 'features/Auth/components/ThirdParty'
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import './Register.scss'
 
 export default function Register() {
@@ -18,8 +19,8 @@ export default function Register() {
                 </div>
 
                 <div className="register__wrapper__option">
-                    <div className="signin">
-                        Already have an account?  <a href="1">Login now</a>
+                    <div className="register__redirect">
+                        Already have an account?  <NavLink to="/signin">Login now</NavLink>
                     </div>
                     <div className="or"><span className="relative">OR</span></div>
                     <ThirdParty />

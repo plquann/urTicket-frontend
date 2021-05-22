@@ -1,6 +1,8 @@
 import React from 'react';
+import AppStore from './AppStore';
 import Dislike from './Dislike';
 import Filter from './Filter';
+import GooglePlay from './GooglePlay';
 import Heart from './Heart';
 import Like from './Like';
 import LocationMarker from './LocationMarker';
@@ -39,6 +41,10 @@ const Icons = props => {
             return <Plus {...props} />;
         case "Minus":
             return <Minus {...props} />;
+        case "AppStore":
+            return <AppStore {...props} />;
+        case "GooglePlay":
+            return <GooglePlay {...props} />;
         default:
             return;
     }

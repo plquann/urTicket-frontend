@@ -1,21 +1,25 @@
 @layer components {
-
-  .header-label {
+  .header-label,
+  .header-auth {
     @apply text-base font-bold uppercase  px-3 py-2 relative inline-block;
   }
-  
+
   .header-label::before {
     content: "";
     background: #31d7a9;
     @apply w-0 h-0 absolute -bottom-1.5 left-0;
   }
-  
-  .header-label:hover::before{
+
+  .header-label:hover::before {
     @apply w-full h-0.5 transition-all duration-200 ease-in origin-left;
   }
-  
-  .header-label.active::before{
+
+  .header-label.active::before {
     @apply w-full h-0.5;
   }
 
+  .header-auth.selected {
+    @apply inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md;
+    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+  }
 }

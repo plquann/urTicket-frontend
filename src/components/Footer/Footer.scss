@@ -1,57 +1,64 @@
 @layer components {
   .footer {
-    @apply w-full py-8;
-
+    @apply w-full py-14 mt-8;
+    background: #131517;
     &__wrapper {
-      @apply max-w-screen-lg mx-auto;
+      @apply grid grid-cols-4 gap-4;
 
-      &__top {
-        @apply grid grid-cols-3 gap-4 border-b border-gray-500 pb-5  mb-5;
+      &__left {
+        &__header {
+          @apply grid grid-cols-3;
+          &__title {
+            @apply text-xl font-bold;
+          }
 
-        &__logo {
-          @apply col-start-1 col-end-2;
-        }
-
-        &__social {
-          @apply col-end-4 justify-self-end;
-
-          .list__social {
-            @apply col-end-4  grid grid-cols-5 gap-4;
-
-            &__item {
-              @apply flex items-center justify-center w-10 h-10 border border-solid rounded-full border-gray-600 col-end-auto;
+          &__nav {
+            @apply col-span-2 grid grid-cols-3 text-lg;
+            .footer__nav--item {
+              @apply whitespace-nowrap inline-block font-medium -mr-6;
               &:hover {
-                @apply transition duration-500 ease-in-out;
+                color: #fff;
               }
             }
           }
         }
-      }
 
-      &__bottom {
-        @apply grid grid-cols-3 gap-4 mt-5  pb-5;
-        color: #dbe2fb;
-
-        .footer__wrapper__left {
-          &__link {
-            @apply text-lg my-4 tracking-wide;
-          }
+        &__info {
+          @apply mt-6 italic;
         }
-
-        .footer__wrapper__middle {
-          @apply justify-self-center;
-
-          &__title {
-            @apply text-2xl mb-4 text-center;
-          }
-          &__icon {
-            @apply grid grid-cols-5 gap-4;
-          }
+        &__contact {
+          @apply mt-6;
+        }
+        &__copyright {
+          @apply mt-6;
         }
       }
 
-      &__right{
-        @apply justify-self-end;
+      &__middle {
+        margin-left: -2rem;
+        padding-right: 2rem;
+        &__title {
+          @apply text-xl font-bold;
+        }
+        &__icon {
+          @apply grid grid-cols-5 gap-4;
+        }
+      }
+
+      &__right {
+        &__title {
+          @apply text-xl font-bold;
+        }
+        &__list {
+          @apply grid grid-cols-5 gap-4 -mt-2;
+
+          .list__social__item {
+            @apply flex items-center justify-center w-10 h-10 border border-solid rounded-full border-gray-600 text-xl;
+            &:hover {
+              @apply transition duration-500 ease-in-out;
+            }
+          }
+        }
       }
     }
   }

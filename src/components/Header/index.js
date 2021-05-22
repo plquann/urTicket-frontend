@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Header.scss';
 import { LOGO } from 'constants/image';
 import DropDownMenu from 'components/DropDownMenu';
+import { NavLink } from 'react-router-dom';
 
 const dropDownItems = [
     {
@@ -22,34 +23,40 @@ export default function Header(props) {
         <header className="header fixed top-0 left-0 z-50 w-full h-16 bg-opacity-0" >
             <nav className=" bg-opacity-0  bg-gray-800 text-center ">
                 <div className="max-w-7xl mx-auto px-8">
-                    <div className="flex items-center justify-between h-16">
+                    <div className="flex items-center  h-16">
                         <div className=" flex items-center">
                             <a className="flex-shrink-0" href="/">
                                 <img className="h-10 w-20" src={LOGO.APP_LOGO} alt="logo" />
                             </a>
                         </div>
 
-                        <div className="hidden md:block flex-shrink-0">
-                            <div className="ml-20 flex items-baseline space-x-4">
-                                <a className="header-label active" href="/#">
-                                    Showtimes
-                                    </a>
-                                <a className="header-label" href="/#">
-                                    Theaters
-                                    </a>
-                                <a className="header-label" href="/#">
-                                    News
-                                    </a>
-                                <a className="header-label" href="/#">
-                                    Contact
-                                    </a>
+                        <div className="hidden md:block">
+                            <div className="ml-20 flex items-baseline flex-grow space-x-4">
+                                <NavLink activeClassName="active" className="header-label" to="/">
+                                    HOME
+                                </NavLink>
+                                <NavLink activeClassName="active" className="header-label" to="/explore">
+                                    EXPLORE
+                                </NavLink>
+                                <NavLink activeClassName="active" className="header-label" to="/news">
+                                    NEWS
+                                </NavLink>
+                                <NavLink activeClassName="active" className="header-label" to="/booking">
+                                    BOOKING
+                                </NavLink>
                             </div>
                         </div>
 
-                        {/* if user logged in => div user else div button login */}
-                        <div className="header__button hidden md:block">
-                            <button className="btn-large">Join Us</button>
+                        <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+                            <NavLink to="/signin" className="header-auth whitespace-nowrap ">
+                                Sign in
+                            </NavLink>
+                            <NavLink to="/register" className="ml-8 header-auth selected whitespace-nowrap">
+                                Sign up
+                            </NavLink>
                         </div>
+                        {/* if user logged in => div user else div button login */}
+
                         {/* <div className="block">
                             <div className="ml-4 flex items-center md:ml-6">
                                 <div className="ml-3 relative">

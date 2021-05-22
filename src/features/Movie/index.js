@@ -10,6 +10,7 @@ import MovieCarousel from './components/MovieBannerCarousel';
 import MovieExplore from './components/MovieExplore';
 import MovieSearch from './components/MovieSearch';
 import Tabs from './components/Tabs';
+import MainFooter from 'components/Footer';
 
 export default function Movie() {
     return (
@@ -25,7 +26,7 @@ export default function Movie() {
                     </button>
                 </a>
             </div>
-            <Footer />
+            <MainFooter />
         </div>
     )
 }
