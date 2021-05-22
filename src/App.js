@@ -1,5 +1,5 @@
 import React, { Suspense, useLayoutEffect } from 'react';
-import { BrowserRouter,Route, Switch, withRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom';
 import { routes } from 'routes';
 import Loading from 'components/Loading';
 import './App.scss';
@@ -24,7 +24,7 @@ function App() {
             <Switch>
               {routes.map(({ component: Component, path, ...rest }, index) => {
                 return (
-                  <Route component={Component} path={path} key={index} {...rest} />
+                  <HomeTemplate Component={Component} path={path} key={index} {...rest} />
                 );
               })}
             </Switch>

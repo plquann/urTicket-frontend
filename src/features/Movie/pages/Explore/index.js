@@ -13,7 +13,6 @@ import Icons from 'components/Icons'
 export default function poster_explore() {
     return (
         <div className="w-full h-full" >
-            {/* <Header /> */}
             <MovieExplore />
             <MovieSearch />
             <div className="grid grid-cols-4 gap-4 max-w-screen-xl mx-auto">
@@ -37,7 +36,6 @@ export default function poster_explore() {
                     <Pagination />
                 </div>
             </div>
-            <Footer />
         </div>
     )
 }

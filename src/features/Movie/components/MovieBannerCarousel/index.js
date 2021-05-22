@@ -46,7 +46,7 @@ const photos = [
 
 export default function MovieBannerCarousel() {
     return (
-        <section className="carousel max-w-full relative">
+        <section className="carousel max-w-full relative mt-20">
             <Slider {...settings}>
                 {photos.map((photo, index) => {
                     return (

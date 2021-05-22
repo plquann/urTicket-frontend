@@ -16,7 +16,7 @@ const Register = lazy(() => import('features/Auth/pages/Register'));
 export const routes = [
     {
         exact: true,
-        path: "/",
+        path: "/home",
         component: Movie,
     },
     {

@@ -11,11 +11,9 @@ export default function Details() {
     const executeScroll = () => scheduleRef.current.scrollIntoView();
 
     return (
-        <div className="w-full ">
-            <Header />
+        <>
             <MovieBackDrop />
             <WrapperInfo refProp={scheduleRef} handleScroll={executeScroll} />
-            <Footer />
-        </div>
+        </>
     )
 }
