@@ -1,6 +1,6 @@
 /* ./src/index.css */
 :root {
-  --color-primary: #001232;
+  --color-primary: #131516;
   --color-secondary: #06121e;
   /* ... */
 }
@@ -12,10 +12,9 @@
 @layer components {
   .btn-large {
     @apply inline-block bg-btn-gradient 
-          rounded-full py-3 px-12 uppercase font-bold 
+          rounded-xl py-3 px-12 uppercase font-bold 
           transition duration-500 ease-in-out transform 
-          hover:-translate-y-1 hover:scale-110 
-          hover:shadow-btn-shadow focus:outline-none;
+          focus:outline-none;
   }
   .bg-img {
     @apply bg-cover bg-center bg-no-repeat;
@@ -37,6 +36,9 @@
   background-color: #000000;
 }
 
+html{
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   padding: 0;
@@ -51,6 +53,7 @@ body {
   line-height: 28px;
   overflow-x: hidden;
   vertical-align: middle;
+  scroll-behavior: smooth;
 }
 
 code {

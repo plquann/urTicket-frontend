@@ -4,6 +4,7 @@ import { LOGO } from 'constants/image';
 import DropDownMenu from 'components/DropDownMenu';
 import { NavLink } from 'react-router-dom';
 
+
 const dropDownItems = [
     {
         label: 'Settings',
@@ -17,11 +18,18 @@ const dropDownItems = [
 ];
 
 export default function Header(props) {
+    //console.log('🚀 ~ file: index.js ~ line 21 ~ Header ~ props', props.show);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    
+
+    const className = props.show
+        ? `header visible ease-in transform-none`
+        : `header invisible ease-out transform translate-x-0 -translate-y-full`;
+
 
     return (
-        <header className="header fixed top-0 left-0 z-50 w-full h-16 bg-opacity-0" >
-            <nav className=" bg-opacity-0  bg-gray-800 text-center ">
+        <header className={className} >
+            <nav className=" bg-opacity-0 bg-gray-800 text-center ">
                 <div className="max-w-7xl mx-auto px-8">
                     <div className="flex items-center  h-16">
                         <div className=" flex items-center">
@@ -43,6 +51,9 @@ export default function Header(props) {
                                 </NavLink>
                                 <NavLink activeClassName="active" className="header-label" to="/booking">
                                     BOOKING
+                                </NavLink>
+                                <NavLink activeClassName="active" className="header-label" to="/details">
+                                    DETAILS
                                 </NavLink>
                             </div>
                         </div>
@@ -105,7 +116,6 @@ export default function Header(props) {
                         </div>
                     </div>
                 )}
-
             </nav>
         </header>
     )

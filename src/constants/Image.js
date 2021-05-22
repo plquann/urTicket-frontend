@@ -1,7 +1,6 @@
 import NotFoundBG from 'assets/images/404.png';
 import Logo from 'assets/images/favicon.png';
 import FooterLogo from 'assets/images/footer/footer-logo.png';
-import NewslaterBG from 'assets/images/newslater/newslater-bg01.jpg';
 import MovieIMG1 from 'assets/images/movie/movie1.jpg';
 import MovieIMG2 from 'assets/images/movie/movie2.jpg';
 import MovieIMG3 from 'assets/images/movie/movie3.jpg';
@@ -77,8 +76,6 @@ export const MOVIE_EXPLORE = explore;
 export const SCREEN = Screen;
 export const IMAGE_BG = {
     NOTFOUND_BG: NotFoundBG,
-    NEWSLETTER_BG: NewslaterBG,
-
 };
 
 export const BANNER_BG = {
@@ -166,8 +163,8 @@ export const LOGO_PARTNER = [
     { link: '#', name: 'IVBANK', img: `${domain}IVB.png` },
     { link: '#', name: 'VTBANK', img: `${domain}VIETTINBANK.png` },
     { link: '#', name: 'GO', img: `${domain}123go.png` },
-    { link: '#', name: 'LABAN', img: `${domain}laban.png` },
-    // { link: '#', name: 'CGV', img: `https://www.cgv.vn/skin/frontend/cgv/default/images/cgvlogo.png` }
+    { link: '#', name: 'CGV', img: `https://www.cgv.vn/skin/frontend/cgv/default/images/cgvlogo.png` }
+    
 ];
 
 export const SVG_IMAGES = {

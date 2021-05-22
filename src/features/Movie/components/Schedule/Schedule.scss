@@ -1,6 +1,6 @@
 @layer components {
   .schedule {
-    background-color: #01173f;
+    background-color: rgb(26, 34, 42);
     height: 700px;
 
     @apply flex flex-wrap;
@@ -8,7 +8,7 @@
     .theater-list {
       @apply w-1/4 capitalize grid grid-flow-row grid-rows-6;
       height: 700px;
-      border-right: 1px solid #11326f;
+      border-right: 1px solid gray;
       li {
         @apply flex items-center text-lg cursor-pointer;
         padding: 30px 5px 20px 10px;
@@ -34,11 +34,19 @@
 
         height: 80px;
         &::-webkit-scrollbar {
-          height: 2px;
+          height: 4px;
           background-color: #afacac;
+          cursor: pointer;
+          &:hover{
+            cursor: pointer;
+          }
         }
         &::-webkit-scrollbar-thumb {
-          background-color: #11326f;
+          background-color: #131516;
+          cursor: pointer;
+          &:hover{
+            cursor: pointer;
+          }
         }
 
         .item {
@@ -55,21 +63,21 @@
         @apply row-span-5 overflow-auto;
         height: 620px;
         &::-webkit-scrollbar {
-          width: 2px;
+          width: 4px;
           background-color: #afacac;
         }
         &::-webkit-scrollbar-thumb {
-          background-color: #11326f;
+          background-color: #131516;
         }
         &__item {
           padding: 15px 20px 10px 20px;
-          border-bottom: 1px solid #11326f;
+          
 
           .time__item {
             color: #ffffff;
             padding: 8px;
             width: 120px;
-            background: #162f5f;
+            background: #3c4e58;
             position: relative;
             mask-position: center center;
             text-align: center;
@@ -81,7 +89,7 @@
             margin: 5px;
             font-weight: 600;
             &:hover {
-              background: #31d7a9;
+              background: #17a27c;
               span {
                 color: #ffffff;
               }

@@ -5,6 +5,7 @@ import MovieScore from '../MovieScore';
 import PhotosPreview from '../PhotosPreview';
 import Details from '../Details';
 import Offer from '../Offer';
+import Schedule from '../Schedule';
 
 export default function WrapperInfo(props) {
     return (
@@ -23,9 +24,10 @@ export default function WrapperInfo(props) {
                 </div>
                 <div className="details-banner-content col-span-3">
                     <MovieInfo />
-                    <MovieScore />
+                    <MovieScore handleScroll={props.handleScroll} />
                     <PhotosPreview />
                     <Details />
+                    <Schedule refProp={props.refProp} />
                 </div>
             </div>
         </div>

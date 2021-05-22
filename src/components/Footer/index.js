@@ -6,7 +6,7 @@ import Icons from 'components/Icons';
 
 export default function Footer() {
     return (
-        <footer className="footer">
+        <footer className="footer ">
             <div className="footer__wrapper max-w-screen-xl mx-auto">
                 <section className="footer__wrapper__left col-span-2">
                     <header className="footer__wrapper__left__header">

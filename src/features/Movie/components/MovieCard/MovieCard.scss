@@ -11,7 +11,7 @@
 
     &__content {
       @apply px-5 py-0;
-      background-color: #032055;
+      background-color: rgb(26, 34, 42);
 
       .movie__card__title {
         @apply py-6 px-0 capitalize border-b border-dashed text-2xl font-semibold;

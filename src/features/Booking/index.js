@@ -4,22 +4,7 @@ import React, { Fragment } from 'react'
 import Header from './components/Header/'
 
 export default function Booking() {
-    // const [scrolled, setScrolled] = useState(false);
-
-    // const handleScroll = () => {
-    //     const offset = window.scrollY;
-    //     if (offset > 200) {
-    //         setScrolled(true);
-    //     }
-    //     else {
-    //         setScrolled(false);
-    //     }
-    // }
-
-    // useEffect(() => {
-    //     window.addEventListener('scroll', handleScroll)
-    // }, []);
-
+    
     return (
         <div style={{ backgroundColor: 'var(--color-secondary)' }}>
             <Header />

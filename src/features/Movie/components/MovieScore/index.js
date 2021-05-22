@@ -1,7 +1,7 @@
 import React from 'react';
 import { ICONS } from 'constants/image'
 
-export default function MovieScore() {
+export default function MovieScore(props) {
     return (
         <div>
             <div className="review-and-booking flex flex-wrap justify-between items-center py-12 -ml-4" style={{ color: '#dbe2fb' }}>
@@ -56,7 +56,12 @@ export default function MovieScore() {
                     </div>
                 </div>
                 <div className="booking">
-                    <button className="px-5 py-2.5 bg-red-300 rounded-3xl bg-btn-gradient">BOOK TICKETS</button>
+                    <button
+                        className="px-5 py-2.5 bg-red-300 rounded-xl font-medium bg-btn-gradient focus:outline-none"
+                        onClick={props.handleScroll}
+                    >
+                        BOOK TICKETS
+                    </button>
                 </div>
             </div>
         </div>

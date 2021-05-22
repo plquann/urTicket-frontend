@@ -17,7 +17,7 @@ export default function Tabs() {
                                 <TabGroup.Tab
                                     key={index}
                                     index={index}
-                                    className="py-2 px-14 mb-2 font-bold uppercase rounded-full transition ease-in duration-300 mx-2 focus:outline-none hover:shadow-btn-shadow"
+                                    className=" px-6 mb-2 font-bold uppercase rounded-xl transition ease-in duration-300 mx-2 focus:outline-none hover:shadow-btn-shadow"
                                     activeClassName="bg-btn-gradient"
                                     inactiveClassName="text-white"
                                     style={{ border: "1px solid #11326f" }}

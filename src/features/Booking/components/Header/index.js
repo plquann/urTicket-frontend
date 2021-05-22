@@ -11,10 +11,10 @@ export default function Header() {
                         </a>
                 </div>
                 <div className="item date-item flex space-x-2 ">
-                    <div className="img rounded-md overflow-hidden shadow-2xl">
+                    {/* <div className="img rounded-md overflow-hidden shadow-2xl">
                         <img className="" src={MOVIE_IMG[8]} alt="movie" style={{ width: '200px', height: '100px' }} />
-                    </div>
-                    <div className="info">
+                    </div> */}
+                    <div className="info text-center">
                         <div className="details-banner-content ">
                             <h3 className="title text-2xl font-bold">Captain America: The First Avenger</h3>
                             <p className="text-lg font-semibold mt-2">CGV Landmark 81 - Room 3</p>

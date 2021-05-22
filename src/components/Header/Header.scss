@@ -1,25 +1,31 @@
 @layer components {
-  .header-label,
-  .header-auth {
-    @apply text-base font-bold uppercase  px-3 py-2 relative inline-block;
-  }
+  .header {
+    @apply  w-full h-16 bg-opacity-0 bg-gray-800 transition-all duration-200 
+    fixed top-0 right-0 left-0 z-50 ;
+    background: black;
 
-  .header-label::before {
-    content: "";
-    background: #31d7a9;
-    @apply w-0 h-0 absolute -bottom-1.5 left-0;
-  }
+    .header-label,
+    .header-auth {
+      @apply text-base font-bold uppercase  px-3 py-2 relative inline-block;
+    }
 
-  .header-label:hover::before {
-    @apply w-full h-0.5 transition-all duration-200 ease-in origin-left;
-  }
+    .header-label::before {
+      content: "";
+      background: #31d7a9;
+      @apply w-0 h-0 absolute -bottom-1.5 left-0;
+    }
 
-  .header-label.active::before {
-    @apply w-full h-0.5;
-  }
+    .header-label:hover::before {
+      @apply w-full h-0.5 transition-all duration-200 ease-in origin-left;
+    }
 
-  .header-auth.selected {
-    @apply inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md;
-    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    .header-label.active::before {
+      @apply w-full h-0.5;
+    }
+
+    .header-auth.selected {
+      @apply inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md;
+      background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    }
   }
 }

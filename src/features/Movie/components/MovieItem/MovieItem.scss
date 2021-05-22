@@ -16,18 +16,18 @@
         @apply text-base mb-3;
       }
       .release {
-        @apply text-white mb-2;
+        @apply text-white mb-1;
       }
 
       .rating {
-        @apply grid grid-cols-5 gap-4 py-4 px-0 mb-1;
+        @apply grid grid-cols-5 gap-4 py-2 px-0 mb-1;
         .item {
           @apply flex flex-row;
         }
       }
       .genres {
         span {
-          @apply inline-block pr-5 border-r-2 border-solid border-gray-400 mr-5 mb-4;
+          @apply inline-block pr-5 border-r-2 border-solid border-gray-400 mr-5 mb-2;
         }
       }
     }

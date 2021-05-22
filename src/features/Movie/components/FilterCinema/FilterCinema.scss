@@ -1,7 +1,7 @@
 @layer components {
   .filter__cinema {
     @apply w-4/5 h-auto p-8 rounded;
-    background-color: #032055;
+    background-color: rgb(26, 34, 42);
 
     &__title {
       @apply text-lg font-semibold uppercase border-b border-solid pb-4 mb-5;
