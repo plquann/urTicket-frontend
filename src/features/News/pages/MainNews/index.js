@@ -3,7 +3,7 @@ import './New.scss';
 import TopNewLarge from 'features/Movie/components/TopNewLarge';
 import TopNewMedium from 'features/Movie/components/TopNewMedium';
 
-export default function News() {
+export default function MainNews() {
     return (
         <div className="news max-w-screen-xl mx-auto py-8">
             <div className="grid grid-cols-2 grid-rows-2 gap-6 auto-rows-max">

@@ -10,7 +10,7 @@ import FilterCinema from 'features/Movie/components/FilterCinema'
 import FilterDate from 'features/Movie/components/FilterDate'
 import Icons from 'components/Icons'
 
-export default function poster_explore() {
+export default function Discover() {
     return (
         <div className="w-full h-full" >
             <MovieExplore />

@@ -1,8 +1,8 @@
 import axiosClient from './axiosClient';
 
 const movieAPI = {
-    get: () => {
-        const url = `http://localhost:5000`;
+    getNowPlaying: () => {
+        const url = `/movie/now_playing`;
         
         return axiosClient.get(url);
     }

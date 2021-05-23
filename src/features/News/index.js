@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Users() {
+export default function News() {
     return (
         <div>
-            <h1>This is Users</h1>
+            This is news
         </div>
     )
 }

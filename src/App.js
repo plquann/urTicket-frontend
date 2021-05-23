@@ -24,7 +24,7 @@ function App() {
             <Switch>
               {routes.map(({ component: Component, path, ...rest }, index) => {
                 return (
-                  <HomeTemplate Component={Component} path={path} key={index} {...rest} />
+                  <Route component={Component} path={path} key={index} {...rest} />
                 );
               })}
             </Switch>
