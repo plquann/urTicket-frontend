@@ -21,7 +21,6 @@ export default function Header(props) {
     //console.log('🚀 ~ file: index.js ~ line 21 ~ Header ~ props', props.show);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-
     const className = props.show
         ? `header visible ease-in transform-none`
         : `header invisible ease-out transform translate-x-0 -translate-y-full`;
@@ -38,31 +37,31 @@ export default function Header(props) {
 
                     <div className="hidden md:block">
                         <div className="ml-20 flex items-baseline flex-grow space-x-4">
-                            <NavLink activeStyle={{color: '#31d7a9'}} className="header-label" to="/home">
+                            <NavLink activeStyle={{ color: '#31d7a9' }} className="header-label" to="/movie">
                                 HOME
                             </NavLink>
-                            <NavLink activeClassName="active" className="header-label" to="/explore">
-                                EXPLORE
-                                </NavLink>
+                            <NavLink activeClassName="active" className="header-label" to="/movie/discover">
+                                DISCOVER
+                            </NavLink>
                             <NavLink activeClassName="active" className="header-label" to="/news">
                                 NEWS
-                                </NavLink>
+                            </NavLink>
                             <NavLink activeClassName="active" className="header-label" to="/booking">
                                 BOOKING
-                                </NavLink>
-                            <NavLink activeClassName="active" className="header-label" to="/details">
-                                DETAILS
-                                </NavLink>
+                            </NavLink>
+                            {/* <NavLink activeClassName="active" className="header-label" to={`/movie/:${movieId}`}>
+                                
+                            </NavLink> */}
                         </div>
                     </div>
 
                     <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-                        <NavLink to="/signin" className="header-auth whitespace-nowrap ">
+                        <NavLink to="/signin" className="header-auth whitespace-nowrap">
                             Sign in
-                            </NavLink>
+                        </NavLink>
                         <NavLink to="/register" className="ml-8 header-auth selected whitespace-nowrap">
                             Sign up
-                            </NavLink>
+                        </NavLink>
                     </div>
                     {/* if user logged in => div user else div button login */}
 

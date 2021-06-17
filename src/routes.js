@@ -1,22 +1,17 @@
 import { lazy } from 'react';
 
-const Movie = lazy(() => import('features/Movie'));
+const Movie = lazy(() => import('containers/Movie'));
 const NotFound = lazy(() => import('components/NotFound'));
-const Admin = lazy(() => import('features/Admin'));
-const News = lazy(() => import('features/Users/pages/MainNews'));
-const Booking = lazy(() => import('features/Booking'));
-const Users = lazy(() => import('features/Users'));
-const SignIn = lazy(() => import('features/Auth/pages/SignIn'));
-const Register = lazy(() => import('features/Auth/pages/Register'));
+const Admin = lazy(() => import('containers/Admin'));
+const News = lazy(() => import('containers/Users/pages/MainNews'));
+const Booking = lazy(() => import('containers/Booking'));
+const Users = lazy(() => import('containers/Users'));
+const SignIn = lazy(() => import('containers/Auth/pages/SignIn'));
+const Register = lazy(() => import('containers/Auth/pages/Register'));
 
 export const routes = [
     {
-        exact: true,
-        path: "/",
-        component: Movie,
-    },
-    {
-        exact: true,
+        exact: false,
         path: "/movie",
         component: Movie,
     },

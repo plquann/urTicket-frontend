@@ -9,8 +9,8 @@ export default function HomeTemplate(props) {
 
     useScrollPosition(
         ({ prevPos, currPos }) => {
-          const isShow = currPos.y > prevPos.y
-          if (isShow !== hideOnScroll) setHideOnScroll(isShow)
+            const isShow = currPos.y > prevPos.y
+            if (isShow !== hideOnScroll) setHideOnScroll(isShow)
         },
         [hideOnScroll],
         false,
@@ -20,15 +20,14 @@ export default function HomeTemplate(props) {
     const { Component, ...restRoute } = props;
 
     return (
-        <Route {...restRoute} render={(propsRoute) => {
-            return (
-                <div className="w-full">
-                    <Header show={hideOnScroll}/>
-                    <Component {...propsRoute} />
-                    <Footer />
-                </div>
-            )
-        }}>
-        </Route>
+        <div className="w-full">
+            <Header show={hideOnScroll} />
+
+            <Route {...restRoute} render={(propsRoute) =>
+                <Component {...propsRoute} />}>
+            </Route>
+
+            <Footer />
+        </div>
     )
 }

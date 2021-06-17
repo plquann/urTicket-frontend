@@ -1,5 +1,5 @@
 import React, { Suspense, useLayoutEffect } from 'react';
-import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route, Switch, withRouter } from 'react-router-dom';
 import { routes } from 'routes';
 import Loading from 'components/Loading';
 import './App.scss';
@@ -18,19 +18,21 @@ const ScrollToTop = withRouter(({ children, location: { pathname } }) => {
 function App() {
   return (
     <div className="my__app">
-      <Suspense fallback={Loading()}>
-        <BrowserRouter>
-          <ScrollToTop>
+      <BrowserRouter>
+        <ScrollToTop>
+          <Suspense fallback={Loading()}>
             <Switch>
+              <Redirect exact from="/" to="/movie" />
               {routes.map(({ component: Component, path, ...rest }, index) => {
                 return (
-                  <Route component={Component} path={path} key={index} {...rest} />
+                  <HomeTemplate Component={Component} path={path} key={index} {...rest} />
                 );
               })}
             </Switch>
-          </ScrollToTop>
-        </BrowserRouter>
-      </Suspense>
+          </Suspense>
+        </ScrollToTop>
+      </BrowserRouter>
+
     </div>
   );
 }

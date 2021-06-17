@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.scss';
 import { NavLink } from 'react-router-dom';
-import { LOGO_PARTNER, SVG_IMAGES } from 'constants/image';
+import { LOGO_PARTNER } from 'constants/image';
 import Icons from 'components/Icons';
 
 export default function Footer() {

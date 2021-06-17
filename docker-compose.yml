@@ -3,8 +3,6 @@ services:
   app:
     build:
       context: .
-    volumes:
-      - .:/core
     ports:
       - 3000:3000
     image: app:react

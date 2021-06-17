@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-
 export const useAxios = (axiosParams) => {
     const [response, setResponse] = useState(undefined);
     const [error, setError] = useState('');
