@@ -1,5 +1,4 @@
 import React from 'react';
-import { MOVIE_IMG } from 'constants/image'
 
 export default function Header() {
     return (
@@ -8,7 +7,7 @@ export default function Header() {
                 <div className="item md-order-1">
                     <a href="movie-ticket-plan.html" className="text-2xl font-semibold">
                         BACK
-                        </a>
+                    </a>
                 </div>
                 <div className="item date-item flex space-x-2 ">
                     {/* <div className="img rounded-md overflow-hidden shadow-2xl">

@@ -1,6 +1,6 @@
 @layer components {
   .summary {
-    @apply w-full mx-auto p-8 pb-5 border;
+    @apply w-full mx-auto p-8 pb-5 border rounded-xl;
     background-color: rgba(15, 21, 26, 0.8);
     border-color: #11326f;
 
@@ -44,7 +44,7 @@
     &__button {
       @apply text-center mt-2 pt-4;
       button {
-        @apply p-2 rounded-full uppercase font-bold;
+        @apply p-2 rounded-lg uppercase font-bold;
       }
     }
   }

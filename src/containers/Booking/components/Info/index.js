@@ -3,7 +3,7 @@ import FormInfo from '../FormInfo'
 
 export default function Info() {
     return (
-        <div className="border"
+        <div className="border rounded-xl"
             style={{
                 padding: '30px',
                 marginBottom: '30px',

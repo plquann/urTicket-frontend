@@ -6,7 +6,7 @@ import './Payment.scss';
 
 export default function Payment() {
     return (
-        <div className=" payment checkout-widget checkout-card mb-0 border"
+        <div className="payment checkout-widget checkout-card mb-0 border rounded-xl"
             style={{
                 padding: '30px',
                 marginBottom: '30px',

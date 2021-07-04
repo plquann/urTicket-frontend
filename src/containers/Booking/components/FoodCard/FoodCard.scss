@@ -1,35 +1,38 @@
 @layer components {
   .food__card {
-    @apply rounded-xl p-0.5 border;
-    background: #032055;
+    @apply rounded-xl p-0.5 border cursor-pointer;
+    background: rgb(45, 45, 45);
     border-color: #213a69;
 
     &__img {
       @apply rounded-t-lg h-3/5 relative;
-      background: #011a48;
+      background: rgba(15, 21, 26, 0.8);
+      overflow: visible;
       .price {
-        @apply w-12 h-16 text-2xl font-bold flex justify-center items-start absolute top-0.5 left-3;
+        @apply w-12 h-16 text-2xl font-bold flex 
+        justify-center items-start absolute -top-2 left-0;
         background: #31d7a9;
         clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 75%, 0 100%, 0 0);
       }
       .sale {
-        @apply w-16 h-16 text-xl font-bold flex justify-center absolute top-8 right-3 rounded-full text-center;
+        @apply w-16 h-16 text-xl font-bold flex justify-center 
+        absolute -top-8 -right-1 rounded-full text-center ;
         background: #eb1436;
       }
     }
     &__wrapper {
-      @apply text-center h-2/5 px-10;
+      @apply  h-2/5 px-4;
       h5 {
-        @apply text-2xl font-semibold mt-1 h-14 mb-1 overflow-hidden;
+        @apply text-center text-xl font-semibold mt-1 h-14 mb-1 overflow-hidden;
       }
       p {
         @apply h-14 -mt-2;
         border-color: #11326f;
       }
       .order {
-        @apply w-4/6 h-10 mt-4 grid grid-cols-4 mx-auto text-xl text-center;
+        @apply w-4/6 h-5 mt-4 grid grid-cols-4 mx-auto text-xl text-center;
         button {
-          @apply border py-2 focus:outline-none flex justify-center items-center;
+          @apply border py-1 focus:outline-none flex justify-center items-center;
           border-color: #11326f;
         }
       }

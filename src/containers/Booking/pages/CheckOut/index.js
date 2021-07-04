@@ -3,7 +3,7 @@ import FormPromo from 'containers/Booking/components/FormPromo'
 import Header from 'containers/Booking/components/Header'
 import Info from 'containers/Booking/components/Info'
 import Payment from 'containers/Booking/components/Payment'
-import React, { Fragment } from 'react'
+import React from 'react'
 
 export default function CheckOut() {
     return (

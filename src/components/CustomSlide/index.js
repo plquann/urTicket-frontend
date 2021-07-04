@@ -14,7 +14,7 @@ export default function CustomSlide(props) {
                         <a href="movie-details.html">Captain America: The First Avenger</a>
                     </h5>
                     <p className="duration">2hrs 50 min</p>
-                    <p className="summary line-clamp-2">During World War II, Steve Rogers is a sickly man from Brooklyn who's transformed into super-soldier Captain America to aid in the war effort. Rogers must stop the Red Skull – Adolf Hitler's ruthless head of weaponry, and the leader of an organization that intends to use a mysterious device of untold powers for world domination.</p>
+                    <p className="movie-summary line-clamp-2">During World War II, Steve Rogers is a sickly man from Brooklyn who's transformed into super-soldier Captain America to aid in the war effort. Rogers must stop the Red Skull – Adolf Hitler's ruthless head of weaponry, and the leader of an organization that intends to use a mysterious device of untold powers for world domination.</p>
 
                     <div className="genres my-3.5">
                         {randomGenres().map((genre, index) => {

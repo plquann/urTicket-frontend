@@ -18,7 +18,6 @@ const dropDownItems = [
 ];
 
 export default function Header(props) {
-    //console.log('🚀 ~ file: index.js ~ line 21 ~ Header ~ props', props.show);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const className = props.show
@@ -37,10 +36,10 @@ export default function Header(props) {
 
                     <div className="hidden md:block">
                         <div className="ml-20 flex items-baseline flex-grow space-x-4">
-                            <NavLink activeStyle={{ color: '#31d7a9' }} className="header-label" to="/movie">
+                            <NavLink activeClassName="active" className="header-label" to="/" exact="/">
                                 HOME
                             </NavLink>
-                            <NavLink activeClassName="active" className="header-label" to="/movie/discover">
+                            <NavLink activeClassName="active" className="header-label" to="/discover">
                                 DISCOVER
                             </NavLink>
                             <NavLink activeClassName="active" className="header-label" to="/news">

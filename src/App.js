@@ -4,7 +4,7 @@ import { routes } from 'routes';
 import Loading from 'components/Loading';
 import './App.scss';
 import "slick-carousel/slick/slick.css";
-import HomeTemplate from 'templates/HomeTemplate';
+
 
 // console.log("routes", routes);
 const ScrollToTop = withRouter(({ children, location: { pathname } }) => {
@@ -22,10 +22,9 @@ function App() {
         <ScrollToTop>
           <Suspense fallback={Loading()}>
             <Switch>
-              <Redirect exact from="/" to="/movie" />
-              {routes.map(({ component: Component, path, ...rest }, index) => {
+              {routes.map(({ component: Component, layout: Layout, path, ...rest }, index) => {
                 return (
-                  <HomeTemplate Component={Component} path={path} key={index} {...rest} />
+                  <Layout Component={Component} path={path} key={index} {...rest} />
                 );
               })}
             </Switch>

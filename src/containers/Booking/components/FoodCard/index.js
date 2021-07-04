@@ -20,7 +20,7 @@ export default function FoodCard(props) {
             <div className="food__card__wrapper">
                 <h5>{food.label}</h5>
                 <p>{food.description}</p>
-                <div className="order">
+                {/* <div className="order">
                     <button className="rounded-l-full ">
                         <Minus />
                     </button>
@@ -28,7 +28,7 @@ export default function FoodCard(props) {
                     <button className="rounded-r-full ">
                         <Plus />
                     </button>
-                </div>
+                </div> */}
             </div>
 
         </div>

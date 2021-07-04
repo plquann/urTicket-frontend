@@ -13,11 +13,11 @@ export default function OrderFood() {
                 <p className="text-lg">Pre-order Your Meal and Save More!</p>
             </div>
             <div className="order-food__wrapper max-w-screen-xl mx-auto grid grid-cols-3 gap-6">
-                <div className="menu col-span-2 ">
-                    <Food />
-                </div>
                 <div className="">
                     <BookingSummary />
+                </div>
+                <div className="menu col-span-2 ">
+                    <Food />
                 </div>
             </div>
         </div>

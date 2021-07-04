@@ -6,7 +6,7 @@ import './Food.scss';
 export default function Food() {
     return (
         <div className="food">
-            <div className="food__list grid grid-cols-2 gap-14 pr-14">
+            <div className="food__list grid grid-cols-3 gap-14 pr-14 pt-8">
                 {COMBO_FOOD.map((food, index) => (
                     <FoodCard food={food} key={index} />
                 ))}
