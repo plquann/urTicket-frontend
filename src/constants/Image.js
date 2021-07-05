@@ -68,10 +68,10 @@ export const PAYMENT = {
 };
 
 export const SEAT = {
-    SEAT: seat1,
-    SEAT_COUPLE: seat2,
+    SEAT_FREE: seat1,
     SEAT_BOOKED: seatSingleBooked,
     SEAT_BOOKING: seatSingleBooking,
+    SEAT_COUPLE_FREE: seat2,
     SEAT_COUPLE_BOOKED: seatCoupleBooked,
     SEAT_COUPLE_BOOKING: seatCoupleBooking,
 }

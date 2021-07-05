@@ -3,15 +3,7 @@ import React from 'react';
 import CoupleSeat from '../CoupleSeat';
 import SingleSeat from '../SingleSeat';
 import './Screen.scss';
-
-const initArr = () => {
-    const arr = [];
-    for (let i = 0; i < 12; i++) {
-        arr.push(i + 1);
-    }
-
-    return [...arr];
-}
+import {initArr} from 'utils/renderSeat';
 
 const alphaBet = ['A', 'B', 'C', 'D', 'E', 'F'];
 
@@ -30,7 +22,7 @@ export default function Screen() {
                         <span>{row}</span>
                         <ul>
                             {initArr().map((col, index) => (
-                                <li key={index} className="relative" >
+                                <li key={index} className="relative">
                                     <SingleSeat index={col} row={row} />
                                 </li>
                             ))}

@@ -1,0 +1,26 @@
+@layer components {
+  .movie-summary-banner {
+    @apply w-full mx-auto border rounded-xl h-full;
+    background-color: rgba(15, 21, 26, 0.8);
+    border-color: #11326f;
+
+    &__img{
+        @apply w-full relative top-0 left-0 rounded-tl-xl overflow-hidden;
+        img{
+            @apply w-full;
+        }
+        &::before {
+            @apply absolute w-full top-0 bottom-0 z-0;
+            content: "";
+            background-color: rgba(2, 13, 24, 0.4);
+          }
+    }
+
+    &__content{
+        @apply py-8 px-4 ;
+        &__title{
+            @apply text-center font-medium text-xl;
+        }
+    }
+  }
+}
