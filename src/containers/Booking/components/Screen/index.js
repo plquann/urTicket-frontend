@@ -53,23 +53,22 @@ export default function Screen() {
                     <div className="screen__seat-info__item__label">
                         <img src={SEAT.SEAT_AVAILABLE} alt="seat-available" />
                     </div>
-                    <span>Available</span>
+                    <span className="font-medium ">Available</span>
                 </div>
                 <div className="screen__seat-info__item">
                     <div className="screen__seat-info__item__label">
                         <img src={SEAT.SEAT_SELECTED} alt="seat-selected" />
                     </div>
-                    <span>Selected</span>
+                    <span className="font-medium ">Selected</span>
                 </div>
                 <div className="screen__seat-info__item">
                     <div className="screen__seat-info__item__label">
                         <img src={SEAT.SEAT_RESERVED} alt="seat-reserved" />
                     </div>
-                    <span>Reserved</span>
+                    <span className="font-medium">Reserved</span>
                 </div>
             </div>
 
-            
         </div>
     )
 }

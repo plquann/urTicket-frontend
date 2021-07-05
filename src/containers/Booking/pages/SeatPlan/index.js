@@ -1,3 +1,4 @@
+import BookingInfo from 'containers/Booking/components/BookingInfo/BookingInfo'
 import MovieSummaryBanner from 'containers/Booking/components/MovieSummaryBanner/MovieSummaryBanner'
 import Screen from 'containers/Booking/components/Screen'
 import React from 'react'
@@ -11,6 +12,7 @@ export default function SeatPlan() {
                 </div>
                 <div className="col-span-3">
                     <Screen />
+                    <BookingInfo />
                 </div>
             </div>
         </div>

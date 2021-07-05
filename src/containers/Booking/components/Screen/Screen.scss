@@ -3,7 +3,7 @@
     @apply w-full pb-10;
 
     &__area {
-      @apply w-3/12 text-2xl text-center mx-auto my-6 py-2 relative;
+      @apply w-3/12 text-xl text-center mx-auto my-6 py-2 relative;
       color: #31d7a9;
       &::before {
         content: "";
@@ -22,7 +22,7 @@
     &__wrapper {
       @apply w-full pt-8;
       &__row {
-        @apply flex space-x-10 mb-8 justify-center items-center;
+        @apply flex space-x-10 mb-5 justify-center items-center;
         ul {
           @apply flex flex-wrap space-x-4;
           li{
