@@ -6,14 +6,11 @@ import './FoodCard.scss';
 export default function FoodCard(props) {
     const { food, key } = props;
     return (
-        <div key={key} className="food__card">
+        <div key={key} className="food__card ">
             <div className="food__card__img ">
                 <img src={food.img} alt="food combo" className="w-full h-full" />
                 <div className="price">
                     {food.price}
-                </div>
-                <div className="sale">
-                    {`${food.sale}% OFF`}
                 </div>
             </div>
 

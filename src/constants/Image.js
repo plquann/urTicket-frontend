@@ -68,12 +68,12 @@ export const PAYMENT = {
 };
 
 export const SEAT = {
-    SEAT_FREE: seat1,
-    SEAT_BOOKED: seatSingleBooked,
-    SEAT_BOOKING: seatSingleBooking,
-    SEAT_COUPLE_FREE: seat2,
-    SEAT_COUPLE_BOOKED: seatCoupleBooked,
-    SEAT_COUPLE_BOOKING: seatCoupleBooking,
+    SEAT_AVAILABLE: seat1,
+    SEAT_RESERVED: seatSingleBooked,
+    SEAT_SELECTED: seatSingleBooking,
+    SEAT_COUPLE_AVAILABLE: seat2,
+    SEAT_COUPLE_RESERVED: seatCoupleBooked,
+    SEAT_COUPLE_SELECTED: seatCoupleBooking,
 }
 
 export const ACCOUNT_BG = account_bg;

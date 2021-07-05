@@ -1,6 +1,6 @@
 @layer components {
   .movie-summary-banner {
-    @apply w-full mx-auto border rounded-xl h-full;
+    @apply w-full mx-auto border rounded-xl;
     background-color: rgba(15, 21, 26, 0.8);
     border-color: #11326f;
 
@@ -17,9 +17,23 @@
     }
 
     &__content{
-        @apply py-8 px-4 ;
+        @apply p-4 text-center ;
         &__title{
-            @apply text-center font-medium text-xl;
+            @apply font-medium text-xl ;
+        }
+        &__duration {
+          @apply text-base pt-2;
+          color: #31d7a9;
+        }
+        &__release {
+          @apply text-white mb-1 pt-2;
+        }
+  
+        &__rating {
+          @apply grid grid-cols-2 gap-2 pt-2;
+          &__item{
+            @apply flex justify-center items-center;
+          }
         }
     }
   }

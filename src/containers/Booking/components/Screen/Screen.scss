@@ -1,6 +1,6 @@
 @layer components {
   .screen {
-    @apply w-full;
+    @apply w-full pb-10;
 
     &__area {
       @apply w-3/12 text-2xl text-center mx-auto my-6 py-2 relative;
@@ -38,6 +38,19 @@
         @apply flex space-x-6 mb-5 justify-center items-center;
         ul {
           @apply flex flex-wrap space-x-9;
+          li{
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    &__seat-info{
+      @apply flex justify-center items-center text-center mt-8;
+      &__item{
+        @apply flex justify-center items-center mx-4;
+        &__label{
+          @apply mr-3;
         }
       }
     }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Header() {
+export default function BookingInfo() {
     return (
         <div className="py-4 bg-gray-900" >
             <div className="flex justify-between max-w-screen-lg mx-auto items-center">

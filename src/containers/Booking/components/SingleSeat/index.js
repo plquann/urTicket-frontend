@@ -14,12 +14,12 @@ export default function SingleSeat(props) {
             {isBooking
                 ?
                 <img
-                    src={SEAT.SEAT_BOOKING}
+                    src={SEAT.SEAT_SELECTED}
                     alt="seat"
                 />
                 :
                 <img
-                    src={SEAT.SEAT_FREE}
+                    src={SEAT.SEAT_AVAILABLE}
                     alt="seat"
                 />
             }

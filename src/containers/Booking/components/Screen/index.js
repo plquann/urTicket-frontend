@@ -3,7 +3,7 @@ import React from 'react';
 import CoupleSeat from '../CoupleSeat';
 import SingleSeat from '../SingleSeat';
 import './Screen.scss';
-import {initArr} from 'utils/renderSeat';
+import { initArr } from 'utils/renderSeat';
 
 const alphaBet = ['A', 'B', 'C', 'D', 'E', 'F'];
 
@@ -47,6 +47,29 @@ export default function Screen() {
                     </div>
                 ))}
             </div>
+            
+            <div className="screen__seat-info">
+                <div className="screen__seat-info__item">
+                    <div className="screen__seat-info__item__label">
+                        <img src={SEAT.SEAT_AVAILABLE} alt="seat-available" />
+                    </div>
+                    <span>Available</span>
+                </div>
+                <div className="screen__seat-info__item">
+                    <div className="screen__seat-info__item__label">
+                        <img src={SEAT.SEAT_SELECTED} alt="seat-selected" />
+                    </div>
+                    <span>Selected</span>
+                </div>
+                <div className="screen__seat-info__item">
+                    <div className="screen__seat-info__item__label">
+                        <img src={SEAT.SEAT_RESERVED} alt="seat-reserved" />
+                    </div>
+                    <span>Reserved</span>
+                </div>
+            </div>
+
+            
         </div>
     )
 }

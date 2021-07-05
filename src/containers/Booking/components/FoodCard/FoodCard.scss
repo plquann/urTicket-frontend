@@ -10,14 +10,9 @@
       overflow: visible;
       .price {
         @apply w-12 h-16 text-2xl font-bold flex 
-        justify-center items-start absolute -top-2 left-0;
-        background: #31d7a9;
-        clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 75%, 0 100%, 0 0);
-      }
-      .sale {
-        @apply w-16 h-16 text-xl font-bold flex justify-center 
-        absolute -top-8 -right-1 rounded-full text-center ;
+        justify-center items-start absolute -top-2 right-0;
         background: #eb1436;
+        clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 75%, 0 100%, 0 0);
       }
     }
     &__wrapper {
