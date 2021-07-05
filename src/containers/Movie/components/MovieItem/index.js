@@ -4,6 +4,7 @@ import { MOVIE_IMG, ICONS } from 'constants/image';
 import { randomGenres } from 'constants/genres';
 
 export default function MovieItem() {
+    console.log("movie item render");
     return (
         <div className="movie__item w-full mt-5 mb-10">
             <div className="movie__item__thumb c-thumb">

@@ -60,7 +60,7 @@ export default function FilterSort() {
                         <span className="show">Show :</span>
                         <Select
                             defaultValue={optionsItem[2]}
-                            onChange={handleChange()}
+                            onChange={handleChange}
                             options={optionsItem}
                             placeholder={null}
                             maxMenuHeight={150}
@@ -71,7 +71,7 @@ export default function FilterSort() {
                         <span className="show">Sort By :</span>
                         <Select
                             defaultValue={optionsType[0]}
-                            onChange={handleChange()}
+                            onChange={handleChange}
                             options={optionsType}
                             placeholder={null}
                             maxMenuHeight={150}

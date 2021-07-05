@@ -30,7 +30,7 @@ export default function Screen() {
                         <span>{row}</span>
                         <ul>
                             {initArr().map((col, index) => (
-                                <li key={index} className="relative">
+                                <li key={index} className="relative" >
                                     <SingleSeat index={col} row={row} />
                                 </li>
                             ))}

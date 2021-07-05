@@ -47,19 +47,19 @@ export const routes = [
         exact: true,
         path: "/seatplan",
         component: SeatPlan,
-        layout: SimpleTemplate,
+        layout: HomeTemplate,
     },
     {
         exact: true,
         path: "/orderfood",
         component: OrderFood,
-        layout: SimpleTemplate,
+        layout: HomeTemplate,
     },
     {
         exact: true,
         path: "/checkout",
         component: CheckOut,
-        layout: SimpleTemplate,
+        layout: HomeTemplate,
     },
     {
         exact: true,

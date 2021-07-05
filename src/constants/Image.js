@@ -52,8 +52,10 @@ import explore from 'assets/images/poster_explore.jpg';
 import Screen from 'assets/images/movie/screen-thumb.png';
 import seat1 from 'assets/images/movie/seat01.png';
 import seat2 from 'assets/images/movie/seat02.png';
-// import seat_book from 'assets/images/movie/seat';
-
+import seatSingleBooked from 'assets/images/movie/seat01-booked.png';
+import seatSingleBooking from 'assets/images/movie/seat01-booking.png';
+import seatCoupleBooked from 'assets/images/movie/seat02-booked.png';
+import seatCoupleBooking from 'assets/images/movie/seat02-booking.png';
 
 import card from 'assets/images/payment/card.png';
 import paypal from 'assets/images/payment/paypal.png';
@@ -68,6 +70,10 @@ export const PAYMENT = {
 export const SEAT = {
     SEAT: seat1,
     SEAT_COUPLE: seat2,
+    SEAT_BOOKED: seatSingleBooked,
+    SEAT_BOOKING: seatSingleBooking,
+    SEAT_COUPLE_BOOKED: seatCoupleBooked,
+    SEAT_COUPLE_BOOKING: seatCoupleBooking,
 }
 
 export const ACCOUNT_BG = account_bg;
@@ -164,7 +170,7 @@ export const LOGO_PARTNER = [
     { link: '#', name: 'VTBANK', img: `${domain}VIETTINBANK.png` },
     { link: '#', name: 'GO', img: `${domain}123go.png` },
     { link: '#', name: 'CGV', img: `https://www.cgv.vn/skin/frontend/cgv/default/images/cgvlogo.png` }
-    
+
 ];
 
 export const SVG_IMAGES = {

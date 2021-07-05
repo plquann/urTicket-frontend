@@ -1,6 +1,6 @@
 @layer components {
   .register {
-    @apply w-full h-screen bg-center bg-no-repeat bg-cover py-16;
+    @apply w-full bg-center bg-no-repeat bg-cover py-16;
     &__wrapper {
       @apply max-w-lg mx-auto px-12 py-12;
       background-color: rgba(68, 90, 153, 0.051);
