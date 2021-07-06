@@ -1,33 +1,13 @@
 @layer components {
   .filter__sort {
-    @apply w-full rounded-md py-5 px-2.5 border border-solid mb-7;
-    border-color: rgba(163, 177, 198, 0.151);
-
+    @apply w-full rounded-md px-4 mb-2;
+   
     &__wrapper {
-      @apply flex flex-wrap justify-between items-center;
-
       &__left {
-        @apply flex flex-wrap -mr-7 -mb-2.5;
+        @apply w-full flex justify-end items-center;
 
-        .item {
-          @apply flex flex-wrap items-center mr-7 mb-2.5;
-        }
-      }
-
-      &__right {
-        @apply flex flex-wrap mb-2.5 justify-end items-center;
-
-        li {
-          @apply mr-5 border border-solid rounded-3xl w-16 h-10 text-lg leading-10 text-center cursor-pointer p-0;
-          color: #4c63ad;
-          border-color: rgba(163, 177, 198, 0.151);
-
-          &:last-child {
-            @apply mr-0;
-          }
-          &.active {
-            color: #31d7a9;
-          }
+        .item--right {
+          @apply w-1/4;
         }
       }
     }
