@@ -27,15 +27,9 @@ const colourStyles = {
         marginLeft: '10px',
 
     }),
-    option: (styles, { data, isDisabled, isFocused, isSelected }) => {
-        return {
-            ...styles,
-            backgroundColor: '#001232',
-            color: '#ffffff',
-        };
-    },
+   
     menu: styles => ({
-        ...styles, backgroundColor: 'transparent', border: '1px solid rgba(163, 177, 198, 0.151)',
+        ...styles, backgroundColor: '#1a222a', border: '1px solid rgba(163, 177, 198, 0.151)',
         textAlign: 'center',
     }),
     input: styles => ({ ...styles, ':hover': { ...styles, fontWeight: 'bold' } }),

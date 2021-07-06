@@ -7,7 +7,7 @@
   .tab-area::before {
     @apply absolute bg-black opacity-40 w-full top-0 left-0;
     content: "";
-    height: calc(100% + 1px);
+    height: 100%;
   }
   .form-group {
     @apply mb-5 relative;
