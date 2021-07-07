@@ -7,7 +7,7 @@ import React from 'react'
 export default function SeatPlan() {
     return (
         <div style={{ backgroundColor: 'var(--color-secondary)' }}>
-            <div className="booking max-w-screen-xl mx-auto grid grid-cols-4 gap-2 mt-20">
+            <div className="booking max-w-screen-xl mx-auto grid grid-cols-4 gap-2 mt-16">
                 <div className="py-8">
                     <MovieSummaryBanner />
                 </div>

@@ -2,7 +2,7 @@ $neutral-medal: #d1d7da;
 $bronze-medal: #df7e08;
 @layer components {
   .quiz-medal {
-    @apply mt-7 ml-7  mb-4 relative;
+    @apply mb-4 relative;
     &__circle {
       @apply relative w-14 h-14 rounded-full font-medium text-3xl text-white text-center
         align-middle border z-10;

@@ -1,13 +1,13 @@
 @layer components {
   .top-new-large {
-    @apply grid grid-cols-3 gap-4 w-full relative cursor-pointer;
+    @apply w-full h-full relative cursor-pointer;
     background-color: #1a222a;
 
-    &__ranking {
-      @apply absolute -top-3 -left-2;
+    .ranking {
+      @apply absolute -top-5 -left-5;
     }
-    &__thumbnails {
-      @apply col-span-2 relative overflow-hidden;
+    .thumbnails {
+      @apply w-full h-1/2 pb-4 relative overflow-hidden;
       img {
         @apply w-full h-full transition duration-300 ease-in-out;
       }
@@ -20,7 +20,7 @@
         }
       }
     }
-    &__title {
+    .title {
       @apply z-10 pr-4 py-2;
       h2 {
         @apply text-2xl font-semibold -mt-2;

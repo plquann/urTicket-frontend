@@ -6,7 +6,7 @@ import React from 'react'
 
 export default function CheckOut() {
     return (
-        <div className="bg-gray-900 check-payment mt-20" style={{ backgroundColor: 'var(--color-secondary)' }}>
+        <div className="bg-gray-900 check-payment mt-16" style={{ backgroundColor: 'var(--color-secondary)' }}>
             <div className="check-payment__title text-center my-5">
                 <h2 className="text-5xl font-bold uppercase mb-3">Yeah! Almost finished</h2>
                 <p className="text-lg">We need your payment information to complete the booking</p>

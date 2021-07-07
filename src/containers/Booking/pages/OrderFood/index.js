@@ -6,7 +6,7 @@ import './OrderFood.scss';
 
 export default function OrderFood() {
     return (
-        <div className="order-food pb-10  mt-20" style={{ backgroundColor: 'var(--color-secondary)' }}>
+        <div className="order-food pb-10 mt-16" style={{ backgroundColor: 'var(--color-secondary)' }}>
             <div className="order-food__title">
                 <h2>we have food</h2>
                 <p className="text-lg">Pre-order Your Meal and Save More!</p>

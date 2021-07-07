@@ -27,7 +27,7 @@ export default function Header(props) {
     return (
         <header className={className} >
             <div className="header__wrapper max-w-screen-xl mx-auto flex-grow">
-                <nav className="w-full bg-opacity-0 bg-gray-800 text-center flex flex-wrap items-center ">
+                <nav className="w-full bg-opacity-0 bg-gray-800 text-center flex flex-wrap items-center justify-center">
                     <div className=" flex items-center">
                         <a className="flex-shrink-0" href="/">
                             <img className="h-10 w-20" src={LOGO.APP_LOGO} alt="logo" />

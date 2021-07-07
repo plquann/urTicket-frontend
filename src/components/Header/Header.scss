@@ -1,8 +1,8 @@
 @layer components {
   .header {
-    @apply w-full h-20 transition-all duration-200 
+    @apply w-full h-16 transition-all duration-200 
     fixed top-0 right-0 left-0  flex items-center;
-    background: #03050a;
+    background: rgb(26, 26, 26);
     z-index: 1000;
 
     .header-label,
