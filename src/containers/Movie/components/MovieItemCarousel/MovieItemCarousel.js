@@ -2,8 +2,8 @@ import React from 'react';
 import Slider from 'react-slick';
 import './MovieItemCarousel.scss';
 import { ARROW_CAROUSEL } from 'constants/image';
-import ArrowCarousel from 'components/ArrowCarousel';
-import MovieGrid from '../MovieGrid';
+import ArrowCarousel from 'components/ArrowCarousel/ArrowCarousel';
+import MovieGrid from '../MovieGrid/MovieGrid';
 
 export default function MovieItemCarousel() {
     const settings = {

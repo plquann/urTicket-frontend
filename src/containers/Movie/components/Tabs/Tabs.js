@@ -1,6 +1,6 @@
 import React from 'react';
 import { TabGroup } from '@statikly/funk';
-import MovieItemCarousel from '../MovieItemCarousel';
+import MovieItemCarousel from '../MovieItemCarousel/MovieItemCarousel';
 
 export default function Tabs() {
     return (
@@ -33,7 +33,7 @@ export default function Tabs() {
                         <TabGroup.TabPanel
                             key={index}
                             index={index}
-                            className="py-12 transition transform duration-700 "
+                            className="pt-12 pb-8 transition transform duration-700 "
                             activeClassName="opacity-100 translate-x-0"
                             inactiveClassName="absolute opacity-0 -translate-x-2"
                         >

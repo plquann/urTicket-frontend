@@ -4,7 +4,7 @@ export default function Scenarios() {
     return (
         <div className="scenarios mb-12">
             <h3 className="text-2xl mb-4 font-semibold">SCENARIOS</h3>
-            <p className="line-clamp-5" style={{ color: '#dbe2fb', lineHeight: '28px', fontSize: '17px' }}>
+            <p className="" style={{ color: '#dbe2fb', fontSize: '16px' }}>
                 Avengers: Endgame is a 2019 American superhero film based on the Marvel Comics
                 superhero team the Avengers. Produced by Marvel
                 Studios and distributed by Walt Disney Studios Motion

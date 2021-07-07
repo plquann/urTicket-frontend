@@ -1,15 +1,8 @@
 import React from 'react';
 import SingleSelect from 'components/SingleSelect/SingleSelect';
 
-import './FilterSort.scss';
+import './FilterStatus.scss';
 
-const optionsItem = [
-    { label: 12, value: 12 },
-    { label: 13, value: 13 },
-    { label: 14, value: 14 },
-    { label: 15, value: 15 },
-
-];
 
 const optionsType = [
     { label: 'Now Showing', value: 'Now Showing' },
@@ -21,7 +14,7 @@ const handleChange = () => {
     console.log("Hii change ")
 }
 
-export default function FilterSort() {
+export default function FilterStatus() {
 
     return (
         <div className="filter__sort">

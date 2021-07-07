@@ -1,7 +1,7 @@
 import React from 'react';
 // import './New.scss';
-import TopNewLarge from 'containers/Movie/components/TopNewLarge';
-import TopNewMedium from 'containers/Movie/components/TopNewMedium';
+import TopNewLarge from 'containers/Movie/components/TopNewLarge/TopNewLarge';
+import TopNewMedium from 'containers/Movie/components/TopNewMedium/TopNewMedium';
 import RelatedNews from '../RelatedNews/RelatedNews';
 
 export default function NewsSection() {
@@ -16,10 +16,10 @@ export default function NewsSection() {
                     <TopNewLarge />
                 </div>
                 <div className="row-span-1">
-                    <TopNewMedium rank='2' />
+                    <TopNewMedium rank='2' title="Jason Statham's Wrath Of Man Kicks The Summer Season Box Office Off To A Mediocre Start"/>
                 </div>
                 <div className="row-span-1">
-                    <TopNewMedium rank='3' />
+                    <TopNewMedium rank='3' title="Netflix's Kissing Booth 3 Trailer Teases Emotional Last Movie For Joey King's Elle"/>
                 </div>
             </div>
             <RelatedNews />

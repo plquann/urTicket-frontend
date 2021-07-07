@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Header.scss';
 import { LOGO } from 'constants/image';
-import DropDownMenu from 'components/DropDownMenu';
+import DropDownMenu from 'components/DropDownMenu/DropDownMenu';
 import { NavLink } from 'react-router-dom';
 
 

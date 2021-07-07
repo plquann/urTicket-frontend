@@ -1,13 +1,13 @@
 import { SCREEN, SEAT } from 'constants/image';
 import React from 'react';
-import CoupleSeat from '../CoupleSeat';
-import SingleSeat from '../SingleSeat';
-import './Screen.scss';
+import CoupleSeat from '../CoupleSeat/CoupleSeat';
+import SingleSeat from '../SingleSeat/SingleSeat';
+import './BookingSeat.scss';
 import { initArr } from 'utils/renderSeat';
 
 const alphaBet = ['A', 'B', 'C', 'D', 'E', 'F'];
 
-export default function Screen() {
+export default function BookingSeat() {
     return (
         <div className="screen">
             <h4 className="screen__area">SCREEN</h4>

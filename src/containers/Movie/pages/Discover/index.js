@@ -1,13 +1,13 @@
-import Footer from 'components/Footer'
-import Header from 'components/Header'
-import Pagination from 'components/Pagination'
-import MovieExplore from 'containers/Movie/components/MovieExplore'
-import MovieItem from 'containers/Movie/components/MovieItem'
-import MovieSearch from 'containers/Movie/components/MovieSearch'
-import FilterSort from 'containers/Movie/components/FilterSort';
+import Footer from 'components/Footer/Footer'
+import Header from 'components/Header/Header'
+import Pagination from 'components/Pagination/Pagination'
+import MovieExplore from 'containers/Movie/components/MovieExplore/MovieExplore'
+import MovieItem from 'containers/Movie/components/MovieItem/MovieItem'
+import MovieSearch from 'containers/Movie/components/MovieSearch/MovieSearch'
+import FilterSort from 'containers/Movie/components/FilterStatus/FilterStatus';
 import React from 'react'
-import FilterCinema from 'containers/Movie/components/FilterCinema'
-import FilterDate from 'containers/Movie/components/FilterDate'
+import FilterCinema from 'containers/Movie/components/FilterCinema/FilterCinema'
+import FilterDate from 'containers/Movie/components/FilterDate/FilterDay'
 import Icons from 'components/Icons'
 
 export default function Discover() {

@@ -1,7 +1,7 @@
 import React from 'react';
 import Icons from 'components/Icons'
 import Slider from 'react-slick';
-import ArrowCarousel from 'components/ArrowCarousel';
+import ArrowCarousel from 'components/ArrowCarousel/ArrowCarousel';
 import './CustomCarousel.scss';
 
 export default function CustomCarousel(props) {

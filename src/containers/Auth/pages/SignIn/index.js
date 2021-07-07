@@ -1,6 +1,6 @@
 import { ACCOUNT_BG } from 'constants/image';
-import FormSignin from 'containers/Auth/components/FormSignIn';
-import ThirdParty from 'containers/Auth/components/ThirdParty';
+import FormSignin from 'containers/Auth/components/FormSignIn/FormSignIn';
+import ThirdParty from 'containers/Auth/components/ThirdParty/ThirdParty';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './SignIn.scss';

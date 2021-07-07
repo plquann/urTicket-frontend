@@ -16,7 +16,7 @@
     &__title {
       @apply px-4 mt-4 pb-4 bg-transparent z-10;
       h2 {
-        @apply text-xl font-medium;
+        @apply text-xl font-medium h-14 mb-2;
       }
     }
     &__ranking {

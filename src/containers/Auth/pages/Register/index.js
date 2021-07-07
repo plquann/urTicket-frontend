@@ -1,6 +1,6 @@
 import { ACCOUNT_BG } from 'constants/image'
-import FormRegister from 'containers/Auth/components/FormRegister'
-import ThirdParty from 'containers/Auth/components/ThirdParty'
+import FormRegister from 'containers/Auth/components/FormRegister/FormRegister'
+import ThirdParty from 'containers/Auth/components/ThirdParty/ThirdParty'
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './Register.scss'

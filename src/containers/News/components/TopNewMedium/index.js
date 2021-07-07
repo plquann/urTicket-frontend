@@ -1,4 +1,4 @@
-import Medal from 'components/Medal'
+import Medal from 'components/Medal/Medal'
 import React from 'react';
 import './TopNewMedium.scss'
 

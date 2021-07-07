@@ -1,6 +1,6 @@
 import { PAYMENT } from 'constants/image';
 import React from 'react';
-import FormPayment from '../FormPayment';
+import FormPayment from '../FormPayment/FormPayment';
 import './Payment.scss';
 
 

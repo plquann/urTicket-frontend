@@ -1,7 +1,7 @@
 import React from 'react';
 import './New.scss';
-import TopNewLarge from 'containers/Movie/components/TopNewLarge';
-import TopNewMedium from 'containers/Movie/components/TopNewMedium';
+import TopNewLarge from 'containers/Movie/components/TopNewLarge/TopNewLarge';
+import TopNewMedium from 'containers/Movie/components/TopNewMedium/TopNewMedium';
 
 export default function MainNews() {
     return (

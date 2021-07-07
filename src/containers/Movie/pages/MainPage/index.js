@@ -1,7 +1,7 @@
 import React from 'react';
-import MovieCarousel from 'containers/Movie/components/MovieBannerCarousel';
-import MovieSearch from 'containers/Movie/components/MovieSearch';
-import Tabs from 'containers/Movie/components/Tabs';
+import MovieCarousel from 'containers/Movie/components/MovieBannerCarousel/MovieBannerCarousel';
+import MovieSearch from 'containers/Movie/components/MovieSearch/MovieSearch';
+import Tabs from 'containers/Movie/components/Tabs/Tabs';
 import NewsSection from 'containers/Movie/components/NewsSection/NewsSection';
 
 export default function MainPage(props) {

@@ -1,9 +1,9 @@
 import React from 'react'
 import { TabGroup } from '@statikly/funk'
-import Scenarios from '../Scenarios'
-import Cast from '../Cast'
-import Crew from '../Crew'
-import ReviewDetails from '../ReviewDetails'
+import Scenarios from '../Scenarios/Scenarios'
+import Cast from '../Cast/Cast'
+import Crew from '../Crew/Crew'
+import ReviewDetails from '../ReviewDetails/ReviewDetails'
 
 export default function Details() {
     return (

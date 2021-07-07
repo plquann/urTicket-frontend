@@ -1,11 +1,11 @@
 import React from 'react';
 import { MOVIE_IMG, LOGO_PARTNER } from 'constants/image';
-import MovieInfo from '../MovieInfo';
-import MovieScore from '../MovieScore';
-import PhotosPreview from '../PhotosPreview';
-import Details from '../Details';
-import Offer from '../Offer';
-import Schedule from '../Schedule';
+import MovieInfo from '../MovieInfo/MovieInfo';
+import MovieScore from '../MovieScore/MovieScore';
+import PhotosPreview from '../PhotosPreview/PhotoPreview';
+import Details from '../Details/Details';
+import Offer from '../Offer/Offer';
+import Schedule from '../Schedule/Schedule';
 
 export default function WrapperInfo(props) {
     return (

@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
-import MovieBackDrop from 'containers/Movie/components/MovieBackDrop';
-import WrapperInfo from 'containers/Movie/components/WrapperInfo';
+import MovieBackDrop from 'containers/Movie/components/MovieBackDrop/MovieBackDrop';
+import WrapperInfo from 'containers/Movie/components/WrapperInfo/WrapperInfo';
 
 export default function Details() {
     const scheduleRef = useRef(null);

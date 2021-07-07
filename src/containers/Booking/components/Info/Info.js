@@ -1,5 +1,5 @@
 import React from 'react'
-import FormInfo from '../FormInfo'
+import FormInfo from '../FormInfo/FormInfo'
 
 export default function Info() {
     return (

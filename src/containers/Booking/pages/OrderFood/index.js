@@ -1,5 +1,5 @@
-import BookingSummary from 'containers/Booking/components/BookingSummary'
-import Food from 'containers/Booking/components/Food'
+import BookingSummary from 'containers/Booking/components/BookingSummary/BookingSummary'
+import Food from 'containers/Booking/components/Food/Food'
 import MovieSummaryBanner from 'containers/Booking/components/MovieSummaryBanner/MovieSummaryBanner';
 import React from 'react';
 import './OrderFood.scss';

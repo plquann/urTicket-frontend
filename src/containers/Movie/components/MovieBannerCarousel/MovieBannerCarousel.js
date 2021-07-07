@@ -1,9 +1,9 @@
-import ArrowCarousel from 'components/ArrowCarousel';
+import ArrowCarousel from 'components/ArrowCarousel/ArrowCarousel';
 import { ARROW_CAROUSEL } from 'constants/image';
 import React from 'react';
 import Slider from 'react-slick';
 import 'reactjs-popup/dist/index.css';
-import PopupTrailer from '../PopupTrailer';
+import PopupTrailer from '../PopupTrailer/PopupTrailer';
 
 import './MovieBannerCarousel.scss';
 

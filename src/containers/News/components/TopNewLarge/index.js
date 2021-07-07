@@ -1,4 +1,4 @@
-import Medal from 'components/Medal'
+import Medal from 'components/Medal/Medal'
 import { randomGenres } from 'constants/genres'
 import React from 'react';
 import './TopNewLarge.scss';

@@ -3,7 +3,7 @@ import { lazy } from 'react';
 const Movie = lazy(() => import('containers/Movie/pages/MainPage'));
 const Discover = lazy(() => import('containers/Movie/pages/Discover'));
 const Details = lazy(() => import('containers/Movie/pages/Details'))
-const NotFound = lazy(() => import('components/NotFound'));
+const NotFound = lazy(() => import('components/NotFound/NotFound'));
 const Admin = lazy(() => import('containers/Admin'));
 const News = lazy(() => import('containers/Users/pages/MainNews'));
 

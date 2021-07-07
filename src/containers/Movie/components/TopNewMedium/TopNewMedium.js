@@ -1,4 +1,4 @@
-import Medal from 'components/Medal'
+import Medal from 'components/Medal/Medal'
 import React from 'react';
 import './TopNewMedium.scss'
 
@@ -9,8 +9,8 @@ export default function TopNewMedium(props) {
                 <img src="https://img.cinemablend.com/filter:scale/quill/e/b/2/b/7/1/eb2b715d128d36bbc2231e0c5e69cc74ce1d88f0.jpg?mw=600" alt="" />
             </div>
             <div className="top-new-medium__title" >
-                <h2 className="line-clamp-2">Jason Statham's Wrath Of Man Kicks The Summer Season Box Office Off To A Mediocre Start</h2>
-                <p className="subtitle line-clamp-1 text-gray-400">
+                <h2 className="line-clamp-2">{props.title}</h2>
+                <p className="subtitle line-clamp-2 text-gray-400">
                     Scarlett Johansson is one of the most recognizable actors in the world,
                     having been a fixture in film and television since she was a child.
                     Over time, she’s also become a voice within the industry, speaking out

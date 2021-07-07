@@ -1,5 +1,5 @@
-import ArrowCarousel from "components/ArrowCarousel";
-import CustomSlide from "components/CustomSlide";
+import ArrowCarousel from "components/ArrowCarousel/ArrowCarousel";
+import CustomSlide from "components/CustomSlide/CustomSlide";
 import Icons from "components/Icons";
 import React from "react";
 import Slider from "react-slick";

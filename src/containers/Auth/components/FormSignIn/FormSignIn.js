@@ -1,9 +1,9 @@
 import React from 'react';
 import * as yup from "yup";
-import Form from 'components/Form';
-import InputField from 'components/InputField';
-import CheckBox from 'components/CheckBox';
-import ButtonSubmit from 'components/ButtonSubmit';
+import Form from 'components/Form/Form';
+import InputField from 'components/InputField/InputField';
+import CheckBox from 'components/CheckBox/CheckBox';
+import ButtonSubmit from 'components/ButtonSubmit/ButtonSubmit';
 
 
 const validationSchema = yup.object().shape({

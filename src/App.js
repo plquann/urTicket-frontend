@@ -1,7 +1,7 @@
 import React, { Suspense, useLayoutEffect } from 'react';
 import { BrowserRouter, Redirect, Route, Switch, withRouter } from 'react-router-dom';
 import { routes } from 'routes';
-import Loading from 'components/Loading';
+import Loading from 'components/Loading/Loading';
 import './App.scss';
 import "slick-carousel/slick/slick.css";
 

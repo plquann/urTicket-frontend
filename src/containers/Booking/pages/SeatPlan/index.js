@@ -1,7 +1,7 @@
 import BookingInfo from 'containers/Booking/components/BookingInfo/BookingInfo'
 import BookingReference from 'containers/Booking/components/BookingReference/BookingReference'
 import MovieSummaryBanner from 'containers/Booking/components/MovieSummaryBanner/MovieSummaryBanner'
-import Screen from 'containers/Booking/components/Screen'
+import Screen from 'containers/Booking/components/BookingSeat/BookingSeat'
 import React from 'react'
 
 export default function SeatPlan() {

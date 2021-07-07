@@ -1,7 +1,7 @@
-import BookingSummary from 'containers/Booking/components/BookingSummary'
-import FormPromo from 'containers/Booking/components/FormPromo'
-import Info from 'containers/Booking/components/Info'
-import Payment from 'containers/Booking/components/Payment'
+import BookingSummary from 'containers/Booking/components/BookingSummary/BookingSummary'
+import FormPromo from 'containers/Booking/components/FormPromo/FormPromo'
+import Info from 'containers/Booking/components/Info/Info'
+import Payment from 'containers/Booking/components/Payment/Payment'
 import React from 'react'
 
 export default function CheckOut() {

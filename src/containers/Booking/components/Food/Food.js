@@ -1,6 +1,6 @@
 import { COMBO_FOOD } from 'constants/food'
 import React from 'react'
-import FoodCard from '../FoodCard';
+import FoodCard from '../FoodCard/FoodCard';
 import './Food.scss';
 
 export default function Food() {

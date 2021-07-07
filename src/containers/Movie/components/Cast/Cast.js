@@ -1,6 +1,6 @@
 import React from 'react';
 import { CAST_PHOTO } from 'constants/image';
-import CustomCarousel from 'components/CustomCarousel';
+import CustomCarousel from 'components/CustomCarousel/CustomCarousel';
 
 const cast = [
     { name: 'Chris Evans', pos: 'actor', character: 'captain america', img: `${CAST_PHOTO[0]}` },
