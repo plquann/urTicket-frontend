@@ -18,11 +18,11 @@ $ npm install
 
  Building image
 ```bash
-$ docker build . -t <urTicket>/node-web-app
+$ docker build . -t ur-ticket
 ```
 - Run the image
 ```bash
-$ docker run -p 49160:5000 -d urTicket>/node-web-app
+$ docker run -p 49160:3000 -d ur-ticket
 ```
-Running on http://localhost:5000 
+Running on http://localhost:3000 
 
