@@ -1,15 +1,22 @@
 import React from 'react';
 import './MovieCard.scss';
 import { MOVIE_IMG, ICONS } from 'constants/image';
+import PopupTrailer from '../PopupTrailer/PopupTrailer';
 
 export default function MovieCard(props) {
     return (
         <div className="movie__card">
             <div className="movie__card__wrapper">
-                <div className="movie__card__img">
+                <div className="movie__card__img relative">
                     <a href="/details" className="block">
                         <img className="w-full" src={MOVIE_IMG[Math.floor(Math.random() * 11)]} alt="movie" />
                     </a>
+                    <PopupTrailer
+                        open={<button className="button movie__card__img__playTrailer">
+                            <i className="fa fa-play" id="viewTrailer" />
+                        </button>}
+                        idVideo={`pRfmrE0ToTo`}
+                    />
                 </div>
                 <div className="movie__card__content">
                     <h5 className="movie__card__title">
