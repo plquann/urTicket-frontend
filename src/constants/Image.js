@@ -61,6 +61,7 @@ import card from 'assets/images/payment/card.png';
 import paypal from 'assets/images/payment/paypal.png';
 
 import account_bg from 'assets/images/account/account-bg.jpg';
+import cinema from 'assets/images/movie/cinema.png'
 
 export const PAYMENT = {
     CARD: card,
@@ -146,7 +147,9 @@ export const CAST_PHOTO = [
 export const LOGO = {
     APP_LOGO: Logo,
     FOOTER_LOGO: FooterLogo,
+    CINEMA_LOGO: cinema,
 };
+
 
 const domain = 'https://tix.vn/app/assets/img/icons/';
 export const LOGO_PARTNER = [
@@ -172,9 +175,4 @@ export const LOGO_PARTNER = [
     { link: '#', name: 'CGV', img: `https://www.cgv.vn/skin/frontend/cgv/default/images/cgvlogo.png` }
 
 ];
-
-export const SVG_IMAGES = {
-    SVG_GGPLAY: 'https://raw.githubusercontent.com/detain/svg-logos/master/svg/google-play-badge.svg',
-    SVG_APPSTORE: 'https://raw.githubusercontent.com/detain/svg-logos/master/svg/download-on-the-app-store-apple-2.svg',
-};
 

@@ -1,0 +1,20 @@
+@layer components {
+  .showtime-item {
+    @apply text-white p-2 relative text-center cursor-pointer 
+        font-semibold transition duration-300 ease-in-out;
+
+    width: 120px;
+    background: #3c4e58;
+    mask-position: center center;
+    mask-image: url(../../../../assets/images/movie/movie-seat.png);
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+
+    &:hover {
+      background: #17a27c;
+      span {
+        color: #ffffff;
+      }
+    }
+  }
+}

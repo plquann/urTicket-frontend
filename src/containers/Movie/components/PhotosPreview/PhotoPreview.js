@@ -18,7 +18,7 @@ export default function PhotosPreview() {
     };
 
     return (
-        <div className="w-full photos__preview my-10">
+        <div className="w-full photos__preview mb-10">
             <h3 className="text-2xl font-bold mb-4">PHOTOS</h3>
             <Slider {...settings}>
                 {MOVIE_PHOTO.map((photo, index) => {

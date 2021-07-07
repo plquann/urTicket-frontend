@@ -1,41 +1,90 @@
 import Icons from "components/Icons";
 import React from "react";
 import './Schedule.scss';
-import { LOGO_PARTNER } from 'constants/image';
+import { LOGO_PARTNER, LOGO, MOVIE_IMG } from 'constants/image';
 import { NavLink } from "react-router-dom";
-
-const listDay = () => {
-    const arrDays = [];
-    const day = new Date();
-    let dayFormat = new Date(day.getFullYear(), day.getMonth(), day.getDate());
-
-    arrDays.push(new Date(dayFormat));
-
-    for (let i = 0; i < 10; i++) {
-        dayFormat.setDate(dayFormat.getDate() + 1);
-        arrDays.push(new Date(dayFormat));
-    }
-    return [...arrDays];
-};
+import { listDay } from "utils/renderDate";
+import ShowtimeItem from "../ShowtimeItem/ShowtimeItem";
 
 export default function Schedule(props) {
     // console.log('🚀 ~ file: index.js ~ line 25 ~ Schedule ~ props', props.refProp.current);
 
     return (
-        <>
-            <h3 ref={props.refProp} className="uppercase text-2xl font-bold my-4">Showtimes Schedule</h3>
-            <div  className="schedule my-10 " >
-                <ul className="theater-list ">
-                    <li className="active"><img src={LOGO_PARTNER[19].img} alt="movie System" /><span>cgv cinemas</span></li>
-                    <li><img src={LOGO_PARTNER[3].img} alt="movie System" /><span>lotte cinemas</span></li>
-                    <li><img src={LOGO_PARTNER[0].img} alt="movie System" /><span>bhd star cineplex</span></li>
-                    <li><img src={LOGO_PARTNER[1].img} alt="movie System" /><span>galaxy cinemas</span></li>
-                    <li><img src={LOGO_PARTNER[4].img} alt="movie System" /><span>mega gs</span></li>
-                    <li><img src={LOGO_PARTNER[5].img} alt="movie System" /><span>beta cinemas</span></li>
+        <div className="schedule-section max-w-screen-lg mx-auto pb-8 mt-4">
+            <div className="schedule-section__title mb-12">
+                <p className="text-5xl font-bold">SHOWTIME SCHEDULES</p>
+                <p>Choose a movie and enjoy our service</p>
+            </div>
+            <div className="schedule-section__content" >
+                <ul className="schedule-section__content__theater ">
+                    <li className="active"><img src={LOGO_PARTNER[19].img} alt="movie System" /></li>
+                    <li><img src={LOGO_PARTNER[3].img} alt="movie System" /></li>
+                    <li><img src={LOGO_PARTNER[0].img} alt="movie System" /></li>
+                    <li><img src={LOGO_PARTNER[1].img} alt="movie System" /></li>
+                    <li><img src={LOGO_PARTNER[4].img} alt="movie System" /></li>
+                    <li><img src={LOGO_PARTNER[5].img} alt="movie System" /></li>
 
                 </ul>
-                <div className="showtimes">
-                    <div className="date ">
+                <ul className="schedule-section__content__cinema">
+                    <li className="active border-b">
+                        <img src={LOGO.CINEMA_LOGO} alt="cinema" />
+                        <div className=" cinema-address">
+                            <span className="text-sm font-medium">CGV Crescent Mall</span>
+                            <p className="text-xs line-clamp-3">5th Floor, Crescent Mall Nguyen Van Linh Boulevard, Phu My Hung, District 7, HCMC</p>
+                        </div>
+
+                    </li>
+                    <li className="active border-b">
+                        <img src={LOGO.CINEMA_LOGO} alt="cinema" />
+                        <div className=" cinema-address">
+                            <span className="text-sm font-medium">CGV Dong Khoi</span>
+                            <p className="text-xs line-clamp-3">3rd floor, Vincom Center Dong Khoi, 72 Le Thanh Ton & 45A Ly Tu Trong, District 1, HCMC</p>
+                        </div>
+
+                    </li>
+                    <li className="active border-b">
+                        <img src={LOGO.CINEMA_LOGO} alt="cinema" />
+                        <div className=" cinema-address">
+                            <span className="text-sm font-medium">CGV Tran Quang Khai</span>
+                            <p className="text-xs line-clamp-3">2nd & 3rd Floor, 62 Tran Quang Khai, Tan Dinh, District 1, HCMC</p>
+                        </div>
+
+                    </li>
+                    <li className="active border-b">
+                        <img src={LOGO.CINEMA_LOGO} alt="cinema" />
+                        <div className=" cinema-address">
+                            <span className="text-sm font-medium">CGV Landmark 81</span>
+                            <p className="text-xs line-clamp-3">Floor B1, Vincom Center Landmark 81, 772 Dien Bien Phu, Ward 22, Binh Thanh District, HCMC</p>
+                        </div>
+
+                    </li>
+                    <li className="active border-b">
+                        <img src={LOGO.CINEMA_LOGO} alt="cinema" />
+                        <div className=" cinema-address">
+                            <span className="text-sm font-medium">CGV Aaeon Tan Phu</span>
+                            <p className="text-xs line-clamp-3">3rd Floor, Aeon Mall 30 Bo Bao Tan Thang, Son Ky Ward, Tan Phu District, HCMC</p>
+                        </div>
+
+                    </li>
+                    <li className="active border-b">
+                        <img src={LOGO.CINEMA_LOGO} alt="cinema" />
+                        <div className=" cinema-address">
+                            <span className="text-sm font-medium">CGV Tran Quang Khai</span>
+                            <p className="text-xs line-clamp-3">5th Floor, Crescent Mall Nguyen Van Linh Boulevard, Phu My Hung, District 7, HCMc</p>
+                        </div>
+
+                    </li>
+                    <li className="active border-b">
+                        <img src={LOGO.CINEMA_LOGO} alt="cinema" />
+                        <div className=" cinema-address">
+                            <span className="text-sm font-medium">CGV Tran Quang Khai</span>
+                            <p className="text-xs line-clamp-3">5th Floor, Crescent Mall Nguyen Van Linh Boulevard, Phu My Hung, District 7, HCMc</p>
+                        </div>
+
+                    </li>
+                </ul>
+                <div className="schedule-section__content__showtimes">
+                    <div className="schedule-section__content__showtimes__date">
                         {listDay().map((item, index) => {
                             return (
                                 <div className="item" key={index}>
@@ -47,63 +96,32 @@ export default function Schedule(props) {
                         })}
                     </div>
 
-                    <div className="theater">
-                        <div className="theater__item">
-                            <p><Icons name="Location" /><span>CGV Tran Quang Khai</span></p>
-                            <ul className="time">
-                                <NavLink to="/booking" className="time__item">09:40<span className="ml-2 text-gray-400 opacity-70 text-sm">~11:30</span></NavLink>
-                                <NavLink to="/booking" className="time__item active">13:45<span className="ml-2 text-gray-400 opacity-70 text-sm">~15:25</span></NavLink>
-                                <NavLink to="/booking" className="time__item">15:45<span className="ml-2 text-gray-400 opacity-70 text-sm">~17:10</span></NavLink>
-                                <NavLink to="/booking" className="time__item">19:50<span className="ml-2 text-gray-400 opacity-70 text-sm">~21:50</span></NavLink>
-                                <NavLink to="/booking" className="time__item">21:00<span className="ml-2 text-gray-400 opacity-70 text-sm">~23:15</span></NavLink>
-                            </ul>
-                        </div>
+                    <div className="schedule-section__content__showtimes__movie">
+                        <div className="schedule-section__content__showtimes__movie__item">
 
-                        <div className="theater__item">
-                            <p><Icons name="Location" /><span>CGV Aeon Tan Phu</span></p>
-                            <ul className="time">
-                                <NavLink to="/booking" className="time__item">09:40<span className="ml-2 text-gray-400 opacity-70 text-sm">~11:30</span></NavLink>
-                                <NavLink to="/booking" className="time__item active">13:45<span className="ml-2 text-gray-400 opacity-70 text-sm">~15:25</span></NavLink>
-                                <NavLink to="/booking" className="time__item">15:45<span className="ml-2 text-gray-400 opacity-70 text-sm">~17:10</span></NavLink>
-                                <NavLink to="/booking" className="time__item">19:50<span className="ml-2 text-gray-400 opacity-70 text-sm">~21:50</span></NavLink>
-                                <NavLink to="/booking" className="time__item">21:00<span className="ml-2 text-gray-400 opacity-70 text-sm">~23:15</span></NavLink>
-                            </ul>
-                        </div>
-
-                        <div className="theater__item">
-                            <p><Icons name="Location" /><span>CGV Landmark 81</span></p>
-                            <ul className="time">
-                                <NavLink to="/booking" className="time__item">09:40<span className="ml-2 text-gray-400 opacity-70 text-sm">~11:30</span></NavLink>
-                                <NavLink to="/booking" className="time__item active">13:45<span className="ml-2 text-gray-400 opacity-70 text-sm">~15:25</span></NavLink>
-                                <NavLink to="/booking" className="time__item">15:45<span className="ml-2 text-gray-400 opacity-70 text-sm">~17:10</span></NavLink>
-                                <NavLink to="/booking" className="time__item">19:50<span className="ml-2 text-gray-400 opacity-70 text-sm">~21:50</span></NavLink>
-                                <NavLink to="/booking" className="time__item">21:00<span className="ml-2 text-gray-400 opacity-70 text-sm">~23:15</span></NavLink>
-                            </ul>
-                        </div>
-
-                        <div className="theater__item">
-                            <p><Icons name="Location" /><span>CGV Van Hanh Mall</span></p>
-                            <ul className="time">
-                                <NavLink to="/booking" className="time__item">09:40<span className="ml-2 text-gray-400 opacity-70 text-sm">~11:30</span></NavLink>
-                                <NavLink to="/booking" className="time__item active">13:45<span className="ml-2 text-gray-400 opacity-70 text-sm">~15:25</span></NavLink>
-                                <NavLink to="/booking" className="time__item">15:45<span className="ml-2 text-gray-400 opacity-70 text-sm">~17:10</span></NavLink>
-                                <NavLink to="/booking" className="time__item">19:50<span className="ml-2 text-gray-400 opacity-70 text-sm">~21:50</span></NavLink>
-                                <NavLink to="/booking" className="time__item">21:00<span className="ml-2 text-gray-400 opacity-70 text-sm">~23:15</span></NavLink>
-                            </ul>
-                        </div>
-                        <div className="theater__item">
-                            <p><Icons name="Location" /><span>CGV Van Hanh Mall</span></p>
-                            <ul className="time">
-                                <NavLink to="/booking" className="time__item">09:40<span className="ml-2 text-gray-400 opacity-70 text-sm">~11:30</span></NavLink>
-                                <NavLink to="/booking" className="time__item active">13:45<span className="ml-2 text-gray-400 opacity-70 text-sm">~15:25</span></NavLink>
-                                <NavLink to="/booking" className="time__item">15:45<span className="ml-2 text-gray-400 opacity-70 text-sm">~17:10</span></NavLink>
-                                <NavLink to="/booking" className="time__item">19:50<span className="ml-2 text-gray-400 opacity-70 text-sm">~21:50</span></NavLink>
-                                <NavLink to="/booking" className="time__item">21:00<span className="ml-2 text-gray-400 opacity-70 text-sm">~23:15</span></NavLink>
+                            <div className="movie__item__wrapper flex flex-wrap items-center h-24">
+                                <img className="h-full" src={MOVIE_IMG[2]} alt="movie" />
+                                <div className="h-full ml-4">
+                                    <p className=" text-lg font-medium">
+                                        <span className="inline-block p-1 bg-green-500 rounded-md mr-2 text-sm">PG-13</span>
+                                        Caption America
+                                    </p>
+                                    <p className="duration">2hrs 50 min</p>
+                                    <p className="-mt-1">Release Date : November 8 , 2020</p>
+                                </div>
+                            </div>
+                            <ul className="time mt-4">
+                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
+                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
+                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
+                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
+                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
+                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }

@@ -3,6 +3,7 @@ import MovieCarousel from 'containers/Movie/components/MovieBannerCarousel/Movie
 import MovieSearch from 'containers/Movie/components/MovieSearch/MovieSearch';
 import Tabs from 'containers/Movie/components/Tabs/Tabs';
 import NewsSection from 'containers/Movie/components/NewsSection/NewsSection';
+import Schedule from 'containers/Movie/components/Schedule/Schedule';
 
 export default function MainPage(props) {
     console.log('🚀 ~ file: index.js ~ line 7 ~ MainPage ~ props', props);
@@ -12,6 +13,7 @@ export default function MainPage(props) {
             <MovieSearch />
             <Tabs />
             <NewsSection />
+            <Schedule />
         </>
     )
 }

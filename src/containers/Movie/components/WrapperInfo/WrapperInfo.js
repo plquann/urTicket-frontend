@@ -5,7 +5,7 @@ import MovieScore from '../MovieScore/MovieScore';
 import PhotosPreview from '../PhotosPreview/PhotoPreview';
 import Details from '../Details/Details';
 import Offer from '../Offer/Offer';
-import Schedule from '../Schedule/Schedule';
+import Schedule from '../MovieSchedule/MovieSchedule';
 
 export default function WrapperInfo(props) {
     return (
@@ -15,16 +15,18 @@ export default function WrapperInfo(props) {
                     <div className="movie__poster mb-5 rounded-md overflow-hidden" style={{ border: '1px solid #17305f' }}>
                         <img className="w-full h-auto" src={MOVIE_IMG[2]} alt="movie" />
                     </div>
-                    <div className="movie__offer">
-                        <h3 className="text-2xl font-semibold mt-20 mb-10 text-center">Applicable Offer</h3>
+                </div>
+                <div className="col-span-3">
+                    <MovieInfo />
+                    <MovieScore handleScroll={props.handleScroll} />
+                </div>
+                <div className="movie__offer ">
+                        <h3 className="text-2xl font-semibold mb-10 text-center">Applicable Offer</h3>
                         <Offer photo={LOGO_PARTNER[11].img} title={LOGO_PARTNER[11].name} description={LOGO_PARTNER[11].description} />
                         <Offer photo={LOGO_PARTNER[12].img} title={LOGO_PARTNER[12].name} description={LOGO_PARTNER[11].description} />
                         <Offer photo={LOGO_PARTNER[13].img} title={LOGO_PARTNER[13].name} description={LOGO_PARTNER[11].description} />
                     </div>
-                </div>
-                <div className="details-banner-content col-span-3">
-                    <MovieInfo />
-                    <MovieScore handleScroll={props.handleScroll} />
+                <div className="details-banner-content col-span-3 -mt-16">
                     <PhotosPreview />
                     <Details />
                     <Schedule refProp={props.refProp} />

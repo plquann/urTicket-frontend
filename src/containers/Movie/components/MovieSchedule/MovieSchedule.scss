@@ -1,0 +1,89 @@
+@layer components {
+  .movie-schedule {
+    background-color: rgb(26, 34, 42);
+    height: 700px;
+
+    @apply flex flex-wrap;
+
+    &__theater-list {
+      @apply w-1/4 uppercase grid grid-flow-row grid-rows-6;
+      height: 700px;
+      border-right: 1px solid gray;
+      li {
+        @apply flex items-center font-medium text-lg cursor-pointer;
+        padding: 30px 5px 20px 10px;
+        opacity: 0.5;
+
+        &.active {
+          opacity: 1;
+        }
+
+        img {
+          width: 30%;
+          margin-right: 15px;
+        }
+      }
+    }
+
+    &__showtimes {
+      @apply w-3/4 grid  grid-flow-row;
+      height: 700px;
+
+      &__date {
+        @apply inline-flex overflow-auto items-center h-1/6;
+
+        height: 80px;
+        &::-webkit-scrollbar {
+          height: 4px;
+          background-color: #afacac;
+          cursor: pointer;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        &::-webkit-scrollbar-thumb {
+          background-color: #131516;
+          cursor: pointer;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        .item {
+          @apply flex-shrink-0 text-center cursor-pointer opacity-50;
+          width: calc(100% / 6);
+          padding: 0 10px;
+
+          &.active {
+            opacity: 1;
+          }
+        }
+      }
+
+      &__theater {
+        @apply row-span-5 overflow-auto;
+        height: 620px;
+        &::-webkit-scrollbar {
+          width: 4px;
+          background-color: #afacac;
+        }
+        &::-webkit-scrollbar-thumb {
+          background-color: #131516;
+        }
+        &__item {
+          padding: 15px 20px 10px 20px;
+
+          p {
+            @apply inline-flex space-x-2 mb-3 items-center text-lg font-medium;
+            span {
+              color: #31d7a9;
+            }
+          }
+        }
+        ul {
+          @apply grid grid-cols-4 gap-4;
+        }
+      }
+    }
+  }
+}
