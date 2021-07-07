@@ -26,7 +26,7 @@ export default function Schedule(props) {
 
                 </ul>
                 <ul className="schedule-section__content__cinema">
-                    <li className="active border-b">
+                    <li className="active">
                         <img src={LOGO.CINEMA_LOGO} alt="cinema" />
                         <div className=" cinema-address">
                             <span className="text-sm font-medium">CGV Crescent Mall</span>
@@ -34,7 +34,7 @@ export default function Schedule(props) {
                         </div>
 
                     </li>
-                    <li className="active border-b">
+                    <li className="">
                         <img src={LOGO.CINEMA_LOGO} alt="cinema" />
                         <div className=" cinema-address">
                             <span className="text-sm font-medium">CGV Dong Khoi</span>
@@ -42,7 +42,7 @@ export default function Schedule(props) {
                         </div>
 
                     </li>
-                    <li className="active border-b">
+                    <li className="">
                         <img src={LOGO.CINEMA_LOGO} alt="cinema" />
                         <div className=" cinema-address">
                             <span className="text-sm font-medium">CGV Tran Quang Khai</span>
@@ -50,7 +50,7 @@ export default function Schedule(props) {
                         </div>
 
                     </li>
-                    <li className="active border-b">
+                    <li className="">
                         <img src={LOGO.CINEMA_LOGO} alt="cinema" />
                         <div className=" cinema-address">
                             <span className="text-sm font-medium">CGV Landmark 81</span>
@@ -58,7 +58,7 @@ export default function Schedule(props) {
                         </div>
 
                     </li>
-                    <li className="active border-b">
+                    <li className="">
                         <img src={LOGO.CINEMA_LOGO} alt="cinema" />
                         <div className=" cinema-address">
                             <span className="text-sm font-medium">CGV Aaeon Tan Phu</span>
@@ -66,7 +66,7 @@ export default function Schedule(props) {
                         </div>
 
                     </li>
-                    <li className="active border-b">
+                    <li className="">
                         <img src={LOGO.CINEMA_LOGO} alt="cinema" />
                         <div className=" cinema-address">
                             <span className="text-sm font-medium">CGV Tran Quang Khai</span>
@@ -74,7 +74,7 @@ export default function Schedule(props) {
                         </div>
 
                     </li>
-                    <li className="active border-b">
+                    <li className="">
                         <img src={LOGO.CINEMA_LOGO} alt="cinema" />
                         <div className=" cinema-address">
                             <span className="text-sm font-medium">CGV Tran Quang Khai</span>
@@ -98,7 +98,90 @@ export default function Schedule(props) {
 
                     <div className="schedule-section__content__showtimes__movie">
                         <div className="schedule-section__content__showtimes__movie__item">
-
+                            <div className="movie__item__wrapper flex flex-wrap items-center h-24">
+                                <img className="h-full" src={MOVIE_IMG[2]} alt="movie" />
+                                <div className="h-full ml-4">
+                                    <p className=" text-lg font-medium">
+                                        <span className="inline-block p-1 bg-green-500 rounded-md mr-2 text-sm">PG-13</span>
+                                        Caption America
+                                    </p>
+                                    <p className="duration">2hrs 50 min</p>
+                                    <p className="-mt-1">Release Date : November 8 , 2020</p>
+                                </div>
+                            </div>
+                            <ul className="time mt-4">
+                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
+                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
+                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
+                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
+                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
+                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
+                            </ul>
+                        </div>
+                        <div className="schedule-section__content__showtimes__movie__item">
+                            <div className="movie__item__wrapper flex flex-wrap items-center h-24">
+                                <img className="h-full" src={MOVIE_IMG[2]} alt="movie" />
+                                <div className="h-full ml-4">
+                                    <p className=" text-lg font-medium">
+                                        <span className="inline-block p-1 bg-green-500 rounded-md mr-2 text-sm">PG-13</span>
+                                        Caption America
+                                    </p>
+                                    <p className="duration">2hrs 50 min</p>
+                                    <p className="-mt-1">Release Date : November 8 , 2020</p>
+                                </div>
+                            </div>
+                            <ul className="time mt-4">
+                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
+                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
+                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
+                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
+                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
+                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
+                            </ul>
+                        </div>
+                        <div className="schedule-section__content__showtimes__movie__item">
+                            <div className="movie__item__wrapper flex flex-wrap items-center h-24">
+                                <img className="h-full" src={MOVIE_IMG[2]} alt="movie" />
+                                <div className="h-full ml-4">
+                                    <p className=" text-lg font-medium">
+                                        <span className="inline-block p-1 bg-green-500 rounded-md mr-2 text-sm">PG-13</span>
+                                        Caption America
+                                    </p>
+                                    <p className="duration">2hrs 50 min</p>
+                                    <p className="-mt-1">Release Date : November 8 , 2020</p>
+                                </div>
+                            </div>
+                            <ul className="time mt-4">
+                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
+                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
+                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
+                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
+                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
+                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
+                            </ul>
+                        </div>
+                        <div className="schedule-section__content__showtimes__movie__item">
+                            <div className="movie__item__wrapper flex flex-wrap items-center h-24">
+                                <img className="h-full" src={MOVIE_IMG[2]} alt="movie" />
+                                <div className="h-full ml-4">
+                                    <p className=" text-lg font-medium">
+                                        <span className="inline-block p-1 bg-green-500 rounded-md mr-2 text-sm">PG-13</span>
+                                        Caption America
+                                    </p>
+                                    <p className="duration">2hrs 50 min</p>
+                                    <p className="-mt-1">Release Date : November 8 , 2020</p>
+                                </div>
+                            </div>
+                            <ul className="time mt-4">
+                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
+                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
+                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
+                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
+                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
+                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
+                            </ul>
+                        </div>
+                        <div className="schedule-section__content__showtimes__movie__item">
                             <div className="movie__item__wrapper flex flex-wrap items-center h-24">
                                 <img className="h-full" src={MOVIE_IMG[2]} alt="movie" />
                                 <div className="h-full ml-4">

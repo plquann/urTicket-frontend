@@ -1,0 +1,43 @@
+@layer components {
+  .box-office {
+    &__table {
+      &__title {
+        @apply relative text-2xl font-medium;
+        span {
+          font-size: 14px;
+        }
+      }
+      hr {
+        @apply my-4 bg-gray-500;
+      }
+      &__chart {
+        li {
+          @apply relative font-bold flex flex-nowrap;
+          margin-bottom: 0.125rem;
+
+          i,
+          a {
+            padding-top: 1.3125rem !important;
+            padding-bottom: 1.1875rem !important;
+            line-height: 1rem !important;
+          }
+          i {
+            @apply block w-14 text-center absolute;
+            background: #15614b;
+            border-right: solid 0.1875rem #fff;
+          }
+          a {
+            @apply w-full flex justify-between uppercase text-sm;
+            padding: 0 1.875rem 0 5rem;
+            background-color: rgb(26, 34, 42);
+
+            span{
+                @apply font-normal;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
