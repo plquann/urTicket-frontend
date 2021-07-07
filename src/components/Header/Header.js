@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import './Header.scss';
 import { LOGO } from 'constants/image';
 import DropDownMenu from 'components/DropDownMenu/DropDownMenu';
 import { NavLink } from 'react-router-dom';
+import { useScrollPosition } from 'hooks/useScrollPosition';
 
 
 const dropDownItems = [
@@ -17,10 +18,22 @@ const dropDownItems = [
     },
 ];
 
-export default function Header(props) {
+function Header(props) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [hideOnScroll, setHideOnScroll] = useState(true);
 
-    const className = props.show
+    useScrollPosition(
+        ({ prevPos, currPos }) => {
+            const isShow = currPos.y > prevPos.y
+            if (isShow !== hideOnScroll) setHideOnScroll(isShow)
+        },
+        [hideOnScroll],
+        false,
+        false,
+        100
+    )
+
+    const className = hideOnScroll
         ? `header visible ease-in transform-none`
         : `header invisible ease-out transform translate-x-0 -translate-y-full`;
 
@@ -120,3 +133,5 @@ export default function Header(props) {
         </header>
     )
 }
+
+export default memo(Header);
