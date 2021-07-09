@@ -1,10 +1,8 @@
-import Icons from "components/Icons";
 import React from "react";
 import './Schedule.scss';
 import { LOGO_PARTNER, LOGO, MOVIE_IMG } from 'constants/image';
-import { NavLink } from "react-router-dom";
-import { listDay } from "utils/renderDate";
 import ShowtimeItem from "../ShowtimeItem/ShowtimeItem";
+import { listDay } from "utils/renderDate";
 
 export default function Schedule(props) {
     // console.log('🚀 ~ file: index.js ~ line 25 ~ Schedule ~ props', props.refProp.current);

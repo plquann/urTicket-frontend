@@ -5,6 +5,7 @@
   "dependencies": {
     "@craco/craco": "^6.1.1",
     "@hookform/resolvers": "^2.4.0",
+    "@material-ui/core": "^4.12.1",
     "@reduxjs/toolkit": "^1.5.1",
     "@statikly/funk": "^0.3.0",
     "@tailwindcss/line-clamp": "^0.2.0",
@@ -14,6 +15,7 @@
     "@testing-library/user-event": "^12.1.10",
     "autoprefixer": "^9.8.6",
     "axios": "^0.21.1",
+    "lodash": "^4.17.21",
     "postcss": "^7.0.35",
     "react": "^17.0.2",
     "react-content-loader": "^6.0.3",

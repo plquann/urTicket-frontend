@@ -3,7 +3,7 @@
     &__content {
       background-color: rgb(26, 34, 42);
       height: 700px;
-
+      //#2D3748
       @apply flex flex-wrap;
 
       &__theater {
@@ -15,7 +15,7 @@
           opacity: 0.5;
 
           &.active {
-            background: #1a1a1a;
+            background: #2D3748;
             opacity: 1;
           }
 
@@ -30,7 +30,7 @@
         @apply w-3/12 capitalize overflow-auto;
         height: 700px;
         &::-webkit-scrollbar {
-          width: 2px;
+          width: 0px;
           background-color: #afacac;
         }
         &::-webkit-scrollbar-thumb {
@@ -45,7 +45,7 @@
 
           &.active {
             opacity: 1;
-            background: #1a1a1a;
+            background: #2D3748;
           }
 
           img {
@@ -71,7 +71,7 @@
 
           height: 80px;
           &::-webkit-scrollbar {
-            height: 4px;
+            height: 2px;
             background-color: #afacac;
             cursor: pointer;
             &:hover {
@@ -100,7 +100,7 @@
           @apply row-span-5 overflow-auto;
           height: 620px;
           &::-webkit-scrollbar {
-            width: 4px;
+            width: 2px;
             background-color: #afacac;
           }
           &::-webkit-scrollbar-thumb {

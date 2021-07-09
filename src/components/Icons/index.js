@@ -1,53 +1,14 @@
-import React from 'react';
-import AppStore from './AppStore';
-import Dislike from './Dislike';
-import Filter from './Filter';
-import GooglePlay from './GooglePlay';
-import Heart from './Heart';
-import Like from './Like';
-import LocationMarker from './LocationMarker';
-import Minus from './Minus';
-import Next from './Next';
-import NextArrow from './NextArrow';
-import Plus from './Plus';
-import Prev from './Prev';
-import PrevArrow from './PrevArrow';
-import Verified from './Verified';
-
-
-const Icons = props => {
-    switch (props.name) {
-        case "NextArrow":
-            return <NextArrow {...props} />;
-        case "PrevArrow":
-            return <PrevArrow {...props} />;
-        case "Heart":
-            return <Heart {...props} />;
-        case "Verified":
-            return <Verified {...props} />;
-        case "Like":
-            return <Like {...props} />;
-        case "Dislike":
-            return <Dislike {...props} />;
-        case "Location":
-            return <LocationMarker {...props} />;
-        case "Next":
-            return <Next {...props} />;
-        case "Prev":
-            return <Prev {...props} />;
-        case "Filter":
-            return <Filter {...props} />;
-        case "Plus":
-            return <Plus {...props} />;
-        case "Minus":
-            return <Minus {...props} />;
-        case "AppStore":
-            return <AppStore {...props} />;
-        case "GooglePlay":
-            return <GooglePlay {...props} />;
-        default:
-            return;
-    }
-};
-
-export default Icons;
+export { default as AppStore } from './AppStore';
+export { default as Dislike } from './Dislike';
+export { default as Filter } from './Filter';
+export { default as GooglePlay } from './GooglePlay';
+export { default as Heart } from './Heart';
+export { default as Like } from './Like';
+export { default as LocationMarker } from './LocationMarker';
+export { default as Minus } from './Minus';
+export { default as Next } from './Next';
+export { default as NextArrow } from './NextArrow';
+export { default as Plus } from './Plus';
+export { default as Prev } from './Prev';
+export { default as PrevArrow } from './PrevArrow';
+export { default as Verified } from './Verified';

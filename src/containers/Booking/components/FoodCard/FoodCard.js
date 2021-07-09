@@ -1,5 +1,5 @@
-import Minus from 'components/Icons/Minus';
-import Plus from 'components/Icons/Plus';
+// import Minus from 'components/Icons/Minus';
+// import Plus from 'components/Icons/Plus';
 import React from 'react';
 import './FoodCard.scss';
 

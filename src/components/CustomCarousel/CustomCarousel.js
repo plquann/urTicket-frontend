@@ -1,5 +1,5 @@
 import React from 'react';
-import Icons from 'components/Icons'
+import { NextArrow, PrevArrow } from 'components/Icons'
 import Slider from 'react-slick';
 import ArrowCarousel from 'components/ArrowCarousel/ArrowCarousel';
 import './CustomCarousel.scss';
@@ -14,11 +14,11 @@ export default function CustomCarousel(props) {
         className: "custom__slides",
         nextArrow: <ArrowCarousel
             isCustom={'arrow right__arrow'}
-            arrowSVG={<Icons name='NextArrow' />}
+            arrowSVG={<NextArrow />}
         />,
         prevArrow: <ArrowCarousel
             isCustom={'arrow left__arrow'}
-            arrowSVG={<Icons name='PrevArrow' />}
+            arrowSVG={<PrevArrow />}
         />,
     };
 

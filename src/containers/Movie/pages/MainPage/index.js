@@ -13,9 +13,9 @@ export default function MainPage(props) {
             <MovieCarousel />
             <MovieSearch />
             <Tabs />
+            <Schedule />
             <NewsSection />
             <BoxOffice />
-            <Schedule />
         </>
     )
 }

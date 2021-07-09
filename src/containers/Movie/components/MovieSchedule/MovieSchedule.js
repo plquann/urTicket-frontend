@@ -1,10 +1,9 @@
-import Icons from "components/Icons";
 import React from "react";
 import './MovieSchedule.scss';
 import { LOGO_PARTNER } from 'constants/image';
-import { NavLink } from "react-router-dom";
 import { listDay } from "utils/renderDate";
 import ShowtimeItem from "../ShowtimeItem/ShowtimeItem";
+import { LocationMarker } from "components/Icons";
 
 export default function MovieSchedule(props) {
     // console.log('🚀 ~ file: index.js ~ line 25 ~ Schedule ~ props', props.refProp.current);
@@ -36,7 +35,7 @@ export default function MovieSchedule(props) {
 
                     <div className="movie-schedule__showtimes__theater">
                         <div className="movie-schedule__showtimes__theater__item">
-                            <p><Icons name="Location" /><span>CGV Tran Quang Khai</span></p>
+                            <p><LocationMarker /><span>CGV Tran Quang Khai</span></p>
                             <ul className="time">
                                 <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
                                 <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />

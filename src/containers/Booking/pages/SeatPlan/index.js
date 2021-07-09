@@ -20,3 +20,5 @@ export default function SeatPlan() {
         </div>
     )
 }
+
+// #1A202C

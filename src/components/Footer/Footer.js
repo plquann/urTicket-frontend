@@ -2,7 +2,7 @@ import React from 'react';
 import './Footer.scss';
 import { NavLink } from 'react-router-dom';
 import { LOGO_PARTNER } from 'constants/image';
-import Icons from 'components/Icons';
+import {AppStore, GooglePlay} from 'components/Icons';
 
 export default function Footer() {
     return (
@@ -95,10 +95,10 @@ export default function Footer() {
 
                     <div className="mobile-platform grid grid-cols-2 gap-2">
                         <div className="app-store">
-                            <Icons name="AppStore" className="w-full h-12 mr-2" />
+                            <AppStore className="w-full h-12 mr-2" />
                         </div>
                         <div className="google-play">
-                            <Icons name="GooglePlay" className="w-full h-12" />
+                            <GooglePlay name="GooglePlay" className="w-full h-12" />
                         </div>
                     </div>
 

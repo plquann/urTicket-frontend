@@ -1,6 +1,6 @@
 import ArrowCarousel from "components/ArrowCarousel/ArrowCarousel";
 import CustomSlide from "components/CustomSlide/CustomSlide";
-import Icons from "components/Icons";
+import { Next, Prev } from "components/Icons";
 import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -18,11 +18,11 @@ export default function MovieExplore() {
 
         nextArrow: <ArrowCarousel
             isCustom={'next'}
-            arrowSVG={<Icons name='Next' />}
+            arrowSVG={<Next />}
         />,
         prevArrow: <ArrowCarousel
             isCustom={'prev'}
-            arrowSVG={<Icons name='Prev' />}
+            arrowSVG={<Prev />}
         />,
         customPaging: i => <div>{i + 1}</div>,
         appendDots: dots => <div><ul> {dots} </ul></div>,
