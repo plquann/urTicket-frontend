@@ -30,7 +30,7 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
 
 
 export default function StatusCard(props) {
-    const { icon, count, title } = props;
+    const { count, title } = props;
     return (
         <RootStyle>
             <IconWrapperStyle>
