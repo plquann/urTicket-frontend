@@ -15,8 +15,6 @@ const NEWS = [...Array(5)].map((_, index) => {
     };
 });
 
-// ----------------------------------------------------------------------
-
 NewsItem.propTypes = {
     news: PropTypes.object.isRequired
 };
