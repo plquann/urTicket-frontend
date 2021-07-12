@@ -1,36 +1,23 @@
-import React, { Suspense, useLayoutEffect } from 'react';
-import { BrowserRouter, Redirect, Route, Switch, withRouter } from 'react-router-dom';
-import { routes } from 'routes';
-import Loading from 'components/Loading/Loading';
+import React, { useLayoutEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import Routes from 'Routes';
 import './App.scss';
 import "slick-carousel/slick/slick.css";
 
+// const ScrollToTop = () => {
+//   const { pathname } = useLocation();
+//   useLayoutEffect(() => {
+//     window.scrollTo(0, 0);
+//   }, [pathname])
 
-// console.log("routes", routes);
-const ScrollToTop = withRouter(({ children, location: { pathname } }) => {
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname])
-
-  return children || null;
-})
+//   return null;
+// }
 
 function App() {
   return (
     <div className="my__app">
-      <BrowserRouter>
-        <ScrollToTop>
-          <Suspense fallback={Loading()}>
-            <Switch>
-              {routes.map(({ component: Component, layout: Layout, path, ...rest }, index) => {
-                return (
-                  <Layout Component={Component} path={path} key={index} {...rest} />
-                );
-              })}
-            </Switch>
-          </Suspense>
-        </ScrollToTop>
-      </BrowserRouter>
+
+      <Routes />
 
     </div>
   );

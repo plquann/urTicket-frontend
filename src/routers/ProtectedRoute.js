@@ -1,28 +1,33 @@
+
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 
-export default function ProtectedRoute(props) {
-  const {
-    layout: Layout,
-    component: Component,
-    ...rest
-  } = props;
+const ProtectedRoute = ({
+  layout: Layout,
+  component: Component,
+  isAuthenticated,
+  ...rest
+}) => (
+  <Route
+    {...rest}
+    render={props =>
+      isAuthenticated ? (
+        <Layout>
+          <Component {...props} />
+        </Layout>
+      ) : (
+        <Redirect to={{ pathname: '/', state: { from: props.location } }} />
+      )
+    }
+  />
+);
 
-  const isAuthenticated = useSelector(state => state.isAuthenticated);
+ProtectedRoute.propTypes = {
+  isAuthenticated: PropTypes.bool
+};
+ProtectedRoute.defaultProps = {
+  isAuthenticated: true
+};
 
-  return (
-    <Route
-      {...rest}
-      render={props =>
-        isAuthenticated ? (
-          <Layout>
-            <Component {...props} />
-          </Layout>
-        ) : (
-          <Redirect to={{ pathname: '/', state: { from: props.location } }} />
-        )
-      }
-    />
-  );
-}
+export default ProtectedRoute;

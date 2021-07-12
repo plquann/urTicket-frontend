@@ -4,7 +4,7 @@ import {
     Button,
     Typography,
 } from '@material-ui/core';
-import IconPlus from 'src/components/IconPlus';
+import { IconPlus } from 'components/Icons';
 
 export default function HeaderStack(props) {
     const { title, newOperator } = props;

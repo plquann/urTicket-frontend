@@ -46,8 +46,9 @@ function NavItem({ item, active }) {
   const theme = useTheme();
   const isActiveRoot = active(item.path);
   const { title, path, icon, info, children } = item;
-  console.log('🚀 ~ file: NavSection.js ~ line 51 ~ NavItem ~ info', info);
+  console.log('🚀 ~ file: NavSection.js ~ line 50 ~ NavItem ~ item', item);
   const [open, setOpen] = useState(isActiveRoot);
+  console.log('🚀 ~ file: NavSection.js ~ line 52 ~ NavItem ~ isActiveRoot', isActiveRoot);
 
   const handleOpen = () => {
     setOpen((prev) => !prev);
@@ -77,7 +78,7 @@ function NavItem({ item, active }) {
           <ListItemText disableTypography primary={title} />
           {info && info}
           <Box sx={{ width: 16, height: 16, ml: 1 }}>
-            {open ? <IconChevronDown width={24} height={24}/> : <IconChevronRight width={24} height={24}/>}
+            {open ? <IconChevronDown width={24} height={24} /> : <IconChevronRight width={24} height={24} />}
           </Box>
         </ListItemStyle>
 
@@ -146,7 +147,7 @@ NavSection.propTypes = {
 
 export default function NavSection({ navConfig, ...other }) {
   const { pathname } = useLocation();
-  const match = (path) => (path ? !!matchPath({ path, end: false }, pathname) : false);
+  const match = (path) => (path === pathname);
 
   return (
     <Box {...other}>

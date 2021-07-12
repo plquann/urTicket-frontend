@@ -52,14 +52,17 @@ function Header(props) {
                             <NavLink activeClassName="active" className="header-label" to="/" exact="/">
                                 HOME
                             </NavLink>
-                            <NavLink activeClassName="active" className="header-label" to="/discover">
+                            <NavLink activeClassName="active" className="header-label" to="/movie/discover">
                                 DISCOVER
                             </NavLink>
                             <NavLink activeClassName="active" className="header-label" to="/news">
                                 NEWS
                             </NavLink>
-                            <NavLink activeClassName="active" className="header-label" to="/booking">
+                            <NavLink activeClassName="active" className="header-label" to="/booking/:id/seatplan">
                                 BOOKING
+                            </NavLink>
+                            <NavLink activeClassName="active" className="header-label" to="/admin/dashboard">
+                                ADMIN
                             </NavLink>
                             {/* <NavLink activeClassName="active" className="header-label" to={`/movie/:${movieId}`}>
                                 
@@ -68,7 +71,7 @@ function Header(props) {
                     </div>
 
                     <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-                        <NavLink to="/signin" className="header-auth whitespace-nowrap">
+                        <NavLink to="/login" className="header-auth whitespace-nowrap">
                             Sign in
                         </NavLink>
                         <NavLink to="/register" className="ml-8 header-auth selected whitespace-nowrap">

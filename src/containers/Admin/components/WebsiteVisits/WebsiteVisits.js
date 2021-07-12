@@ -3,7 +3,7 @@ import { merge } from 'lodash';
 import ReactApexChart from 'react-apexcharts';
 import { Card, CardHeader, Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
-import { BaseOptionChart } from '../../charts';
+import BaseOptionChart from '../BaseOptionChart/BaseOptionChart';
 
 const CHART_DATA = [
   {

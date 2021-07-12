@@ -38,7 +38,7 @@ const GlobalStyles = withStyles((theme) => ({
       '&:-ms-input-placeholder': { color: theme.palette.text.disabled },
       '&::placeholder': { color: theme.palette.text.disabled }
     },
-    a: { color: theme.palette.primary.main },
+    // a: { color: theme.palette.primary.main },
     img: { display: 'block', maxWidth: '100%' }
   }
 }))(() => null);

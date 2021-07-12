@@ -9,7 +9,7 @@ import {
   ClickAwayListener,
   IconButton
 } from '@material-ui/core';
-import IconSearch from 'src/components/IconSearch';
+import { IconSearch } from 'components/Icons';
 
 const APPBAR_MOBILE = 64;
 const APPBAR_DESKTOP = 92;

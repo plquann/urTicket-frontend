@@ -57,7 +57,7 @@ const TableRow = withStyles({
     }
 })(MuiTableRow);
 
-export default function Movies() {
+export default function MoviesDashboard() {
     const [page, setPage] = useState(0);
     const [order, setOrder] = useState('asc');
     const [selected, setSelected] = useState([]);

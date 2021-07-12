@@ -22,32 +22,32 @@ const getIcon = (name) => {
 const sidebarConfig = [
   {
     title: 'dashboard',
-    path: '/dashboard/app',
+    path: '/admin/dashboard',
     icon: getIcon('dashboard')
   },
   {
     title: 'users',
-    path: '/dashboard/users',
+    path: '/admin/users',
     icon: getIcon('user')
   },
   {
     title: 'movies',
-    path: '/dashboard/movies',
+    path: '/admin/movies',
     icon: getIcon('movie')
   },
   {
     title: 'news',
-    path: '/dashboard/news',
+    path: '/admin/news',
     icon: getIcon('news')
   },
   {
     title: 'Cinemas',
-    path: '/dashboard/cinemas',
+    path: '/admin/cinemas',
     icon: getIcon('cinema')
   },
   {
     title: 'showtimes',
-    path: '/dashboard/showtimes',
+    path: '/admin/showtimes',
     icon: getIcon('showtimes')
   }
 ];
