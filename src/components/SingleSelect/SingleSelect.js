@@ -55,10 +55,10 @@ const SingleSelect = (props) => {
                 ...provided,
                 position: 'absolute',
                 padding: '0 8px',
-                top: isChanged ? 0 : "50%",
+                top: isChanged ? "-5px" : "50%",
                 color: isChanged ? '#31d7a9' : "#dbe2fb",
-                transition: 'all 0.1s',
-                backgroundColor: backgroundColor || '#23282B',
+                transition: 'all 0.3s',
+                backgroundColor: backgroundColor || '#232629',
                 display: 'inline-block',
             }
         },

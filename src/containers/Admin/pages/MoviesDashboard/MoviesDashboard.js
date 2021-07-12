@@ -30,7 +30,7 @@ import { selectedIndex } from 'utils/selectedIndex';
 import { applySortFilter } from 'utils/applySortFilter';
 import { getComparator } from 'utils/getComparator';
 import { IconEdit, IconTrash } from 'components/Icons';
-import Page from 'containers/Admin/components/Page/Page';
+import Page from 'components/Page/Page';
 
 const TABLE_HEAD = [
     { id: 'name', label: 'Name', alignRight: false },
@@ -104,7 +104,7 @@ export default function MoviesDashboard() {
     const isNotFound = filteredData.length === 0;
 
     return (
-        <Page title="Movies | UR-TICKET">
+        <Page title="Movies | Admin UI">
             <Container>
                 <HeaderStack title={'Movies'} newOperator={'New Movie'} />
 

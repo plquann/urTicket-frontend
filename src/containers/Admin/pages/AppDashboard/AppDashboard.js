@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Grid, Container, Typography } from '@material-ui/core';
-import Page from 'containers/Admin/components/Page/Page';
+import Page from 'components/Page/Page';
 
 import AppStatusCard from 'containers/Admin/components/StatusCard/StatusCard';
 import WebsiteVisits from 'containers/Admin/components/WebsiteVisits/WebsiteVisits';

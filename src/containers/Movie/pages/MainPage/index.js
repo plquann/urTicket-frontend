@@ -5,17 +5,18 @@ import Tabs from 'containers/Movie/components/Tabs/Tabs';
 import NewsSection from 'containers/Movie/components/NewsSection/NewsSection';
 import Schedule from 'containers/Movie/components/Schedule/Schedule';
 import BoxOffice from 'containers/Movie/components/BoxOffice/BoxOffice';
+import Page from 'components/Page/Page';
 
 export default function MainPage(props) {
     console.log('🚀 ~ file: index.js ~ line 7 ~ MainPage ~ props', props);
     return (
-        <>
+        <Page title="Homepage | UR-TICKET">
             <MovieCarousel />
             <MovieSearch />
             <Tabs />
             <Schedule />
             <NewsSection />
             <BoxOffice />
-        </>
+        </Page>
     )
 }

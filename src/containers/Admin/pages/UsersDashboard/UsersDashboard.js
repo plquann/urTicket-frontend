@@ -18,7 +18,7 @@ import { withStyles } from '@material-ui/styles';
 
 import USERLIST from '../../_mocks_/user';
 
-import Page from 'containers/Admin/components/Page/Page';
+import Page from 'components/Page/Page';
 import HeaderStack from 'containers/Admin/components/HeaderStack/HeaderStack';
 import ListToolbar from 'containers/Admin/components/ListToolbar/ListToolbar';
 import ListHead from 'containers/Admin/components/ListHead/ListHead';

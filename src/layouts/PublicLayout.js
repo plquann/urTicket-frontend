@@ -4,14 +4,13 @@ import Footer from 'components/Footer/Footer';
 
 
 function PublicLayout(props) {
-
-    const { children } = props;
+    const { children, withFooter = true } = props;
 
     return (
         <div className="w-full">
             <Header />
             {children}
-            <Footer />
+            {withFooter && <Footer />}
         </div>
     )
 }

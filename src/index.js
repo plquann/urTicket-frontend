@@ -4,14 +4,16 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
+import { HelmetProvider } from 'react-helmet-async';
 import store from 'app/store';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-
-    </Provider>
+    <HelmetProvider>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </HelmetProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

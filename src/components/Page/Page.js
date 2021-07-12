@@ -1,15 +1,14 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
-// import { Helmet } from 'react-helmet-async';
-import { Box } from '@material-ui/core';
+import { Helmet } from 'react-helmet-async';
 
 const Page = forwardRef(({ children, title = '', ...other }, ref) => (
-  <Box ref={ref} {...other}>
-    <>
+  <div ref={ref} {...other}>
+    <Helmet>
       <title>{title}</title>
-    </>
+    </Helmet>
     {children}
-  </Box>
+  </div>
 ));
 
 Page.propTypes = {

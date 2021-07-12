@@ -30,7 +30,7 @@ export default function BookingReference() {
                 <div className="booking-reference-section__item grid grid-cols-3 gap-6">
                     <div className="booking-reference-section__item__cinema">
                         <SingleSelect
-                            defaultValue={cinema[0]}
+                            // defaultValue={cinema[0]}
                             onChange={handleChange}
                             options={cinema}
                             placeholder={"Select Cinema"}
@@ -39,7 +39,7 @@ export default function BookingReference() {
                     </div>
                     <div className="booking-reference-section__item__date">
                         <SingleSelect
-                            defaultValue={date[0]}
+                            // defaultValue={date[0]}
                             onChange={handleChange}
                             options={date}
                             placeholder={"Select Date"}
@@ -48,7 +48,7 @@ export default function BookingReference() {
                     </div>
                     <div className="booking-reference-section__item__showtime">
                         <SingleSelect
-                            defaultValue={showtimes[0]}
+                            // defaultValue={showtimes[0]}
                             onChange={handleChange}
                             options={showtimes}
                             placeholder={"Select Time"}

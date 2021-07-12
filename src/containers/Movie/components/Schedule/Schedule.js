@@ -82,7 +82,7 @@ export default function Schedule(props) {
                     </li>
                 </ul>
                 <div className="schedule-section__content__showtimes">
-                    <div className="schedule-section__content__showtimes__date">
+                    {/* <div className="schedule-section__content__showtimes__date">
                         {listDay().map((item, index) => {
                             return (
                                 <div className="item" key={index}>
@@ -92,7 +92,7 @@ export default function Schedule(props) {
                                 </div>
                             )
                         })}
-                    </div>
+                    </div> */}
 
                     <div className="schedule-section__content__showtimes__movie">
                         <div className="schedule-section__content__showtimes__movie__item">
