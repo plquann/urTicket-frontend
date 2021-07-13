@@ -7,6 +7,7 @@ import NewMostView from 'containers/News/components/NewMostView/NewMostView';
 import NewTrendingMovie from 'containers/News/components/TrendingMovie/TrendingMovie';
 
 import { news } from 'containers/News/_mocks_/newsData';
+import BoxOffice from 'components/BoxOffice/BoxOffice';
 
 
 export default function MainNews() {
@@ -18,7 +19,7 @@ export default function MainNews() {
                         <NewLarge />
                     </div>
                     <div className="col-span-1 pl-6">
-                    <NewTrailer />
+                        <NewTrailer />
                     </div>
                 </div>
                 <div className="grid grid-cols-3 gap-6">
@@ -33,7 +34,9 @@ export default function MainNews() {
                         <NewMostView />
                         <NewTrendingMovie />
                     </div>
-
+                </div>
+                <div className="news__box-office">
+                    <BoxOffice />
                 </div>
             </div>
         </Page>

@@ -11,14 +11,14 @@ export default function NewTrendingMovie(props) {
             <div className="new-trending-movie__list">
                 {movieTrending.map((item, index) => (
                     <div key={item.id} className="new-trending-movie__list__item ">
-                        <div className="p-2">
+                        <div className="new-trending-movie__list__item__thums ">
                             <img
                                 src={item.img.replace('w600_and_h900', 'w150_and_h225')}
                                 alt="news thumbnails"
-                                style={{ width: '100px', height: '150px' }}
+                                
                             />
                         </div>
-                        <div className="new-trending-movie__list__item__wrapper p-2">
+                        <div className="new-trending-movie__list__item__wrapper w-2/3 p-2">
                             <div className="item__wrapper__date ">
                                 <IconCinema width={20} height={20} fillColor={'#dbe2fb'} />
                                 <p>{item.releaseDate}</p>
@@ -26,10 +26,13 @@ export default function NewTrendingMovie(props) {
                             <h5 className="item__wrapper__title ">
                                 {item.title}
                             </h5>
-                            <Rating name="read-only" precision={0.5} value={item.rating} readOnly />
+                            <p className="line-clamp-2 text-sm text-gray-400">{item.info}</p>
+                            <div className="mt-4">
+                                <Rating name="read-only" precision={0.5} value={item.rating} readOnly />
+                            </div>
                         </div>
                         <div className="new-trending-movie__list__item__index">
-                            {index +1 }
+                            {index + 1}
                         </div>
                     </div>
                 ))}

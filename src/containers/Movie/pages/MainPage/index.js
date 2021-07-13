@@ -4,7 +4,7 @@ import MovieSearch from 'containers/Movie/components/MovieSearch/MovieSearch';
 import Tabs from 'containers/Movie/components/Tabs/Tabs';
 import NewsSection from 'containers/Movie/components/NewsSection/NewsSection';
 import Schedule from 'containers/Movie/components/Schedule/Schedule';
-import BoxOffice from 'containers/Movie/components/BoxOffice/BoxOffice';
+import BoxOffice from 'components/BoxOffice/BoxOffice';
 import Page from 'components/Page/Page';
 
 export default function MainPage(props) {

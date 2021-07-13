@@ -23,7 +23,8 @@
           }
           i {
             @apply block w-14 text-center absolute;
-            background: #15614b;
+            background: #ffc033;
+            color: #000;
             border-right: solid 0.1875rem #fff;
           }
           a {
@@ -31,8 +32,8 @@
             padding: 0 1.875rem 0 5rem;
             background-color: rgb(26, 34, 42);
 
-            span{
-                @apply font-normal;
+            span {
+              @apply font-normal;
             }
           }
         }
@@ -40,4 +41,3 @@
     }
   }
 }
-
