@@ -54,6 +54,10 @@ body {
   overflow-x: hidden;
   vertical-align: middle;
   scroll-behavior: smooth;
+
+  .popup-overlay.trailer-overlay{
+    background: rgba(0, 0, 0, 0.8) !important;
+  }
 }
 
 code {

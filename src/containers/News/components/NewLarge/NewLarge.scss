@@ -1,7 +1,7 @@
 @layer components {
   .new-large {
     @apply w-full cursor-pointer
-      grid grid-cols-3 gap-2 mb-6 h-96;
+      grid grid-cols-3 gap-2 mb-6 h-96 -mt-6;
     background-color: #1a222a;
     
 

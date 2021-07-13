@@ -1,0 +1,40 @@
+@layer components {
+  .new-trailer {
+    &__title {
+        @apply text-xl font-semibold uppercase tracking-wider mb-4 pb-2 italic;
+        border-bottom: 5px solid #FFC033;
+    }
+    &__item {
+      &__video {
+        @apply relative overflow-hidden;
+        img {
+          @apply transition duration-300 ease-in-out;
+          object-fit: cover
+        }
+
+        &__playTrailer {
+          @apply absolute top-1/2 left-1/2
+                  scale-100 text-white rounded-full opacity-0 transition duration-700 cursor-pointer outline-none;
+          transform: translate(-50%, -50%);
+          i {
+            @apply border-2 border-solid border-white rounded-full text-white 
+                    cursor-pointer transition-all scale-100 hover:scale-110;
+            padding: 20px;
+            font-size: 20px;
+            line-height: 20px;
+          }
+        }
+      }
+      &:hover {
+        .new-trailer__item__video {
+          img {
+            @apply transform scale-110;
+          }
+          &__playTrailer {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

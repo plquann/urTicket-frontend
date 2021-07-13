@@ -1,3 +1,8 @@
 @layer components {
-  
+  .news {
+    .news-latest__title {
+      @apply text-xl font-semibold uppercase tracking-wider mb-4 pb-2 italic;
+      border-bottom: 5px solid #ffc033;
+    }
+  }
 }
