@@ -6,7 +6,7 @@ import { newsTrailer } from 'containers/News/_mocks_/newsData';
 export default function NewTrailer() {
     return (
         <div className="new-trailer">
-            <h1 className="new-trailer__title">New Official Trailers</h1>
+            <h1 className="new-trailer__title">New Trailers</h1>
             <div className="grid grid-cols-2 gap-2">
                 {newsTrailer.map((item, index) => (
                     <div key={item.videoId} className="new-trailer__item">

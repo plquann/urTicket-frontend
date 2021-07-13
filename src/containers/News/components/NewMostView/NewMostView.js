@@ -4,7 +4,7 @@ import { news } from 'containers/News/_mocks_/newsData';
 
 export default function NewMostView() {
     return (
-        <div className="new-most-view -mt-10">
+        <div className="new-most-view -mt-2 mb-4">
             <h1 className="new-most-view__title">MOST VIEWS</h1>
             <div className="new-most-view__list">
                 {news.slice(news.length - 6).map((item, index) => (
@@ -13,7 +13,7 @@ export default function NewMostView() {
                             <img src={item.imageUrl.replace('w=900,h=900','w=300,h=150')} alt="news thumbnails"/>
                         </div>
                         <div className="related--1__wrapper w-1/2 px-2">
-                            <h5 className="line-clamp-5  -mt-1" style={{ lineHeight: '1.2rem' }}>
+                            <h5 className="line-clamp-3 -mt-1 font-medium" style={{ lineHeight: '1.5rem' }}>
                                 {item.title}
                             </h5>
                         </div>

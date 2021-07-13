@@ -71,4 +71,42 @@ export const newsTrailer = [
     { videoId: 'rrwBnlYOp4g' },
     { videoId: 'UFXt5pdpNMQ' },
     { videoId: 'ii8Jr2rzXFQ' },
+];
+
+export const movieTrending = [
+    {
+        id: faker.datatype.uuid(),
+        title: 'Black Widow',
+        rating: 4.5,
+        releaseDate:'Jul 07, 2021',
+        img: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/qAZ0pzat24kLdO3o8ejmbLxyOac.jpg'
+    },
+    {
+        id: faker.datatype.uuid(),
+        title: 'The Tomorrow War',
+        rating: 4.5,
+        releaseDate:'Jun 30, 2021',
+        img: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/xipF6XqfSYV8DxLqfLN6aWlwuRp.jpg'
+    },
+    {
+        id: faker.datatype.uuid(),
+        title: 'A Quiet Place Part II',
+        rating: 4,
+        releaseDate:'May 21, 2021',
+        img: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/4q2hz2m8hubgvijz8Ez0T2Os2Yv.jpg'
+    },
+    {
+        id: faker.datatype.uuid(),
+        title: 'Loki',
+        rating: 4.5,
+        releaseDate:'Jun 09, 2021',
+        img: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg'
+    },
+    {
+        id: faker.datatype.uuid(),
+        title: 'Luca',
+        rating: 4,
+        releaseDate:'Jun 17, 2021',
+        img: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/jTswp6KyDYKtvC52GbHagrZbGvD.jpg'
+    },
 ]

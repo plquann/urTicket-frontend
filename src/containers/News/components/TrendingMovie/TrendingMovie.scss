@@ -1,0 +1,30 @@
+@layer components {
+  .new-trending-movie {
+    &__title {
+      @apply text-xl font-semibold uppercase tracking-wider mb-4 pb-2 italic;
+      border-bottom: 5px solid #ffc033;
+    }
+    &__list {
+      &__item {
+        @apply relative flex flex-wrap mb-4;
+        background-color: #1a222a;
+
+        &__wrapper {
+          .item__wrapper__date {
+            @apply flex flex-nowrap items-center space-x-1 mb-2 -mt-2;
+          }
+          .item__wrapper__title {
+            @apply line-clamp-5 -mt-1 text-xl font-semibold mb-4;
+          }
+        }
+        &__index {
+          @apply absolute w-10 h-10 text-center font-bold text-2xl;
+          top: -5%;
+          left: 0;
+          color: #ffc033;
+          background:#161e2f;
+        }
+      }
+    }
+  }
+}
