@@ -10,7 +10,7 @@ const videoInfo = {
 export default function NewTrailer() {
     return (
         <div className="new-trailer">
-            <h1 className="new-trailer__title">Official Trailers</h1>
+            <h1 className="new-trailer__title">New Official Trailers</h1>
             <div className="grid grid-cols-2 gap-4">
                 <div className="new-trailer__item">
                     <div className="new-trailer__item__video">
@@ -67,6 +67,8 @@ export default function NewTrailer() {
                         />
                     </div>
                 </div>
+
+                
             </div>
         </div>
     )

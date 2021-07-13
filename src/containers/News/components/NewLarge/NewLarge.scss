@@ -1,34 +1,40 @@
 @layer components {
   .new-large {
-    @apply w-full cursor-pointer
-      grid grid-cols-3 gap-2 mb-6 h-96 -mt-6;
-    background-color: #1a222a;
-    
+    &__title {
+      @apply text-xl font-semibold uppercase tracking-wider mb-4 pb-2 italic;
+      border-bottom: 5px solid #ffc033;
+    }
 
-    &__thumbnails {
-      @apply col-span-2 overflow-hidden h-full;
-      img {
-        @apply w-full h-full transition duration-300 ease-in-out;
-      }
-      &:hover {
+    &__wrapper {
+      @apply w-full cursor-pointer
+        grid grid-cols-3 gap-2 mb-6 h-96;
+      background-color: #1a222a;
+
+      &__thumbnails {
+        @apply col-span-2 overflow-hidden h-full;
         img {
-          @apply transform scale-110;
+          @apply w-full h-full transition duration-300 ease-in-out;
+        }
+        &:hover {
+          img {
+            @apply transform scale-110;
+          }
         }
       }
-    }
-    &__content {
-      @apply z-10 px-2 ;
-      h2 {
-        @apply text-2xl font-semibold mb-2;
-      }
-      &__category {
-        a {
-          @apply inline-block font-medium text-xs italic uppercase px-2 py-1 
-          transition-all duration-300 ease-in-out mr-1;
-          color: "#fff";
-          background-color: #DF7E08;
-          &:hover {
-            @apply bg-gray-600;
+      &__content {
+        @apply z-10 px-2;
+        h2 {
+          @apply text-2xl font-semibold mb-2;
+        }
+        &__category {
+          a {
+            @apply inline-block font-medium text-xs italic uppercase px-2 py-1 
+            transition-all duration-300 ease-in-out mr-1;
+            color: "#fff";
+            background-color: #df7e08;
+            &:hover {
+              @apply bg-gray-600;
+            }
           }
         }
       }
