@@ -5,7 +5,7 @@
     background-color: #1a222a;
 
     &__thumbnails {
-      @apply h-2/3 overflow-hidden;
+      @apply h-2/3 overflow-hidden px-2.5 pt-2.5;
       img {
         @apply w-full h-full transition duration-300 ease-in-out;
       }
@@ -23,7 +23,7 @@
       }
       &__category {
         a {
-          @apply inline-block font-medium text-xs italic uppercase px-2 py-1 
+          @apply inline-block font-medium text-xs italic uppercase px-1 py-0.5 
           transition-all duration-300 ease-in-out mr-1;
           color: "#fff";
           background-color: #df7e08;

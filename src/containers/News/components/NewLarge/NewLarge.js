@@ -1,9 +1,9 @@
 import React from 'react';
 import './NewLarge.scss';
-import faker from 'faker';
 
 const newContent = {
-    imgUrl: faker.image.city(),
+    title:'Scarlett Johansson Reveals The Black Widow Idea That Was ‘Quickly Killed’ In Captain America',
+    imgUrl:'https://img.cinemablend.com/cdn-cgi/image/fit=cover,w=900,h=900//quill/8/2/1/9/8/5/8219859dfd193fea19920bae4b2dec73a7419123.jpg',
 }
 
 export default function NewLarge() {
@@ -21,7 +21,7 @@ export default function NewLarge() {
                         <a href="#0">TRENDING</a>
                         <a href="#0">HOT STUFF</a>
                     </div>
-                    <h2 className="line-clamp-4">Scarlett Johansson joins criticism of Golden Globes body amid accusations of racism sexism</h2>
+                    <h2 className="line-clamp-4">{newContent.title}</h2>
                     <p className="new-large__wrapper__content__subtitle line-clamp-5 text-gray-400">
                         Scarlett Johansson is one of the most recognizable actors in the world,
                         having been a fixture in film and television since she was a child.
