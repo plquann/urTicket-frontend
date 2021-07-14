@@ -53,8 +53,6 @@ export default function Payment() {
             </ul>
             <h6 className="subtitle mb-3.5 text-xl font-semibold">Enter Your Card Details </h6>
             <FormPayment />
-
-
         </div>
     )
 }

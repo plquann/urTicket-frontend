@@ -5,9 +5,9 @@ import PostMedium from 'containers/News/components/PostMedium/PostMedium';
 import NewTrailer from 'containers/News/components/NewsTrailers/NewsTrailer';
 import PostMostView from 'containers/News/components/PostMostView/PostMostView';
 import NewTrendingMovie from 'containers/News/components/TrendingMovie/TrendingMovie';
+import BoxOffice from 'components/BoxOffice/BoxOffice';
 
 import { news } from 'containers/News/_mocks_/newsData';
-import BoxOffice from 'components/BoxOffice/BoxOffice';
 
 export default function MainNews() {
     return (

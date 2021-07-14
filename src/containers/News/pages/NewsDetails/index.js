@@ -2,7 +2,7 @@ import React from 'react';
 import './NewsDetails.scss'
 import Page from 'components/Page/Page';
 import { useForm } from 'react-hook-form';
-import { news } from 'containers/News/_mocks_/newsData';
+import { news, categoryNews } from 'containers/News/_mocks_/newsData';
 import faker from 'faker';
 import Comment from 'containers/News/components/Comment/Comment';
 import NewTrailer from 'containers/News/components/NewsTrailers/NewsTrailer';
@@ -71,6 +71,12 @@ export default function NewsDetails() {
                         <div className="news-details__related pl-4">
                             <NewMostView />
                             <NewTrailer />
+                            <div className="news-category mt-4">
+                                <h1 className="post-most-view__title">Categories News</h1>
+                                {categoryNews.map((item, index) => (
+                                    <a key={item + index} href="#0">{item}</a>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>

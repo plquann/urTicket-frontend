@@ -1,0 +1,33 @@
+@layer components {
+  .profile {
+    &__wrapper {
+      &__info {
+        background-position: top left;
+        @apply h-52 pt-3 flex flex-col text-center;
+        .info__avatar {
+          @apply flex justify-center items-center;
+          img {
+            border: 3px solid #ffc033;
+          }
+        }
+        .info__name {
+          @apply capitalize font-bold text-3xl;
+        }
+      }
+
+      &__content {
+        height: 900px;
+        .content__head {
+          @apply h-14 mb-5 text-center grid grid-cols-4;
+          background-color: #1a222a;
+          .head__item {
+            @apply h-full relative font-semibold focus:border-transparent;
+          }
+        }
+        .content__body {
+          @apply absolute transform transition-all duration-500;
+        }
+      }
+    }
+  }
+}

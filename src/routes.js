@@ -18,7 +18,7 @@ const News = lazy(() => import('containers/News/pages/MainNews'));
 const NewsDetails = lazy(() => import('containers/News/pages/NewsDetails'));
 
 
-const Users = lazy(() => import('containers/Users'));
+const Profile = lazy(() => import('containers/Profile'));
 const SignIn = lazy(() => import('containers/Auth/pages/SignIn'));
 const Register = lazy(() => import('containers/Auth/pages/Register'));
 
@@ -110,7 +110,7 @@ const Routes = () => {
                             exact
                             path="/profile/:userId"
                             layout={PublicLayout}
-                            component={Users}
+                            component={Profile}
                         />
 
                         {/* <WithLayoutRoute

@@ -44,22 +44,31 @@ const newsTitle = [
     'See Black Panther 2’s Lupita Nyong’o Getting Back Into Superhero Shape As The Movie Starts Filming',
     'Why Joining The Avengers Was A Little Bit Nerve-Wracking For The Guardians Of The Galaxy, According To Karen Gillan',
     'Whoa, It Looks Like Black Panther 2 Is Still Going Through Script Changes As Production Begins',
-]
+];
+
+export const categoryNews = [
+    'news',
+    'trending',
+    'movies',
+    'hot stuff',
+    'next',
+    'reviews',
+    'box office',
+    'tv shows',
+    'discover',
+    'rating',
+    'spotlight',
+    'daily',
+    'celebs'
+];
+
 export const news = [...Array(20)].map((_, index) => ({
     id: faker.datatype.uuid(),
     title: newsTitle[index],
     author: faker.name.findName(),
     description: faker.lorem.paragraph(),
     imageUrl: newsImageUrl[index],
-    category: sampleSize([
-        'news',
-        'trending',
-        'movies',
-        'hot stuff',
-        'next',
-        'reviews',
-        'box office'
-    ], 3),
+    category: sampleSize(categoryNews, 3),
     status: sample(['lastesNews', 'mostView']),
     createdAt: ' May 9 2021 12:05 PM',
 }));
@@ -87,7 +96,7 @@ export const movieTrending = [
         title: 'The Tomorrow War',
         rating: 4,
         releaseDate: 'Jun 30, 2021',
-        info:'The fight for tomorrow begins today',
+        info: 'The fight for tomorrow begins today',
         img: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/xipF6XqfSYV8DxLqfLN6aWlwuRp.jpg'
     },
     {
@@ -95,7 +104,7 @@ export const movieTrending = [
         title: 'A Quiet Place Part II',
         rating: 3.5,
         releaseDate: 'May 21, 2021',
-        info:'Following the events at home, the Abbott family now face the terrors of the outside world',
+        info: 'Following the events at home, the Abbott family now face the terrors of the outside world',
         img: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/4q2hz2m8hubgvijz8Ez0T2Os2Yv.jpg'
     },
     {
@@ -103,7 +112,7 @@ export const movieTrending = [
         title: 'Loki',
         rating: 4.5,
         releaseDate: 'Jun 09, 2021',
-        info:'After stealing the Tesseract during the events of Avengers: Endgame, Loki’s time has come',
+        info: 'After stealing the Tesseract during the events of Avengers: Endgame, Loki’s time has come',
         img: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg'
     },
     {
@@ -111,7 +120,7 @@ export const movieTrending = [
         title: 'F9: The Fast Saga',
         rating: 2.5,
         releaseDate: 'Jun 25, 2021',
-        info:'Dominic Toretto and his crew battle the most skilled assassin',
+        info: 'Dominic Toretto and his crew battle the most skilled assassin',
         img: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/bOFaAXmWWXC3Rbv4u4uM9ZSzRXP.jpg'
     },
 ]

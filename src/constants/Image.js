@@ -61,7 +61,11 @@ import card from 'assets/images/payment/card.png';
 import paypal from 'assets/images/payment/paypal.png';
 
 import account_bg from 'assets/images/account/account-bg.jpg';
-import cinema from 'assets/images/movie/cinema.png'
+import cinema from 'assets/images/movie/cinema.png';
+
+import profileCover from 'assets/images/backapp.jpg';
+
+export const PROFILE_COVER = profileCover;
 
 export const PAYMENT = {
     CARD: card,
