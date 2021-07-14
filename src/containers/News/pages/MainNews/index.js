@@ -1,9 +1,9 @@
 import React from 'react';
 import Page from 'components/Page/Page';
-import NewLarge from 'containers/News/components/NewLarge/NewLarge';
-import NewMedium from 'containers/News/components/NewMedium/NewMedium';
-import NewTrailer from 'containers/News/components/NewTrailer/NewTrailer';
-import NewMostView from 'containers/News/components/NewMostView/NewMostView';
+import PostLarge from 'containers/News/components/PostLarge/PostLarge';
+import PostMedium from 'containers/News/components/PostMedium/PostMedium';
+import NewTrailer from 'containers/News/components/NewsTrailers/NewsTrailer';
+import PostMostView from 'containers/News/components/PostMostView/PostMostView';
 import NewTrendingMovie from 'containers/News/components/TrendingMovie/TrendingMovie';
 
 import { news } from 'containers/News/_mocks_/newsData';
@@ -15,7 +15,7 @@ export default function MainNews() {
             <div className="news max-w-screen-xl mx-auto mt-20">
                 <div className="grid grid-cols-3 gap-6">
                     <div className="col-span-2">
-                        <NewLarge />
+                        <PostLarge />
                     </div>
                     <div className="col-span-1 pl-6">
                         <NewTrailer />
@@ -25,12 +25,12 @@ export default function MainNews() {
                     <div className="col-span-2">
                         <div className="grid grid-cols-3 gap-6">
                             {news.slice(0, 12).map((item, index) => (
-                                <NewMedium key={item.id} post={item} />
+                                <PostMedium key={item.id} post={item} />
                             ))}
                         </div>
                     </div>
                     <div className="col-span-1 pl-6">
-                        <NewMostView />
+                        <PostMostView />
                         <NewTrendingMovie />
                     </div>
                 </div>

@@ -23,15 +23,12 @@ export default function Comment(props) {
                 </div>
                 <div className="comment__wrapper__react">
                     <div className="like inline-flex space-x-1 items-center mr-6">
-                        <Like className="h-5 w-5" fill="#31d7a9" />
+                        <Like width={20} height={20} fillColor="#31d7a9" />
                         <span>(8)</span>
                     </div>
                     <div className="dislike inline-flex space-x-1 items-center mr-6">
-                        <Dislike className="h-4 w-4 mt-2" fill="#f1481f" />
+                        <Dislike idth={20} height={20} fillColor="#f1481f" />
                         <span>(2)</span>
-                    </div>
-                    <div className="report flex items-center">
-                        <p >Reply</p>
                     </div>
                 </div>
             </div>

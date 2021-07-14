@@ -20,12 +20,6 @@
       }
       &__react {
         @apply flex flex-wrap text-sm my-2;
-
-        .like::after,
-        .dislike::after {
-          content: "|";
-          margin-left: 8px;
-        }
       }
     }
   }

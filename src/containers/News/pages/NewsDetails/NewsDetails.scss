@@ -67,7 +67,26 @@
       &__discussion {
         h3 {
           @apply text-3xl font-medium uppercase tracking-wider pb-1.5 mb-4;
-          border-bottom: 5px solid  #ffc033;
+          border-bottom: 5px solid #ffc033;
+        }
+
+        .your-comment {
+          h4 {
+            @apply text-xl font-medium italic mb-4;
+          }
+          textarea {
+            @apply w-full bg-transparent rounded-md px-4 py-2 mb-2;
+            background-color: #1a222a;
+          }
+          input {
+            @apply py-2 px-6 italic font-medium rounded-md 
+            transition duration-300 cursor-pointer;
+            background-color: #1a222a;
+            &:hover {
+              background-color: #ffc033;
+              color: #000;
+            }
+          }
         }
       }
     }

@@ -1,14 +1,20 @@
 import React from 'react';
 import './NewsDetails.scss'
 import Page from 'components/Page/Page';
+import { useForm } from 'react-hook-form';
 import { news } from 'containers/News/_mocks_/newsData';
 import faker from 'faker';
 import Comment from 'containers/News/components/Comment/Comment';
+import NewTrailer from 'containers/News/components/NewsTrailers/NewsTrailer';
+import NewMostView from 'containers/News/components/PostMostView/PostMostView';
 
 const article = news[0];
 const contents = faker.lorem.paragraphs();
 
 export default function NewsDetails() {
+    const { register, handleSubmit } = useForm();
+    const onSubmit = data => console.log(data);
+
     return (
         <Page title="News Details | UR-TICKET">
             <div className="news-details max-w-screen-lg mx-auto mt-20">
@@ -52,6 +58,19 @@ export default function NewsDetails() {
                             <Comment />
                             <Comment />
                             <Comment />
+                            <div className="your-comment">
+                                <h4>Leave your comment</h4>
+                                <form onSubmit={handleSubmit(onSubmit)}>
+                                    <textarea {...register("Comment", {})} rows="2" placeholder="Enter your comment..." />
+                                    <input type="submit" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-span-1">
+                        <div className="news-details__related pl-4">
+                            <NewMostView />
+                            <NewTrailer />
                         </div>
                     </div>
                 </div>

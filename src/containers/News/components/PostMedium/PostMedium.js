@@ -1,16 +1,16 @@
 import React from 'react';
-import './NewMedium.scss';
+import './PostMedium.scss';
 
 
-export default function TopNewMedium(props) {
+export default function PostMedium(props) {
     const { post } = props;
     return (
-        <div className="new-medium">
-            <div className="new-medium__thumbnails">
+        <div className="post-medium">
+            <div className="post-medium__thumbnails">
                 <img src={post.imageUrl} alt="__thumbnails" />
             </div>
-            <div className="new-medium__content" >
-                <div className="new-medium__content__category mb-2">
+            <div className="post-medium__content" >
+                <div className="post-medium__content__category mb-2">
                     {post.category.map((item, index) => (
                         <a key={item + index} href="#0">{item}</a>
                     ))}

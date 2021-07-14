@@ -1,9 +1,9 @@
 import React from 'react';
 import PopupTrailer from 'containers/Movie/components/PopupTrailer/PopupTrailer'
-import './NewTrailer.scss'
+import './NewsTrailers.scss'
 import { newsTrailer } from 'containers/News/_mocks_/newsData';
 
-export default function NewTrailer() {
+export default function NewsTrailers() {
     return (
         <div className="new-trailer">
             <h1 className="new-trailer__title">New Trailers</h1>

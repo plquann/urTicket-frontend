@@ -1,14 +1,14 @@
 import React from 'react';
-import './NewMostView.scss';
+import './PostMostView.scss';
 import { news } from 'containers/News/_mocks_/newsData';
 
-export default function NewMostView() {
+export default function PostMostView() {
     return (
-        <div className="new-most-view -mt-2 mb-4">
-            <h1 className="new-most-view__title">MOST VIEWS</h1>
-            <div className="new-most-view__list">
+        <div className="post-most-view -mt-2 mb-4">
+            <h1 className="post-most-view__title">MOST VIEWS</h1>
+            <div className="post-most-view__list">
                 {news.slice(news.length - 6).map((item, index) => (
-                    <div key={item.id} className="new-most-view__list__item flex flex-wrap items-center mb-4">
+                    <div key={item.id} className="post-most-view__list__item flex flex-wrap items-center mb-4">
                         <div className="related--1__img w-1/2 p-2">
                             <img src={item.imageUrl.replace('w=900,h=900','w=300,h=150')} alt="news thumbnails"/>
                         </div>

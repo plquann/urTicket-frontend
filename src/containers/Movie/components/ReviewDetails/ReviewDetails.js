@@ -38,11 +38,11 @@ export default function ReviewDetails() {
                 </p>
                 <div className="react">
                     <div className="like inline-flex space-x-1 items-center mr-6">
-                        <Like className="h-7 w-7" fill="#31d7a9" />
+                        <Like width={22} height={22} fillColor="#31d7a9" />
                         <span>(8)</span>
                     </div>
                     <div className="dislike inline-flex space-x-1 items-center mr-6">
-                        <Dislike className="h-6 w-6 mt-2" fill="#f1481f" />
+                        <Dislike width={22} height={22} fillColor="#f1481f" />
                         <span>(2)</span>
                     </div>
                     <div className="report flex items-center">
