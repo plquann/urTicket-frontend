@@ -1,22 +1,22 @@
 import React, { useState, memo } from 'react';
 import './Header.scss';
 import { LOGO } from 'constants/image';
-import DropDownMenu from 'components/DropDownMenu/DropDownMenu';
+// import DropDownMenu from 'components/DropDownMenu/DropDownMenu';
 import { NavLink } from 'react-router-dom';
 import { useScrollPosition } from 'hooks/useScrollPosition';
 
 
-const dropDownItems = [
-    {
-        label: 'Settings',
-    },
-    {
-        label: 'Account',
-    },
-    {
-        label: 'Logout',
-    },
-];
+// const dropDownItems = [
+//     {
+//         label: 'Settings',
+//     },
+//     {
+//         label: 'Account',
+//     },
+//     {
+//         label: 'Logout',
+//     },
+// ];
 
 function Header(props) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);

@@ -2,10 +2,8 @@ import React from "react";
 import './Schedule.scss';
 import { LOGO_PARTNER, LOGO, MOVIE_IMG } from 'constants/image';
 import ShowtimeItem from "../ShowtimeItem/ShowtimeItem";
-import { listDay } from "utils/renderDate";
 
 export default function Schedule(props) {
-    // console.log('🚀 ~ file: index.js ~ line 25 ~ Schedule ~ props', props.refProp.current);
 
     return (
         <div className="schedule-section max-w-screen-lg mx-auto pb-8 mt-4">

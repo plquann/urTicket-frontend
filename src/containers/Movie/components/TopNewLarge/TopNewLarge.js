@@ -1,6 +1,5 @@
-import Medal from 'components/Medal/Medal'
-import { randomGenres } from 'constants/genres'
 import React from 'react';
+import Medal from 'components/Medal/Medal';
 import './TopNewLarge.scss';
 
 export default function TopNewLarge() {

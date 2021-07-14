@@ -1,0 +1,75 @@
+@layer components {
+  .news-details {
+    &__article {
+      &__category {
+        a {
+          @apply inline-block font-medium text-xs italic uppercase px-2 py-1 
+                transition-all duration-300 ease-in-out mr-2;
+          color: "#fff";
+          background-color: #df7e08;
+          &:hover {
+            @apply bg-gray-600;
+          }
+        }
+      }
+
+      &__title {
+        @apply font-semibold text-4xl;
+        line-height: 2.25rem;
+      }
+
+      &__info {
+        @apply flex flex-wrap items-end my-4 text-sm space-x-3;
+        .author {
+          @apply uppercase font-medium;
+        }
+        .space {
+          color: #ffc033;
+          @apply font-bold text-xl;
+        }
+      }
+
+      &__thumbnails {
+        @apply py-4;
+      }
+
+      &__content {
+        p {
+          @apply my-4;
+        }
+      }
+
+      &__footer {
+        background-color: #1a222a;
+        @apply px-6 pb-4 pt-2 mt-8;
+        &__title {
+          @apply relative font-medium uppercase tracking-wider pb-1.5 italic mb-4;
+          &::before {
+            @apply absolute bottom-0 left-0 w-52 h-0.5 rounded-lg;
+            background-color: #ffc033;
+            content: "";
+          }
+        }
+        &__wrapper {
+          @apply flex flex-wrap;
+          .info {
+            @apply w-2/3 pl-4;
+            .name {
+              @apply uppercase font-semibold text-lg mb-1;
+            }
+            p {
+              line-height: 1.25rem;
+            }
+          }
+        }
+      }
+
+      &__discussion {
+        h3 {
+          @apply text-3xl font-medium uppercase tracking-wider pb-1.5 mb-4;
+          border-bottom: 5px solid  #ffc033;
+        }
+      }
+    }
+  }
+}

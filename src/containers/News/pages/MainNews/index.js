@@ -9,7 +9,6 @@ import NewTrendingMovie from 'containers/News/components/TrendingMovie/TrendingM
 import { news } from 'containers/News/_mocks_/newsData';
 import BoxOffice from 'components/BoxOffice/BoxOffice';
 
-
 export default function MainNews() {
     return (
         <Page title="News | UR-TICKET">
