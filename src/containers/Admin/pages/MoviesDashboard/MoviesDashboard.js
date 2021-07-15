@@ -44,7 +44,7 @@ const TABLE_HEAD = [
 
 const TableCell = withStyles({
     root: {
-        borderBottom: 'none'
+        borderBottom: '1px solid #2b3d4d',
     }
 })(MuiTableCell);
 

@@ -17,7 +17,6 @@ const useStylesPaperPage = makeStyles({
 
 export default function TablePaging(props) {
     const { rowsPerPageOptions, rowsPerPage, count, page, onPageChange, onRowsPerPageChange } = props;
-    console.log('🚀 ~ file: TablePaging.js ~ line 20 ~ TablePaging ~ props', props);
     const classes = useStylesPaperPage();
 
     return (

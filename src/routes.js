@@ -18,7 +18,7 @@ const News = lazy(() => import('containers/News/pages/MainNews'));
 const NewsDetails = lazy(() => import('containers/News/pages/NewsDetails'));
 
 
-const Profile = lazy(() => import('containers/Profile'));
+const Profile = lazy(() => import('containers/Profile/pages/Me'));
 const SignIn = lazy(() => import('containers/Auth/pages/SignIn'));
 const Register = lazy(() => import('containers/Auth/pages/Register'));
 

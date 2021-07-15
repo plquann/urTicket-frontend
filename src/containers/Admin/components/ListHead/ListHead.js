@@ -9,7 +9,8 @@ ListHead.propTypes = {
   headLabel: PropTypes.array,
   numSelected: PropTypes.number,
   onRequestSort: PropTypes.func,
-  onSelectAllClick: PropTypes.func
+  onSelectAllClick: PropTypes.func,
+  isCheckAll: PropTypes.bool,
 };
 
 export default function ListHead({
@@ -19,7 +20,8 @@ export default function ListHead({
   headLabel,
   numSelected,
   onRequestSort,
-  onSelectAllClick
+  onSelectAllClick,
+  isCheckAll = 'true',
 }) {
   const createSortHandler = (property) => (event) => {
     onRequestSort(event, property);
@@ -29,11 +31,15 @@ export default function ListHead({
     <TableHead>
       <TableRow>
         <TableCell padding="checkbox">
-          <Checkbox
-            indeterminate={numSelected > 0 && numSelected < rowCount}
-            checked={rowCount > 0 && numSelected === rowCount}
-            onChange={onSelectAllClick}
-          />
+          {isCheckAll
+            ? <Checkbox
+              indeterminate={numSelected > 0 && numSelected < rowCount}
+              checked={rowCount > 0 && numSelected === rowCount}
+              onChange={onSelectAllClick}
+            />
+            : <></>
+          }
+
         </TableCell>
         {headLabel.map((headCell) => (
           <TableCell
