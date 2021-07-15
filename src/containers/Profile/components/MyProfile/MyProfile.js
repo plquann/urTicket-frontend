@@ -1,101 +1,122 @@
 import React, { useState } from 'react';
 import './MyProfile.scss';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
+
+
 export default function MyProfile(props) {
     const { me } = props;
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, control } = useForm({
+        defaultValues: { ...me }
+    });
     const [editInfo, setEditInfo] = useState(false);
-    const [date, setDate] = useState(new Date());
 
-    console.log('render')
+
     const onSubmit = (data) => {
         console.log(data);
         setEditInfo(false);
     }
 
-    console.log(errors);
-
-    const handleClick = () => {
-        setEditInfo(true);
+    const handleClickEdit = () => {
+        setEditInfo(!editInfo);
     }
+
     return (
         <div className="form-profile w-full">
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="fullname mb-4">
-                    <label htmlFor="fullName">Fullname</label><br></br>
-                    <input
-
-                        id="fullName"
-                        type="text"
-                        value={me.fullName}
-                        {...register("Fullname", { maxLength: 80 })}
-                    />
-                </div>
                 <div className="username mb-4">
                     <label htmlFor="userName">Username</label><br></br>
                     <input
-                        disabled
                         id="userName"
                         type="text"
-                        value={me.userName}
-                        {...register("Username", {})}
-
+                        {...register('userName', { maxLength: 15 })}
+                        disabled
                     />
                 </div>
-                <div className="genre mb-4">
-                    <label htmlFor="userName">Genre</label><br></br>
-                    <select {...register} disabled={!editInfo}>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Another">Another</option>
+                <div className="fullname mb-4">
+                    <label htmlFor="fullName">Fullname</label><br></br>
+                    <input
+                        id="fullName"
+                        type="text"
+                        {...register('fullName', { maxLength: 80 })}
+                        disabled={!editInfo}
+                        className={editInfo ? 'border border-yellow-500' : ''}
+                    />
+                </div>
+                <div className="gender mb-4">
+                    <label htmlFor="gender">Gender</label><br></br>
+                    <select
+                        id="gender"
+                        {...register('gender')}
+                        disabled={!editInfo}
+                        className={editInfo ? 'border border-yellow-500' : ''}
+                    >
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="another">Another</option>
                     </select>
                 </div>
                 <div className="email mb-4">
                     <label htmlFor="email">Email</label><br></br>
                     <input
-                        disabled
+                        id="email"
                         type="text"
-                        value={me.email}
-                        {...register("Email", { required: true, pattern: /^\S+@\S+$/i })}
-
+                        {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
+                        disabled
                     />
                 </div>
                 <div className="phoneNumber mb-4">
                     <label htmlFor="phoneNumber">Phone Number</label><br></br>
                     <input
-                        disabled={!editInfo}
+                        id="phoneNumber"
                         type="tel"
-                        value={me.phoneNumber}
-                        {...register("Mobile number", { minLength: 6, maxLength: 30 })}
-
+                        {...register('phoneNumber', { minLength: 6, maxLength: 30 })}
+                        disabled={!editInfo}
+                        className={editInfo ? 'border border-yellow-500' : ''}
                     />
                 </div>
                 <div className="birthday mb-4">
-                    <label htmlFor="birthday">DOB</label><br></br>
-                    <DatePicker
-                        disabled={!editInfo}
-                        selected={date}
-                        onChange={(date) => setDate(date)}
-                        peekNextMonth
-                        showMonthDropdown
-                        showYearDropdown
-                        dropdownMode="select"
+                    <label htmlFor="birthday">D.O.B</label><br></br>
+                    <Controller
+                        control={control}
+                        name="birthday"
+                        render={({ field: { onChange, onBlur, value } }) => (
+                            <DatePicker
+                                peekNextMonth
+                                showMonthDropdown
+                                showYearDropdown
+                                dropdownMode="select"
+                                onChange={onChange}
+                                onBlur={onBlur}
+                                selected={value}
+                                disabled={!editInfo}
+                                className={editInfo ? 'border border-yellow-500' : ''}
+                            />
+                        )}
                     />
                 </div>
                 <div className="address mb-4">
                     <label htmlFor="address">Address</label>
-                    <textarea disabled={!editInfo} value={me.address} {...register("Address", {})} />
+                    <textarea
+                        id="address"
+                        {...register('address', {})}
+                        disabled={!editInfo}
+                        className={editInfo ? 'border border-yellow-500' : ''}
+                    />
                 </div>
                 <div className="button-edit text-center">
                     {editInfo
-                        ? <button className="btn-edit-profile" type="submit">Submit</button>
-                        : <span className="btn-edit-profile mr-4" onClick={handleClick}>Edit Profile</span>
+                        ? (
+                            <>
+                                <button className="btn-edit-profile mr-3" type="submit">Submit</button>
+                                <span className="btn-edit-profile" onClick={handleClickEdit}>Cancel</span>
+                            </>
+                        )
+                        : <span className="btn-edit-profile mr-4" onClick={handleClickEdit}>Edit Profile</span>
                     }
                 </div>
-
             </form>
         </div>
     );
