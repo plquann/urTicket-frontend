@@ -21,7 +21,7 @@
           @apply h-14 mb-5 text-center grid grid-cols-4;
           background-color: #1a222a;
           .head__item {
-            @apply h-full relative font-semibold focus:border-transparent;
+            @apply h-full relative font-semibold focus:outline-none;
           }
         }
         .content__body {

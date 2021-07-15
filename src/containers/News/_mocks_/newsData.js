@@ -89,7 +89,8 @@ export const movieTrending = [
         rating: 4.5,
         releaseDate: 'Jul 07, 2021',
         info: 'She is Done Running From Her Past',
-        img: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/qAZ0pzat24kLdO3o8ejmbLxyOac.jpg'
+        img: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/qAZ0pzat24kLdO3o8ejmbLxyOac.jpg',
+        videoTrailer: 'Fp9pNPdNwjI',
     },
     {
         id: faker.datatype.uuid(),
@@ -97,7 +98,8 @@ export const movieTrending = [
         rating: 4,
         releaseDate: 'Jun 30, 2021',
         info: 'The fight for tomorrow begins today',
-        img: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/xipF6XqfSYV8DxLqfLN6aWlwuRp.jpg'
+        img: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/xipF6XqfSYV8DxLqfLN6aWlwuRp.jpg',
+        videoTrailer: 'QPistcpGB8o',
     },
     {
         id: faker.datatype.uuid(),
@@ -105,7 +107,8 @@ export const movieTrending = [
         rating: 3.5,
         releaseDate: 'May 21, 2021',
         info: 'Following the events at home, the Abbott family now face the terrors of the outside world',
-        img: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/4q2hz2m8hubgvijz8Ez0T2Os2Yv.jpg'
+        img: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/4q2hz2m8hubgvijz8Ez0T2Os2Yv.jpg',
+        videoTrailer: 'BpdDN9d9Jio',
     },
     {
         id: faker.datatype.uuid(),
@@ -113,7 +116,9 @@ export const movieTrending = [
         rating: 4.5,
         releaseDate: 'Jun 09, 2021',
         info: 'After stealing the Tesseract during the events of Avengers: Endgame, Loki’s time has come',
-        img: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg'
+        img: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg',
+        videoTrailer: 'nW948Va-l10',
+
     },
     {
         id: faker.datatype.uuid(),
@@ -121,6 +126,7 @@ export const movieTrending = [
         rating: 2.5,
         releaseDate: 'Jun 25, 2021',
         info: 'Dominic Toretto and his crew battle the most skilled assassin',
-        img: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/bOFaAXmWWXC3Rbv4u4uM9ZSzRXP.jpg'
+        img: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/bOFaAXmWWXC3Rbv4u4uM9ZSzRXP.jpg',
+        videoTrailer: 'aSiDu3Ywi8E',
     },
 ]

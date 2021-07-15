@@ -3,6 +3,11 @@
     padding: 1rem 2rem;
     background-color: #1a222a;
     border-radius: 5px;
+    
+    form {
+      display: block;
+      width: 100%;
+    }
 
     input,
     select,

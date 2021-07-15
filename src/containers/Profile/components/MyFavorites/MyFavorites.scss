@@ -1,0 +1,50 @@
+@layer components {
+  .favorites {
+    &__item {
+      background: #1a222a;
+      @apply h-80 flex flex-wrap rounded-md p-4;
+      &__thums {
+        @apply w-1/2 h-full;
+        img {
+          @apply w-full h-full object-cover;
+        }
+      }
+      &__wrapper {
+        @apply w-1/2 pl-4 relative;
+        &__title {
+          @apply text-2xl font-semibold line-clamp-2 mb-2;
+        }
+        &__date {
+          @apply flex flex-nowrap items-center space-x-1 mb-1 text-sm text-gray-400;
+        }
+        &__desc {
+          line-height: 1.5rem;
+          @apply text-gray-400 line-clamp-5;
+        }
+        &__btn {
+          .btn__trailer,
+          .btn__book,
+          .btn__delete {
+            @apply inline-block p-2 text-sm font-medium rounded-md 
+            transition duration-300 mr-2;
+            background-color: #131516;
+            &:hover {
+              background-color: #ffc033;
+              color: #000;
+            }
+          }
+        }
+
+        .btn__delete {
+          @apply absolute -top-2 -right-2 p-1.5 rounded-md transition duration-300 opacity-50;
+          background-color: #131516;
+          &:hover {
+            background-color: #ffc033;
+            color: #000;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

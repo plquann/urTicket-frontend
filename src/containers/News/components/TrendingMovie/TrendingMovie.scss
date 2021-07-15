@@ -20,6 +20,17 @@
           .item__wrapper__title {
             @apply line-clamp-5 -mt-1 text-xl font-semibold mb-2;
           }
+          .item__wrapper__btn{
+            button{
+              @apply inline-block p-2 text-sm font-medium rounded-md 
+              transition duration-300 cursor-pointer mr-3;
+              background-color: #131516;
+              &:hover {
+                  background-color: #ffc033;
+                  color:#000;
+              }
+            }
+          }
         }
         &__index {
           @apply absolute w-10 h-10 text-center font-bold text-2xl;

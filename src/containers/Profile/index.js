@@ -2,8 +2,9 @@ import React from 'react';
 import './Profile.scss';
 import { PROFILE_COVER } from 'constants/image';
 import { TabGroup } from '@statikly/funk'
-import { me } from 'containers/Profile/_mocks_/me';
+import { me } from 'containers/Profile/_mocks_/profile';
 import MyProfile from 'containers/Profile/components/MyProfile/MyProfile';
+import MyFavorites from './components/MyFavorites/MyFavorites';
 
 const TABS_HEAD = [
     'PROFILE INFO',
@@ -42,24 +43,28 @@ export default function Profile() {
                                 </TabGroup.Tab>
                             ))}
                         </TabGroup.TabList>
-                        <div className="pt-6 flex justify-center">
+                        <div className="pt-6 flex justify-center relative">
                             <TabGroup.TabPanel
                                 index={0}
-                                className="content__body"
+                                className="content__body w-full"
                                 activeClassName="translate-y-0 opacity-1"
                                 inactiveClassName="opacity-0 translate-y-2"
                             >
-                                <div className="mx-auto " style={{ width: '800px' }}>
-                                    <MyProfile me={me}/>
+                                <div className="max-w-screen-md mx-auto">
+                                    <MyProfile me={me} />
                                 </div>
                             </TabGroup.TabPanel>
                             <TabGroup.TabPanel
                                 index={1}
                                 className="content__body w-full"
                                 activeClassName="translate-y-0 opacity-1"
-                                inactiveClassName="opacity-0 translate-y-2" >
-                                item 2
+                                inactiveClassName="opacity-0 translate-y-2"
+                            >
+                                <div className="mx-auto max-w-screen-lg" >
+                                    <MyFavorites />
+                                </div>
                             </TabGroup.TabPanel>
+
                             <TabGroup.TabPanel
                                 index={2}
                                 className="content__body w-full"

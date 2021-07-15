@@ -4,8 +4,6 @@ import { useForm, Controller } from 'react-hook-form';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-
-
 export default function MyProfile(props) {
     const { me } = props;
     const { register, handleSubmit, control } = useForm({
@@ -24,7 +22,7 @@ export default function MyProfile(props) {
     }
 
     return (
-        <div className="form-profile w-full">
+        <div className="form-profile">
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="username mb-4">
                     <label htmlFor="userName">Username</label><br></br>
