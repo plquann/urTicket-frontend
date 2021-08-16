@@ -5,6 +5,7 @@ import authAPI from 'apis/authAPI';
 export const login = createAsyncThunk('auth/LOGIN', async (user, thunkAPI) => {
     const { email, password } = user;
     //console.log('🚀 ~ file: authSlice.js ~ line 7 ~ login ~ user', user);
+    
     const userLogin = await authAPI.login({ email, password });
     console.log('🚀 ~ file: authSlice.js ~ line 9 ~ login ~ userLogin', userLogin);
     return userLogin;
@@ -34,6 +35,8 @@ const authSlice = createSlice({
             state.isAdmin = action.payload.roles === 'ADMIN';
         });
         builder.addCase(login.rejected, (state, action) => {
+            console.log('🚀 ~ file: authSlice.js ~ line 38 ~ builder.addCase ~ action', action);
+
             if (action.payload)
                 state.error = action.payload.message;
             else

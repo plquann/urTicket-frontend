@@ -8,21 +8,16 @@ import { NavLink, useHistory } from 'react-router-dom';
 import './SignIn.scss';
 import { login } from 'app/authSlice';
 
-import axiosClient from 'apis/axiosClient';
-
 export default function SignIn() {
     const auth = useSelector(state => state.auth);
     const dispatch = useDispatch();
     const history = useHistory();
-    
+
     useEffect(() => {
-
-        // if (auth.isLoggedIn) {
-        //     history.push('/');
-        // }
-
+        if (auth.isLoggedIn) {
+            history.push('/');
+        }
     }, [auth.isLoggedIn, history]);
-
 
     const onSubmit = (values) => {
         console.log('🚀 ~ file: index.js ~ line 23 ~ onSubmit ~ values', values);

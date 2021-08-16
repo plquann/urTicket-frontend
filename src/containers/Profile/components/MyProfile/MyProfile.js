@@ -33,7 +33,7 @@ export default function MyProfile(props) {
                         disabled
                     />
                 </div>
-                <div className="fullname mb-4">
+                {/* <div className="fullname mb-4">
                     <label htmlFor="fullName">Fullname</label><br></br>
                     <input
                         id="fullName"
@@ -42,7 +42,7 @@ export default function MyProfile(props) {
                         disabled={!editInfo}
                         className={editInfo ? 'border border-yellow-500' : ''}
                     />
-                </div>
+                </div> */}
                 <div className="gender mb-4">
                     <label htmlFor="gender">Gender</label><br></br>
                     <select
@@ -51,9 +51,9 @@ export default function MyProfile(props) {
                         disabled={!editInfo}
                         className={editInfo ? 'border border-yellow-500' : ''}
                     >
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                        <option value="another">Another</option>
+                        <option value="MALE">Male</option>
+                        <option value="FEMALE">Female</option>
+                        <option value="ANOTHER">Another</option>
                     </select>
                 </div>
                 <div className="email mb-4">

@@ -2,11 +2,11 @@ import React from 'react';
 import './Profile.scss';
 import { PROFILE_COVER } from 'constants/image';
 import { TabGroup } from '@statikly/funk'
-import { me } from 'containers/Profile/_mocks_/profile';
 import MyProfile from 'containers/Profile/components/MyProfile/MyProfile';
 import MyFavorites from '../../components/MyFavorites/MyFavorites';
 import Page from 'components/Page/Page';
 import MyReservation from 'containers/Profile/components/MyReservation/MyReservation';
+import { useSelector } from 'react-redux';
 
 const TABS_HEAD = [
     'PROFILE INFO',
@@ -15,6 +15,7 @@ const TABS_HEAD = [
 ];
 
 export default function Profile() {
+    const me = useSelector(state => state.auth.user)
     return (
         <Page title="Profile | URTicket Booking">
             <div className="profile mt-20">
@@ -24,10 +25,10 @@ export default function Profile() {
                         style={{ backgroundImage: `url(${PROFILE_COVER})` }}
                     >
                         <div className="info__avatar">
-                            <img className=" rounded-full" src={me.avatarUrl} alt="avatar user" />
+                            <img className=" rounded-full w-full h-full" src={me?.avatar.url} alt="avatar user" />
                         </div>
                         <div className="info__name">
-                            <h1>{me.fullName}</h1>
+                            <h1>{me.userName}</h1>
                         </div>
                     </div>
                     <div className="profile__wrapper__content mt-8 ">

@@ -2,7 +2,8 @@ import axiosClient from './axiosClient';
 
 const authAPI = {
     login: async (data) => {
-        return await axiosClient.post('/auth/login', data);
+        const res = await axiosClient.post('/auth/login', data);
+        return res;
     },
     register: async (data) => {
         return await axiosClient.post('/auth/register', data);

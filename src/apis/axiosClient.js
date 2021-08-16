@@ -22,14 +22,18 @@ axiosClient.interceptors.request.use(async (config) => {
 });
 
 axiosClient.interceptors.response.use((response) => {
-    if (response && response.data) {
+    console.log('🚀 ~ file: axiosClient.js ~ line 25 ~ axiosClient.interceptors.response.use ~ response', response);
+
+    if (response ) {
         return response.data;
     }
     return response;
 }, (error) => {
-    console.log('🚀 ~ file: axiosClient.js ~ line 27 ~ axiosClient.interceptors.response.use ~ error', error);
-    // Handle errors
-    throw error;
+    // console.log('🚀 ~ axiosClient.interceptors.response.use ~ error', error.response);
+    // const { statusCode, message } = error.response.data;
+    // console.log('🚀 ~ file: axiosClient.js ~ line 34 ~ axiosClient.interceptors.response.use ~ message', message);
+    // console.log('🚀 ~ file: axiosClient.js ~ line 34 ~ axiosClient.interceptors.response.use ~ statusCode', statusCode);
+    throw error.response.data;
 });
 
 export default axiosClient;

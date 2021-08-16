@@ -64,7 +64,7 @@ function Header(props) {
                             <NavLink activeClassName="active" className="header-label" to="/admin/dashboard">
                                 ADMIN
                             </NavLink>
-                            <NavLink activeClassName="active" className="header-label" to="/profile/:idUser">
+                            <NavLink activeClassName="active" className="header-label" to="/profile/me">
                                 PROFILE
                             </NavLink>
                             {/* <NavLink activeClassName="active" className="header-label" to={`/movie/:${movieId}`}>
