@@ -1,12 +1,35 @@
+import React, { useEffect } from 'react';
 import Page from 'components/Page/Page';
 import { ACCOUNT_BG } from 'constants/image';
 import FormSignin from 'containers/Auth/components/FormSignIn/FormSignIn';
 import ThirdParty from 'containers/Auth/components/ThirdParty/ThirdParty';
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { NavLink, useHistory } from 'react-router-dom';
 import './SignIn.scss';
+import { login } from 'app/authSlice';
+
+import axiosClient from 'apis/axiosClient';
 
 export default function SignIn() {
+    const auth = useSelector(state => state.auth);
+    const dispatch = useDispatch();
+    const history = useHistory();
+    
+    useEffect(() => {
+
+        // if (auth.isLoggedIn) {
+        //     history.push('/');
+        // }
+
+    }, [auth.isLoggedIn, history]);
+
+
+    const onSubmit = (values) => {
+        console.log('🚀 ~ file: index.js ~ line 23 ~ onSubmit ~ values', values);
+
+        dispatch(login(values));
+    };
+
     return (
         <Page title="Login | UR-TICKET">
             <section className="signin bg_img" style={{ backgroundImage: `url(${ACCOUNT_BG})` }}>
@@ -17,7 +40,7 @@ export default function SignIn() {
                     </div>
 
                     <div className="signin__wrapper__form">
-                        <FormSignin />
+                        <FormSignin onSubmit={onSubmit} />
                     </div>
                     <a href="#0" className="forget-pass">Forget Password</a>
 

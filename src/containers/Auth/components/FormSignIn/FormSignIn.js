@@ -15,13 +15,12 @@ const validationSchema = yup.object().shape({
         .required('Password is required'),
 });
 
-export default function FormSignin() {
-    const onSubmitForm = (data) => {
-        console.log('🚀 ~ file: index.js ~ line 19 ~ FormSignin ~ data', data);
-    };
+export default function FormSignin(props) {
+    const { onSubmit } = props;
+  
     return (
         <>
-            <Form onSubmit={onSubmitForm} validationSchema={validationSchema}>
+            <Form onSubmit={onSubmit} validationSchema={validationSchema}>
                 <InputField name="email" type="text" label="EMAIL" />
                 <InputField name="password" type="password" label="PASSWORD" />
                 <CheckBox name="rememberPW" label="Remember Password" />
