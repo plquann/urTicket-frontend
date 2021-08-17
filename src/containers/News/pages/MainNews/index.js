@@ -34,7 +34,7 @@ export default function MainNews() {
                         <NewTrendingMovie />
                     </div>
                 </div>
-                <div className="news__box-office">
+                <div className="news__box-office mt-10">
                     <BoxOffice />
                 </div>
             </div>

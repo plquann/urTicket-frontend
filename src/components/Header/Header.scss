@@ -28,10 +28,15 @@
         #aa52a1 63%,
         #ff4343 100%
       );
-      .selected {
-      }
     }
-
+    .avatar-user {
+      background-image: linear-gradient(
+        169deg,
+        #5560ff 17%,
+        #aa52a1 63%,
+        #ff4343 100%
+      );
+    }
     .header-auth.selected {
       padding: 1.5px;
       a {

@@ -1,11 +1,10 @@
-import React, { useState, memo } from 'react';
+import React, { useState, memo, useRef } from 'react';
 import './Header.scss';
 import { LOGO } from 'constants/image';
 import DropDownMenu from 'components/DropDownMenu/DropDownMenu';
 import { NavLink } from 'react-router-dom';
 import { useScrollPosition } from 'hooks/useScrollPosition';
 import { useSelector } from 'react-redux';
-import AccountPopover from 'containers/Admin/components/AccountPopover/AccountPopover';
 
 const dropDownItems = [
     {
@@ -18,6 +17,7 @@ const dropDownItems = [
 
 function Header(props) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isMenuDropDownOpen, setIsMenuDropDownOpen] = useState(false);
     const [hideOnScroll, setHideOnScroll] = useState(true);
     const { isLoggedIn, user } = useSelector(state => state.auth);
 
@@ -73,13 +73,16 @@ function Header(props) {
                     </div>
 
                     {/* if user logged in => div user else div button login */}
-                    {isLoggedIn
+                    {true
                         ? <div className="block">
                             <div className="flex items-center md:ml-6">
-                                <AccountPopover />
+                                <DropDownMenu
+                                    items={dropDownItems}
+                                    avatar = {user?.avatar.url}
+                                />
                             </div>
                         </div>
-                        : <div className="hidden md:block md:flex items-center justify-between">
+                        : <div className="hidden  md:flex items-center justify-between">
                             <div className="header-auth selected">
                                 <NavLink to="/login" className="inline-block selected">
                                     Sign in
