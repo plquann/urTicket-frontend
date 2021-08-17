@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Profile.scss';
 import { PROFILE_COVER } from 'constants/image';
 import { TabGroup } from '@statikly/funk'
@@ -7,6 +7,7 @@ import MyFavorites from '../../components/MyFavorites/MyFavorites';
 import Page from 'components/Page/Page';
 import MyReservation from 'containers/Profile/components/MyReservation/MyReservation';
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 const TABS_HEAD = [
     'PROFILE INFO',
@@ -15,7 +16,15 @@ const TABS_HEAD = [
 ];
 
 export default function Profile() {
-    const me = useSelector(state => state.auth.user)
+    const { user, isLoggedIn } = useSelector(state => state.auth)
+    const history = useHistory();
+
+    useEffect(() => {
+        if (!isLoggedIn) {
+            history.push('/login');
+        }
+    }, [isLoggedIn, history]);
+
     return (
         <Page title="Profile | URTicket Booking">
             <div className="profile mt-20">
@@ -25,10 +34,10 @@ export default function Profile() {
                         style={{ backgroundImage: `url(${PROFILE_COVER})` }}
                     >
                         <div className="info__avatar">
-                            <img className=" rounded-full w-full h-full" src={me?.avatar.url} alt="avatar user" />
+                            <img className=" rounded-full w-full h-full" src={user?.avatar.url} alt="avatar user" />
                         </div>
                         <div className="info__name">
-                            <h1>{me.userName}</h1>
+                            <h1>{user?.userName}</h1>
                         </div>
                     </div>
                     <div className="profile__wrapper__content mt-8 ">
@@ -54,7 +63,7 @@ export default function Profile() {
                                     inactiveClassName="opacity-0 translate-y-2"
                                 >
                                     <div className="max-w-screen-md mx-auto">
-                                        <MyProfile me={me} />
+                                        <MyProfile me={user} />
                                     </div>
                                 </TabGroup.TabPanel>
                                 <TabGroup.TabPanel

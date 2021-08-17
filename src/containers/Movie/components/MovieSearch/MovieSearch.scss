@@ -1,6 +1,6 @@
 @layer components {
   .search-tab::before {
-    @apply opacity-80 absolute inset-0;
+    @apply opacity-80 absolute inset-0 rounded-md;
     background-image: linear-gradient(0deg, #3f4b50 0%, #524d54 100%);
     content: "";
   }

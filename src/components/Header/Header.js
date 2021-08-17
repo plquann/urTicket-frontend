@@ -1,26 +1,25 @@
 import React, { useState, memo } from 'react';
 import './Header.scss';
 import { LOGO } from 'constants/image';
-// import DropDownMenu from 'components/DropDownMenu/DropDownMenu';
+import DropDownMenu from 'components/DropDownMenu/DropDownMenu';
 import { NavLink } from 'react-router-dom';
 import { useScrollPosition } from 'hooks/useScrollPosition';
+import { useSelector } from 'react-redux';
+import AccountPopover from 'containers/Admin/components/AccountPopover/AccountPopover';
 
-
-// const dropDownItems = [
-//     {
-//         label: 'Settings',
-//     },
-//     {
-//         label: 'Account',
-//     },
-//     {
-//         label: 'Logout',
-//     },
-// ];
+const dropDownItems = [
+    {
+        label: 'My Profile',
+    },
+    {
+        label: 'Logout',
+    },
+];
 
 function Header(props) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [hideOnScroll, setHideOnScroll] = useState(true);
+    const { isLoggedIn, user } = useSelector(state => state.auth);
 
     useScrollPosition(
         ({ prevPos, currPos }) => {
@@ -40,7 +39,7 @@ function Header(props) {
     return (
         <header className={className} >
             <div className="header__wrapper max-w-screen-xl mx-auto flex-grow">
-                <nav className="w-full bg-opacity-0 bg-gray-800 text-center flex flex-wrap items-center justify-center">
+                <nav className="w-full bg-opacity-0 bg-gray-800 text-center flex flex-wrap items-center justify-between">
                     <div className=" flex items-center">
                         <a className="flex-shrink-0" href="/">
                             <img className="h-10 w-20" src={LOGO.APP_LOGO} alt="logo" />
@@ -48,7 +47,7 @@ function Header(props) {
                     </div>
 
                     <div className="hidden md:block">
-                        <div className="ml-20 flex items-baseline flex-grow space-x-4">
+                        <div className="flex items-baseline flex-grow space-x-4">
                             <NavLink activeClassName="active" className="header-label" to="/" exact="/">
                                 HOME
                             </NavLink>
@@ -73,29 +72,26 @@ function Header(props) {
                         </div>
                     </div>
 
-                    <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-                        <NavLink to="/login" className="header-auth whitespace-nowrap">
-                            Sign in
-                        </NavLink>
-                        <NavLink to="/register" className="ml-8 header-auth selected whitespace-nowrap">
-                            Sign up
-                        </NavLink>
-                    </div>
                     {/* if user logged in => div user else div button login */}
-
-                    {/* <div className="block">
-                            <div className="ml-4 flex items-center md:ml-6">
-                                <div className="ml-3 relative">
-                                    <DropDownMenu
-                                        withBackground={true}
-                                        forceOpen={false}
-                                        items={dropDownItems.map((item) => {
-                                            return { label: item.label };
-                                        })}
-                                    />
-                                </div>
+                    {isLoggedIn
+                        ? <div className="block">
+                            <div className="flex items-center md:ml-6">
+                                <AccountPopover />
                             </div>
-                        </div> */}
+                        </div>
+                        : <div className="hidden md:block md:flex items-center justify-between">
+                            <div className="header-auth selected">
+                                <NavLink to="/login" className="inline-block selected">
+                                    Sign in
+                                </NavLink>
+                            </div>
+                            <div className="header-auth ml-2">
+                                <NavLink to="/register" className="inline-block">
+                                    Sign up
+                                </NavLink>
+                            </div>
+                        </div>
+                    }
 
 
                     <div className="-mr-2 flex md:hidden">

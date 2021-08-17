@@ -33,7 +33,7 @@ export default function MovieSearch() {
     return (
         <section className="search-ticket-section pt-20 mb-20 relative z-10">
             <div className="max-w-screen-lg mx-auto ">
-                <div className="search-tab bg-img py-7 px-8 relative" >
+                <div className="search-tab bg-img py-7 px-8 relative " >
                     <div className="grid grid-cols-2 mb-10">
                         <div className="search-ticket-header relative">
                             <h6 className="category text-lg mb-3 font-semibold uppercase" style={{ color: '#31d7a9' }}>
