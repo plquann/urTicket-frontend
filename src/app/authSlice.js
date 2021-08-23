@@ -2,14 +2,17 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import authAPI from 'apis/authAPI';
 
 //action 
-export const login = createAsyncThunk('auth/LOGIN', async (user, thunkAPI) => {
-    const { email, password } = user;
-    //console.log('🚀 ~ file: authSlice.js ~ line 7 ~ login ~ user', user);
-    
-    const userLogin = await authAPI.login({ email, password });
-    console.log('🚀 ~ file: authSlice.js ~ line 9 ~ login ~ userLogin', userLogin);
-    return userLogin;
-})
+export const login = createAsyncThunk(
+    'auth/LOGIN',
+    async (user, thunkAPI) => {
+        const { email, password } = user;
+        //console.log('🚀 ~ file: authSlice.js ~ line 7 ~ login ~ user', user);
+
+        const userLogin = await authAPI.login({ email, password });
+        console.log('🚀 ~ file: authSlice.js ~ line 12 ~ userLogin', userLogin);
+
+        return userLogin;
+    })
 
 const authSlice = createSlice({
     name: 'auth',

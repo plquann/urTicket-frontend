@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
+import homeReducer from 'containers/Movie/Slice/homeSlice';
 import authReducer from './authSlice';
 
 const rootReducer = {
-    auth : authReducer
+    auth : authReducer,
+    home: homeReducer,
 };
 
 const store = configureStore({

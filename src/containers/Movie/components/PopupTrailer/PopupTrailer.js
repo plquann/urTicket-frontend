@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Popup from 'reactjs-popup';
 import './PopupTrailer.scss';
 
-export default function PopupTrailer(props = { idVideo: 'h3h035Eyz5A' }) {
+const PopupTrailer = (props) => {
+console.log('🚀 ~ file: PopupTrailer.js ~ line 6 ~ props', props.idVideo);
 
     return (
         <Popup
@@ -29,3 +30,5 @@ export default function PopupTrailer(props = { idVideo: 'h3h035Eyz5A' }) {
         </Popup>
     )
 }
+
+export default PopupTrailer;

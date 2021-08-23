@@ -2,7 +2,10 @@ import React from 'react';
 import { TabGroup } from '@statikly/funk';
 import MovieItemCarousel from '../MovieItemCarousel/MovieItemCarousel';
 
-export default function Tabs() {
+export default function Tabs(props) {
+
+    const { movieNowPlaying, movieUpcoming } = props;
+
     return (
         <div className="max-w-screen-lg mx-auto justify-center items-center">
             <TabGroup numTabs={2} direction={TabGroup.direction.HORIZONTAL}>
@@ -28,19 +31,22 @@ export default function Tabs() {
                         })}
                     </div>
                 </TabGroup.TabList>
-                {[0, 1].map((item, index) => {
-                    return (
-                        <TabGroup.TabPanel
-                            key={index}
-                            index={index}
-                            className="pt-12 pb-8 transition transform duration-700 "
-                            activeClassName="opacity-100 translate-x-0"
-                            inactiveClassName="absolute opacity-0 -translate-x-2"
-                        >
-                            <MovieItemCarousel />
-                        </TabGroup.TabPanel>
-                    )
-                })}
+                <TabGroup.TabPanel
+                    index={0}
+                    className="pt-12 pb-8 transition transform duration-700 "
+                    activeClassName="opacity-100 translate-x-0"
+                    inactiveClassName="absolute opacity-0 -translate-x-2"
+                >
+                    <MovieItemCarousel movies={movieNowPlaying} />
+                </TabGroup.TabPanel>
+                <TabGroup.TabPanel
+                    index={1}
+                    className="pt-12 pb-8 transition transform duration-700 "
+                    activeClassName="opacity-100 translate-x-0"
+                    inactiveClassName="absolute opacity-0 -translate-x-2"
+                >
+                    <MovieItemCarousel movies={movieUpcoming} />
+                </TabGroup.TabPanel>
             </TabGroup>
         </div>
     )
