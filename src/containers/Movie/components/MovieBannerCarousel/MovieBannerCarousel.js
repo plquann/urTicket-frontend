@@ -58,7 +58,7 @@ export default function MovieBannerCarousel() {
                                 open={<button className="button playTrailer">
                                     <i className="fa fa-play" id="viewTrailer" />
                                 </button>}
-                                idVideo={`pRfmrE0ToTo`}
+                                idVideo={`eg5ciqQzmK0`}
                             />
                         </div>
                     )
