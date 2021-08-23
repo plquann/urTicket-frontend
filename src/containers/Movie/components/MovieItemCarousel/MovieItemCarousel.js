@@ -6,8 +6,8 @@ import ArrowCarousel from 'components/ArrowCarousel/ArrowCarousel';
 import MovieCard from '../MovieCard/MovieCard';
 
 const settings = {
-    dots: true,
-    
+    dots: false,
+    lazyLoad: true,
     autoplay: false,
     arrows: true,
     pauseOnHover: true,
@@ -23,25 +23,17 @@ const settings = {
 
 
 export default function MovieItemCarousel(props) {
-
     const { movies } = props;
-    const arr = test();
+    console.log('🚀 ~ file: MovieItemCarousel.js ~ line 27 ~ movies', movies.length);
 
     return (
         <section className="carousel max-w-full relative">
             <Slider {...settings}>
-                {/* {movies?.map((movie, index) => {
+                {movies?.map((movie, index) => {
                     return (
-                        <MovieCard key={index} movie={movie} />
-                    )
-                })} */}
-
-                {arr.map((movie, index) => {
-                    return (
-                        <div className="px-2 py-4">
-                            <MovieCard key={index} movie={movie} />
+                        <div className="px-2 py-4" key={index} >
+                            <MovieCard movie={movie} />
                         </div>
-
                     )
                 })}
             </Slider>

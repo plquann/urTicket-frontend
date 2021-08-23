@@ -3,8 +3,6 @@ import Popup from 'reactjs-popup';
 import './PopupTrailer.scss';
 
 const PopupTrailer = (props) => {
-console.log('🚀 ~ file: PopupTrailer.js ~ line 6 ~ props', props.idVideo);
-
     return (
         <Popup
             trigger={props.open}

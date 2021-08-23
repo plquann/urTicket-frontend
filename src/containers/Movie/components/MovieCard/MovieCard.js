@@ -1,27 +1,27 @@
 import React from 'react';
 import './MovieCard.scss';
-import { MOVIE_IMG, ICONS } from 'constants/image';
+import { ICONS } from 'constants/image';
 import PopupTrailer from '../PopupTrailer/PopupTrailer';
 
-export default function MovieCard(props) {
+export default function MovieCard({movie}) {
     return (
         <div className="movie__card">
             <div className="movie__card__wrapper">
                 <div className="movie__card__img relative">
-                    <a href="/details" className="block">
-                        <img className="w-full" src={MOVIE_IMG[Math.floor(Math.random() * 11)]} alt="movie" />
-                    </a>
+                    <div href="/details" className="block">
+                        <img className="w-full h-full" src={movie?.posterUrl} alt="movie" />
+                    </div>
                     <PopupTrailer
                         open={<button className="button movie__card__img__playTrailer">
                             <i className="fa fa-play" id="viewTrailer" />
                         </button>}
-                        idVideo={`pRfmrE0ToTo`}
+                        idVideo={movie?.trailerVideoUrl}
                     />
                 </div>
                 <div className="movie__card__content">
-                    <h5 className="movie__card__title">
-                        <a href="#0">alone</a>
-                    </h5>
+                    <div className="movie__card__title">
+                        <h5 className="line-clamp-2">{movie?.title}</h5>
+                    </div>
                     <ul className="movie__card__rating">
                         <li className="card__rating_item">
                             <div className="flex items-center ">

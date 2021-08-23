@@ -40,7 +40,7 @@ export default function Footer() {
                             </a>
                         </p>
                         <p>
-                            <i class="fab fa-github mr-3"></i>
+                            <i className="fab fa-github mr-3"></i>
                             <a href="https://github.com/quankhs" className="italic font-medium">
                                 QuanKhs
                             </a>

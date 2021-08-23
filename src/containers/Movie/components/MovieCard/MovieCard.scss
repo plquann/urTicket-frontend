@@ -17,7 +17,7 @@
             cursor-pointer transition-all scale-100 hover:scale-110;
           padding: 20px;
           font-size: 20px;
-          line-height:20px;
+          line-height: 20px;
         }
       }
     }
@@ -27,8 +27,9 @@
       background-color: rgb(26, 34, 42);
 
       .movie__card__title {
-        @apply py-6 px-0 capitalize border-b border-dashed text-2xl font-semibold;
+        @apply py-4 px-0 capitalize border-b border-dashed text-xl font-semibold line-clamp-2;
         border-color: #11326f;
+        height: 94px;
       }
 
       .movie__card__rating {

@@ -38,7 +38,7 @@ const MovieBannerCarousel = ({ movies }) => {
             <Slider {...settings}>
                 {movies?.map((movie, index) => {
                     return (
-                        <div key={movie?.id} className="carousel-inner w-full relative ">
+                        <div key={movie.id || index} className="carousel-inner w-full relative ">
                             <img
                                 src={movie?.backdropUrl} alt="img-carousel"
                                 className="w-full mx-auto"

@@ -38,7 +38,7 @@ function Header(props) {
 
                     <div className="hidden md:block">
                         <div className="flex items-baseline flex-grow space-x-4">
-                            <NavLink activeClassName="active" className="header-label" to="/" exact="/">
+                            <NavLink activeClassName="active" className="header-label" to="/" exact>
                                 HOME
                             </NavLink>
                             <NavLink activeClassName="active" className="header-label" to="/movie/discover">
