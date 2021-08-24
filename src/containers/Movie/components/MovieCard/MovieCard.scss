@@ -28,13 +28,13 @@
       background-color: rgb(26, 34, 42);
 
       .movie__card__title {
-        @apply pt-2 px-0 capitalize border-b border-dashed text-xl font-semibold line-clamp-2;
+        @apply py-2 px-0 capitalize border-b border-dashed text-xl font-semibold line-clamp-2 leading-5;
         border-color: #11326f;
-        height: 88px;
+        height: 100px;
       }
 
       .movie__card__rating {
-        @apply grid grid-cols-3 gap-4 py-4 px-0;
+        @apply grid grid-cols-3 gap-4 py-2 px-0;
 
         .card__rating_item {
           @apply flex flex-row;

@@ -7,11 +7,12 @@ import PopupTrailer from '../PopupTrailer/PopupTrailer';
 import ArrowCarousel from 'components/ArrowCarousel/ArrowCarousel';
 
 import './MovieBannerCarousel.scss';
+import { Skeleton } from '@material-ui/core';
 
 const settings = {
     dots: false,
     autoplay: false,
-    infinite:true,
+    infinite: true,
     speed: 500,
     // fade: true,
     slidesToShow: 1,
@@ -22,35 +23,37 @@ const settings = {
     prevArrow: <ArrowCarousel arrowImg={ARROW_CAROUSEL.PREV_ARROW} />,
 }
 
-const id = ['_BggT--yxf0', '0pmfrE1YL4I', 'eg5ciqQzmK0', '1VIZ89FEjYI', 'mYfJxlgR2jw'];
 
 const MovieBannerCarousel = () => {
-    const { movieHighlight } = useSelector(state => state.home);
+    const { movieHighlight, loading } = useSelector(state => state.home);
 
     return (
         <section className="carousel max-w-full relative mt-16">
-            <Slider {...settings}>
-                {movieHighlight?.map((movie, index) => {
-                    return (
-                        <div key={movie.id || index} className="transition-all duration-300">
-                            <div className="carousel-inner w-full relative ">
-                                <img
-                                    src={movie?.backdropUrl} alt="img-carousel"
-                                    className="w-full mx-auto"
-                                    style={{ height: '600px', objectFit: 'cover' }}
+            {loading
+                ? <Skeleton animation="wave" variant="rect" width="100%" height={600} style={{ backgroundColor: '#404146' }} />
+                : <Slider {...settings}>
+                    {movieHighlight.length && movieHighlight?.map((movie, index) => {
+                        return (
+                            <div key={movie.id || index} className="transition-all duration-300">
+                                <div className="carousel-inner w-full relative ">
+                                    <img
+                                        src={movie?.backdropUrl} alt="img-carousel"
+                                        className="w-full mx-auto"
+                                        style={{ height: '600px', objectFit: 'cover' }}
 
-                                />
-                                <PopupTrailer
-                                    open={<button className="button playTrailer">
-                                        <i className="fa fa-play" id="viewTrailer" />
-                                    </button>}
-                                    idVideo={movie.trailerVideoUrl}
-                                />
+                                    />
+                                    <PopupTrailer
+                                        open={<button className="button playTrailer">
+                                            <i className="fa fa-play" id="viewTrailer" />
+                                        </button>}
+                                        idVideo={movie.trailerVideoUrl}
+                                    />
+                                </div>
                             </div>
-                        </div>
-                    )
-                })}
-            </Slider>
+                        )
+                    })}
+                </Slider>
+            }
 
         </section>
     )
