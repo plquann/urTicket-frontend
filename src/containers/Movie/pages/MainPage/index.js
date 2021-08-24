@@ -1,5 +1,4 @@
 import React, { memo} from 'react';
-import MovieCarousel from 'containers/Movie/components/MovieBannerCarousel/MovieBannerCarousel';
 import MovieSearch from 'containers/Movie/components/MovieSearch/MovieSearch';
 import Tabs from 'containers/Movie/components/Tabs/Tabs';
 import NewsSection from 'containers/Movie/components/NewsSection/NewsSection';
@@ -7,6 +6,7 @@ import Schedule from 'containers/Movie/components/Schedule/Schedule';
 import BoxOffice from 'components/BoxOffice/BoxOffice';
 import Page from 'components/Page/Page';
 import { useSelector } from 'react-redux';
+import MovieHighlight from 'containers/Movie/components/MovieHighlight/MovieHighlight';
 
 const MainPage = (props) => {
 
@@ -21,7 +21,7 @@ const MainPage = (props) => {
 
     return (
         <Page title="Homepage | UR-TICKET">
-            <MovieCarousel />
+            <MovieHighlight />
             <MovieSearch movies={movieNowPlaying} />
             <Tabs />
             <Schedule

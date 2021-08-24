@@ -1,7 +1,6 @@
 import React from 'react'
 
 import Pagination from 'components/Pagination/Pagination'
-import MovieExplore from 'containers/Movie/components/MovieExplore/MovieExplore'
 import MovieItem from 'containers/Movie/components/MovieItem/MovieItem'
 import MovieSearch from 'containers/Movie/components/MovieSearch/MovieSearch'
 import FilterSort from 'containers/Movie/components/FilterStatus/FilterStatus';
@@ -11,10 +10,10 @@ import Page from 'components/Page/Page'
 import { Filter } from 'components/Icons'
 
 export default function Discover() {
+    const {movieNowPlaying} = useSelector(state => state.home)
     return (
         <Page title="Discover | UR-TICKET">
             <div className="w-full h-full" >
-                <MovieExplore />
                 <MovieSearch />
                 <div className="grid grid-cols-4 gap-4 max-w-screen-xl mx-auto">
                     <div className="col-span-1">
@@ -28,6 +27,8 @@ export default function Discover() {
                     </div>
                     <div className="col-span-3">
                         <FilterSort />
+                        {/* 
+                         */}
                         <MovieItem />
                         <MovieItem />
                         <MovieItem />

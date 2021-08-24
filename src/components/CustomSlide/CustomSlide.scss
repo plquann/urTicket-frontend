@@ -4,7 +4,7 @@
     height: 700px;
 
     .bg {
-      @apply p-8 transform skew-x-6 absolute pl-80 -left-32 h-full;
+      @apply p-8 transform skew-x-6 absolute pl-60 -left-32 h-full;
       background-color: rgba(black, 0.6);
       width: 55%;
       transform-origin: 0 100%;
@@ -41,7 +41,7 @@
       }
       .genres {
         a {
-          @apply inline-block border-2 font-medium text-xs uppercase px-3.5 py-2 rounded-3xl transition-all duration-300 ease-in-out mr-4;
+          @apply inline-block border-2 font-medium text-xs uppercase px-3.5 py-2 rounded-md transition-all duration-300 ease-in-out mr-4;
           color: "#9aace5";
           border-color: rgba(168, 177, 198, 0.2);
           &:hover {
@@ -51,49 +51,15 @@
       }
       .btn {
         button {
-          @apply uppercase px-3.5 py-2 bg-gray-600 text-white rounded-xl focus:outline-none opacity-75;
+          @apply uppercase px-3.5 py-2 bg-gray-600 text-white rounded-md focus:outline-none;
           &:hover {
-            opacity: 1;
+            background-image: linear-gradient(
+              169deg,
+              #5560ff 17%,
+              #aa52a1 63%,
+              #ff4343 100%
+            );
           }
-        }
-      }
-    }
-
-    .illustration {
-      div {
-        height: 25rem;
-        width: 18rem;
-        border-radius: 3rem;
-        background-color: #ffff;
-        position: relative;
-        transform: skewX(-10deg);
-        margin-left: 10rem;
-
-        // @media only screen and (max-width: 800px) {
-        //   height: 20rem;
-        //   width: 15rem;
-        // }
-
-        &::after,
-        &::before {
-          content: "";
-          position: absolute;
-          height: 100%;
-          width: 100%;
-          background: url(../../assets/images/poster_explore.jpg);
-          background-position:top left;
-          background-repeat: no-repeat;
-          background-size: cover;
-          border-radius: 3rem;
-          top: 0;
-          left: 0;
-        }
-
-        &::after {
-          transform: translate(6rem, -2rem);
-        }
-        &::before {
-          transform: translate(3rem, -3rem);
         }
       }
     }

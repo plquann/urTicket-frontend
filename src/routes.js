@@ -40,7 +40,6 @@ const ScrollToTop = withRouter(({ children, location: { pathname } }) => {
 const Routes = () => {
     return (
         <Suspense fallback={<Loading />}>
-
             <Router>
                 <ScrollToTop>
                     <Switch>

@@ -28,9 +28,11 @@
       background-color: rgb(26, 34, 42);
 
       .movie__card__title {
-        @apply py-2 px-0 capitalize border-b border-dashed text-xl font-semibold line-clamp-2 leading-5;
+        @apply py-2 px-0 capitalize border-b border-dashed text-xl font-semibold line-clamp-2 ;
         border-color: #11326f;
-        height: 100px;
+        h5{
+          height: 56px;
+        }
       }
 
       .movie__card__rating {

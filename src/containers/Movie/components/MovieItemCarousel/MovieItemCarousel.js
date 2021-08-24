@@ -4,6 +4,8 @@ import './MovieItemCarousel.scss';
 import { ARROW_CAROUSEL } from 'constants/image';
 import ArrowCarousel from 'components/ArrowCarousel/ArrowCarousel';
 import MovieCard from '../MovieCard/MovieCard';
+import { Skeleton } from '@material-ui/core';
+import { useSelector } from 'react-redux';
 
 const settings = {
     dots: false,
@@ -23,19 +25,23 @@ const settings = {
 
 
 export default function MovieItemCarousel(props) {
+    const { loading } = useSelector(state => state.home)
     const { movies } = props;
 
     return (
         <section className="carousel max-w-full relative">
-            <Slider {...settings}>
-                {movies.length && movies.slice(0, 16)?.map((movie, index) => {
-                    return (
-                        <div className="px-2 py-4" key={index} >
-                            <MovieCard movie={movie} />
-                        </div>
-                    )
-                })}
-            </Slider>
+            {loading
+                ? <Skeleton variant="rect" animation="wave" width="100%" height={1080}  />
+                : <Slider {...settings}>
+                    {movies.length && movies.slice(0, 16)?.map((movie, index) => {
+                        return (
+                            <div className="px-2 py-4" key={index} >
+                                <MovieCard movie={movie} />
+                            </div>
+                        )
+                    })}
+                </Slider>
+            }
         </section>
 
     )
