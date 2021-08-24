@@ -8,6 +8,7 @@ import FilterCinema from 'containers/Movie/components/FilterCinema/FilterCinema'
 import FilterDate from 'containers/Movie/components/FilterDate/FilterDay'
 import Page from 'components/Page/Page'
 import { Filter } from 'components/Icons'
+import { useSelector } from 'react-redux';
 
 export default function Discover() {
     const {movieNowPlaying} = useSelector(state => state.home)
@@ -27,14 +28,9 @@ export default function Discover() {
                     </div>
                     <div className="col-span-3">
                         <FilterSort />
-                        {/* 
-                         */}
-                        <MovieItem />
-                        <MovieItem />
-                        <MovieItem />
-                        <MovieItem />
-                        <MovieItem />
-                        <MovieItem />
+                        {movieNowPlaying.length && movieNowPlaying?.slice(0,10).map((movie, index) => (
+                            <MovieItem key={movie?.id} movie={movie} />
+                        ))}
                         <Pagination />
                     </div>
                 </div>

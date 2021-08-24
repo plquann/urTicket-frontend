@@ -2,44 +2,48 @@ import React from 'react';
 import './MovieItem.scss';
 import { MOVIE_IMG, ICONS } from 'constants/image';
 import { randomGenres } from 'constants/genres';
+import { Link } from 'react-router-dom';
+import MovieClassify from '../MovieClassify/MovieClassify';
 
-export default function MovieItem() {
-    console.log("movie item render");
+export default function MovieItem({ movie, ...props }) {
     return (
         <div className="movie__item w-full mt-5 mb-10">
             <div className="movie__item__thumb c-thumb">
-                <a href="movie-details.html" className="w-100" >
-                    <img className="w-full h-full bg-img rounded-t-md" src={MOVIE_IMG[Math.floor(Math.random() * 11)]} alt="movie" />
-                </a>
+                <Link to={`/movie/${movie?.id}`} className="w-100" >
+                    <img className="w-full h-full bg-img rounded-md" src={movie?.posterUrl} alt="movie" />
+                </Link>
             </div>
             <div className="movie__item__content h-100">
                 <h5 className="title line-clamp-1">
-                    <a href="movie-details.html">Captain America: The First Avenger</a>
+                    <Link to={`/movie/${movie?.id}`}>{movie?.title}</Link>
                 </h5>
-                <p className="duration">2hrs 50 min</p>
-                <p className="summary line-clamp-3">During World War II, Steve Rogers is a sickly man from Brooklyn who's transformed into super-soldier Captain America to aid in the war effort. Rogers must stop the Red Skull – Adolf Hitler's ruthless head of weaponry, and the leader of an organization that intends to use a mysterious device of untold powers for world domination.</p>
+                <p className="duration">
+                    <MovieClassify classify={movie?.classify} styles={'font-medium'} />
+                    <span className="ml-2">{movie?.duration} minutes</span>
+                </p>
+                <p className="summary line-clamp-3 mt-2">{movie?.description}</p>
 
                 <div className="genres">
-                    {randomGenres().map((genre, index) => {
-                        return <span key={index}>{genre}</span>
+                    {movie?.genres.map((genre, index) => {
+                        return <span key={genre.id}>{genre.name}</span>
                     })}
                 </div>
 
-                <div className="release">
-                    <span>Release Date : </span> <a href="#0"> November 8 , 2020</a>
+                <div className="release mt-2">
+                    <span style={{ color: '#31d7a9' }}>Release Date : </span> <a href="#0">{new Date(movie?.releaseDate).toDateString()}</a>
                 </div>
                 <ul className="rating">
                     <li className="item">
                         <div className="flex items-center ">
                             <img className="max-w-full" src={ICONS.TOMATO} alt="movie" />
                         </div>
-                        <span className="font-semibold text-lg ml-2">88%</span>
+                        <span className="font-semibold text-lg ml-2">{movie?.voteAverage * 10}%</span>
                     </li>
                     <li className="item">
                         <div className="flex items-center ">
                             <img className="max-w-full" src={ICONS.CAKE} alt="movie" />
                         </div>
-                        <span className="font-semibold text-lg ml-2">88%</span>
+                        <span className="font-semibold text-lg ml-2">{movie?.voteAverage / 2}</span>
                     </li>
                 </ul>
                 <div className="booking">
