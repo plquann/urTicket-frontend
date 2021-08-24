@@ -22,8 +22,6 @@ axiosClient.interceptors.request.use(async (config) => {
 });
 
 axiosClient.interceptors.response.use((response) => {
-    console.log('🚀 ~ file: axiosClient.js ~ line 25 ~ axiosClient.interceptors.response.use ~ response', response);
-
     if (response ) {
         return response.data;
     }

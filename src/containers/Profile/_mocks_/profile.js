@@ -1,5 +1,5 @@
 import faker from 'faker';
-import { sample, sampleSize } from 'lodash';
+import { sample } from 'lodash';
 
 export const me = {
     id: faker.datatype.uuid(),

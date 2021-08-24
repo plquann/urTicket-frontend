@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo} from 'react';
 import MovieCarousel from 'containers/Movie/components/MovieBannerCarousel/MovieBannerCarousel';
 import MovieSearch from 'containers/Movie/components/MovieSearch/MovieSearch';
 import Tabs from 'containers/Movie/components/Tabs/Tabs';
@@ -9,30 +9,27 @@ import Page from 'components/Page/Page';
 import { useSelector } from 'react-redux';
 
 const MainPage = (props) => {
+
     const {
         movieNowPlaying,
-        movieUpcoming,
-        movieHighlight,
         groupTheater,
         currentShowtime,
         newsHottest
     } = useSelector(state => state.home);
 
+    
 
     return (
         <Page title="Homepage | UR-TICKET">
-            <MovieCarousel movies={movieHighlight}/>
-            <MovieSearch movies={movieNowPlaying}/>
-            <Tabs
-                movieNowPlaying={movieNowPlaying}
-                movieUpcoming={movieUpcoming}
-            />
+            <MovieCarousel />
+            <MovieSearch movies={movieNowPlaying} />
+            <Tabs />
             <Schedule
                 groupTheater={groupTheater}
                 showtime={currentShowtime}
 
             />
-            <NewsSection news={newsHottest?.data}/>
+            <NewsSection news={newsHottest?.data} />
             <BoxOffice />
         </Page>
     )

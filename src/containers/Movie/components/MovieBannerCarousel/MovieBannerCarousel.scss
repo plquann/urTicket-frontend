@@ -8,14 +8,15 @@
       }
     }
     .playTrailer {
-      @apply absolute top-1/2 left-1/2
-        scale-100 text-white rounded-full opacity-0 transition duration-700 cursor-pointer outline-none;
+      @apply absolute top-1/2 left-1/2 p-6 border-2 border-solid border-white
+         text-white transition opacity-0 duration-700 cursor-pointer outline-none;
       transform: translate(-50%, -50%);
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       i {
-        @apply border-2 border-solid border-white rounded-full text-white 
-          cursor-pointer transition-all scale-100 hover:scale-110;
-        padding: 25px;
-        font-size: 25px;
+        font-size: 24px;
       }
     }
     .slides {

@@ -1,9 +1,10 @@
 @layer components {
   .movie__card {
-    @apply rounded-lg overflow-hidden;
+    @apply rounded-lg overflow-hidden ;
+    height: 32rem;
 
     &__img {
-      @apply relative overflow-hidden;
+      @apply h-2/3 relative overflow-hidden;
       img {
         @apply transition duration-300 ease-in-out;
       }
@@ -27,9 +28,9 @@
       background-color: rgb(26, 34, 42);
 
       .movie__card__title {
-        @apply py-4 px-0 capitalize border-b border-dashed text-xl font-semibold line-clamp-2;
+        @apply pt-2 px-0 capitalize border-b border-dashed text-xl font-semibold line-clamp-2;
         border-color: #11326f;
-        height: 94px;
+        height: 88px;
       }
 
       .movie__card__rating {

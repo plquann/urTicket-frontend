@@ -26,7 +26,6 @@ export const fetchMoviesHighlight = createAsyncThunk(
     }
 );
 
-
 const initialHomePage = {
     movieNowPlaying: [],
     movieUpcoming: [],
@@ -79,8 +78,6 @@ const homeSlice = createSlice({
             state.loading = false;
         });
         builder.addCase(fetchMoviesHighlight.rejected, (state, action) => {
-            console.log('🚀 ~ file: homeSlice.js ~ line 82 ~ action', action);
-
             if (action.payload)
                 state.error = action.payload.message;
             else

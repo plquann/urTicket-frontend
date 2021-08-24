@@ -1,11 +1,14 @@
-import React, { memo } from 'react';
+import React from 'react';
 import Popup from 'reactjs-popup';
 import './PopupTrailer.scss';
 
 const PopupTrailer = (props) => {
     return (
         <Popup
-            trigger={props.open}
+            trigger={() => props.open}
+            // trigger={open => (
+            //     <button className="button">Trigger - {open ? 'Opened' : 'Closed'}</button>
+            // )}
             modal
             className='trailer'
         >
