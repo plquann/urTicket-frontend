@@ -1,5 +1,4 @@
 import React from 'react';
-import { randomGenres } from 'constants/genres';
 import './CustomSlide.scss';
 import { ICONS } from 'constants/image';
 import { Link } from 'react-router-dom';

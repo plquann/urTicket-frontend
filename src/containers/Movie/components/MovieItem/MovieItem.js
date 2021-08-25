@@ -1,9 +1,10 @@
 import React from 'react';
 import './MovieItem.scss';
-import { MOVIE_IMG, ICONS } from 'constants/image';
-import { randomGenres } from 'constants/genres';
+import { ICONS } from 'constants/image';
 import { Link } from 'react-router-dom';
 import MovieClassify from '../MovieClassify/MovieClassify';
+import { Heart, IconMovie, IconCinema } from 'components/Icons';
+import PopupTrailer from '../PopupTrailer/PopupTrailer';
 
 export default function MovieItem({ movie, ...props }) {
     return (
@@ -49,30 +50,31 @@ export default function MovieItem({ movie, ...props }) {
                 <div className="booking">
                     <div className="book-ticket grid grid-cols-4 gap-4">
                         <div className="react-item">
-                            <a href="#0">
-                                <div className="thumb">
-                                    <img src={ICONS.HEART} alt="icons" />
-                                </div>
+                            <button className="btn-popup-video">
+                                <Heart fill="#f1481f" />
                                 <span>Like</span>
-                            </a>
+                            </button>
                         </div>
 
                         <div className="react-item">
-                            <a href="#0" className="popup-video">
-                                <div className="thumb">
-                                    <img src={ICONS.PLAY_BTN} alt="icons" />
-                                </div>
-                                <span>Watch trailer</span>
-                            </a>
+                            <PopupTrailer
+                                open={
+                                    <button className="btn-popup-video">
+                                        <IconMovie fill="#f1481f" />
+                                        <span>Watch Trailer</span>
+                                    </button>
+                                }
+                                idVideo={movie?.trailerVideoUrl}
+                            />
                         </div>
 
                         <div className="react-item col-start-4">
-                            <a href="/booking">
-                                <div className="thumb">
-                                    <img src={ICONS.BOOK} alt="icons" />
-                                </div>
-                                <span>book ticket</span>
-                            </a>
+                            <button className="btn-popup-video">
+                                <Link to={`/movie/${movie?.id}`}>
+                                    <IconCinema fill="#f1481f" />
+                                    <span>Book Ticket</span>
+                                </Link>
+                            </button>
                         </div>
                     </div>
                 </div>

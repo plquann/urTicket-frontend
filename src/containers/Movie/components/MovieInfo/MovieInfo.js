@@ -1,4 +1,3 @@
-import { randomGenres } from 'constants/genres';
 import React from 'react';
 
 export default function MovieInfo() {
@@ -11,7 +10,7 @@ export default function MovieInfo() {
                 </div>
 
                 <div className="genres mb-3.5">
-                    {randomGenres().map((genre, index) => {
+                    {[1,2].map((genre, index) => {
                         return(
                         <a  key={index}
                             href="#0"
