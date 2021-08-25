@@ -19,7 +19,7 @@ export default function MovieInfo({ movie }) {
                         return (
                             <a key={index}
                                 href="#0"
-                                className="inline-block border border-solid text-xs font-medium uppercase px-3.5 py-2 rounded-md transition-all duration-300 ease-in-out mr-4"
+                                className="inline-block border border-solid text-xs font-medium bg-gray-800 uppercase px-3.5 py-2 rounded-md transition-all duration-300 ease-in-out mr-4"
                                 style={{ borderColor: 'rgba(168,177,198,0.2)' }}
                             >
                                 {genre.name}
@@ -28,7 +28,7 @@ export default function MovieInfo({ movie }) {
                 </div>
             </div>
             <div className="social__duration flex flex-wrap">
-                <div className="duration-area flex flex-wrap space-x-2">
+                <div className="duration-area flex flex-wrap space-x-2 text-white">
                     <div className="item mr-2 " >
                         <i className="fas fa-calendar-alt mr-1.5" /><span>{new Date(movie?.releaseDate).toDateString()}</span>
                     </div>

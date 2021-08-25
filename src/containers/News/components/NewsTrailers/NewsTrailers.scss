@@ -17,7 +17,7 @@
                   scale-100 text-white rounded-full opacity-0 transition duration-700 cursor-pointer outline-none;
           transform: translate(-50%, -50%);
           i {
-            @apply border-2 border-solid border-white rounded-full text-white 
+            @apply rounded-full text-white 
                     cursor-pointer transition-all scale-100 hover:scale-110;
             padding: 20px;
             font-size: 20px;

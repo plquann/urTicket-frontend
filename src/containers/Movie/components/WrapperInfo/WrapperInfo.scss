@@ -1,0 +1,35 @@
+@layer components {
+  .wrapper__info {
+    .details-banner-content {
+      .media {
+        .media-youtube {
+          @apply relative;
+          .button-playTrailer {
+            @apply absolute top-1/2 left-1/2
+                                scale-100 text-white rounded-full opacity-0 transition duration-700 cursor-pointer outline-none;
+            transform: translate(-50%, -50%);
+            i {
+              @apply rounded-full text-white cursor-pointer transition-all;
+              padding: 20px;
+              font-size: 20px;
+              line-height: 20px;
+            }
+          }
+          img {
+            @apply transition duration-300 ease-in-out;
+            object-fit: cover;
+          }
+
+          &:hover {
+            img {
+              @apply transform scale-110;
+            }
+            .button-playTrailer {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
