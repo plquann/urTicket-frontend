@@ -1,6 +1,6 @@
 import React from "react";
 import './Schedule.scss';
-import { LOGO_PARTNER, LOGO, MOVIE_IMG } from 'constants/image';
+import { LOGO_PARTNER, LOGO } from 'constants/image';
 import ShowtimeItem from "../ShowtimeItem/ShowtimeItem";
 
 export default function Schedule(props) {
@@ -95,7 +95,7 @@ export default function Schedule(props) {
                     <div className="schedule-section__content__showtimes__movie">
                         <div className="schedule-section__content__showtimes__movie__item">
                             <div className="movie__item__wrapper flex flex-wrap items-center h-24">
-                                <img className="h-full" src={MOVIE_IMG[2]} alt="movie" />
+                                <img className="h-full" src={''} alt="movie" />
                                 <div className="h-full ml-4">
                                     <p className=" text-lg font-medium">
                                         <span className="inline-block p-1 bg-green-500 rounded-md mr-2 text-sm">PG-13</span>
@@ -116,7 +116,7 @@ export default function Schedule(props) {
                         </div>
                         <div className="schedule-section__content__showtimes__movie__item">
                             <div className="movie__item__wrapper flex flex-wrap items-center h-24">
-                                <img className="h-full" src={MOVIE_IMG[2]} alt="movie" />
+                                <img className="h-full" src={''} alt="movie" />
                                 <div className="h-full ml-4">
                                     <p className=" text-lg font-medium">
                                         <span className="inline-block p-1 bg-green-500 rounded-md mr-2 text-sm">PG-13</span>
@@ -137,7 +137,7 @@ export default function Schedule(props) {
                         </div>
                         <div className="schedule-section__content__showtimes__movie__item">
                             <div className="movie__item__wrapper flex flex-wrap items-center h-24">
-                                <img className="h-full" src={MOVIE_IMG[2]} alt="movie" />
+                                <img className="h-full" src={''} alt="movie" />
                                 <div className="h-full ml-4">
                                     <p className=" text-lg font-medium">
                                         <span className="inline-block p-1 bg-green-500 rounded-md mr-2 text-sm">PG-13</span>
@@ -158,7 +158,7 @@ export default function Schedule(props) {
                         </div>
                         <div className="schedule-section__content__showtimes__movie__item">
                             <div className="movie__item__wrapper flex flex-wrap items-center h-24">
-                                <img className="h-full" src={MOVIE_IMG[2]} alt="movie" />
+                                <img className="h-full" src={''} alt="movie" />
                                 <div className="h-full ml-4">
                                     <p className=" text-lg font-medium">
                                         <span className="inline-block p-1 bg-green-500 rounded-md mr-2 text-sm">PG-13</span>
@@ -179,7 +179,7 @@ export default function Schedule(props) {
                         </div>
                         <div className="schedule-section__content__showtimes__movie__item">
                             <div className="movie__item__wrapper flex flex-wrap items-center h-24">
-                                <img className="h-full" src={MOVIE_IMG[2]} alt="movie" />
+                                <img className="h-full" src={''} alt="movie" />
                                 <div className="h-full ml-4">
                                     <p className=" text-lg font-medium">
                                         <span className="inline-block p-1 bg-green-500 rounded-md mr-2 text-sm">PG-13</span>

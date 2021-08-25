@@ -1,12 +1,11 @@
 import React from 'react';
-import { BANNER_BG } from 'constants/image';
 import './MovieBackDrop.scss';
 
-export default function MovieBackDrop() {
+export default function MovieBackDrop({ backdropUrl, ref, ...props }) {
     return (
-        <div 
-            className="backdrop bg-img relative mt-16" 
-            style={{ backgroundImage: `url(${BANNER_BG.BANNER_2})`, zIndex: '-1' , backgroundColor:'#032055'}} >
+        <div
+            className="backdrop bg-img mt-16 relative "
+            style={{ height: "500px", backgroundImage: `url(${backdropUrl})`, backgroundColor: '#000', zIndex: '-1' }} >
         </div>
     )
 }

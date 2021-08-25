@@ -114,20 +114,6 @@ export const ICONS = {
 
 export const THUMS = searchthums;
 
-export const MOVIE_IMG = [
-    MovieIMG1,
-    MovieIMG2,
-    MovieIMG3,
-    MovieIMG4,
-    MovieIMG5,
-    MovieIMG6,
-    MovieIMG7,
-    MovieIMG8,
-    MovieIMG9,
-    MovieIMG10,
-    MovieIMG11,
-    MovieIMG12,
-];
 
 export const MOVIE_PHOTO = [
     MovieDetail1,

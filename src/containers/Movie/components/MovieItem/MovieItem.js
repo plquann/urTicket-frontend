@@ -48,11 +48,11 @@ export default function MovieItem({ movie, ...props }) {
                     </li>
                 </ul>
                 <div className="booking">
-                    <div className="book-ticket grid grid-cols-4 gap-4">
+                    <div className="book-ticket grid grid-cols-4 gap-4 items-center">
                         <div className="react-item">
                             <button className="btn-popup-video">
-                                <Heart fill="#f1481f" />
-                                <span>Like</span>
+                                <Heart className="h-8 w-8" fill="#f1481f" />
+                                <span className="ml-2">Like</span>
                             </button>
                         </div>
 
@@ -60,19 +60,18 @@ export default function MovieItem({ movie, ...props }) {
                             <PopupTrailer
                                 open={
                                     <button className="btn-popup-video">
-                                        <IconMovie fill="#f1481f" />
-                                        <span>Watch Trailer</span>
+                                        <IconMovie width={32} height={32} fillColor={'#ffc033'} />
+                                        <span className="ml-2">Watch Trailer</span>
                                     </button>
                                 }
                                 idVideo={movie?.trailerVideoUrl}
                             />
                         </div>
 
-                        <div className="react-item col-start-4">
-                            <button className="btn-popup-video">
+                        <div className="react-item col-start-4 justify-self-end">
+                            <button className="btn-book-ticket">
                                 <Link to={`/movie/${movie?.id}`}>
-                                    <IconCinema fill="#f1481f" />
-                                    <span>Book Ticket</span>
+                                    <span className="font-medium">BOOK TICKET</span>
                                 </Link>
                             </button>
                         </div>

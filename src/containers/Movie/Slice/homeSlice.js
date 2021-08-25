@@ -84,9 +84,7 @@ const homeSlice = createSlice({
                 state.error = action.error.message;
 
             state.loading = false;
-        });
-
-
+        }); 
     }
 })
 

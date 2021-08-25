@@ -1,12 +1,12 @@
 import React from 'react';
 import './MovieSummaryBanner.scss';
-import { ICONS, MOVIE_IMG } from 'constants/image';
+import { ICONS  } from 'constants/image';
 
 export default function MovieSummaryBanner() {
     return (
         <div className="movie-summary-banner">
             <div className="movie-summary-banner__img">
-                <img src={MOVIE_IMG[7]} alt="movie" />
+                <img src={''} alt="movie" />
             </div>
             <div className="movie-summary-banner__content">
                 <h4 className="movie-summary-banner__content__title">

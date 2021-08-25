@@ -41,10 +41,19 @@
       .btn-popup-video {
         @apply flex flex-wrap items-center;
       }
+      .btn-book-ticket {
+        @apply inline-flex items-center justify-center px-4 py-2 rounded-md;
+        background-image: linear-gradient(
+          169deg,
+          #5560ff 17%,
+          #aa52a1 63%,
+          #ff4343 100%
+        );
+      }
     }
 
     .booking {
-      padding: 16px 0;
+      padding: 8px 0;
       border-top: 1px solid #1e3251;
       border-bottom: 1px solid #1e3251;
     }

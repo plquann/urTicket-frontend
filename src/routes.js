@@ -62,7 +62,7 @@ const Routes = () => {
 
                         <WithLayoutRoute
                             exact
-                            path="/movie/:id"
+                            path="/movie/:movieId"
                             layout={PublicLayout}
                             component={MovieDetails}
                         />
