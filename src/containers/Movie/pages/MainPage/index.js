@@ -12,11 +12,6 @@ import { fetchMoviesHighlight, fetchMoviesNowPlaying, fetchMoviesUpcoming } from
 const MainPage = (props) => {
     console.log('🚀 ~ file: index.js ~ line 48 ~ MainPage');
 
-    const {
-        movieNowPlaying,
-        newsHottest
-    } = useSelector(state => state.home);
-
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -24,7 +19,6 @@ const MainPage = (props) => {
     }, [dispatch]);
 
     useEffect(() => {
-        // console.log('userEffect now playing');
         dispatch(fetchMoviesNowPlaying());
     }, [dispatch]);
 
@@ -35,10 +29,10 @@ const MainPage = (props) => {
     return (
         <Page title="Homepage | UR-TICKET">
             <MovieHighlight />
-            <MovieSearch movies={movieNowPlaying} />
+            <MovieSearch />
             <Tabs />
             <Schedule/>
-            <NewsSection news={newsHottest?.data} />
+            <NewsSection />
             <BoxOffice />
         </Page>
     )

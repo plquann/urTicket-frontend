@@ -56,6 +56,15 @@ const homeSlice = createSlice({
     name: 'home',
     initialState: initialHomePage,
     reducers: {
+        changeCurrentTheaterSystem: (state, action) => {
+            state.currentTheaterSystem = action.payload;
+            const index = state.groupTheater.findIndex(item => item.id === state.currentTheaterSystem);
+            state.currentListTheaters = state.groupTheater[index].theaters;
+            state.currentTheater = state.groupTheater[index].theaters[0].id;
+        },
+        changeCurrentTheater: (state, action) => {
+            state.currentTheater = action.payload;
+        }
     },
     extraReducers: (builder) => {
         builder.addCase(fetchMoviesNowPlaying.pending, (state, action) => {
@@ -107,5 +116,6 @@ const homeSlice = createSlice({
     }
 })
 
-const { reducer: homeReducer } = homeSlice;
+const { reducer: homeReducer, actions } = homeSlice;
+export const { changeCurrentTheaterSystem, changeCurrentTheater } = actions;
 export default homeReducer;

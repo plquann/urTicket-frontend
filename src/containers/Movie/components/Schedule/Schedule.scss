@@ -15,7 +15,12 @@
           opacity: 0.5;
 
           &.active {
-            background: #2D3748;
+            background: #2d3748;
+            opacity: 1;
+          }
+          &:hover {
+            background: #2d3748;
+            transition: all 0.3s ease;
             opacity: 1;
           }
 
@@ -45,7 +50,12 @@
 
           &.active {
             opacity: 1;
-            background: #2D3748;
+            background: #2d3748;
+          }
+          &:hover {
+            opacity: 1;
+            background: #2d3748;
+            transition: all 0.3s ease;
           }
 
           img {
@@ -54,10 +64,10 @@
             margin-right: 15px;
           }
 
-          .cinema-address{
-              span{
-                  color: #31D7A9;
-              }
+          .cinema-address {
+            span {
+              color: #31d7a9;
+            }
           }
         }
       }

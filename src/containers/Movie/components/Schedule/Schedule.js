@@ -1,13 +1,30 @@
 import React, { useEffect } from "react";
 import './Schedule.scss';
-import { LOGO_PARTNER, LOGO } from 'constants/image';
 import ShowtimeItem from "../ShowtimeItem/ShowtimeItem";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchGroupTheater } from "containers/Movie/slice/homeSlice";
+import {
+    changeCurrentTheater,
+    changeCurrentTheaterSystem,
+    fetchGroupTheater
+} from "containers/Movie/slice/homeSlice";
 
 export default function Schedule(props) {
-    const { groupTheater, currentTheaterSystem, currentListTheaters, currentTheater } = useSelector(state => state.home);
+    const {
+        groupTheater,
+        currentTheaterSystem,
+        currentListTheaters,
+        currentTheater
+    } = useSelector(state => state.home);
+
     const dispatch = useDispatch();
+
+    const handleChangeGroupTheater = (theatersId) => {
+        dispatch(changeCurrentTheaterSystem(theatersId));
+    };
+
+    const handleChangeTheater = (theaterId) => {
+        dispatch(changeCurrentTheater(theaterId));
+    }
 
     useEffect(() => {
         dispatch(fetchGroupTheater());
@@ -25,7 +42,11 @@ export default function Schedule(props) {
                     {groupTheater.length && groupTheater.map((theaters, index) => {
                         let active = theaters?.id === currentTheaterSystem ? "active" : "";
                         return (
-                            <li key={index} className={`${active}`}>
+                            <li
+                                key={index}
+                                className={`${active}`}
+                                onClick={() => handleChangeGroupTheater(theaters.id)}
+                            >
                                 <img src={theaters?.logo} alt="movie System" />
                             </li>)
                     })}
@@ -35,7 +56,11 @@ export default function Schedule(props) {
                     {currentListTheaters.length && currentListTheaters.map((theater, index) => {
                         let active = theater.id === currentTheater ? "active" : "";
                         return (
-                            <li key={index} className={`${active}`}>
+                            <li
+                                key={index}
+                                className={`${active}`}
+                                onClick={() => handleChangeTheater(theater.id)}
+                            >
                                 <img src={theater?.thumbnail} alt="cinema" />
                                 <div className=" cinema-address">
                                     <span className="text-sm font-medium">{theater?.name}</span>
@@ -46,18 +71,6 @@ export default function Schedule(props) {
                     {/*  */}
                 </ul>
                 <div className="schedule-section__content__showtimes">
-                    {/* <div className="schedule-section__content__showtimes__date">
-                        {listDay().map((item, index) => {
-                            return (
-                                <div className="item" key={index}>
-                                    <p>{new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(item)}</p>
-                                    <span className="mr-2">{item.getDate()}</span>
-                                    <span>{new Intl.DateTimeFormat('en-US', { month: 'long' }).format(item)}</span>
-                                </div>
-                            )
-                        })}
-                    </div> */}
-
                     <div className="schedule-section__content__showtimes__movie">
                         <div className="schedule-section__content__showtimes__movie__item">
                             <div className="movie__item__wrapper flex flex-wrap items-center h-24">

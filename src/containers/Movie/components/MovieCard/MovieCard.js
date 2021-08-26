@@ -66,24 +66,30 @@ export default function MovieCard({ movie }) {
                                     </span>
                                 </div>
                             </div>
-                            <ul className="movie__card__rating">
-                                <li className="card__rating_item">
-                                    <div className="flex items-center ">
-                                        <img className="max-w-full" src={ICONS.TOMATO} alt="movie" />
-                                    </div>
-                                    <span className="font-semibold text-lg ml-2">
-                                        {movie?.voteAverage * 10}%
-                                    </span>
-                                </li>
-                                <li className="card__rating_item">
-                                    <div className="flex items-center ">
-                                        <img className="max-w-full" src={ICONS.CAKE} alt="movie" />
-                                    </div>
-                                    <span className="font-semibold text-lg ml-2">
-                                        {movie?.voteAverage / 2}
-                                    </span>
-                                </li>
-                            </ul>
+                            {movie?.voteAverage
+                                ?
+                                <ul className="movie__card__rating">
+                                    <li className="card__rating_item">
+                                        <div className="flex items-center ">
+                                            <img className="max-w-full" src={ICONS.TOMATO} alt="movie" />
+                                        </div>
+                                        <span className="font-semibold text-lg ml-2">
+                                            {movie?.voteAverage * 10}%
+                                        </span>
+                                    </li>
+                                    <li className="card__rating_item">
+                                        <div className="flex items-center ">
+                                            <img className="max-w-full" src={ICONS.CAKE} alt="movie" />
+                                        </div>
+                                        <span className="font-semibold text-lg ml-2">
+                                            {movie?.voteAverage / 2}
+                                        </span>
+
+                                    </li>
+                                </ul>
+                                :
+                                <p className="py-2">There are no reviews yet</p>
+                            }
                         </div>
                     </Link>
                 </div>
