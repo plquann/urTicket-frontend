@@ -67,7 +67,9 @@ function Header(props) {
                         ? <div className="block">
                             <div className="flex items-center md:ml-6">
                                 <DropDownMenu
-                                    avatar = { 'https://gamek.mediacdn.vn/133514250583805952/2020/8/24/sss1-1598260335309972535042.png'}
+                                    avatar = { 
+                                        'https://gamek.mediacdn.vn/133514250583805952/2020/8/24/sss1-1598260335309972535042.png'
+                                        }
                                 />
                             </div>
                         </div>

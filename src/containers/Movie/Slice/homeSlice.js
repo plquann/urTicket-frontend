@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import movieAPI from 'apis/movieAPI';
-
+import groupTheaterAPI from 'apis/groupTheaterAPI';
 
 export const fetchMoviesNowPlaying = createAsyncThunk(
     'home/MOVIE_NOW_PLAYING',
@@ -26,11 +26,22 @@ export const fetchMoviesHighlight = createAsyncThunk(
     }
 );
 
+export const fetchGroupTheater = createAsyncThunk(
+    'home/GROUP_THEATER',
+    async () => {
+        const group = await groupTheaterAPI.getGroupTheater();
+        return group;
+    }
+);
+
 const initialHomePage = {
     movieNowPlaying: [],
     movieUpcoming: [],
     movieHighlight: [],
     groupTheater: [],
+    currentTheaterSystem: '',
+    currentListTheaters: [],
+    currentTheater: '',
     currentShowtime: [],
     loading: false,
     error: '',
@@ -84,7 +95,15 @@ const homeSlice = createSlice({
                 state.error = action.error.message;
 
             state.loading = false;
-        }); 
+        });
+
+        builder.addCase(fetchGroupTheater.fulfilled, (state, action) => {
+            state.groupTheater = action.payload;
+            state.currentListTheaters = action.payload[0].theaters;
+            state.currentTheaterSystem = action.payload[0].id;
+            state.currentTheater = action.payload[0].theaters[0].id;
+            state.loading = false;
+        });
     }
 })
 

@@ -23,19 +23,3 @@ export const useAxios = (axiosParams) => {
 
     return { response, error, loading };
 };
-
-//  const App = () => {
-//     const { response, loading, error } = useAxios({
-//         method: 'POST',
-//         url: '/posts',
-//         headers: { // no need to stringify
-//           accept: '*/*'
-//         },
-//         data: {  // no need to stringify
-//             userId: 1,
-//             id: 19392,
-//             title: 'title',
-//             body: 'Sample text',
-//         },
-//     });
- 

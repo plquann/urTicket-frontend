@@ -34,7 +34,10 @@ export default function Profile() {
                         style={{ backgroundImage: `url(${PROFILE_COVER})` }}
                     >
                         <div className="info__avatar">
-                            <img className=" rounded-full w-full h-full" src={user?.avatar.url} alt="avatar user" />
+                            {user?.avatar.url
+                                ? <img className=" rounded-full w-full h-full" src={user?.avatar.url} alt="avatar user" />
+                                : <img className=" rounded-full w-full h-full" src="https://res.cloudinary.com/quankhs/image/upload/v1620351649/avatar_default.jpg" alt="avatar user" />
+                            }
                         </div>
                         <div className="info__name">
                             <h1>{user?.userName}</h1>

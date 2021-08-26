@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './Schedule.scss';
 import { LOGO_PARTNER, LOGO } from 'constants/image';
 import ShowtimeItem from "../ShowtimeItem/ShowtimeItem";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchGroupTheater } from "containers/Movie/slice/homeSlice";
 
 export default function Schedule(props) {
+    const { groupTheater, currentTheaterSystem, currentListTheaters, currentTheater } = useSelector(state => state.home);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchGroupTheater());
+
+    }, [dispatch])
 
     return (
         <div className="schedule-section max-w-screen-lg mx-auto pb-8 mt-4">
@@ -13,71 +22,28 @@ export default function Schedule(props) {
             </div>
             <div className="schedule-section__content" >
                 <ul className="schedule-section__content__theater ">
-                    <li className="active"><img src={LOGO_PARTNER[19].img} alt="movie System" /></li>
-                    <li><img src={LOGO_PARTNER[3].img} alt="movie System" /></li>
-                    <li><img src={LOGO_PARTNER[0].img} alt="movie System" /></li>
-                    <li><img src={LOGO_PARTNER[1].img} alt="movie System" /></li>
-                    <li><img src={LOGO_PARTNER[4].img} alt="movie System" /></li>
-                    <li><img src={LOGO_PARTNER[5].img} alt="movie System" /></li>
+                    {groupTheater.length && groupTheater.map((theaters, index) => {
+                        let active = theaters?.id === currentTheaterSystem ? "active" : "";
+                        return (
+                            <li key={index} className={`${active}`}>
+                                <img src={theaters?.logo} alt="movie System" />
+                            </li>)
+                    })}
 
                 </ul>
                 <ul className="schedule-section__content__cinema">
-                    <li className="active">
-                        <img src={LOGO.CINEMA_LOGO} alt="cinema" />
-                        <div className=" cinema-address">
-                            <span className="text-sm font-medium">CGV Crescent Mall</span>
-                            <p className="text-xs line-clamp-3">5th Floor, Crescent Mall Nguyen Van Linh Boulevard, Phu My Hung, District 7, HCMC</p>
-                        </div>
-
-                    </li>
-                    <li className="">
-                        <img src={LOGO.CINEMA_LOGO} alt="cinema" />
-                        <div className=" cinema-address">
-                            <span className="text-sm font-medium">CGV Dong Khoi</span>
-                            <p className="text-xs line-clamp-3">3rd floor, Vincom Center Dong Khoi, 72 Le Thanh Ton & 45A Ly Tu Trong, District 1, HCMC</p>
-                        </div>
-
-                    </li>
-                    <li className="">
-                        <img src={LOGO.CINEMA_LOGO} alt="cinema" />
-                        <div className=" cinema-address">
-                            <span className="text-sm font-medium">CGV Tran Quang Khai</span>
-                            <p className="text-xs line-clamp-3">2nd & 3rd Floor, 62 Tran Quang Khai, Tan Dinh, District 1, HCMC</p>
-                        </div>
-
-                    </li>
-                    <li className="">
-                        <img src={LOGO.CINEMA_LOGO} alt="cinema" />
-                        <div className=" cinema-address">
-                            <span className="text-sm font-medium">CGV Landmark 81</span>
-                            <p className="text-xs line-clamp-3">Floor B1, Vincom Center Landmark 81, 772 Dien Bien Phu, Ward 22, Binh Thanh District, HCMC</p>
-                        </div>
-
-                    </li>
-                    <li className="">
-                        <img src={LOGO.CINEMA_LOGO} alt="cinema" />
-                        <div className=" cinema-address">
-                            <span className="text-sm font-medium">CGV Aaeon Tan Phu</span>
-                            <p className="text-xs line-clamp-3">3rd Floor, Aeon Mall 30 Bo Bao Tan Thang, Son Ky Ward, Tan Phu District, HCMC</p>
-                        </div>
-
-                    </li>
-                    <li className="">
-                        <img src={LOGO.CINEMA_LOGO} alt="cinema" />
-                        <div className=" cinema-address">
-                            <span className="text-sm font-medium">CGV Tran Quang Khai</span>
-                            <p className="text-xs line-clamp-3">5th Floor, Crescent Mall Nguyen Van Linh Boulevard, Phu My Hung, District 7, HCMc</p>
-                        </div>
-
-                    </li>
-                    <li className="">
-                        <img src={LOGO.CINEMA_LOGO} alt="cinema" />
-                        <div className=" cinema-address">
-                            <span className="text-sm font-medium">CGV Tran Quang Khai</span>
-                            <p className="text-xs line-clamp-3">5th Floor, Crescent Mall Nguyen Van Linh Boulevard, Phu My Hung, District 7, HCMc</p>
-                        </div>
-
-                    </li>
+                    {currentListTheaters.length && currentListTheaters.map((theater, index) => {
+                        let active = theater.id === currentTheater ? "active" : "";
+                        return (
+                            <li key={index} className={`${active}`}>
+                                <img src={theater?.thumbnail} alt="cinema" />
+                                <div className=" cinema-address">
+                                    <span className="text-sm font-medium">{theater?.name}</span>
+                                    <p className="text-xs line-clamp-3">{theater?.address}</p>
+                                </div>
+                            </li>)
+                    })}
+                    {/*  */}
                 </ul>
                 <div className="schedule-section__content__showtimes">
                     {/* <div className="schedule-section__content__showtimes__date">

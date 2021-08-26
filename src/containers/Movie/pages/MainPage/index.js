@@ -7,14 +7,13 @@ import BoxOffice from 'components/BoxOffice/BoxOffice';
 import Page from 'components/Page/Page';
 import { useDispatch, useSelector } from 'react-redux';
 import MovieHighlight from 'containers/Movie/components/MovieHighlight/MovieHighlight';
-import { fetchMoviesHighlight, fetchMoviesNowPlaying, fetchMoviesUpcoming } from 'containers/Movie/Slice/homeSlice';
+import { fetchMoviesHighlight, fetchMoviesNowPlaying, fetchMoviesUpcoming } from 'containers/Movie/slice/homeSlice';
 
 const MainPage = (props) => {
+    console.log('🚀 ~ file: index.js ~ line 48 ~ MainPage');
 
     const {
         movieNowPlaying,
-        groupTheater,
-        currentShowtime,
         newsHottest
     } = useSelector(state => state.home);
 
@@ -33,22 +32,17 @@ const MainPage = (props) => {
         dispatch(fetchMoviesUpcoming());
     }, [dispatch]);
 
-
-
     return (
         <Page title="Homepage | UR-TICKET">
             <MovieHighlight />
             <MovieSearch movies={movieNowPlaying} />
             <Tabs />
-            <Schedule
-                groupTheater={groupTheater}
-                showtime={currentShowtime}
-
-            />
+            <Schedule/>
             <NewsSection news={newsHottest?.data} />
             <BoxOffice />
         </Page>
     )
 }
+
 
 export default memo(MainPage);
