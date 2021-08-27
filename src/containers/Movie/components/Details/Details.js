@@ -1,74 +1,64 @@
-import React from 'react'
-import { TabGroup } from '@statikly/funk'
+import React, { useState } from 'react';
+import './Details.scss';
 import ReviewDetails from '../ReviewDetails/ReviewDetails'
 import CustomCarousel from 'components/CustomCarousel/CustomCarousel'
 import { useSelector } from 'react-redux'
 
-export default function Details({ casts, crews, movieDesc, ...props }) {
+export default function Details(props) {
+    const [activeTab, setActiveTab] = useState('summary');
+
     const { movieDetails } = useSelector(state => state.movie);
+
+    const handleChangeTabs = (tab) => {
+        setActiveTab(tab);
+    }
 
     return (
         <div className="details__tab w-full">
-            <TabGroup numTabs={2} direction={TabGroup.direction.HORIZONTAL}>
-                <TabGroup.TabList className="h-14 mb-5 border-t border-b border-solid border-blue-900 ">
-                    <TabGroup.Tab
-                        index={0}
-                        className="h-full transition duration-800 font-semibold text-white mr-8 relative focus:outline-none"
-                        activeClassName="border-t-2 border-b-2 border-green-400 "
-                        inactiveClassName="text-black"
-                    >
-                        SUMMARY
-                    </TabGroup.Tab>
-
-                    <TabGroup.Tab
-                        index={1}
-                        className="h-full transition duration-800 font-semibold text-white mr-8 relative focus:outline-none"
-                        activeClassName="border-t-2 border-b-2 border-green-400 "
-                        inactiveClassName="text-black"
-                    >
-                        USER REVIEWS
-                    </TabGroup.Tab>
-
-                </TabGroup.TabList>
-
-                <TabGroup.TabPanel
-                    index={0}
-                    className="transition-all transform ease-in-out"
-                    activeClassName="opacity-100 duration-1000 translate-x-0 "
-                    inactiveClassName="absolute opacity-0 -translate-x-2 top-0 -left-full w-full"
+            <div className="details__tab__header ">
+                <button
+                    className={activeTab === 'summary' ? "details__tab__header__btn active" : "details__tab__header__btn"}
+                    style={{}}
+                    onClick={() => handleChangeTabs('summary')}
                 >
-                    <div className="content">
-                        <div className="scenarios mb-12">
-                            <h3 className="text-2xl mb-4 font-semibold">SCENARIOS</h3>
-                            <p className="" style={{ color: '#dbe2fb', fontSize: '16px' }}>{movieDetails?.description}</p>
-                        </div>
-                        <div className="cast mb-4 w-full h-auto">
-                            <div className="title pb-3 mb-10" style={{ borderBottom: '1px dashed #11326f' }}>
-                                <h3 className="text-2xl font-semibold">CASTS</h3>
+                    SUMMARY
+                </button>
+
+                <button
+                    className={activeTab === 'reviews' ? "details__tab__header__btn active" : "details__tab__header__btn"}
+                    style={{}}
+                    onClick={() => handleChangeTabs('reviews')}
+                >
+                    USER REVIEWS
+                </button>
+            </div>
+            <div className="details__tab__body">
+                {activeTab === 'summary'
+                    ? <div className="details__tab__body__summary">
+                        <div className="content">
+                            <div className="scenarios mb-12">
+                                <h3 className="text-xl mb-4 font-semibold">SCENARIOS</h3>
+                                <p className="" style={{ color: '#dbe2fb', fontSize: '16px' }}>{movieDetails?.description}</p>
                             </div>
-                            <CustomCarousel data={movieDetails.casts} />
-                        </div>
-                        <div className="crew mb-4 w-full">
-                            <div className="title pb-3 mb-10" style={{ borderBottom: '1px dashed #11326f' }}>
-                                <h3 className="text-2xl font-semibold">CREWS</h3>
+                            <div className="cast mb-4 w-full h-auto">
+                                <div className="title pb-3 mb-10" style={{ borderBottom: '1px dashed ' }}>
+                                    <h3 className="text-xl font-semibold">CASTS</h3>
+                                </div>
+                                <CustomCarousel data={movieDetails.casts} />
                             </div>
-                            <CustomCarousel data={movieDetails.crews} />
+                            <div className="crew mb-4 w-full">
+                                <div className="title pb-3 mb-10" style={{ borderBottom: '1px dashed ' }}>
+                                    <h3 className="text-xl font-semibold">CREWS</h3>
+                                </div>
+                                <CustomCarousel data={movieDetails.crews} />
+                            </div>
                         </div>
                     </div>
-                </TabGroup.TabPanel>
-
-                <TabGroup.TabPanel
-                    index={1}
-                    className="transition-all transform ease-in-out"
-                    activeClassName=" opacity-100 duration-1000 translate-x-0 "
-                    inactiveClassName="absolute opacity-0 -translate-x-2 top-0 -left-full w-full"
-                >
-                    <div className="content">
+                    : <div className="details__tab__body__review">
                         <ReviewDetails />
                     </div>
-
-                </TabGroup.TabPanel>
-            </TabGroup>
+                }
+            </div>
         </div>
     )
 }

@@ -5,11 +5,11 @@ export default function Offer(props) {
     const { photo, title, description } = props;
     return (
         <div className="offer rou">
-            <div className="offer__logo">
+            <div className="offer__logo flex items-center ">
                 <img src={photo} alt={title} />
+                <p className="font-medium ml-2">{title}</p>
             </div>
             <div className="offer__content">
-                <p>{title}</p>
                 <span>{description}</span>
             </div>
         </div>
