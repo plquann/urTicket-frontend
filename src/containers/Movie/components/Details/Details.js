@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import './Details.scss';
-import ReviewDetails from '../ReviewDetails/ReviewDetails'
 import CustomCarousel from 'components/CustomCarousel/CustomCarousel'
 import { useSelector } from 'react-redux'
 import MovieReviews from '../MovieReviews/MovieReviews';
+import FormReview from '../FormReview/FormReview';
 
 export default function Details(props) {
     const [activeTab, setActiveTab] = useState('summary');
 
-    const  movieDetails  = useSelector(state => state.movie.movieDetails);
+    const movieDetails = useSelector(state => state.movie.movieDetails);
 
     const handleChangeTabs = (tab) => {
         setActiveTab(tab);
@@ -57,6 +57,7 @@ export default function Details(props) {
                     </div>
                     : <div className="details__tab__body__review">
                         <MovieReviews />
+                        <FormReview movieId={movieDetails.data.id} />
                     </div>
                 }
             </div>

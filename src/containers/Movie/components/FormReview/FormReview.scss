@@ -1,0 +1,20 @@
+@layer components {
+  .your__movie__review {
+    h4 {
+      @apply text-xl font-medium italic mb-4;
+    }
+    textarea, input {
+      @apply w-full bg-transparent rounded-md px-4 py-2 mb-2 focus:outline-none ;
+      background-color: #1a222a;
+    }
+    button {
+      @apply py-2 px-6 italic font-medium rounded-md 
+          transition duration-300 cursor-pointer;
+      background-color: #1a222a;
+      &:hover {
+        background-color: #ffc033;
+        color: #000;
+      }
+    }
+  }
+}

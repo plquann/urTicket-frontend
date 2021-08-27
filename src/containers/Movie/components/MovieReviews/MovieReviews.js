@@ -16,17 +16,14 @@ const MovieReviews = () => {
 
     return (
         <div className="movie__reviews">
-            {/* {movieReviews.loading 
+            {movieReviews.loading
                 ? <div>Loading...</div>
-                : movieReviews.reviews.map(review => (
-                    <ReviewDetails key={review?.id} review={review} />
-                ))} */}
-
-                {
-                    movieReviews.reviews.map(review => (
-                    <ReviewDetails key={review?.id} review={review} />
-                ))
-                }
+                : movieReviews.data && movieReviews.data.length
+                    ? movieReviews.reviews.map(review => (
+                        <ReviewDetails key={review?.id} review={review} />
+                    ))
+                    : <div className="text-xl font-medium italic mb-4 text-green-400">No reviews found</div>
+            }
         </div>
     )
 }
