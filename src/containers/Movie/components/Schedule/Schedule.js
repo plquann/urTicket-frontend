@@ -6,7 +6,7 @@ import {
     changeCurrentTheater,
     changeCurrentTheaterSystem,
     fetchGroupTheater
-} from "containers/Movie/slice/homeSlice";
+} from "containers/Movie/slices/homeSlice";
 
 export default function Schedule(props) {
     const {

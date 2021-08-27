@@ -7,7 +7,7 @@ import BoxOffice from 'components/BoxOffice/BoxOffice';
 import Page from 'components/Page/Page';
 import { useDispatch, useSelector } from 'react-redux';
 import MovieHighlight from 'containers/Movie/components/MovieHighlight/MovieHighlight';
-import { fetchMoviesHighlight, fetchMoviesNowPlaying, fetchMoviesUpcoming } from 'containers/Movie/slice/homeSlice';
+import { fetchMoviesHighlight, fetchMoviesNowPlaying, fetchMoviesUpcoming } from 'containers/Movie/slices/homeSlice';
 
 const MainPage = (props) => {
     console.log('🚀 ~ file: index.js ~ line 48 ~ MainPage');

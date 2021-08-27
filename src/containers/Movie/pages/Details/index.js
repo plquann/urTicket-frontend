@@ -4,7 +4,7 @@ import WrapperInfo from 'containers/Movie/components/WrapperInfo/WrapperInfo';
 import Page from 'components/Page/Page';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMovieDetails } from 'containers/Movie/slice/movieSlide';
+import { fetchMovieDetails } from 'containers/Movie/slices/movieSlide';
 import Loading from 'components/Loading/Loading';
 
 const scrollToRef = (ref) => {
