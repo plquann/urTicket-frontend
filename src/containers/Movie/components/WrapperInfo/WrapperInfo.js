@@ -10,9 +10,10 @@ import { useSelector } from 'react-redux';
 import PopupTrailer from '../PopupTrailer/PopupTrailer';
 
 export default function WrapperInfo(props) {
-    const { movieDetails } = useSelector(state => state.movie)
+    const { data } = useSelector(state => state.movie.movieDetails);
+    // console.log('🚀 ~ file: WrapperInfo.js ~ line 42 ~ data', data);
     const { handleScroll, refProp } = props;
-    const { casts, crews, voteAverage, posterUrl, backdropUrl, trailerVideoUrl, ...movieInfo } = movieDetails;
+    const { casts, crews, voteAverage, posterUrl, backdropUrl, trailerVideoUrl, ...movieInfo } = data;
 
     return (
         <div className="wrapper__info max-w-screen-xl mx-auto h-auto mb-10">

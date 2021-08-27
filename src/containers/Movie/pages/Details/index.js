@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef } from 'react';
+import React, { memo, useEffect, useRef } from 'react';
 import MovieBackDrop from 'containers/Movie/components/MovieBackDrop/MovieBackDrop';
 import WrapperInfo from 'containers/Movie/components/WrapperInfo/WrapperInfo';
 import Page from 'components/Page/Page';
@@ -9,17 +9,17 @@ import Loading from 'components/Loading/Loading';
 
 const scrollToRef = (ref) => {
     console.log('🚀 ~ file: index.js ~ line 14 ~ scrollToRef');
-    window.scrollTo(0, ref.current.offsetTop)  
+    window.scrollTo(0, ref.current.offsetTop)
 }
 
-export default function Details() {
+const Details = () => {
     const scheduleRef = useRef(null);
     const ref = useRef(null);
     const { movieId } = useParams();
-    const { movieDetails, loading } = useSelector(state => state.movie);
+    const movieDetails = useSelector(state => state.movie.movieDetails);
 
     const dispatch = useDispatch();
-    console.log('🚀 ~ file: index.js ~ line 19 ~ movieDetails', movieDetails);
+    console.log('🚀 ~ file: index.js ~ line 19 ~ movieDetails render');
 
     useEffect(() => {
         console.log('fetching movie details');
@@ -27,20 +27,20 @@ export default function Details() {
     }, [dispatch, movieId]);
 
     useEffect(() => {
-        if(ref.current) {
+        if (ref.current) {
             scrollToRef(ref);
         }
-    });
+    }, [ref]);
 
     const executeScroll = () => scheduleRef.current.scrollIntoView();
 
     return (
         <Page title="Movie | UR-TICKET" >
-            {loading || movieDetails === null
+            {movieDetails.loading || movieDetails.data.length === 0
                 ? <Loading />
                 :
                 <div ref={ref}>
-                    <MovieBackDrop backdropUrl={movieDetails?.backdropUrl} />
+                    <MovieBackDrop backdropUrl={movieDetails.data?.backdropUrl} />
                     <WrapperInfo
                         refProp={scheduleRef}
                         handleScroll={executeScroll}
@@ -50,3 +50,5 @@ export default function Details() {
         </Page>
     )
 }
+
+export default memo(Details);

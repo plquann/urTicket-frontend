@@ -23,7 +23,7 @@ export default function CustomCarousel(props) {
     };
 
     const { data } = props;
-    console.log('🚀 ~ file: CustomCarousel.js ~ line 26 ~ data', data);
+    // console.log('🚀 ~ file: CustomCarousel.js ~ line 26 ~ data', data);
 
     return (
         <Slider {...settings}>
