@@ -20,6 +20,17 @@ export const fetchMovieReviews = createAsyncThunk(
     }
 );
 
+export const createReviewMovie = createAsyncThunk(
+    'movie/POST_REVIEW',
+    async (review, thunkAPI) => {
+        const reviewResponse = await reviewAPI.createReview(review);
+        await thunkAPI.dispatch(fetchMovieReviews(review.movieId));
+
+        return reviewResponse;
+    }
+);
+
+
 const initialMovie = {
     movieDetails: {
         data: [],
@@ -31,7 +42,11 @@ const initialMovie = {
         error: null,
         loading: false
     },
-
+    createReview:{
+        review: null,
+        error: null,
+        loading: false
+    }   
 }
 
 const movieSlice = createSlice({
@@ -74,6 +89,21 @@ const movieSlice = createSlice({
             console.log('🚀 ~ file: movieSlide.js ~ line 73 ~ action', action.payload);
             state.movieReviews.loading = false;
             state.movieReviews.error = '';
+        });
+
+        builder.addCase(createReviewMovie.pending, (state, action) => {
+            state.createReview.loading = true;
+        });
+
+        builder.addCase(createReviewMovie.fulfilled, (state, action) => {
+            state.createReview.review = action.payload;
+            state.createReview.loading = false;
+            state.createReview.error = '';
+        });
+        builder.addCase(createReviewMovie.rejected, (state, action) => {
+            console.log('🚀 ~ file: movieSlide.js ~ line 87 ~ action', action.payload);
+            state.createReview.loading = false;
+            state.createReview.error = '';
         });
 
     }

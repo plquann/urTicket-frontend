@@ -4,6 +4,8 @@ import * as yup from "yup";
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Rating } from '@material-ui/core';
+import { createReviewMovie } from 'containers/Movie/slices/movieSlide';
+import { useDispatch } from 'react-redux';
 
 const validationSchema = yup.object().shape({
     title: yup.string()
@@ -15,13 +17,17 @@ const validationSchema = yup.object().shape({
 });
 
 const FormReview = (props) => {
+    const dispatch = useDispatch();
+
     const { register, handleSubmit, control, formState: { errors }, reset } = useForm({
         resolver: yupResolver(validationSchema)
     });
+
     const onSubmit = data => {
-        const review = { ...data, rating: data.rating * 2 };
+        const review = { ...data, rating: data.rating * 2, title: data.title.trim(), content: data.content.trim() };
         reset({ title: '', content: '', rating: 0 });
-        console.log(review);
+        
+        dispatch(createReviewMovie(review));
     }
 
     return (

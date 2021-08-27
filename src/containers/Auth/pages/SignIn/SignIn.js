@@ -20,8 +20,7 @@ export default function SignIn() {
     }, [auth.isLoggedIn, history]);
 
     const onSubmit = (values) => {
-        console.log('🚀 ~ file: index.js ~ line 23 ~ onSubmit ~ values', values);
-
+        
         dispatch(login(values));
     };
 

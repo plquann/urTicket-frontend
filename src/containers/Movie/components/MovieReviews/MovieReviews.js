@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import ReviewDetails from '../ReviewDetails/ReviewDetails';
 
 
-const MovieReviews = () => {
+const MovieReviews = (props) => {
 
     const { movieDetails, movieReviews } = useSelector(state => state.movie);
 
@@ -17,8 +17,8 @@ const MovieReviews = () => {
     return (
         <div className="movie__reviews">
             {movieReviews.loading
-                ? <div>Loading...</div>
-                : movieReviews.data && movieReviews.data.length
+                ? <div></div>
+                : movieReviews.reviews && movieReviews.reviews.length
                     ? movieReviews.reviews.map(review => (
                         <ReviewDetails key={review?.id} review={review} />
                     ))
