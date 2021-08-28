@@ -32,13 +32,19 @@
         line-height: 28px;
       }
 
-      .react {
-        @apply flex flex-wrap text-sm;
+      &__footer {
+        @apply flex justify-between items-center;
+        .react {
+          @apply flex flex-wrap text-sm;
 
-        .like::after,
-        .dislike::after {
-          content: "|";
-          margin-left: 20px;
+          .like::after,
+          .dislike::after {
+            content: "|";
+            margin-left: 20px;
+          }
+        }
+        .btn__delete__review{
+          
         }
       }
     }

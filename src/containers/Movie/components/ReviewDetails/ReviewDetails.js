@@ -1,13 +1,17 @@
 import React from 'react';
 import './ReviewDetails.scss';
 import { CAST_PHOTO } from 'constants/image';
-import { Verified, Like, Dislike } from 'components/Icons';
+import { Verified, Like, Dislike, IconTrash } from 'components/Icons';
 import { Rating } from '@material-ui/core';
+import { useSelector } from 'react-redux';
+import AlertModal from 'components/AlertModal/AlertModal';
 
 export default function ReviewDetails({ review }) {
+    const { user } = useSelector(state => state.auth);
+
     const { id, title, content, rating, author, createdDate } = review;
     return (
-        <div className="review__details" style={{background: '#1A222A'}}>
+        <div className="review__details" style={{ background: '#1A222A' }}>
             <div className="review__details__author">
                 <div className="avatar">
                     {author?.avatar
@@ -31,18 +35,30 @@ export default function ReviewDetails({ review }) {
                 </div>
                 <h6 className="text-lg font-semibold mb-2">{title}</h6>
                 <p className="articles line-clamp-5">{content}</p>
-                <div className="react">
-                    <div className="like inline-flex space-x-1 items-center mr-6">
-                        <Like width={22} height={22} fillColor="#31d7a9" />
-                        <span>(8)</span>
+                <div className="review__details__content__footer">
+                    <div className="react">
+                        <div className="like inline-flex space-x-1 items-center mr-6">
+                            <Like width={22} height={22} fillColor="#31d7a9" />
+                            <span>(8)</span>
+                        </div>
+                        <div className="dislike inline-flex space-x-1 items-center mr-6">
+                            <Dislike width={22} height={22} fillColor="#f1481f" />
+                            <span>(2)</span>
+                        </div>
+                        <div className="report flex items-center">
+                            <p >Report Abuse</p>
+                        </div>
                     </div>
-                    <div className="dislike inline-flex space-x-1 items-center mr-6">
-                        <Dislike width={22} height={22} fillColor="#f1481f" />
-                        <span>(2)</span>
-                    </div>
-                    <div className="report flex items-center">
-                        <p >Report Abuse</p>
-                    </div>
+                    <AlertModal
+                        open={
+                            <button className="btn__delete__review p-2 flex items-center bg-gray-700 rounded-md hover:bg-red-500 transition duration-300">
+                                <IconTrash width={22} height={22} fillColor="#fff" />
+                                <span className="ml-1 font-medium">Delete</span>
+                            </button>
+                        }
+                        content="Are you sure you want to delete this review?"
+                    />
+
                 </div>
             </div>
         </div>
