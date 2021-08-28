@@ -22,7 +22,7 @@ axiosClient.interceptors.request.use(async (config) => {
 });
 
 axiosClient.interceptors.response.use((response) => {
-    if (response ) {
+    if (response) {
         return response.data;
     }
     return response;
@@ -32,6 +32,7 @@ axiosClient.interceptors.response.use((response) => {
     // console.log('🚀 ~ file: axiosClient.js ~ line 34 ~ axiosClient.interceptors.response.use ~ message', message);
     // console.log('🚀 ~ file: axiosClient.js ~ line 34 ~ axiosClient.interceptors.response.use ~ statusCode', statusCode);
     throw error.response.data;
+
 });
 
 export default axiosClient;

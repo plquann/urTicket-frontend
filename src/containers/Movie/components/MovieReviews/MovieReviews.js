@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import './MovieReviews.scss';
 import { fetchMovieReviews } from 'containers/Movie/slices/movieSlide';
 import { useDispatch, useSelector } from 'react-redux';
 import ReviewDetails from '../ReviewDetails/ReviewDetails';

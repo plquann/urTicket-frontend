@@ -2,7 +2,7 @@ import React from 'react';
 import Popup from 'reactjs-popup';
 import './AlertModal.scss'
 
-const AlertModal = ({ open, content, handleClick, ...props }) => {
+const AlertModal = ({ open, content, onHandleConfirm }) => {
 
     return (
         <Popup
@@ -24,7 +24,13 @@ const AlertModal = ({ open, content, handleClick, ...props }) => {
                         >
                             Cancel
                         </button>
-                        <button className="button__confirm__modal">
+                        <button
+                            className="button__confirm__modal"
+                            onClick={() => {
+                                onHandleConfirm();
+                                close();
+                            }}
+                        >
                             Confirm
                         </button>
 

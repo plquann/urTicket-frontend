@@ -26,7 +26,7 @@ const FormReview = (props) => {
     const onSubmit = data => {
         const review = { ...data, rating: data.rating * 2, title: data.title.trim(), content: data.content.trim() };
         reset({ title: '', content: '', rating: 0 });
-        
+
         dispatch(createReviewMovie(review));
     }
 
@@ -57,11 +57,13 @@ const FormReview = (props) => {
                 <textarea {...register("content", {})} rows="2" placeholder="Enter your reviews..." />
                 <p className="text-red-500 my-2">{errors.content?.message}</p>
 
-                <button
-                    type="submit"
-                >
-                    Submit
-                </button>
+                <div className="flex justify-end">
+                    <button
+                        type="submit"
+                    >
+                        Submit
+                    </button>
+                </div>
             </form>
         </div>
     )

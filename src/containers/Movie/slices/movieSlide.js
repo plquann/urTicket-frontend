@@ -30,6 +30,16 @@ export const createReviewMovie = createAsyncThunk(
     }
 );
 
+export const deleteReviewMovie = createAsyncThunk(
+    'movie/DELETE_REVIEW',
+    async (reviewId, thunkAPI) => {
+        const res = await reviewAPI.deleteReview(reviewId);
+        await thunkAPI.dispatch(fetchMovieReviews(res));
+        
+        return res;
+    }
+);
+
 
 const initialMovie = {
     movieDetails: {
@@ -42,11 +52,15 @@ const initialMovie = {
         error: null,
         loading: false
     },
-    createReview:{
+    createReview: {
         review: null,
         error: null,
         loading: false
-    }   
+    },
+    deleteReview: {
+        loading: false,
+        error: null
+    }
 }
 
 const movieSlice = createSlice({
@@ -86,7 +100,7 @@ const movieSlice = createSlice({
         });
 
         builder.addCase(fetchMovieReviews.rejected, (state, action) => {
-            console.log('🚀 ~ file: movieSlide.js ~ line 73 ~ action', action.payload);
+            console.log('🚀 ~ file: movieSlide.js ~ line 73 ~ fetchMovieReviews.rejected', action.error);
             state.movieReviews.loading = false;
             state.movieReviews.error = '';
         });
@@ -101,9 +115,22 @@ const movieSlice = createSlice({
             state.createReview.error = '';
         });
         builder.addCase(createReviewMovie.rejected, (state, action) => {
-            console.log('🚀 ~ file: movieSlide.js ~ line 87 ~ action', action.payload);
+            console.log('🚀 ~ file: movieSlide.js ~ line 87 ~ createReviewMovie.rejected', action.error);
             state.createReview.loading = false;
             state.createReview.error = '';
+        });
+
+        builder.addCase(deleteReviewMovie.pending, (state, action) => {
+            state.deleteReview.loading = true;
+        });
+        builder.addCase(deleteReviewMovie.fulfilled, (state, action) => {
+            state.deleteReview.loading = false;
+            state.deleteReview.error = '';
+        });
+        builder.addCase(deleteReviewMovie.rejected, (state, action) => {
+            console.log('🚀 ~ file: movieSlide.js ~ line 100 ~ deleteReviewMovie.rejected', action.error);
+            state.deleteReview.loading = false;
+            state.deleteReview.error = '';
         });
 
     }

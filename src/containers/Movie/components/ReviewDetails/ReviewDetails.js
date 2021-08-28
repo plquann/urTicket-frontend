@@ -3,13 +3,18 @@ import './ReviewDetails.scss';
 import { CAST_PHOTO } from 'constants/image';
 import { Verified, Like, Dislike, IconTrash } from 'components/Icons';
 import { Rating } from '@material-ui/core';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import AlertModal from 'components/AlertModal/AlertModal';
+import { deleteReviewMovie } from 'containers/Movie/slices/movieSlide';
 
 export default function ReviewDetails({ review }) {
     const { user } = useSelector(state => state.auth);
-
+    const dispatch = useDispatch();
     const { id, title, content, rating, author, createdDate } = review;
+
+    const handleDelete = () => {
+        dispatch(deleteReviewMovie(id));
+    };
     return (
         <div className="review__details" style={{ background: '#1A222A' }}>
             <div className="review__details__author">
@@ -49,15 +54,17 @@ export default function ReviewDetails({ review }) {
                             <p >Report Abuse</p>
                         </div>
                     </div>
-                    <AlertModal
-                        open={
-                            <button className="btn__delete__review p-2 flex items-center bg-gray-700 rounded-md hover:bg-red-500 transition duration-300">
-                                <IconTrash width={22} height={22} fillColor="#fff" />
-                                <span className="ml-1 font-medium">Delete</span>
-                            </button>
-                        }
-                        content="Are you sure you want to delete this review?"
-                    />
+                    {user && user.id === author?.id &&
+                        <AlertModal
+                            open={
+                                <button className="btn__delete__review p-2 flex items-center bg-gray-700 rounded-md hover:bg-red-500 transition duration-300">
+                                    <IconTrash width={22} height={22} fillColor="#fff" />
+                                    <span className="ml-1 font-medium">Delete</span>
+                                </button>
+                            }
+                            content="Are you sure you want to delete this review?"
+                            onHandleConfirm={handleDelete}
+                        />}
 
                 </div>
             </div>
