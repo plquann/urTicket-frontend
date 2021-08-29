@@ -4,6 +4,8 @@ import Form from 'components/Form/Form';
 import InputField from 'components/InputField/InputField';
 import CheckBox from 'components/CheckBox/CheckBox';
 import ButtonSubmit from 'components/ButtonSubmit/ButtonSubmit';
+import { register } from 'app/authSlice';
+import { useDispatch } from 'react-redux';
 
 const validationSchema = yup.object().shape({
     userName: yup.string()
@@ -18,12 +20,15 @@ const validationSchema = yup.object().shape({
         .oneOf([yup.ref('password'), null], 'Passwords must match')
         .required('Confirm Password is required'),
     acceptTerms: yup.bool()
-        .oneOf([true], 'We need you to agree with the terms')
+        .isTrue('You must accept The Terms, Privacy Policy And Fees'),
+
 });
 
 export default function FormRegister() {
+    const dispatch = useDispatch();
+
     const onSubmitForm = (data) => {
-        console.log('🚀 ~ file: index.js ~ line 27 ~ FormRegister ~ data', data);
+        dispatch(register(data));
     };
 
     return (
@@ -35,7 +40,7 @@ export default function FormRegister() {
                 <InputField name="confirmPassword" type="password" label="CONFIRM PASSWORD" />
                 <CheckBox name="acceptTerms" label="I Agree To The Terms, Privacy Policy And Fees" />
 
-                <ButtonSubmit name="REGISTER" />
+                <ButtonSubmit name="REGISTER" onSubmitForm={onSubmitForm} />
             </Form>
         </>
     );

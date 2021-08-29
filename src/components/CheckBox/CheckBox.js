@@ -2,12 +2,13 @@ import React from 'react';
 import './CheckBox.scss';
 
 export default function CheckBox(props) {
-    const { register, name, label, ...rest } = props;
+    const { register, name, label, errors, ...rest } = props;
 
     return (
         <div className="form-checkbox">
             <input type="checkbox" id="checkbox" {...register(name)} {...rest} />
             <label htmlFor="checkbox">{label}</label>
+            {errors?.message && <p className="invalid-feedback">{errors?.message}</p>}
         </div>
     )
 }

@@ -18,5 +18,12 @@
       @apply pl-1.5 mb-0 mr-auto cursor-pointer;
       max-width: calc(100% - 15px);
     }
+    .invalid-feedback {
+      @apply font-medium text-red-500;
+      &::before {
+        display: inline;
+        content: "⚠ ";
+      }
+    }
   }
 }

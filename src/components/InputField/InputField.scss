@@ -8,8 +8,17 @@
         color: #f1481f;
       }
     }
+    i {
+      text-align: center;
+      color: #acacac;
+      transition: 0.5s;
+      font-size: 1.1rem;
+      &.show {
+        cursor: pointer;
+      }
+    }
     input {
-      @apply w-full h-9  border-b bg-transparent rounded-none outline-none overflow-visible placeholder-gray-400 placeholder-opacity-50;
+      @apply w-full h-9  bg-transparent rounded-none outline-none overflow-visible placeholder-gray-400 placeholder-opacity-50;
       border-color: #23334f;
     }
     .invalid-feedback {
