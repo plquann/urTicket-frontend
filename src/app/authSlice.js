@@ -11,6 +11,8 @@ export const login = createAsyncThunk(
         const userLogin = await authAPI.login({ email, password });
         console.log('🚀 ~ file: authSlice.js ~ line 12 ~ userLogin', userLogin);
 
+        localStorage.setItem('user', JSON.stringify(userLogin));
+
         return userLogin;
     }
 );
@@ -23,6 +25,8 @@ export const register = createAsyncThunk(
         const userRegister = await authAPI.register({ email, userName, password });
         // console.log('🚀 ~ file: authSlice.js ~ line 22 ~ userRegister', userRegister);
 
+        localStorage.setItem('user', JSON.stringify(userRegister));
+        
         return userRegister;
     }
 );
@@ -31,6 +35,8 @@ export const logout = createAsyncThunk(
     'auth/LOGOUT',
     async () => {
         const res = await authAPI.logout();
+
+        localStorage.removeItem('user');
         return res;
     }
 );
