@@ -6,7 +6,7 @@
     .modal{
         .button__close__modal,
         .button__confirm__modal{
-            @apply bg-gray-900 font-semibold py-2 px-4 rounded-md hover:text-green-400;
+            @apply bg-gray-900 font-semibold py-2 px-4 rounded-md hover:bg-green-600 hover:text-white;
         }
 
         .button__confirm__modal{

@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import movieAPI from 'apis/movieAPI';
-import groupTheaterAPI from 'apis/groupTheaterAPI';
+import { groupTheaterAPI, movieAPI, showtimeAPI } from 'apis';
+
 
 export const fetchMoviesNowPlaying = createAsyncThunk(
     'home/MOVIE_NOW_PLAYING',
@@ -34,6 +34,14 @@ export const fetchGroupTheater = createAsyncThunk(
     }
 );
 
+export const fetchShowTimeByTheater = createAsyncThunk(
+    'home/SHOW_TIME_BY_THEATER',
+    async (theaterId) => {
+        const showTime = await showtimeAPI.getShowTimeByTheater(theaterId);
+        return showTime;
+    }
+);
+
 const initialHomePage = {
     movieNowPlaying: [],
     movieUpcoming: [],
@@ -42,10 +50,14 @@ const initialHomePage = {
     currentTheaterSystem: '',
     currentListTheaters: [],
     currentTheater: '',
-    currentShowtime: [],
     loading: false,
     error: '',
     newsHottest: {
+        data: [],
+        loading: false,
+        error: '',
+    },
+    currentShowtime: {
         data: [],
         loading: false,
         error: '',
@@ -112,6 +124,20 @@ const homeSlice = createSlice({
             state.currentTheaterSystem = action.payload[0].id;
             state.currentTheater = action.payload[0].theaters[0].id;
             state.loading = false;
+        });
+
+        builder.addCase(fetchShowTimeByTheater.pending, (state, action) => {
+            state.currentShowtime.loading = true;
+        });
+
+        builder.addCase(fetchShowTimeByTheater.fulfilled, (state, action) => {
+            state.currentShowtime.data = action.payload;
+            state.currentShowtime.loading = false;
+        });
+
+        builder.addCase(fetchShowTimeByTheater.rejected, (state, action) => {
+            state.currentShowtime.error = action.error.message;
+            state.currentShowtime.loading = false;
         });
     }
 })
