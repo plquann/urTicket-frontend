@@ -13,7 +13,7 @@ export default function WrapperInfo(props) {
     const { data } = useSelector(state => state.movie.movieDetails);
     // console.log('🚀 ~ file: WrapperInfo.js ~ line 42 ~ data', data);
     const { handleScroll, refProp } = props;
-    const { casts, crews, voteAverage, posterUrl, backdropUrl, trailerVideoUrl, ...movieInfo } = data;
+    const { id, casts, crews, voteAverage, posterUrl, backdropUrl, trailerVideoUrl, ...movieInfo } = data;
 
     return (
         <div className="wrapper__info max-w-screen-xl mx-auto h-auto mb-10">
@@ -53,7 +53,7 @@ export default function WrapperInfo(props) {
                         </div>
                     </div>
                     <Details />
-                    <Schedule refProp={refProp} />
+                    <Schedule refProp={refProp} movieId={id}/>
                 </div>
             </div>
         </div>

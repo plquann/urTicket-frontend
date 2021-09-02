@@ -23,7 +23,7 @@
     "autoprefixer": "^9.8.6",
     "axios": "^0.21.1",
     "change-case": "^4.1.2",
-    "date-fns": "^2.22.1",
+    "dateformat": "^4.5.1",
     "lodash": "^4.17.21",
     "numeral": "^2.0.6",
     "postcss": "^7.0.35",

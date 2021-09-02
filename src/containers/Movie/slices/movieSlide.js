@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import movieAPI from 'apis/movieAPI';
-import reviewAPI from 'apis/reviewAPI';
+import { movieAPI, reviewAPI, showtimeAPI } from 'apis';
+
 
 export const fetchMovieDetails = createAsyncThunk(
     'movie/MOVIE_DETAILS',
@@ -40,6 +40,15 @@ export const deleteReviewMovie = createAsyncThunk(
     }
 );
 
+export const fetchMovieShowtimes = createAsyncThunk(
+    'movie/MOVIE_SHOWTIMES',
+    async (movieId) => {
+        const showtimes = await showtimeAPI.getShowtimesByMovieId(movieId);
+        // console.log('🚀 ~ file: movieSlide.js ~ line 33 ~ showtimes', showtimes);
+        return showtimes;
+    }
+);
+
 
 const initialMovie = {
     movieDetails: {
@@ -49,6 +58,11 @@ const initialMovie = {
     },
     movieReviews: {
         reviews: [],
+        error: null,
+        loading: false
+    },
+    movieShowtimes: {
+        data: [],
         error: null,
         loading: false
     },
@@ -131,6 +145,19 @@ const movieSlice = createSlice({
             console.log('🚀 ~ file: movieSlide.js ~ line 100 ~ deleteReviewMovie.rejected', action.error);
             state.deleteReview.loading = false;
             state.deleteReview.error = '';
+        });
+        builder.addCase(fetchMovieShowtimes.pending, (state, action) => {
+            state.movieShowtimes.loading = true;
+        });
+        builder.addCase(fetchMovieShowtimes.fulfilled, (state, action) => {
+            state.movieShowtimes.data = action.payload;
+            state.movieShowtimes.loading = false;
+            state.movieShowtimes.error = '';
+        });
+        builder.addCase(fetchMovieShowtimes.rejected, (state, action) => {
+            console.log('🚀 ~ file: movieSlide.js ~ line 115 ~ fetchMovieShowtimes.rejected', action.error);
+            state.movieShowtimes.loading = false;
+            state.movieShowtimes.error = '';
         });
 
     }

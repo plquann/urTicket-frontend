@@ -58,10 +58,9 @@ export default function MovieCard({ movie }) {
                     <Link to={`/movie/${movie?.id}`}>
                         <div className="movie__card__content">
                             <div className="movie__card__title">
-                                <h5 className="line-clamp-2">{movie?.title}</h5>
-                                <div className="flex items-center mt-2">
-                                    <MovieClassify classify={movie?.classify} />
-                                    <span className="ml-2 text-sm text-gray-400">
+                                <h5 className="line-clamp-2"> <MovieClassify classify={movie?.classify} /> {movie?.title}</h5>
+                                <div className="">
+                                    <span className=" text-sm text-gray-400">
                                         {movie?.duration} minutes
                                     </span>
                                 </div>

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import MovieClassify from '../MovieClassify/MovieClassify';
 import { Heart, IconMovie, IconCinema } from 'components/Icons';
 import PopupTrailer from '../PopupTrailer/PopupTrailer';
+import dateFormat from 'dateformat';
 
 export default function MovieItem({ movie, ...props }) {
     return (
@@ -31,7 +32,7 @@ export default function MovieItem({ movie, ...props }) {
                 </div>
 
                 <div className="release mt-2">
-                    <span style={{ color: '#31d7a9' }}>Release Date: </span> <a href="#0">{new Date(movie?.releaseDate).toDateString()}</a>
+                    <span style={{ color: '#31d7a9' }}>Release Date: </span> <a href="#0">{dateFormat(movie?.releaseDate, 'fullDate')}</a>
                 </div>
                 <ul className="rating">
                     <li className="item">

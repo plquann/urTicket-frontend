@@ -4540,10 +4540,15 @@
     "whatwg-mimetype" "^2.3.0"
     "whatwg-url" "^8.0.0"
 
-"date-fns@^2.0.0", "date-fns@^2.0.1", "date-fns@^2.22.1":
+"date-fns@^2.0.0", "date-fns@^2.0.1":
   "integrity" "sha512-yUFPQjrxEmIsMqlHhAhmxkuH769baF21Kk+nZwZGyrMoyLA+LugaQtC0+Tqf9CBUUULWwUJt6Q5ySI3LJDDCGg=="
   "resolved" "https://registry.npmjs.org/date-fns/-/date-fns-2.22.1.tgz"
   "version" "2.22.1"
+
+"dateformat@^4.5.1":
+  "integrity" "sha512-OD0TZ+B7yP7ZgpJf5K2DIbj3FZvFvxgFUuaqA/V5zTjAtAAXZ1E8bktHxmAGs4x5b7PflqA9LeQ84Og7wYtF7Q=="
+  "resolved" "https://registry.npmjs.org/dateformat/-/dateformat-4.5.1.tgz"
+  "version" "4.5.1"
 
 "debug@^2.2.0":
   "integrity" "sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA=="

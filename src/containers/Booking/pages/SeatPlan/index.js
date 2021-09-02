@@ -14,9 +14,8 @@ export default function SeatPlan() {
                         <MovieSummaryBanner />
                     </div>
                     <div className="col-span-3">
-                        <BookingReference />
-                        <Screen />
                         <BookingInfo />
+                        <Screen />
                     </div>
                 </div>
             </div>

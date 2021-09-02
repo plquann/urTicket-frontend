@@ -9,6 +9,8 @@ import {
     fetchShowTimeByTheater
 } from "containers/Movie/slices/homeSlice";
 import MovieClassify from "../MovieClassify/MovieClassify";
+import dateFormat from 'dateformat';
+
 
 export default function Schedule(props) {
     const {
@@ -83,34 +85,35 @@ export default function Schedule(props) {
                                 : currentShowtime.data.length
                                     ? currentShowtime.data.map((movie, index) => (
                                         <div className="schedule-section__content__showtimes__movie__item" key={index + movie?.id}>
-                                            <div className="movie__item__wrapper flex flex-wrap items-center h-24">
-                                                <img className="h-full" src={movie?.posterUrl} alt="movie" />
-                                                <div className="h-full ml-4 flex flex-initial">
-                                                    <div className="div">
-                                                        <MovieClassify classify={movie?.classify} styles={'font-medium'} />
+                                            <div className="movie__item__wrapper grid grid-cols-5 gap-4">
+                                                <div className="showtime-movie-posters">
+                                                    <img className="h-full" src={movie?.posterUrl} alt="movie" />
+                                                </div>
+                                                <div className="showtime-details col-span-4">
+                                                    <div className="">
+                                                        <div className=" text-xl font-medium -mt-2">
+                                                            <span className="mr-3">{movie?.title}</span>
+                                                            <MovieClassify classify={movie?.classify} styles={'font-medium'} />
+                                                        </div>
+                                                        <p className="duration text-sm text-green-400 font-medium">{movie?.duration} minutes</p>
+                                                        <p className=" text-sm mt-1 font-medium">Release Date: <span>{dateFormat(movie?.releaseDate, 'fullDate')}</span></p>
                                                     </div>
-                                                    <div className=" text-xl font-medium ml-3 -mt-2">
-                                                        <span className="">{movie?.title}</span>
-                                                        <p className="duration text-sm text-green-400">{movie?.duration} minutes</p>
-                                                        <p className=" text-sm ">Release Date: <span>{new Date(movie?.releaseDate).toDateString()}</span></p>
-                                                    </div>
-
+                                                    <ul className="time mt-6 grid grid-cols-4 gap-4">
+                                                        {movie?.showtimes.map((showtime, index) => {
+                                                            let startTime = new Date(showtime.startTime);
+                                                            let endTime = new Date(showtime.endTime);
+                                                            return (
+                                                                <ShowtimeItem
+                                                                    key={index + showtime?.id}
+                                                                    startTime={`${dateFormat(startTime, 'HH:MM')}`}
+                                                                    endTime={`~${dateFormat(endTime, 'HH:MM')}`}
+                                                                    link={`/booking/${showtime?.id}/seatplan`}
+                                                                />
+                                                            )
+                                                        })}
+                                                    </ul>
                                                 </div>
                                             </div>
-                                            <ul className="time mt-4">
-                                                {movie?.showtimes.map((showtime, index) => {
-                                                    let startTime = new Date(showtime.startTime);
-                                                    let endTime = new Date(showtime.endTime);
-                                                    return (
-                                                        <ShowtimeItem
-                                                            key={index + showtime?.id}
-                                                            startTime={`${startTime.getHours()}:${startTime.getMinutes()}`}
-                                                            endTime={`~${endTime.getHours()}:${endTime.getMinutes()}`}
-                                                            link={`/booking/${showtime?.id}/seatplan`}
-                                                        />
-                                                    )
-                                                })}
-                                            </ul>
                                         </div>
                                     ))
                                     : <div className="loading-showtime">No Showtime</div>

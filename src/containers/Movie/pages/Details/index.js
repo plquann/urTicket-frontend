@@ -4,7 +4,7 @@ import WrapperInfo from 'containers/Movie/components/WrapperInfo/WrapperInfo';
 import Page from 'components/Page/Page';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMovieDetails } from 'containers/Movie/slices/movieSlide';
+import { fetchMovieDetails, fetchMovieShowtimes } from 'containers/Movie/slices/movieSlide';
 import Loading from 'components/Loading/Loading';
 
 const scrollToRef = (ref) => {
@@ -24,6 +24,11 @@ const Details = () => {
     useEffect(() => {
         console.log('fetching movie details');
         dispatch(fetchMovieDetails(movieId));
+    }, [dispatch, movieId]);
+
+    useEffect(() => {
+        console.log('dispatch fetch showtime')
+        dispatch(fetchMovieShowtimes(movieId));
     }, [dispatch, movieId]);
 
     useEffect(() => {

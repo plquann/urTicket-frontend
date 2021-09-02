@@ -3,6 +3,7 @@ import './CustomSlide.scss';
 import { ICONS } from 'constants/image';
 import { Link } from 'react-router-dom';
 import PopupTrailer from 'containers/Movie/components/PopupTrailer/PopupTrailer';
+import dateFormat from 'dateformat';
 
 export default function CustomSlide({ movie, ...props }) {
 
@@ -24,7 +25,7 @@ export default function CustomSlide({ movie, ...props }) {
                     </div>
 
                     <div className="release">
-                        <span style={{ color: '#31d7a9' }}>Release Date : </span> <a href="#0">{new Date(movie?.releaseDate).toDateString()}</a>
+                        <span style={{ color: '#31d7a9' }}>Release Date : </span> <a href="#0">{dateFormat(movie?.releaseDate, 'fullDate')}</a>
                     </div>
                     <ul className="rating">
                         <li className="item">

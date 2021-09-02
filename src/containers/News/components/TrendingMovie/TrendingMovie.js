@@ -6,6 +6,7 @@ import { IconCinema } from 'components/Icons';
 import PopupTrailer from 'containers/Movie/components/PopupTrailer/PopupTrailer';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import dateFormat from 'dateformat';
 
 export default function NewTrendingMovie(props) {
 
@@ -26,7 +27,7 @@ export default function NewTrendingMovie(props) {
                         <div className="new-trending-movie__list__item__wrapper w-2/3 p-2">
                             <div className="item__wrapper__date ">
                                 <IconCinema width={20} height={20} fillColor={'#ffc033'} />
-                                <p>{new Date(item.releaseDate).toDateString()}</p>
+                                <p>{dateFormat(item?.releaseDate, 'fullDate')}</p>
                             </div>
                             <h5 className="item__wrapper__title ">
                                 {item.title}

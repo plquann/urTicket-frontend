@@ -6,7 +6,7 @@
     &__img {
       @apply h-2/3 relative overflow-hidden;
       img {
-        @apply transition duration-300 ease-in-out;
+        @apply transition duration-300 ease-in-out object-cover;
       }
 
       &__playTrailer {
@@ -31,7 +31,7 @@
         @apply py-2 px-0 capitalize border-b border-dashed text-xl font-semibold line-clamp-2 ;
         border-color: #11326f;
         h5{
-          height: 56px;
+          height: 62px;
         }
       }
 

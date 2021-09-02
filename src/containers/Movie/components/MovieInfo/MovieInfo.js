@@ -1,3 +1,4 @@
+import dateFormat from 'dateformat';
 import React from 'react';
 import { classifyDesc } from 'utils/classifyDesc';
 import MovieClassify from '../MovieClassify/MovieClassify';
@@ -30,7 +31,7 @@ export default function MovieInfo({ movie }) {
             <div className="social__duration flex flex-wrap">
                 <div className="duration-area flex flex-wrap space-x-2 text-white">
                     <div className="item mr-2 " >
-                        <i className="fas fa-calendar-alt mr-1.5" /><span>{new Date(movie?.releaseDate).toDateString()}</span>
+                        <i className="fas fa-calendar-alt mr-1.5" /><span>{dateFormat(movie?.releaseDate, 'fullDate')}</span>
                     </div>
                     <div className="item">
                         <i className="far fa-clock mr-1.5" /><span>{movie.duration} minutes</span>

@@ -1,24 +1,50 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './MovieSchedule.scss';
-import { LOGO_PARTNER } from 'constants/image';
 import { listDay } from "utils/renderDate";
 import ShowtimeItem from "../ShowtimeItem/ShowtimeItem";
 import { LocationMarker } from "components/Icons";
+import { groupTheaterAPI } from "apis";
+import { useSelector } from "react-redux";
+import dateFormat from "dateformat";
 
 export default function MovieSchedule(props) {
-    // console.log('🚀 ~ file: index.js ~ line 25 ~ Schedule ~ props', props.refProp.current);
+    const [groupTheater, setGroupTheater] = useState([]);
+    const [currentGroup, setCurrentGroup] = useState(null);
+
+    const { data } = useSelector(state => state.movie.movieShowtimes);
+    console.log('🚀 ~ file: MovieSchedule.js ~ line 16 ~ movieShowtimes', data);
+
+    useEffect(() => {
+        const fetchGroupTheater = async () => {
+            try {
+                const groupTheater = await groupTheaterAPI.getGroupTheater();
+                setGroupTheater(groupTheater);
+                setCurrentGroup(groupTheater[0]);
+            } catch (error) {
+                console.log("🚀 ~ error", error);
+            }
+        };
+        console.log('dispatch fetch group')
+        fetchGroupTheater();
+    }, []);
+
     return (
         <>
             <h3 ref={props.refProp} className="uppercase text-2xl font-bold my-4">Movie Schedules</h3>
             <div className="movie-schedule my-10 " >
                 <ul className="movie-schedule__theater-list ">
-                    <li className="active"><img src={LOGO_PARTNER[19].img} alt="movie System" /><span>cgv cinemas</span></li>
-                    <li><img src={LOGO_PARTNER[3].img} alt="movie System" /><span>lotte cinemas</span></li>
-                    <li><img src={LOGO_PARTNER[0].img} alt="movie System" /><span>bhd star cineplex</span></li>
-                    <li><img src={LOGO_PARTNER[1].img} alt="movie System" /><span>galaxy cinemas</span></li>
-                    <li><img src={LOGO_PARTNER[4].img} alt="movie System" /><span>mega gs</span></li>
-                    <li><img src={LOGO_PARTNER[5].img} alt="movie System" /><span>beta cinemas</span></li>
-
+                    {groupTheater.length && groupTheater.map((theaters, index) => {
+                        let active = theaters?.id === currentGroup?.id ? "active" : "";
+                        return (
+                            <li
+                                key={index}
+                                className={`${active}`}
+                                onClick={() => setCurrentGroup(theaters)}
+                            >
+                                <img src={theaters?.logo} alt="movie System" />
+                                <span>{theaters?.name}</span>
+                            </li>)
+                    })}
                 </ul>
                 <div className="movie-schedule__showtimes">
                     <div className="movie-schedule__showtimes__date ">
@@ -34,20 +60,36 @@ export default function MovieSchedule(props) {
                     </div>
 
                     <div className="movie-schedule__showtimes__theater">
-                        <div className="movie-schedule__showtimes__theater__item">
-                            <p><LocationMarker /><span>CGV Tran Quang Khai</span></p>
-                            <ul className="time">
-                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
-                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
-                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
-                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
-                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
-                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
-                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
-                                <ShowtimeItem link="/seatplan" startTime="09:40" endTime="~11:30" />
+                        {currentGroup && data.length
+                            ? data.findIndex(item => item.id === currentGroup.id) !== -1
+                                ? data.find(item => item.id === currentGroup.id)
+                                    .theaters.map((theater, index) => {
+                                        return (
+                                            <div className="movie-schedule__showtimes__theater__item" key={index}>
+                                                <p><LocationMarker /><span>{theater?.name}</span></p>
+                                                <ul className="time">
+                                                    {
+                                                        theater?.showtimes.map((showtime, index) => {
+                                                            let startTime = new Date(showtime.startTime);
+                                                            let endTime = new Date(showtime.endTime);
+                                                            return (
+                                                                <ShowtimeItem
+                                                                    key={index + showtime?.id}
+                                                                    startTime={`${dateFormat(startTime, 'HH:MM')}`}
+                                                                    endTime={`~${dateFormat(endTime, 'HH:MM')}`}
+                                                                    link={`/booking/${showtime?.id}/seatplan`}
+                                                                />
+                                                            )
+                                                        })
+                                                    }
+                                                </ul>
 
-                            </ul>
-                        </div>
+                                            </div>
+                                        )
+                                    })
+                                : <div className="py-2 pl-4 text-xl font-semibold">No Showtime</div>
+                            : ''
+                        }
 
                     </div>
                 </div>
