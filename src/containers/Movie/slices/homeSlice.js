@@ -36,8 +36,9 @@ export const fetchGroupTheater = createAsyncThunk(
 
 export const fetchShowTimeByTheater = createAsyncThunk(
     'home/SHOW_TIME_BY_THEATER',
-    async (theaterId) => {
-        const showTime = await showtimeAPI.getShowTimeByTheater(theaterId);
+    async (theaterId, thunkAPI) => {
+        console.log('🚀 ~ file: homeSlice.js ~ line 40 ~ theaterId', theaterId);
+        const showTime = await showtimeAPI.getShowtimesByTheaterId(theaterId);
         return showTime;
     }
 );
@@ -133,6 +134,7 @@ const homeSlice = createSlice({
         builder.addCase(fetchShowTimeByTheater.fulfilled, (state, action) => {
             state.currentShowtime.data = action.payload;
             state.currentShowtime.loading = false;
+            state.currentShowtime.error = '';
         });
 
         builder.addCase(fetchShowTimeByTheater.rejected, (state, action) => {

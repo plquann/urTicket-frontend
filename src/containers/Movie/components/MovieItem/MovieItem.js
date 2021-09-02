@@ -31,7 +31,7 @@ export default function MovieItem({ movie, ...props }) {
                 </div>
 
                 <div className="release mt-2">
-                    <span style={{ color: '#31d7a9' }}>Release Date : </span> <a href="#0">{new Date(movie?.releaseDate).toDateString()}</a>
+                    <span style={{ color: '#31d7a9' }}>Release Date: </span> <a href="#0">{new Date(movie?.releaseDate).toDateString()}</a>
                 </div>
                 <ul className="rating">
                     <li className="item">
