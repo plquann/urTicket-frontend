@@ -83,7 +83,7 @@ const Routes = () => {
 
                         <WithLayoutRoute
                             exact
-                            path="/booking/:reservationId/seatplan"
+                            path="/booking/:showtimeId/seatplan"
                             component={SeatPlan}
                             layoutProps={{ withFooter: false }}
                             layout={PublicLayout}
@@ -91,7 +91,7 @@ const Routes = () => {
 
                         <WithLayoutRoute
                             exact
-                            path="/booking/:reservationId/food"
+                            path="/booking/:showtimeId/food"
                             component={OrderFood}
                             layoutProps={{ withFooter: false }}
                             layout={PublicLayout}
@@ -99,7 +99,7 @@ const Routes = () => {
 
                         <WithLayoutRoute
                             exact
-                            path="/booking/:reservationId/checkout"
+                            path="/booking/:showtimeId/checkout"
                             component={CheckOut}
                             layoutProps={{ withFooter: false }}
                             layout={PublicLayout}

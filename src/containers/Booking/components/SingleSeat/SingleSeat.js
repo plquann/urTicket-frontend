@@ -24,7 +24,7 @@ export default function SingleSeat(props) {
                 />
             }
             <span
-                className="inline-block absolute top-1/2 left-1/2 text-sm"
+                className="inline-block absolute top-1/2 left-1/2 text-sm font-semibold"
                 style={{ transform: 'translate(-50%, -50%)' }}
             >
                 {`${row}${index}`}

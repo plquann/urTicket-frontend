@@ -3,6 +3,7 @@ import homeReducer from 'containers/Movie/slices/homeSlice';
 import movieReducer from 'containers/Movie/slices/movieSlide';
 import authReducer from './authSlice';
 import { loadUserData } from 'utils/localStorage'
+import bookingReducer from 'containers/Booking/slices/bookingSlice';
 
 const userData = loadUserData();
 
@@ -20,6 +21,7 @@ const rootReducer = {
     auth: authReducer,
     home: homeReducer,
     movie: movieReducer,
+    booking: bookingReducer,
 };
 
 const store = configureStore({

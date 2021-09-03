@@ -24,7 +24,7 @@ export default function CoupleSeat(props) {
                 />
             }
             <span
-                className=" absolute top-1/2 left-1/2 tracking-widest inline-flex space-x-6"
+                className=" absolute top-1/2 left-1/2 tracking-widest inline-flex space-x-6 font-semibold"
                 style={{ transform: 'translate(-50%, -50%)' }}
             >
                 <span>{row}</span>

@@ -11,5 +11,11 @@ const showtimeAPI = {
 
         return axiosClient.get(url);
     },
+    getDetailsByShowtimeId: (showtimeId) => {
+        const url = `/showtime/${showtimeId}`;
+
+        return axiosClient.get(url);
+    }
+
 }
 export default showtimeAPI;

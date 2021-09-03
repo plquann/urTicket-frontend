@@ -1,39 +1,25 @@
 @layer components {
   .movie-summary-banner {
-    @apply w-full mx-auto border rounded-xl;
+    @apply w-full mx-auto border rounded-md overflow-hidden;
     background-color: rgba(15, 21, 26, 0.8);
+    height: 600px;
     border-color: #11326f;
 
     &__img{
-        @apply w-full relative top-0 left-0 rounded-tl-xl overflow-hidden;
+        @apply w-full h-2/3 relative top-0 left-0  overflow-hidden;
         img{
-            @apply w-full;
+            @apply w-full h-full object-cover;
         }
-        &::before {
-            @apply absolute w-full top-0 bottom-0 z-0;
-            content: "";
-            background-color: rgba(2, 13, 24, 0.4);
-          }
     }
 
     &__content{
-        @apply p-4 text-center ;
+        @apply p-4  ;
         &__title{
-            @apply font-medium text-xl ;
+            @apply font-medium text-xl text-center;
         }
         &__duration {
-          @apply text-base pt-2;
+          @apply text-base text-center;
           color: #31d7a9;
-        }
-        &__release {
-          @apply text-white mb-1 pt-2;
-        }
-  
-        &__rating {
-          @apply grid grid-cols-2 gap-2 pt-2;
-          &__item{
-            @apply flex justify-center items-center;
-          }
         }
     }
   }
