@@ -36,7 +36,9 @@ export default function Schedule(props) {
     }, [dispatch]);
 
     useEffect(() => {
-        dispatch(fetchShowTimeByTheater(currentTheater));
+        if (currentTheater) {
+            dispatch(fetchShowTimeByTheater(currentTheater));
+        }
     }, [dispatch, currentTheater]);
 
     return (

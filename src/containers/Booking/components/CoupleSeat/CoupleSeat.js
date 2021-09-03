@@ -2,7 +2,7 @@ import { SEAT } from 'constants/image'
 import React, { useState } from 'react'
 
 export default function CoupleSeat(props) {
-    const { index, row } = props;
+    const { col, row, ticket } = props;
     const [isBooking, setIsBooking] = useState(false);
     // console.log('🚀 ~ file: index.js ~ line 7 ~ SingleSeat ~ status', isBooking);
 
@@ -28,7 +28,7 @@ export default function CoupleSeat(props) {
                 style={{ transform: 'translate(-50%, -50%)' }}
             >
                 <span>{row}</span>
-                <span>{index}</span>
+                <span>{col}</span>
             </span>
         </div>
     )

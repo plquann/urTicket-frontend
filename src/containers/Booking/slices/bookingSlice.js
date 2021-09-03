@@ -1,9 +1,9 @@
-import { showtimeAPI } from "apis";
+import { showtimeAPI, ticketAPI } from "apis";
 
 const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
 
 export const fetchShowtimeInfo = createAsyncThunk(
-    "booking/fetchShowtimeInfo",
+    "booking/FETCH_SHOWTIME_INFO",
     async (showtimeId) => {
         const showtime = await showtimeAPI.getDetailsByShowtimeId(showtimeId);
 
@@ -11,11 +11,18 @@ export const fetchShowtimeInfo = createAsyncThunk(
     }
 );
 
+export const fetchTicketsByShowtime = createAsyncThunk(
+    "booking/FETCH_TICKETS_SHOWTIME",
+    async (showtimeId) => {
+        const tickets = await ticketAPI.getTicketsByShowtime(showtimeId);
+        return tickets;
+    }
+);
+
 const bookingSlice = createSlice({
     name: 'booking',
     initialState: {
         showtimeInfo: {},
-        ticket: [],
         pickedSeats: [],
         loading: false,
         status: '',
@@ -32,6 +39,18 @@ const bookingSlice = createSlice({
             state.showtimeInfo = action.payload;
         });
         builder.addCase(fetchShowtimeInfo.rejected, (state, action) => {
+            state.loading = false;
+            state.error = action.error;
+        });
+        builder.addCase(fetchTicketsByShowtime.pending, (state, action) => {
+            state.loading = true;
+        }
+        );
+        builder.addCase(fetchTicketsByShowtime.fulfilled, (state, action) => {
+            state.loading = false;
+            state.ticket = action.payload;
+        });
+        builder.addCase(fetchTicketsByShowtime.rejected, (state, action) => {
             state.loading = false;
             state.error = action.error;
         });

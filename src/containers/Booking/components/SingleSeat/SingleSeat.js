@@ -2,9 +2,8 @@ import { SEAT } from 'constants/image';
 import React, { useState } from 'react'
 
 export default function SingleSeat(props) {
-    const { index, row } = props;
+    const { col, row, ticket } = props;
     const [isBooking, setIsBooking] = useState(false);
-    console.log('🚀 ~ file: index.js ~ line 7 ~ SingleSeat ~ status', isBooking);
 
     const handleSeatClick = () => {
         setIsBooking(!isBooking);
@@ -27,7 +26,7 @@ export default function SingleSeat(props) {
                 className="inline-block absolute top-1/2 left-1/2 text-sm font-semibold"
                 style={{ transform: 'translate(-50%, -50%)' }}
             >
-                {`${row}${index}`}
+                {`${row}${col}`}
             </span>
         </div>
     )
