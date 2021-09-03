@@ -25,10 +25,28 @@ const bookingSlice = createSlice({
         showtimeInfo: {},
         pickedSeats: [],
         loading: false,
+        steps: {
+            currentStep: '',
+            previousStep: '',
+            nextStep: '',
+        },
         status: '',
         error: null,
     },
     reducers: {
+        handlePickedSeats: (state, action) => {
+            const ticket = action.payload;
+            const index = state.pickedSeats.findIndex(item => item.id === ticket.id);
+            if (index === -1) {
+                state.pickedSeats.push(ticket);
+            } else {
+                state.pickedSeats.splice(index, 1);
+            }
+        },
+        checkPickedSeatsShowtime: (state, action) => {
+            const showtimeId = action.payload;
+            state.pickedSeats = state.pickedSeats.filter(item => item.showtimeId === showtimeId);
+        }
     },
     extraReducers: (builder) => {
         builder.addCase(fetchShowtimeInfo.pending, (state, action) => {
@@ -61,5 +79,6 @@ const bookingSlice = createSlice({
 
 // export default bookingSlice.reducer;
 
-const { reducer: bookingReducer } = bookingSlice;
+const { reducer: bookingReducer, actions } = bookingSlice;
+export const { handlePickedSeats, checkPickedSeatsShowtime } = actions;
 export default bookingReducer;

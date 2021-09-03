@@ -1,0 +1,13 @@
+@layer components {
+  .booking-directional {
+    button {
+      @apply inline-flex items-center justify-center px-4 py-2 rounded-md;
+      background-image: linear-gradient(
+        169deg,
+        #5560ff 17%,
+        #aa52a1 63%,
+        #ff4343 100%
+      );
+    }
+  }
+}

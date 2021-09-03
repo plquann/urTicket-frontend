@@ -1,14 +1,17 @@
-import { SCREEN, SEAT } from 'constants/image';
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import CoupleSeat from '../CoupleSeat/CoupleSeat';
 import SingleSeat from '../SingleSeat/SingleSeat';
+import { SCREEN, SEAT } from 'constants/image';
 import './BookingSeat.scss';
 
 
 export default function BookingSeat({ tickets, seatSinglePerRow = 12, seatCouplePerRow = 6 }) {
     const [singleSeat, setSingleSeat] = useState([]);
     const [coupleSeat, setCoupleSeat] = useState([]);
-    
+
+    const pickedSeats = useSelector(state => state.booking.pickedSeats);
+
     useEffect(() => {
         const formatSeat = (tickets) => {
             let single = [];
@@ -46,7 +49,12 @@ export default function BookingSeat({ tickets, seatSinglePerRow = 12, seatCouple
                                     {
                                         singleSeat.slice(index, index + seatSinglePerRow).map((item, index) => (
                                             <li key={index} className="relative">
-                                                <SingleSeat col={item.seat.column} row={item.seat.row} ticket={item} />
+                                                <SingleSeat
+                                                    col={item.seat.column}
+                                                    row={item.seat.row}
+                                                    ticket={item}
+                                                    pickedSeats={pickedSeats}
+                                                />
                                             </li>
                                         ))
                                     }
@@ -83,7 +91,12 @@ export default function BookingSeat({ tickets, seatSinglePerRow = 12, seatCouple
                                     {
                                         coupleSeat.slice(index, index + seatCouplePerRow).map((item, index) => (
                                             <li key={index} className="relative">
-                                                <CoupleSeat col={item.seat.column} row={item.seat.row} ticket={item} />
+                                                <CoupleSeat
+                                                    col={item.seat.column}
+                                                    row={item.seat.row}
+                                                    ticket={item}
+                                                    pickedSeats={pickedSeats}
+                                                />
                                             </li>
                                         ))
                                     }

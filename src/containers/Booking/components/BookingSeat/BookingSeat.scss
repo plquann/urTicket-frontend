@@ -3,7 +3,7 @@
     @apply w-full pb-10;
 
     &__area {
-      @apply w-3/12 text-xl text-center mx-auto my-3 py-2 relative;
+      @apply w-3/12 text-xl text-center mx-auto mb-3 pb-2 relative;
       color: #31d7a9;
       &::before {
         content: "";
