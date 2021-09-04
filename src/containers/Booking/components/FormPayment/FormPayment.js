@@ -4,7 +4,7 @@ import './FormPayment.scss';
 import usePaymentForm from 'hooks/usePaymentForm';
 
 export default function FormPayment() {
-    const { handleSubmit } = usePaymentForm();
+    const { handleSubmit } = usePaymentForm(200);
 
     return (
         <>

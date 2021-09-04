@@ -13,7 +13,7 @@ export default function Payment() {
             style={{
                 padding: '30px',
                 marginBottom: '30px',
-                backgroundColor: 'rgba(15, 21, 26, 0.8)',
+                backgroundColor: '#1A222A',
                 borderColor: '#11326f'
             }}
         >
