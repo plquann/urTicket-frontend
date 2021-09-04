@@ -3,11 +3,10 @@ import MovieSummaryBanner from 'containers/Booking/components/MovieSummaryBanner
 import BookingSeat from 'containers/Booking/components/BookingSeat/BookingSeat'
 import Page from 'components/Page/Page'
 import { useSelector, useDispatch } from 'react-redux'
-import { checkPickedSeatsShowtime, fetchShowtimeInfo } from 'containers/Booking/slices/bookingSlice'
-import { Link, useParams } from 'react-router-dom'
+import { checkPickedSeatsShowtime, fetchShowtimeInfo, setStepBooking } from 'containers/Booking/slices/bookingSlice'
+import { useParams } from 'react-router-dom'
 import { ticketAPI } from 'apis'
 import { useState } from 'react'
-import BookingDirect from 'containers/Booking/components/BookingDirect/BookingDirect'
 
 export default function SeatPlan() {
     const showtimeInfo = useSelector(state => state.booking.showtimeInfo);
@@ -25,6 +24,10 @@ export default function SeatPlan() {
     }, [dispatch, showtimeId]);
 
     useEffect(() => {
+        dispatch(setStepBooking('food'))
+    }, [dispatch]);
+
+    useEffect(() => {
         const fetchTickets = async (showtimeId) => {
             try {
                 const tickets = await ticketAPI.getTicketsByShowtime(showtimeId);
@@ -39,17 +42,16 @@ export default function SeatPlan() {
 
     return (
         <Page title="Seat Plan | UR-TICKET">
-            <div className="mt-16" style={{ backgroundColor: 'var(--color-secondary)' }}>
-                <div className="max-w-screen-xl mx-auto ">
-                    <BookingDirect />
-                </div>
-                <div className="booking max-w-screen-xl mx-auto grid grid-cols-4 gap-2 mt-4">
+            <div className=" max-w-screen-xl mx-auto mt-16 py-10" >
+                <div className="booking grid grid-cols-4 gap-2">
+                    <div className="col-span-3">
+                        <BookingSeat tickets={tickets} />
+                    </div>
                     <div className="">
                         <MovieSummaryBanner showtime={showtimeInfo} />
+
                     </div>
-                    <div className="col-span-3">
-                        <BookingSeat tickets={tickets}/>
-                    </div>
+
                 </div>
             </div>
         </Page>

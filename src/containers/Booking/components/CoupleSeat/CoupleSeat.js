@@ -1,6 +1,6 @@
 import { SEAT } from 'constants/image'
 import { handlePickedSeats } from 'containers/Booking/slices/bookingSlice';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 
 export default function CoupleSeat(props) {
@@ -13,24 +13,27 @@ export default function CoupleSeat(props) {
         setIsBooking(!isBooking);
         dispatch(handlePickedSeats(ticket))
     }
-    
+
+    useEffect(() => {
+        if (pickedSeats.findIndex(item => item.id === ticket.id) !== -1)
+            setIsBooking(true);
+    }, [pickedSeats, ticket])
+
     return (
         <div className="couple-seat" onClick={() => handleSeatClick(ticket)}>
             {ticket.reservationId
                 ? <img src={SEAT.SEAT_COUPLE_RESERVED} alt="seat-reserved" />
-                : pickedSeats.findIndex(item => item.id === ticket.id) !== -1
-                    ? <img src={SEAT.SEAT_COUPLE_SELECTED} alt="seat-selected" />
-                    : isBooking
-                        ?
-                        <img
-                            src={SEAT.SEAT_COUPLE_SELECTED}
-                            alt="seat-selected"
-                        />
-                        :
-                        <img
-                            src={SEAT.SEAT_COUPLE_AVAILABLE}
-                            alt="seat-available"
-                        />
+                : isBooking
+                    ?
+                    <img
+                        src={SEAT.SEAT_COUPLE_SELECTED}
+                        alt="seat-selected"
+                    />
+                    :
+                    <img
+                        src={SEAT.SEAT_COUPLE_AVAILABLE}
+                        alt="seat-available"
+                    />
             }
             <span
                 className=" absolute top-1/2 left-1/2 tracking-widest inline-flex space-x-6 font-semibold"

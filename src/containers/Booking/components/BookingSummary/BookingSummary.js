@@ -43,14 +43,10 @@ export default function BookingSummary() {
                     <span>VAT(10%)</span>
                     <span>$7</span>
                 </div>
-                <div className="payment">
+                <div className="payment text-green-400 mt-3">
                     <span>AMOUNT PAYABLE</span>
                     <span>$84</span>
                 </div>
-            </div>
-
-            <div className="summary__button">
-                <button className="bg-btn-gradient ">Payment Now</button>
             </div>
         </div>
     )

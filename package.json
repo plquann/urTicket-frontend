@@ -14,6 +14,8 @@
     "@material-ui/utils": "^5.0.0-alpha.36",
     "@reduxjs/toolkit": "^1.5.1",
     "@statikly/funk": "^0.3.0",
+    "@stripe/react-stripe-js": "^1.4.1",
+    "@stripe/stripe-js": "^1.17.1",
     "@tailwindcss/line-clamp": "^0.2.0",
     "@tailwindcss/postcss7-compat": "^2.0.4",
     "@testing-library/jest-dom": "^5.11.4",

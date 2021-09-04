@@ -25,11 +25,7 @@ const bookingSlice = createSlice({
         showtimeInfo: {},
         pickedSeats: [],
         loading: false,
-        steps: {
-            currentStep: '',
-            previousStep: '',
-            nextStep: '',
-        },
+        nextStep: '',
         status: '',
         error: null,
     },
@@ -46,7 +42,11 @@ const bookingSlice = createSlice({
         checkPickedSeatsShowtime: (state, action) => {
             const showtimeId = action.payload;
             state.pickedSeats = state.pickedSeats.filter(item => item.showtimeId === showtimeId);
+        },
+        setStepBooking: (state, action) => {
+            state.nextStep = action.payload;
         }
+
     },
     extraReducers: (builder) => {
         builder.addCase(fetchShowtimeInfo.pending, (state, action) => {
@@ -80,5 +80,5 @@ const bookingSlice = createSlice({
 // export default bookingSlice.reducer;
 
 const { reducer: bookingReducer, actions } = bookingSlice;
-export const { handlePickedSeats, checkPickedSeatsShowtime } = actions;
+export const { handlePickedSeats, checkPickedSeatsShowtime,setStepBooking} = actions;
 export default bookingReducer;

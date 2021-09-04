@@ -1,6 +1,6 @@
 @layer components {
   .screen {
-    @apply w-full pb-10;
+    @apply w-full ;
 
     &__area {
       @apply w-3/12 text-xl text-center mx-auto mb-3 pb-2 relative;
@@ -17,7 +17,7 @@
       }
     }
     &__img {
-      @apply max-w-xl mx-auto mt-3 mb-2;
+      @apply max-w-xl mx-auto mb-2;
     }
     &__wrapper {
       @apply w-full pt-8;

@@ -7,11 +7,16 @@
       border-color: #11326f;
     }
     label {
-      @apply inline-block mb-2 text-lg;
+      @apply inline-block mb-4 text-lg;
     }
 
     &__field {
       @apply flex flex-wrap;
+
+      iframe {
+        @apply w-full h-10 px-2 mb-4 text-lg placeholder-gray-200 placeholder-opacity-20 border rounded-lg focus:outline-none bg-transparent;
+        border-color: #11326f;
+      }
 
       .namecard {
         @apply w-full px-2;

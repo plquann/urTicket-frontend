@@ -6,20 +6,16 @@
     border-color: #11326f;
 
     &__img{
-        @apply w-full h-2/3 overflow-hidden;
+        @apply w-full h-1/2 overflow-hidden;
         img{
             @apply w-full h-full object-cover;
         }
     }
 
     &__content{
-        @apply px-4  ;
+        @apply px-4 mt-3;
         &__title{
-            @apply font-medium text-xl text-center;
-        }
-        &__duration {
-          @apply text-base text-center;
-          color: #31d7a9;
+            @apply font-medium text-2xl text-center;
         }
     }
   }

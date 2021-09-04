@@ -33,8 +33,6 @@ export default function BookingSeat({ tickets, seatSinglePerRow = 12, seatCouple
 
     return (
         <div className="screen">
-            <h4 className="screen__area">SCREEN</h4>
-
             <div className="screen__img">
                 <img src={SCREEN} alt="movie" className="w-full" />
             </div>
@@ -44,7 +42,7 @@ export default function BookingSeat({ tickets, seatSinglePerRow = 12, seatCouple
                     if (index % seatSinglePerRow === 0) {
                         acc.push(
                             <div className="screen__wrapper__row" key={index}>
-                                <span>{ticket.seat.row}</span>
+                                {/* <span>{ticket.seat.row}</span> */}
                                 <ul>
                                     {
                                         singleSeat.slice(index, index + seatSinglePerRow).map((item, index) => (
@@ -59,7 +57,7 @@ export default function BookingSeat({ tickets, seatSinglePerRow = 12, seatCouple
                                         ))
                                     }
                                 </ul>
-                                <span>{ticket.seat.row}</span>
+                                {/* <span>{ticket.seat.row}</span> */}
                             </div>
                         );
                         return acc;
@@ -81,12 +79,12 @@ export default function BookingSeat({ tickets, seatSinglePerRow = 12, seatCouple
                     </div>
                 ))} */}
 
-                <p className="screen__area">COUPLE SEAT</p>
+                
                 {coupleSeat.reduce((acc, ticket, index) => {
                     if (index % seatCouplePerRow === 0) {
                         acc.push(
                             <div className="screen__wrapper__row" key={index}>
-                                <span>{ticket.seat.row}</span>
+                                {/* <span>{ticket.seat.row}</span> */}
                                 <ul>
                                     {
                                         coupleSeat.slice(index, index + seatCouplePerRow).map((item, index) => (
@@ -101,7 +99,7 @@ export default function BookingSeat({ tickets, seatSinglePerRow = 12, seatCouple
                                         ))
                                     }
                                 </ul>
-                                <span>{ticket.seat.row}</span>
+                                {/* <span>{ticket.seat.row}</span> */}
                             </div>
                         );
                         return acc;

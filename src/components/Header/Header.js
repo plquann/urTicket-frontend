@@ -47,7 +47,7 @@ function Header(props) {
                             <NavLink activeClassName="active" className="header-label" to="/news">
                                 NEWS
                             </NavLink>
-                            <NavLink activeClassName="active" className="header-label" to="/booking/:id/seatplan">
+                            <NavLink activeClassName="active" className="header-label" to="/booking/:id/checkout">
                                 BOOKING
                             </NavLink>
                             <NavLink activeClassName="active" className="header-label" to="/admin/dashboard">

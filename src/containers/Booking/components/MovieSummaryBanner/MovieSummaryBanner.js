@@ -2,6 +2,7 @@ import React from 'react';
 import './MovieSummaryBanner.scss';
 import dateFormat from 'dateformat';
 import { useSelector } from 'react-redux';
+import BookingDirect from '../BookingDirect/BookingDirect';
 
 export default function MovieSummaryBanner({ showtime }) {
     const pickedSeats = useSelector(state => state.booking.pickedSeats);
@@ -15,15 +16,19 @@ export default function MovieSummaryBanner({ showtime }) {
                 <h4 className="movie-summary-banner__content__title">
                     {movie?.title}
                 </h4>
-                <p className="movie-summary-banner__content__duration">{movie?.duration} minutes</p>
-                <div className="movie-summary-banner__content__theater mt-2">
+                <p className=" text-center">{movie?.duration} minutes</p>
+                <div className="movie-summary-banner__content__theater mt-4">
                     <div className="flex justify-between items-center font-medium text-lg">
                         <span className="flex items-center">{theater?.name}</span>
                         <span>Room {showtime?.room}</span>
                     </div>
                     <div className="flex justify-between items-center">
-                        <span>{dateFormat(showtime?.startTime, "mmmm d, yyyy")}</span>
-                        <span>{`${dateFormat(showtime?.startTime, "HH:MM")} - ${dateFormat(showtime?.endTime, "HH:MM")}`}</span>
+                        <span>Schedule</span>
+                        <span className="font-medium text-green-500">{dateFormat(showtime?.startTime, "mmmm d, yyyy")}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                        <span>Showtime</span>
+                        <span className="font-medium text-green-500">{`${dateFormat(showtime?.startTime, "HH:MM")} - ${dateFormat(showtime?.endTime, "HH:MM")}`}</span>
                     </div>
                     <div className="flex justify-between items-center ">
                         <span>Picked Seat</span>
@@ -48,6 +53,7 @@ export default function MovieSummaryBanner({ showtime }) {
                         </div>
                     </div>
                 </div>
+                <BookingDirect />
             </div>
         </div>
     )
