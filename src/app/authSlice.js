@@ -34,9 +34,9 @@ export const register = createAsyncThunk(
 export const logout = createAsyncThunk(
     'auth/LOGOUT',
     async () => {
+        await localStorage.removeItem('user');
         const res = await authAPI.logout();
 
-        localStorage.removeItem('user');
         return res;
     }
 );

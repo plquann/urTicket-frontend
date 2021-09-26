@@ -1,25 +1,7 @@
 import NotFoundBG from 'assets/images/404.png';
 import Logo from 'assets/images/favicon.png';
 import FooterLogo from 'assets/images/footer/footer-logo.png';
-import MovieIMG1 from 'assets/images/movie/movie1.jpg';
-import MovieIMG2 from 'assets/images/movie/movie2.jpg';
-import MovieIMG3 from 'assets/images/movie/movie3.jpg';
-import MovieIMG4 from 'assets/images/movie/movie4.jpg';
-import MovieIMG5 from 'assets/images/movie/movie5.jpg';
-import MovieIMG6 from 'assets/images/movie/movie6.jpg';
-import MovieIMG7 from 'assets/images/movie/movie7.jpg';
-import MovieIMG8 from 'assets/images/movie/movie8.jpg';
-import MovieIMG9 from 'assets/images/movie/movie9.jpg';
-import MovieIMG10 from 'assets/images/movie/movie10.jpg';
-import MovieIMG11 from 'assets/images/movie/movie11.jpg';
-import MovieIMG12 from 'assets/images/movie/movie12.jpg';
 
-import MovieDetail1 from 'assets/images/movie/movie-details01.jpg';
-import MovieDetail2 from 'assets/images/movie/movie-details02.jpg';
-import MovieDetail3 from 'assets/images/movie/movie-details03.jpg';
-import MovieDetail4 from 'assets/images/movie/movie-details04.jpg';
-import MovieDetail5 from 'assets/images/movie/movie-details05.jpg';
-import MovieDetail6 from 'assets/images/movie/movie-details06.jpg';
 
 import Tomato from 'assets/images/movie/tomato.png';
 import Cake from 'assets/images/movie/cake.png';
@@ -114,15 +96,6 @@ export const ICONS = {
 
 export const THUMS = searchthums;
 
-
-export const MOVIE_PHOTO = [
-    MovieDetail1,
-    MovieDetail2,
-    MovieDetail3,
-    MovieDetail4,
-    MovieDetail5,
-    MovieDetail6,
-];
 export const CAST_PHOTO = [
     cast1,
     cast2,

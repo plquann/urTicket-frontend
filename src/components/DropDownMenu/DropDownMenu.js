@@ -37,7 +37,7 @@ const DropDownMenu = (props) => {
                         aria-labelledby="options-menu"
                     >
                         <Link
-                            className="flex items-center px-4 py-2 text-md text-white hover:bg-gray-900  hover:text-white-500"
+                            className="flex items-center px-4 py-2 text-md text-white hover:bg-gray-900  hover:text-white-500 cursor-pointer"
                             role="menuitem"
                             to="/profile/me"
                         >
@@ -45,11 +45,11 @@ const DropDownMenu = (props) => {
                             <span className="flex flex-col ml-1">My Profile</span>
                         </Link>
                         <Link
-                            className="flex items-center px-4 py-2 text-md text-white hover:bg-gray-900 hover:text-white-500"
+                            className="flex items-center px-4 py-2 text-md text-white hover:bg-gray-900 hover:text-white-500 cursor-pointer"
                             role="menuitem"
                         >
                             <IconLogout width={22} height={22} fillColor={'#dbe2fb'} />
-                            <span className="flex flex-col ml-1 cursor-pointer" onClick={() => handleLogout()}>Logout</span>
+                            <span className="flex flex-col ml-1 " onClick={() => handleLogout()}>Logout</span>
                         </Link>
                     </div>
                 </div>

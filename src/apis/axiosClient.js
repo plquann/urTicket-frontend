@@ -7,11 +7,11 @@ import queryString from 'query-string';
 const axiosClient = axios.create({
     baseURL: process.env.REACT_APP_API_URL,
     withCredentials: true,
-    headers: {
-        'Access-Control-Allow-Origin': `${process.env.REACT_APP_URL}`,
-        'Access-Control-Allow-Credentials': true,
-        'Content-Type': 'application/json',
-    },
+    // headers: {
+    //     'Access-Control-Allow-Origin': `${process.env.REACT_APP_URL}`,
+    //     'Access-Control-Allow-Credentials': true,
+    //     'Content-Type': 'application/json',
+    // },
     paramsSerializer: params => queryString.stringify(params),
 });
 

@@ -34,18 +34,18 @@ function usePaymentForm(amountToCharge = 100) {
         const paymentMethodId = paymentMethod.id;
         console.log('axios');
 
-        const chargeResponse = axiosClient.post(`${process.env.REACT_APP_API_URL}payment`, {
-            paymentMethodId,
-            amount: amountToCharge
-        })
+        // const chargeResponse = axiosClient.post(`${process.env.REACT_APP_API_URL}payment`, {
+        //     paymentMethodId,
+        //     amount: amountToCharge
+        // })
         
 
-        console.log('🚀 ~ file: usePaymentForm.js ~ line 36 ~ res', chargeResponse);
-        if (chargeResponse.status !== 'succeeded') {
-            const secret = chargeResponse.client_secret;
+        // console.log('🚀 ~ file: usePaymentForm.js ~ line 36 ~ res', chargeResponse);
+        // if (chargeResponse.status !== 'succeeded') {
+        //     const secret = chargeResponse.client_secret;
 
-            await stripe?.confirmCardPayment(secret);
-        }
+        //     await stripe?.confirmCardPayment(secret);
+        // }
 
 
     };

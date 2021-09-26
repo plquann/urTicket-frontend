@@ -2,8 +2,8 @@ import React from 'react';
 
 import Page from 'components/Page/Page'
 import BookingSummary from 'containers/Booking/components/BookingSummary/BookingSummary'
-import FormPromo from 'containers/Booking/components/FormPromo/FormPromo'
-import Info from 'containers/Booking/components/Info/Info'
+// import FormPromo from 'containers/Booking/components/FormPromo/FormPromo'
+// import Info from 'containers/Booking/components/Info/Info'
 import Payment from 'containers/Booking/components/Payment/Payment'
 
 

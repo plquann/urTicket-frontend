@@ -20,28 +20,40 @@ export default function CoupleSeat(props) {
     }, [pickedSeats, ticket])
 
     return (
-        <div className="couple-seat" onClick={() => handleSeatClick(ticket)}>
-            {ticket.reservationId
-                ? <img src={SEAT.SEAT_COUPLE_RESERVED} alt="seat-reserved" />
-                : isBooking
-                    ?
-                    <img
-                        src={SEAT.SEAT_COUPLE_SELECTED}
-                        alt="seat-selected"
-                    />
-                    :
-                    <img
-                        src={SEAT.SEAT_COUPLE_AVAILABLE}
-                        alt="seat-available"
-                    />
+        <>
+            {
+                ticket.reservationId
+                    ? <button className="couple-seat block " disabled>
+                        <img src={SEAT.SEAT_COUPLE_RESERVED} alt="seat-reserved" />
+                        <span
+                            className="inline-block absolute top-1/2 left-1/2 text-sm font-semibold"
+                            style={{ transform: 'translate(-50%, -50%)' }}
+                        >
+                            {`${row}${col}`}
+                        </span>
+                    </button>
+                    : <button className="couple-seat block" onClick={() => handleSeatClick(ticket)}>
+                        {isBooking
+                            ?
+                            <img
+                                src={SEAT.SEAT_COUPLE_SELECTED}
+                                alt="seat-selected"
+                            />
+                            :
+                            <img
+                                src={SEAT.SEAT_COUPLE_AVAILABLE}
+                                alt="seat-available"
+                            />
+                        }
+                        <span
+                            className=" absolute top-1/2 left-1/2 tracking-widest inline-flex space-x-6 font-semibold"
+                            style={{ transform: 'translate(-50%, -50%)' }}
+                        >
+                            <span>{row}</span>
+                            <span>{col}</span>
+                        </span>
+                    </button>
             }
-            <span
-                className=" absolute top-1/2 left-1/2 tracking-widest inline-flex space-x-6 font-semibold"
-                style={{ transform: 'translate(-50%, -50%)' }}
-            >
-                <span>{row}</span>
-                <span>{col}</span>
-            </span>
-        </div>
+        </>
     )
 }

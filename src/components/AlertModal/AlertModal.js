@@ -10,7 +10,7 @@ const AlertModal = ({ open, content, onHandleConfirm }) => {
             modal
         >
             {close => (
-                <div className="modal px-2">
+                <div className="modal px-2 ">
                     <div className="content text-xl mb-8">
                         {content}
                     </div>

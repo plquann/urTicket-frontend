@@ -1,8 +1,12 @@
 import axiosClient from './axiosClient';
 
 const movieAPI = {
+    getMovies: (params) => {
+        const url = '/movie';
+        return axiosClient.get(url, { params });
+    },
     getNowPlaying: () => {
-        const url = `/movie/now_playing`;
+        const url = `/movie/now-playing`;
 
         return axiosClient.get(url);
     },
