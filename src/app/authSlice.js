@@ -26,7 +26,7 @@ export const register = createAsyncThunk(
         // console.log('🚀 ~ file: authSlice.js ~ line 22 ~ userRegister', userRegister);
 
         localStorage.setItem('user', JSON.stringify(userRegister));
-        
+
         return userRegister;
     }
 );
@@ -38,6 +38,17 @@ export const logout = createAsyncThunk(
         const res = await authAPI.logout();
 
         return res;
+    }
+);
+
+export const refreshToken = createAsyncThunk(
+    'auth/REFRESH_TOKEN',
+    async () => {
+        const user = localStorage.getItem('user');
+        if(user) {
+            const res = await authAPI.refreshToken();
+            return res;
+        }
     }
 );
 
@@ -111,6 +122,24 @@ const authSlice = createSlice({
         });
 
         builder.addCase(logout.rejected, (state, action) => {
+            console.log('🚀 ~ file: authSlice.js ~ line 38 ~ builder.addCase ~ action', action);
+
+            if (action.payload)
+                state.error = action.payload.message;
+            else
+                state.error = action.error.message;
+
+            state.loading = false;
+        });
+
+        builder.addCase(refreshToken.pending, (state, action) => {
+            state.loading = true;
+        });
+        builder.addCase(refreshToken.fulfilled, (state, action) => {
+            state.loading = false;
+            state.error = '';
+        });
+        builder.addCase(refreshToken.rejected, (state, action) => {
             console.log('🚀 ~ file: authSlice.js ~ line 38 ~ builder.addCase ~ action', action);
 
             if (action.payload)

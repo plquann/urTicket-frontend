@@ -6,7 +6,7 @@ export default function Pagination(props) {
     const { pagination, onPageChange } = props;
     const { page, limit, totalRows } = pagination;
     
-    const totalPages = Math.floor(totalRows / limit);
+    const totalPages = Math.ceil(totalRows / limit);
     const arrPage = rangePagination(page, totalPages);
 
     const handlePageChange = (newPage) => {

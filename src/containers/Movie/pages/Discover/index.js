@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
 import { movieAPI } from 'apis';
 
 import Pagination from 'components/Pagination/Pagination'
@@ -24,6 +24,10 @@ export default function Discover() {
         limit: 10,
         genre: '',
     });
+
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0);
+    })
 
     useEffect(() => {
         const fetchMovies = async () => {
