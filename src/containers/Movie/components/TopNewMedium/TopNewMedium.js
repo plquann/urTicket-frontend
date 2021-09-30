@@ -1,34 +1,29 @@
 import Medal from 'components/Medal/Medal'
+import dateFormat from 'dateformat';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './TopNewMedium.scss'
 
-export default function TopNewMedium(props) {
+export default function TopNewMedium({ news, rank }) {
     return (
         <div className="top-new-medium">
-            <div className="top-new-medium__thumbnails">
-                <img src="https://img.cinemablend.com/filter:scale/quill/e/b/2/b/7/1/eb2b715d128d36bbc2231e0c5e69cc74ce1d88f0.jpg?mw=600" alt="" />
-            </div>
-            <div className="top-new-medium__title" >
-                <h2 className="line-clamp-2">{props.title}</h2>
-                <p className="subtitle line-clamp-2 text-gray-400">
-                    Scarlett Johansson is one of the most recognizable actors in the world,
-                    having been a fixture in film and television since she was a child.
-                    Over time, she’s also become a voice within the industry, speaking out
-                    on issues affecting both the entertainment landscape and society as a whole.
-                    The Hollywood Foreign Press Association has been a particularly hot topic as of late,
-                    as the organization has received backlash for a number of reasons.
-                    Now, Johansson is lending her voice to the many who are calling for reform with the HFPA
-                    by bluntly revealing why she's avoiding doing Golden Globes press for years
-                </p>
-                <p className="mt-2 ">
-                    May 9 2021 12:05 PM
-                    <span className="text-lg font-bold mx-2"> |</span>
-                    <span className="font-medium">Alexander Clare</span>
-                </p>
-            </div>
-            <div className="top-new-medium__ranking">
-                <Medal rank={props.rank} />
-            </div>
+            <Link to={`/news/${news?.id}`}>
+                <div className="top-new-medium__thumbnails">
+                    <img src={news?.image} alt="" />
+                </div>
+                <div className="top-new-medium__title" >
+                    <h2 className="line-clamp-2">{news?.title}</h2>
+
+                    <p className="mt-4">
+                        {dateFormat(news?.publishedDate, 'fullDate')}
+                        <span className="text-lg font-bold mx-2"> |</span>
+                        <span className="font-medium">{news?.author.name}</span>
+                    </p>
+                </div>
+                <div className="top-new-medium__ranking">
+                    <Medal rank={rank} />
+                </div>
+            </Link>
         </div>
     )
 }

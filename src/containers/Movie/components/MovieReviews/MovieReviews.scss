@@ -1,7 +1,7 @@
 @layer components {
   .movie__reviews {
     @apply overflow-auto pr-8 pt-6 mb-4;
-    height: 600px;
+    max-height: 600px;
     &::-webkit-scrollbar {
       width: 5px;
       background-color: #afacac;

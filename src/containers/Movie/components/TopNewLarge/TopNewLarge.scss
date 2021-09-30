@@ -1,15 +1,18 @@
 @layer components {
   .top-new-large {
-    @apply grid grid-cols-3 gap-4 w-full relative cursor-pointer;
+    @apply grid grid-cols-3 gap-4 w-full h-full relative cursor-pointer;
     background-color: #1a222a;
+    max-height: 400px;
 
     &__ranking {
       @apply absolute -top-3 -left-2;
     }
     &__thumbnails {
-      @apply col-span-2 relative overflow-hidden;
+      @apply col-span-2 relative overflow-hidden h-full;
       img {
-        @apply w-full h-full transition duration-300 ease-in-out;
+        @apply transition duration-300 ease-in-out object-cover;
+        width: 100%;
+        
       }
       &:hover {
         img {
@@ -21,7 +24,7 @@
       }
     }
     &__title {
-      @apply z-10 pr-4 py-2;
+      @apply z-10 pr-4 py-4;
       h2 {
         @apply text-2xl font-semibold -mt-2;
       }

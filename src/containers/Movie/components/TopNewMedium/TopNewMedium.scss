@@ -1,11 +1,13 @@
 @layer components {
   .top-new-medium {
-    @apply w-full h-full  relative;
+    @apply w-full  relative;
     background-color: #1a222a;
+    height: 400px;
+
     &__thumbnails {
-      @apply overflow-hidden;
+      @apply overflow-hidden h-2/3;
       img {
-        @apply w-full h-full transition duration-300 ease-in-out;
+        @apply w-full transition duration-300 ease-in-out object-cover;
       }
       &:hover {
         img {
