@@ -183,7 +183,7 @@ export default function User() {
                                                     </Label>
                                                 </TableCell> */}
                                                 <TableCell align="right">
-                                                    <IconButton aria-label="delete">
+                                                    <IconButton aria-label="edit">
                                                         <IconEdit width={24} height={24} fillColor={'#637381'} />
                                                     </IconButton>
                                                     <IconButton aria-label="delete">

@@ -33,8 +33,7 @@ import { IconEdit, IconTrash } from 'components/Icons';
 import Page from 'components/Page/Page';
 
 const TABLE_HEAD = [
-    { id: 'name', label: 'Name', alignRight: false },
-    { id: 'genre', label: 'Genres', alignRight: false },
+    { id: 'title', label: 'Title', alignRight: false },
     { id: 'duration', label: 'Duration', alignRight: false },
     { id: 'releaseDate', label: 'Release Date', alignRight: false },
     { id: 'rating', label: 'Rating', alignRight: false },
@@ -58,25 +57,31 @@ const TableRow = withStyles({
 })(MuiTableRow);
 
 export default function MoviesDashboard() {
-    const [page, setPage] = useState(0);
     const [order, setOrder] = useState('asc');
     const [selected, setSelected] = useState([]);
-    const [orderBy, setOrderBy] = useState('name');
+    const [orderBy, setOrderBy] = useState('title');
     const [filterName, setFilterName] = useState('');
-    const [rowsPerPage, setRowsPerPage] = useState(10);
+    const [totalRows, setTotalRows] = useState(1);
+    const [pagination, setPagination] = useState({
+        page: 1,
+        limit: 12,
+    });
 
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
         const fetchMovies = async () => {
             try {
-                const movies = await adminAPI.getAllMovies();
+                const res = await adminAPI.getAllMovies(pagination);
+                console.log('🚀 ~ file: MoviesDashboard.js ~ line 74 ~ res', res);
+                setMovies(res.movies);
+                setTotalRows(res.totalRow);
             } catch (err) {
                 console.log('🚀 ~ file: MoviesDashboard.js ~ line 76 ~ err', err);
             }
         };
         fetchMovies();
-    }, [])
+    }, [pagination])
 
 
     const handleRequestSort = (event, property) => {
@@ -87,8 +92,8 @@ export default function MoviesDashboard() {
 
     const handleSelectAllClick = (event) => {
         if (event.target.checked) {
-            const newSelecteds = MOVIESLIST.map((n) => n.name);
-            setSelected(newSelecteds);
+            const newSelected = movies.map((n) => n.id);
+            setSelected(newSelected);
             return;
         }
         setSelected([]);
@@ -99,21 +104,19 @@ export default function MoviesDashboard() {
     };
 
     const handleChangePage = (event, newPage) => {
-        setPage(newPage);
-    };
-
-    const handleChangeRowsPerPage = (event) => {
-        setRowsPerPage(parseInt(event.target.value, 10));
-        setPage(0);
+        console.log('🚀 ~ file: MoviesDashboard.js ~ line 108 ~ newPage', newPage);
+        // setPage(newPage);
+        setPagination({
+            ...pagination,
+            page: newPage + 1
+        });
     };
 
     const handleFilterByName = (event) => {
         setFilterName(event.target.value);
     };
 
-    const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - MOVIESLIST.length) : 0;
-
-    const filteredData = applySortFilter(MOVIESLIST, getComparator(order, orderBy), filterName);
+    const filteredData = applySortFilter(movies, getComparator(order, orderBy), filterName);
 
     const isNotFound = filteredData.length === 0;
 
@@ -135,17 +138,16 @@ export default function MoviesDashboard() {
                                 order={order}
                                 orderBy={orderBy}
                                 headLabel={TABLE_HEAD}
-                                rowCount={MOVIESLIST.length}
+                                rowCount={movies.length}
                                 numSelected={selected.length}
                                 onRequestSort={handleRequestSort}
                                 onSelectAllClick={handleSelectAllClick}
                             />
                             <TableBody>
                                 {filteredData
-                                    .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                                     .map((row) => {
-                                        const { id, name, genre, status, duration, posterUrl, releaseDate, rating } = row;
-                                        const isItemSelected = selected.indexOf(name) !== -1;
+                                        const { id, title, genres, status, duration, posterUrl, releaseDate, voteAverage } = row;
+                                        const isItemSelected = selected.indexOf(id) !== -1;
 
                                         return (
                                             <TableRow
@@ -159,36 +161,36 @@ export default function MoviesDashboard() {
                                                 <TableCell padding="checkbox">
                                                     <Checkbox
                                                         checked={isItemSelected}
-                                                        onChange={(event) => handleClick(event, name)}
+                                                        onChange={(event) => handleClick(event, id)}
                                                     />
                                                 </TableCell>
                                                 <TableCell component="th" scope="row" padding="none">
                                                     <Stack direction="row" alignItems="center" spacing={2}>
-                                                        <Avatar alt={name} src={posterUrl} />
+                                                        <Avatar alt={title} src={posterUrl} />
                                                         <Typography variant="subtitle2" noWrap>
-                                                            {name}
+                                                            {title}
                                                         </Typography>
                                                     </Stack>
                                                 </TableCell>
-                                                <TableCell align="left">
-                                                    {genre.map((item, index) =>
+                                                {/* <TableCell align="left">
+                                                    {genres.map((item, index) =>
                                                         <Label
                                                             key={index + item}
                                                             variant="ghost"
                                                             color={'default'}
                                                         >
-                                                            {sentenceCase(item)}
+                                                            {sentenceCase(item.name)}
                                                         </Label>)}
-                                                </TableCell>
+                                                </TableCell> */}
                                                 <TableCell align="left">{duration + ' minutes'}</TableCell>
-                                                <TableCell align="left">{releaseDate}</TableCell>
+                                                <TableCell align="left">{new Date(releaseDate).toDateString()}</TableCell>
                                                 <TableCell align="left">
-                                                    <Rating name="read-only" value={rating} readOnly />
+                                                    <Rating name="read-only" value={voteAverage / 2} readOnly />
                                                 </TableCell>
                                                 <TableCell align="left">
                                                     <Label
                                                         variant="filled"
-                                                        color={(status === 'coming' && 'warning') || (status === 'showing' && 'success') || 'error'}
+                                                        color={(status === 'UPCOMING' && 'warning') || (status === 'PLAYING' && 'success') || 'error'}
                                                     >
                                                         {sentenceCase(status)}
                                                     </Label>
@@ -204,11 +206,11 @@ export default function MoviesDashboard() {
                                             </TableRow>
                                         );
                                     })}
-                                {emptyRows > 0 && (
+                                {/* {emptyRows > 0 && (
                                     <TableRow style={{ height: 53 * emptyRows }}>
                                         <TableCell colSpan={6} />
                                     </TableRow>
-                                )}
+                                )} */}
                             </TableBody>
                             {
                                 isNotFound && (
@@ -226,11 +228,11 @@ export default function MoviesDashboard() {
 
                     <TablePaging
                         rowsPerPageOptions={[5, 10, 25]}
-                        count={MOVIESLIST.length}
-                        rowsPerPage={rowsPerPage}
-                        page={page}
+                        count={totalRows}
+                        rowsPerPage={pagination.limit}
+                        page={pagination.page - 1}
                         onPageChange={handleChangePage}
-                        onRowsPerPageChange={handleChangeRowsPerPage}
+                    // onRowsPerPageChange={handleChangeRowsPerPage}
                     />
                 </Card>
             </Container>
