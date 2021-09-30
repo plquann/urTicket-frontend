@@ -9,6 +9,7 @@ import FilterDate from 'containers/Movie/components/FilterDate/FilterDay'
 import Page from 'components/Page/Page'
 import { Filter } from 'components/Icons'
 import Loading from 'components/Loading/Loading';
+import SearchDiscover from 'containers/Movie/components/SearchDiscover/SearchDiscover';
 
 export default function Discover() {
     // const { movieNowPlaying } = useSelector(state => state.home);
@@ -68,7 +69,7 @@ export default function Discover() {
     return (
         <Page title="Discover | UR-TICKET">
             <div className="w-full h-full" >
-                <MovieSearch />
+                <SearchDiscover />
                 <div className="grid grid-cols-4 gap-4 max-w-screen-xl mx-auto">
                     <div className="col-span-1">
                         <div className="mb-8 inline-flex space-x-4 items-center">

@@ -24,6 +24,10 @@ const movieAPI = {
         const url = `/movie/${movieId}`;
 
         return axiosClient.get(url);
+    },
+    searchMovie: (params) => {
+        const url = '/movie/search';
+        return axiosClient.get(url, { params });
     }
 
 }

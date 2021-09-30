@@ -3,7 +3,7 @@ import './MovieItem.scss';
 import { ICONS } from 'constants/image';
 import { Link } from 'react-router-dom';
 import MovieClassify from '../MovieClassify/MovieClassify';
-import { Heart, IconMovie, IconCinema } from 'components/Icons';
+import { Heart, IconMovie } from 'components/Icons';
 import PopupTrailer from '../PopupTrailer/PopupTrailer';
 import dateFormat from 'dateformat';
 

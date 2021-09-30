@@ -1,0 +1,12 @@
+@layer components {
+  .search-discover-section {
+    .search-discover-tab {
+      @apply inset-0 rounded-md;
+      background: #1A222A;
+    }
+    .tab-area-discover{
+      @apply bg-black opacity-40 w-full ;
+      height: 100%;
+    }
+  }
+}
