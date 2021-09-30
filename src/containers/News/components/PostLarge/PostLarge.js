@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './PostLarge.scss';
 
-export default function PostLarge({ data }) {
+export default function PostLarge({ data, changeFilter }) {
     return (
         <div className="post-large">
             <h1 className="post-large__title">Latest News</h1>
@@ -10,16 +11,21 @@ export default function PostLarge({ data }) {
                 <div className="post-large__wrapper__thumbnails">
                     <img className="w-full h-full" src={data?.image} alt="thumbnails"
                         style={{ width: '100%', objectFit: 'fill', objectPosition: '0% 10%' }} />
-                
+
                 </div>
                 <div className="post-large__wrapper__content">
                     <div className="post-large__wrapper__content__category mb-4">
                         {data.tags.map((item, index) => (
-                            <a key={index} href="#0">{item}</a>
+                            <span
+                                key={index}
+                                onClick={() => changeFilter(item)}
+                            >
+                                {item}
+                            </span>
                         ))}
-                        
+
                     </div>
-                    <h2 className="line-clamp-4">{data.title}</h2>
+                    <Link to={`/news/${data.id}`}><h2 className="line-clamp-4">{data.title}</h2></Link>
                     <p className="post-large__wrapper__content__subtitle line-clamp-5 text-gray-400">
                         {data.paragraphs[0]}
                     </p>

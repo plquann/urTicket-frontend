@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { sentenceCase } from 'change-case';
 import {
     Card,
@@ -17,6 +17,7 @@ import MuiTableRow from '@material-ui/core/TableRow';
 import { withStyles } from '@material-ui/styles';
 
 import USERLIST from '../../_mocks_/user';
+import { adminAPI } from 'apis';
 
 import Page from 'components/Page/Page';
 import HeaderStack from 'containers/Admin/components/HeaderStack/HeaderStack';
@@ -33,7 +34,7 @@ import { IconEdit, IconTrash } from 'components/Icons';
 
 
 const TABLE_HEAD = [
-    { id: 'name', label: 'Name', alignRight: false },
+    { id: 'userName', label: 'User Name', alignRight: false },
     { id: 'email', label: 'Email', alignRight: false },
     { id: 'role', label: 'Role', alignRight: false },
     { id: 'isVerified', label: 'Verified', alignRight: false },
@@ -60,9 +61,23 @@ export default function User() {
     const [page, setPage] = useState(0);
     const [order, setOrder] = useState('asc');
     const [selected, setSelected] = useState([]);
-    const [orderBy, setOrderBy] = useState('name');
+    const [orderBy, setOrderBy] = useState('userName');
     const [filterName, setFilterName] = useState('');
     const [rowsPerPage, setRowsPerPage] = useState(10);
+
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        const fetchUsers = async () => {
+            try {
+                const users = await adminAPI.getAllUsers();
+                setUsers(users);
+            } catch (err) {
+                console.log('🚀 ~ file: UsersDashboard.js ~ line 76 ~ err', err);
+            }
+        };
+        fetchUsers();
+    }, [users])
 
     const handleRequestSort = (event, property) => {
         const isAsc = orderBy === property && order === 'asc';
@@ -72,7 +87,7 @@ export default function User() {
 
     const handleSelectAllClick = (event) => {
         if (event.target.checked) {
-            const newSelected = USERLIST.map((n) => n.name);
+            const newSelected = users.map((n) => n.email);
             setSelected(newSelected);
             return;
         }
@@ -96,9 +111,9 @@ export default function User() {
         setFilterName(event.target.value);
     };
 
-    const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - USERLIST.length) : 0;
+    const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - users.length) : 0;
 
-    const filteredUsers = applySortFilter(USERLIST, getComparator(order, orderBy), filterName);
+    const filteredUsers = applySortFilter(users, getComparator(order, orderBy), filterName);
 
     const isUserNotFound = filteredUsers.length === 0;
 
@@ -121,7 +136,7 @@ export default function User() {
                                 order={order}
                                 orderBy={orderBy}
                                 headLabel={TABLE_HEAD}
-                                rowCount={USERLIST.length}
+                                rowCount={users.length}
                                 numSelected={selected.length}
                                 onRequestSort={handleRequestSort}
                                 onSelectAllClick={handleSelectAllClick}
@@ -130,8 +145,8 @@ export default function User() {
                                 {filteredUsers
                                     .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                                     .map((row) => {
-                                        const { id, name, role, status, email, avatarUrl, isVerified } = row;
-                                        const isItemSelected = selected.indexOf(name) !== -1;
+                                        const { id, userName, roles, email, avatar, isActive } = row;
+                                        const isItemSelected = selected.indexOf(email) !== -1;
 
                                         return (
                                             <TableRow
@@ -145,28 +160,28 @@ export default function User() {
                                                 <TableCell padding="checkbox">
                                                     <Checkbox
                                                         checked={isItemSelected}
-                                                        onChange={(event) => handleClick(event, name)}
+                                                        onChange={(event) => handleClick(event, email)}
                                                     />
                                                 </TableCell>
                                                 <TableCell component="th" scope="row" padding="none">
                                                     <Stack direction="row" alignItems="center" spacing={2}>
-                                                        <Avatar alt={name} src={avatarUrl} />
+                                                        <Avatar alt={userName} src={avatar ?? 'https://res.cloudinary.com/jackson-pham/image/upload/v1620351649/avatar_default.jpg'} />
                                                         <Typography variant="subtitle2" noWrap>
-                                                            {name}
+                                                            {userName}
                                                         </Typography>
                                                     </Stack>
                                                 </TableCell>
                                                 <TableCell align="left">{email}</TableCell>
-                                                <TableCell align="left">{role}</TableCell>
-                                                <TableCell align="left">{isVerified ? 'Yes' : 'No'}</TableCell>
-                                                <TableCell align="left">
+                                                <TableCell align="left">{roles}</TableCell>
+                                                <TableCell align="left">{isActive ? 'Yes' : 'No'}</TableCell>
+                                                {/* <TableCell align="left">
                                                     <Label
                                                         variant="filled"
                                                         color={(status === 'banned' && 'error') || 'success'}
                                                     >
                                                         {sentenceCase(status)}
                                                     </Label>
-                                                </TableCell>
+                                                </TableCell> */}
                                                 <TableCell align="right">
                                                     <IconButton aria-label="delete">
                                                         <IconEdit width={24} height={24} fillColor={'#637381'} />
@@ -197,7 +212,7 @@ export default function User() {
                     </TableContainer>
                     <TablePaging
                         rowsPerPageOptions={[5, 10, 25]}
-                        count={USERLIST.length}
+                        count={users.length}
                         rowsPerPage={rowsPerPage}
                         page={page}
                         onPageChange={handleChangePage}

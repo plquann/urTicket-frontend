@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { sentenceCase } from 'change-case';
-import { useState } from 'react';
 import {
     Card,
     Table,
@@ -17,6 +16,7 @@ import {
 import MuiTableCell from '@material-ui/core/TableCell';
 import MuiTableRow from '@material-ui/core/TableRow';
 import { withStyles } from '@material-ui/styles';
+import { adminAPI } from 'apis';
 
 import HeaderStack from 'containers/Admin/components/HeaderStack/HeaderStack';
 import ListToolbar from 'containers/Admin/components/ListToolbar/ListToolbar';
@@ -64,6 +64,20 @@ export default function MoviesDashboard() {
     const [orderBy, setOrderBy] = useState('name');
     const [filterName, setFilterName] = useState('');
     const [rowsPerPage, setRowsPerPage] = useState(10);
+
+    const [movies, setMovies] = useState([]);
+
+    useEffect(() => {
+        const fetchMovies = async () => {
+            try {
+                const movies = await adminAPI.getAllMovies();
+            } catch (err) {
+                console.log('🚀 ~ file: MoviesDashboard.js ~ line 76 ~ err', err);
+            }
+        };
+        fetchMovies();
+    }, [])
+
 
     const handleRequestSort = (event, property) => {
         const isAsc = orderBy === property && order === 'asc';
