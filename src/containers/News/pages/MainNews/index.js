@@ -1,43 +1,87 @@
-import React from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import Page from 'components/Page/Page';
 import PostLarge from 'containers/News/components/PostLarge/PostLarge';
 import PostMedium from 'containers/News/components/PostMedium/PostMedium';
 import NewTrailer from 'containers/News/components/NewsTrailers/NewsTrailer';
 import PostMostView from 'containers/News/components/PostMostView/PostMostView';
 import NewTrendingMovie from 'containers/News/components/TrendingMovie/TrendingMovie';
-import BoxOffice from 'components/BoxOffice/BoxOffice';
+import { newsAPI } from 'apis';
+import Pagination from 'components/Pagination/Pagination';
+import Loading from 'components/Loading/Loading';
 
-import { news } from 'containers/News/_mocks_/newsData';
 
 export default function MainNews() {
+    const [news, setNews] = React.useState([]);
+    const [pagination, setPagination] = useState({
+        page: 1,
+        limit: 12,
+        totalRows: 1
+    });
+
+    const [filters, setFilters] = useState({
+        page: 1,
+        limit: 13,
+    });
+
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0);
+    })
+
+    useEffect(() => {
+        const fetchNews = async () => {
+            try {
+                const res = await newsAPI.getAllNews(filters);
+                setNews(res.news);
+                setPagination({
+                    page: filters.page,
+                    limit: filters.limit,
+                    totalRows: res.totalRow
+                })
+            } catch (error) {
+                console.log('🚀 ~ file: index.js ~ line 35 ~ error', error);
+            }
+        };
+        fetchNews();
+
+    }, [filters]);
+
+    const handlePageChange = (newPage) => {
+        setFilters({
+            ...filters,
+            page: newPage,
+        });
+    };
+
     return (
         <Page title="News | UR-TICKET">
-            <div className="news max-w-screen-xl mx-auto mt-20">
-                <div className="grid grid-cols-3 gap-6">
-                    <div className="col-span-2">
-                        <PostLarge />
-                    </div>
-                    <div className="col-span-1 pl-6">
-                        <NewTrailer />
-                    </div>
-                </div>
-                <div className="grid grid-cols-3 gap-6">
-                    <div className="col-span-2">
-                        <div className="grid grid-cols-3 gap-6">
-                            {news.slice(0, 12).map((item, index) => (
-                                <PostMedium key={item.id} post={item} />
-                            ))}
+            {news.length
+                ? <div className="news max-w-screen-xl mx-auto mt-20">
+                    <div className="grid grid-cols-3 gap-6 mb-6">
+                        <div className="col-span-2">
+                            <PostLarge data={news[0]} />
+                        </div>
+                        <div className="col-span-1 pl-6">
+                            <NewTrailer />
                         </div>
                     </div>
-                    <div className="col-span-1 pl-6">
-                        <PostMostView />
-                        <NewTrendingMovie />
+                    <div className="grid grid-cols-3 gap-6">
+                        <div className="col-span-2">
+                            <div className="grid grid-cols-3 gap-6 mb-6">
+                                {news.length ? news.slice(1).map((item, index) => (
+                                    <PostMedium key={item.id} post={item} />
+                                )) : ''}
+                            </div>
+
+                            <Pagination pagination={pagination} onPageChange={handlePageChange} />
+                        </div>
+                        <div className="col-span-1 pl-6">
+                            <PostMostView />
+                            <NewTrendingMovie />
+                        </div>
                     </div>
                 </div>
-                <div className="news__box-office mt-10">
-                    <BoxOffice />
-                </div>
-            </div>
+                : <Loading />
+            }
         </Page>
     )
 }

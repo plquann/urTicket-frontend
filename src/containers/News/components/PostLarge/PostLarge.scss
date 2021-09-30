@@ -1,5 +1,7 @@
 @layer components {
   .post-large {
+    overflow: hidden;
+    max-height: 400px;
     &__title {
       @apply text-xl font-semibold uppercase tracking-wider mb-4 pb-2 italic;
       border-bottom: 5px solid #ffc033;
@@ -7,11 +9,11 @@
 
     &__wrapper {
       @apply w-full cursor-pointer
-        grid grid-cols-3 gap-2 mb-6 h-96;
+        grid grid-cols-3 gap-2 mb-6;
       background-color: #1a222a;
 
       &__thumbnails {
-        @apply col-span-2 overflow-hidden h-full p-2.5;
+        @apply col-span-2 overflow-hidden p-2.5;
         img {
           @apply w-full h-full transition duration-300 ease-in-out;
         }
@@ -22,7 +24,7 @@
         }
       }
       &__content {
-        @apply z-10 px-2;
+        @apply z-10 px-2 py-2.5;
         h2 {
           @apply text-2xl font-semibold mb-2;
         }

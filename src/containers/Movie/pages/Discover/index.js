@@ -3,7 +3,6 @@ import { movieAPI } from 'apis';
 
 import Pagination from 'components/Pagination/Pagination'
 import MovieItem from 'containers/Movie/components/MovieItem/MovieItem'
-import MovieSearch from 'containers/Movie/components/MovieSearch/MovieSearch'
 import FilterCinema from 'containers/Movie/components/FilterCinema/FilterCinema'
 import FilterDate from 'containers/Movie/components/FilterDate/FilterDay'
 import Page from 'components/Page/Page'
@@ -58,7 +57,7 @@ export default function Discover() {
     };
 
     const handleFiltersChange = (newFilter) => {
-        console.log('🚀 ~ file: index.js ~ line 60 ~ newFilter', newFilter);
+        // console.log('🚀 ~ file: index.js ~ line 60 ~ newFilter', newFilter);
         setFilters({
             ...filters,
             page: 1, 

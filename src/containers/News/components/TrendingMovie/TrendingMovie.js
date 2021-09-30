@@ -1,21 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './TrendingMovie.scss';
-import { movieTrending } from 'containers/News/_mocks_/newsData';
 import { Rating } from '@material-ui/core';
 import { IconCinema } from 'components/Icons';
 import PopupTrailer from 'containers/Movie/components/PopupTrailer/PopupTrailer';
-import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import dateFormat from 'dateformat';
+import { movieAPI } from 'apis';
 
 export default function NewTrendingMovie(props) {
+    const [movies, setMovies] = useState([]);
 
-    const { movieHighlight } = useSelector(state => state.home)
+    useEffect(() => {
+        const fetchMovieTrending = async () => {
+            try {
+                const res = await movieAPI.getHighlight();
+                setMovies(res);
+            } catch (error) {
+                console.log('🚀 ~ file: TrendingMovie.js ~ line 21 ~ error', error);
+            }
+        };
+
+        fetchMovieTrending();
+
+    }, []);
+
+
     return (
         <div className="new-trending-movie mt-8">
             <h1 className="new-trending-movie__title">Trending Movie</h1>
             <div className="new-trending-movie__list">
-                {movieHighlight.length && movieHighlight.map((item, index) => (
+                {movies.length && movies.map((item, index) => (
                     <div key={item.id} className="new-trending-movie__list__item ">
                         <div className="new-trending-movie__list__item__thums ">
                             <img
