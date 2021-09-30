@@ -15,7 +15,7 @@ export default function TopNewMedium({ news, rank }) {
                     <h2 className="line-clamp-2">{news?.title}</h2>
 
                     <p className="mt-4">
-                        {dateFormat(news?.publishedDate, 'fullDate')}
+                        {new Date(news?.publishedDate).toDateString()}
                         <span className="text-lg font-bold mx-2"> |</span>
                         <span className="font-medium">{news?.author.name}</span>
                     </p>

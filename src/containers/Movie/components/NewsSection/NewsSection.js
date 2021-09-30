@@ -39,7 +39,7 @@ export default function NewsSection() {
                     <TopNewMedium rank='3' news={news[2]} />
                 </div>
             </div>
-            <RelatedNews />
+            <RelatedNews news={news.slice(3)}/>
         </div>
     )
 }
