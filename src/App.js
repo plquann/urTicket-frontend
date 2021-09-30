@@ -5,12 +5,13 @@ import "slick-carousel/slick/slick.css";
 import { useDispatch } from 'react-redux';
 import { refreshToken } from 'app/authSlice';
 
+
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(refreshToken());
-  })
+  }, [])
 
   return (
     <div className="my__app">

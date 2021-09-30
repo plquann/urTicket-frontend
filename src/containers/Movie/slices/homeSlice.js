@@ -37,7 +37,7 @@ export const fetchGroupTheater = createAsyncThunk(
 export const fetchShowTimeByTheater = createAsyncThunk(
     'home/SHOW_TIME_BY_THEATER',
     async (theaterId, thunkAPI) => {
-        console.log('🚀 ~ file: homeSlice.js ~ line 40 ~ theaterId', theaterId);
+        // console.log('🚀 ~ file: homeSlice.js ~ line 40 ~ theaterId', theaterId);
         const showTime = await showtimeAPI.getShowtimesByTheaterId(theaterId);
         return showTime;
     }

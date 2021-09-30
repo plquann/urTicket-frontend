@@ -6,14 +6,11 @@ const PopupTrailer = (props) => {
     return (
         <Popup
             trigger={() => props.open}
-            // trigger={open => (
-            //     <button className="button">Trigger - {open ? 'Opened' : 'Closed'}</button>
-            // )}
             modal
             className='trailer'
         >
             {close => (
-                <div className="w-full h-full modal">
+                <div className="w-full h-full modal trailer-content">
                     <button className="close"
                         onClick={close}>
                         &times;

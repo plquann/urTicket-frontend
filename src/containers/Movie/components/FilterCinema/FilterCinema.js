@@ -1,33 +1,39 @@
 import React from 'react';
 import './FilterCinema.scss';
+import { useForm } from 'react-hook-form';
 
-export default function FilterCinema() {
+
+const genres = ['Action', 'Adventure', 'Animation', 'Comedy', 'Crime', 'Documentary', 'Drama', 'Family', 'Fantasy', 'History', 'Horror', 'Music', 'Mystery', 'Romance', 'Science Fiction', 'TV Movie', 'Thriller', 'War', 'Western'];
+
+
+export default function FilterCinema(props) {
+    const { onSubmit } = props;
+    const { register, handleSubmit, watch } = useForm();
+
+
+    React.useEffect(() => {
+        const subscription = watch((value, { name, type }) => {
+            const filterGenre = genres.filter(genre => value[genre] === true);
+            // console.log('🚀 ~ file: FilterCinema.js ~ line 17 ~ filterGenre', filterGenre);
+            onSubmit({ genre: filterGenre[0] });
+        });
+
+        return () => subscription.unsubscribe();
+    }, [watch]);
+
     return (
         <div className="filter__cinema " >
-            <p className="filter__cinema__title">Cinema System</p>
-            <div className="filter__cinema__wrapper">
-                <div className="filter__cinema__wrapper__item">
-                    <input type="checkbox" name="lang" id="lang1" /><label htmlFor="lang1">CGV</label>
+            <p className="filter__cinema__title">Genres</p>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <div className="filter__cinema__wrapper">
+                    {genres.map((genre, index) => (
+                        <div className="filter__cinema__wrapper__item" key={index}>
+                            <input type="checkbox" name={genre} id={genre} {...register(`${genre}`, {})} />
+                            <label htmlFor={genre}>{genre}</label>
+                        </div>
+                    ))}
                 </div>
-                <div className="filter__cinema__wrapper__item">
-                    <input type="checkbox" name="lang" id="lang2" /><label htmlFor="lang2">LOTTE CINEMA</label>
-                </div>
-                <div className="filter__cinema__wrapper__item">
-                    <input type="checkbox" name="lang" id="lang3" /><label htmlFor="lang3">BHD STAR</label>
-                </div>
-                <div className="filter__cinema__wrapper__item">
-                    <input type="checkbox" name="lang" id="lang4" /><label htmlFor="lang4">GALAXY</label>
-                </div>
-                <div className="filter__cinema__wrapper__item">
-                    <input type="checkbox" name="lang" id="lang5" /><label htmlFor="lang5">MegaGS</label>
-                </div>
-                <div className="filter__cinema__wrapper__item">
-                    <input type="checkbox" name="lang" id="lang6" /><label htmlFor="lang6">Gujrati</label>
-                </div>
-                <div className="filter__cinema__wrapper__item">
-                    <input type="checkbox" name="lang" id="lang7" /><label htmlFor="lang7">Bangla</label>
-                </div>
-            </div>
+            </form>
         </div>
     )
 }

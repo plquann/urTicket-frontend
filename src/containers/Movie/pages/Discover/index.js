@@ -8,6 +8,7 @@ import FilterCinema from 'containers/Movie/components/FilterCinema/FilterCinema'
 import FilterDate from 'containers/Movie/components/FilterDate/FilterDay'
 import Page from 'components/Page/Page'
 import { Filter } from 'components/Icons'
+import Loading from 'components/Loading/Loading';
 
 export default function Discover() {
     // const { movieNowPlaying } = useSelector(state => state.home);
@@ -55,13 +56,14 @@ export default function Discover() {
         });
     };
 
-    // const handleFiltersChange = (newFilter) => {
-    //     setFilters({
-    //         ...filters,
-    //         _page: 1, 
-    //         title_like: newFilter.searchTerm,
-    //     });
-    // };
+    const handleFiltersChange = (newFilter) => {
+        console.log('🚀 ~ file: index.js ~ line 60 ~ newFilter', newFilter);
+        setFilters({
+            ...filters,
+            page: 1, 
+            genre: newFilter.genre,
+        });
+    };
 
     return (
         <Page title="Discover | UR-TICKET">
@@ -74,13 +76,17 @@ export default function Discover() {
                             <p className="text-2xl font-medium ">SEARCH FITTER</p>
                         </div>
 
-                        <FilterCinema />
+                        <FilterCinema onSubmit={handleFiltersChange} />
                         <FilterDate />
                     </div>
                     <div className="col-span-3">
-                        {movies.length && movies?.map((movie, index) => (
-                            <MovieItem key={movie?.id} movie={movie} />
-                        ))}
+                        {movies.length ?
+                            movies?.map((movie, index) => (
+                                <MovieItem key={movie?.id} movie={movie} />
+                            ))
+                            :
+                            <Loading />
+                        }
                         <Pagination pagination={pagination} onPageChange={handlePageChange} />
                     </div>
                 </div>

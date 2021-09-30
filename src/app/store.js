@@ -26,6 +26,7 @@ const rootReducer = {
 
 const store = configureStore({
     reducer: rootReducer,
+    // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
     preloadedState: initialState,
 });
 

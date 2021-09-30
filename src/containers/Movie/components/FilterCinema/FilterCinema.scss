@@ -1,30 +1,44 @@
 @layer components {
   .filter__cinema {
-    @apply w-4/5 h-auto p-8 rounded mt-2;
+    @apply w-4/5 p-8 rounded mt-2;
     background-color: rgb(26, 34, 42);
 
     &__title {
       @apply text-lg font-semibold uppercase border-b border-solid pb-4 mb-5;
       border-color: #1f2b72;
     }
-    &__wrapper__item {
-      @apply flex flex-wrap items-center mb-5;
-
-      input {
-        @apply w-4 h-4 opacity-0 bg-transparent leading-5 m-0;
-        &:checked ~ label::before {
-          @apply text-white font-semibold text-xs leading-none text-center;
-          font-family: "Font Awesome 5 Free";
-          content: "\f00c";
-        }
+    &__wrapper {
+      @apply overflow-auto;
+      height: 300px;
+      &::-webkit-scrollbar {
+        width: 5px;
+        background-color: #afacac;
+        border-radius: 10px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: #25d399;
+        border-radius: 10px;
       }
 
-      label {
-        @apply text-sm m-0 w-10/12 pl-3 relative uppercase inline-block font-medium;
-        &::before {
-          @apply w-4 h-4 border border-solid border-white rounded-sm top-0.5 -left-4 absolute;
-          font-family: "Font Awesome 5 Free";
-          content: "\f00c";
+      &__item {
+        @apply flex flex-wrap items-center mb-5;
+  
+        input {
+          @apply w-4 h-4 opacity-0 bg-transparent leading-5 m-0;
+          &:checked ~ label::before {
+            @apply text-white font-semibold text-xs leading-none text-center;
+            font-family: "Font Awesome 5 Free";
+            content: "\f00c";
+          }
+        }
+  
+        label {
+          @apply text-sm m-0 w-10/12 pl-3 relative uppercase inline-block font-medium;
+          &::before {
+            @apply w-4 h-4 border border-solid border-white rounded-sm top-0.5 -left-4 absolute;
+            font-family: "Font Awesome 5 Free";
+            content: "\f00c";
+          }
         }
       }
     }
