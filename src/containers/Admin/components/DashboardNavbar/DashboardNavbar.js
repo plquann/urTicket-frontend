@@ -8,7 +8,6 @@ import Searchbar from '../Searchbar/Searchbar';
 import NotificationsPopover from '../NotifyPopover/NotificationsPopover';
 import AccountPopover from '../AccountPopover/AccountPopover';
 
-
 const DRAWER_WIDTH = 280;
 const APPBAR_MOBILE = 64;
 const APPBAR_DESKTOP = 92;

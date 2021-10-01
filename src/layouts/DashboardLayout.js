@@ -30,7 +30,6 @@ const MainStyle = styled('div')(({ theme }) => ({
 }));
 
 export default function DashboardLayout(props) {
-  console.log('Dash board layout')
   const { children } = props;
   const [open, setOpen] = useState(false);
 

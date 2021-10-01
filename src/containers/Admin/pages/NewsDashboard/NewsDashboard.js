@@ -4,14 +4,12 @@ import {
     Card,
     Table,
     Stack,
-    Avatar,
     Checkbox,
     TableBody,
     Container,
     Typography,
     TableContainer,
     IconButton,
-    Rating
 } from '@material-ui/core';
 import MuiTableCell from '@material-ui/core/TableCell';
 import MuiTableRow from '@material-ui/core/TableRow';
@@ -25,7 +23,6 @@ import Label from 'containers/Admin/components/Label/Label';
 import SearchNotFound from 'containers/Admin/components/SearchNotFound/SearchNotFound';
 import TablePaging from 'containers/Admin/components/TablePaging/TablePaging';
 
-import MOVIESLIST from '../../_mocks_/movies';
 import { selectedIndex } from 'utils/selectedIndex';
 import { applySortFilter } from 'utils/applySortFilter';
 import { getComparator } from 'utils/getComparator';
@@ -34,10 +31,11 @@ import Page from 'components/Page/Page';
 
 const TABLE_HEAD = [
     { id: 'title', label: 'Title', alignRight: false },
-    { id: 'duration', label: 'Duration', alignRight: false },
-    { id: 'releaseDate', label: 'Release Date', alignRight: false },
-    { id: 'rating', label: 'Rating', alignRight: false },
-    { id: 'status', label: 'Status', alignRight: false },
+    { id: 'tags', label: 'Tags', alignRight: false },
+    { id: 'views', label: 'Views', alignRight: false },
+    { id: 'author', label: 'Author', alignRight: false },
+    { id: 'publishedDate', label: 'Published Date', alignRight: false },
+    { id: 'isPublished', label: 'Published', alignRight: false },
     { id: '' }
 ];
 
@@ -56,7 +54,7 @@ const TableRow = withStyles({
     }
 })(MuiTableRow);
 
-export default function MoviesDashboard() {
+export default function NewsDashboard() {
     const [order, setOrder] = useState('asc');
     const [selected, setSelected] = useState([]);
     const [orderBy, setOrderBy] = useState('title');
@@ -65,23 +63,21 @@ export default function MoviesDashboard() {
     const [pagination, setPagination] = useState({
         page: 1,
         limit: 12,
-        searchTerm: '',
     });
 
-    const [movies, setMovies] = useState([]);
+    const [news, setNews] = useState([]);
 
     useEffect(() => {
-        const fetchMovies = async () => {
+        const fetchNews = async () => {
             try {
-                const res = await adminAPI.getAllMovies(pagination);
-                console.log('🚀 ~ file: MoviesDashboard.js ~ line 74 ~ res', res);
-                setMovies(res.movies);
+                const res = await adminAPI.getAllNews(pagination);
+                setNews(res.news);
                 setTotalRows(res.totalRow);
             } catch (err) {
-                console.log('🚀 ~ file: MoviesDashboard.js ~ line 76 ~ err', err);
+                console.log('🚀 ~ file: NewsDashboard.js ~ line 79 ~ err', err);
             }
         };
-        fetchMovies();
+        fetchNews();
     }, [pagination])
 
 
@@ -93,7 +89,7 @@ export default function MoviesDashboard() {
 
     const handleSelectAllClick = (event) => {
         if (event.target.checked) {
-            const newSelected = movies.map((n) => n.id);
+            const newSelected = news.map((n) => n.id);
             setSelected(newSelected);
             return;
         }
@@ -105,7 +101,6 @@ export default function MoviesDashboard() {
     };
 
     const handleChangePage = (event, newPage) => {
-        // console.log('🚀 ~ file: MoviesDashboard.js ~ line 108 ~ newPage', newPage);
         setPagination({
             ...pagination,
             page: newPage + 1
@@ -116,21 +111,21 @@ export default function MoviesDashboard() {
         setFilterName(event.target.value);
     };
 
-    const filteredData = applySortFilter(movies, getComparator(order, orderBy), filterName);
+    const filteredData = applySortFilter(news, getComparator(order, orderBy), filterName);
 
     const isNotFound = filteredData.length === 0;
 
     return (
-        <Page title="MOVIES | Admin UI">
+        <Page title="News | Admin UI">
             <Container>
-                <HeaderStack title={'Movies'} newOperator={'New Movie'} />
+                <HeaderStack title={'News'} newOperator={'New Article'} />
 
                 <Card>
                     <ListToolbar
                         numSelected={selected.length}
                         filterName={filterName}
                         onFilterName={handleFilterByName}
-                        placeHolder={'Search Movie...'}
+                        placeHolder={'Search Article...'}
                     />
                     <TableContainer sx={{ minWidth: 800 }}>
                         <Table>
@@ -138,7 +133,7 @@ export default function MoviesDashboard() {
                                 order={order}
                                 orderBy={orderBy}
                                 headLabel={TABLE_HEAD}
-                                rowCount={movies.length}
+                                rowCount={news.length}
                                 numSelected={selected.length}
                                 onRequestSort={handleRequestSort}
                                 onSelectAllClick={handleSelectAllClick}
@@ -146,7 +141,7 @@ export default function MoviesDashboard() {
                             <TableBody>
                                 {filteredData
                                     .map((row) => {
-                                        const { id, title, status, duration, posterUrl, releaseDate, voteAverage } = row;
+                                        const { id, title, tags, views, author, publishedDate, isPublished } = row;
                                         const isItemSelected = selected.indexOf(id) !== -1;
 
                                         return (
@@ -166,33 +161,30 @@ export default function MoviesDashboard() {
                                                 </TableCell>
                                                 <TableCell component="th" scope="row" padding="none">
                                                     <Stack direction="row" alignItems="center" spacing={2}>
-                                                        <Avatar alt={title} src={posterUrl} />
-                                                        <Typography variant="subtitle2" >
+                                                        <Typography variant="subtitle2">
                                                             {title}
                                                         </Typography>
                                                     </Stack>
                                                 </TableCell>
-                                                {/* <TableCell align="left">
-                                                    {genres.map((item, index) =>
+                                                <TableCell align="left">
+                                                    {tags?.map((item, index) =>
                                                         <Label
                                                             key={index + item}
                                                             variant="ghost"
                                                             color={'default'}
                                                         >
-                                                            {sentenceCase(item.name)}
+                                                            {item}
                                                         </Label>)}
-                                                </TableCell> */}
-                                                <TableCell align="left">{duration + ' minutes'}</TableCell>
-                                                <TableCell align="left">{new Date(releaseDate).toDateString()}</TableCell>
-                                                <TableCell align="left">
-                                                    <Rating name="read-only" value={voteAverage / 2} readOnly />
                                                 </TableCell>
+                                                <TableCell align="left">{views}</TableCell>
+                                                <TableCell align="left">{author.name}</TableCell>
+                                                <TableCell align="left">{new Date(publishedDate).toDateString()}</TableCell>
                                                 <TableCell align="left">
                                                     <Label
                                                         variant="filled"
-                                                        color={(status === 'UPCOMING' && 'warning') || (status === 'PLAYING' && 'success') || 'error'}
+                                                        color={(isPublished  && 'success') || 'error'}
                                                     >
-                                                        {sentenceCase(status)}
+                                                        {isPublished ? 'TRUE' : 'FALSE'}
                                                     </Label>
                                                 </TableCell>
                                                 <TableCell align="right">

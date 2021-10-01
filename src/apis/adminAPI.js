@@ -13,6 +13,10 @@ const adminAPI = {
         const url = '/movie';
         return axiosClient.get(url, { params });
     },
+    getAllNews: (params) => {
+        const url = '/news';
+        return axiosClient.get(url, { params });
+    },
 
 }
 export default adminAPI;

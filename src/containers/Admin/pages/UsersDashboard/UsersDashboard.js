@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { sentenceCase } from 'change-case';
 import {
     Card,
     Table,
@@ -16,7 +15,6 @@ import MuiTableCell from '@material-ui/core/TableCell';
 import MuiTableRow from '@material-ui/core/TableRow';
 import { withStyles } from '@material-ui/styles';
 
-import USERLIST from '../../_mocks_/user';
 import { adminAPI } from 'apis';
 
 import Page from 'components/Page/Page';
@@ -57,7 +55,7 @@ const TableRow = withStyles({
     }
 })(MuiTableRow);
 
-export default function User() {
+export default function UsersDashboard() {
     const [page, setPage] = useState(0);
     const [order, setOrder] = useState('asc');
     const [selected, setSelected] = useState([]);
@@ -118,7 +116,7 @@ export default function User() {
     const isUserNotFound = filteredUsers.length === 0;
 
     return (
-        <Page title="User | Admin UI">
+        <Page title="USERS | Admin UI">
             <Container>
                 <HeaderStack title={'Users'} newOperator={'New User'} />
 

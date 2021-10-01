@@ -46,9 +46,7 @@ function NavItem({ item, active }) {
   const theme = useTheme();
   const isActiveRoot = active(item.path);
   const { title, path, icon, info, children } = item;
-  console.log('🚀 ~ file: NavSection.js ~ line 50 ~ NavItem ~ item', item);
   const [open, setOpen] = useState(isActiveRoot);
-  console.log('🚀 ~ file: NavSection.js ~ line 52 ~ NavItem ~ isActiveRoot', isActiveRoot);
 
   const handleOpen = () => {
     setOpen((prev) => !prev);

@@ -27,6 +27,7 @@ const Register = lazy(() => import('containers/Auth/pages/Register'));
 const AppDashboard = lazy(() => import('containers/Admin/pages/AppDashboard/AppDashboard'));
 const MoviesDashboard = lazy(() => import('containers/Admin/pages/MoviesDashboard/MoviesDashboard'));
 const UsersDashboard = lazy(() => import('containers/Admin/pages/UsersDashboard/UsersDashboard'));
+const NewsDashboard = lazy(() => import('containers/Admin/pages/NewsDashboard/NewsDashboard'));
 
 
 const ScrollToTop = withRouter(({ children, location: { pathname } }) => {
@@ -145,6 +146,13 @@ const Routes = () => {
                             path="/admin/movies"
                             layout={DashboardLayout}
                             component={MoviesDashboard}
+                        />
+
+                        <ProtectedRoute
+                            exact
+                            path="/admin/news"
+                            layout={DashboardLayout}
+                            component={NewsDashboard}
                         />
 
                         {/* <ProtectedRoute
