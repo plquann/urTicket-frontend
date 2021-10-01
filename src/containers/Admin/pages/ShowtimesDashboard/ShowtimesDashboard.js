@@ -4,14 +4,12 @@ import {
     Card,
     Table,
     Stack,
-    Avatar,
     Checkbox,
     TableBody,
     Container,
     Typography,
     TableContainer,
     IconButton,
-    Rating
 } from '@material-ui/core';
 import MuiTableCell from '@material-ui/core/TableCell';
 import MuiTableRow from '@material-ui/core/TableRow';
@@ -30,13 +28,14 @@ import { applySortFilter } from 'utils/applySortFilter';
 import { getComparator } from 'utils/getComparator';
 import { IconEdit, IconTrash } from 'components/Icons';
 import Page from 'components/Page/Page';
+import dateFormat from 'dateformat';
 
 const TABLE_HEAD = [
-    { id: 'title', label: 'Title', alignRight: false },
-    { id: 'duration', label: 'Duration', alignRight: false },
-    { id: 'releaseDate', label: 'Release Date', alignRight: false },
-    { id: 'rating', label: 'Rating', alignRight: false },
-    { id: 'status', label: 'Status', alignRight: false },
+    { id: 'movie', label: 'Movie', alignRight: false },
+    { id: 'cinema', label: 'Cinema', alignRight: false },
+    { id: 'room', label: 'Room', alignRight: false },
+    { id: 'schedule', label: 'Schedule', alignRight: false },
+    { id: 'date', label: 'Date', alignRight: false },
     { id: '' }
 ];
 
@@ -55,32 +54,30 @@ const TableRow = withStyles({
     }
 })(MuiTableRow);
 
-export default function MoviesDashboard() {
+export default function ShowtimesDashboard() {
     const [order, setOrder] = useState('asc');
     const [selected, setSelected] = useState([]);
-    const [orderBy, setOrderBy] = useState('title');
+    const [orderBy, setOrderBy] = useState('movie');
     const [filterName, setFilterName] = useState('');
     const [totalRows, setTotalRows] = useState(1);
     const [pagination, setPagination] = useState({
         page: 1,
         limit: 12,
-        searchTerm: '',
     });
 
-    const [movies, setMovies] = useState([]);
+    const [showtimes, setShowtimes] = useState([]);
 
     useEffect(() => {
-        const fetchMovies = async () => {
+        const fetchShowtimes = async () => {
             try {
-                const res = await adminAPI.getAllMovies(pagination);
-                console.log('🚀 ~ file: MoviesDashboard.js ~ line 74 ~ res', res);
-                setMovies(res.movies);
+                const res = await adminAPI.getAllShowtimes(pagination);
+                setShowtimes(res.showtimes);
                 setTotalRows(res.totalRow);
             } catch (err) {
-                console.log('🚀 ~ file: MoviesDashboard.js ~ line 76 ~ err', err);
+                console.log('🚀 ~ file: ShowtimesDashboard.js ~ line 78 ~ err', err);
             }
         };
-        fetchMovies();
+        fetchShowtimes();
     }, [pagination])
 
 
@@ -92,7 +89,7 @@ export default function MoviesDashboard() {
 
     const handleSelectAllClick = (event) => {
         if (event.target.checked) {
-            const newSelected = movies.map((n) => n.id);
+            const newSelected = showtimes.map((n) => n.id);
             setSelected(newSelected);
             return;
         }
@@ -104,7 +101,6 @@ export default function MoviesDashboard() {
     };
 
     const handleChangePage = (event, newPage) => {
-        // console.log('🚀 ~ file: MoviesDashboard.js ~ line 108 ~ newPage', newPage);
         setPagination({
             ...pagination,
             page: newPage + 1
@@ -115,14 +111,14 @@ export default function MoviesDashboard() {
         setFilterName(event.target.value);
     };
 
-    const filteredData = applySortFilter(movies, getComparator(order, orderBy), filterName);
+    const filteredData = applySortFilter(showtimes, getComparator(order, orderBy), filterName);
 
     const isNotFound = filteredData.length === 0;
 
     return (
-        <Page title="MOVIES | Admin UI">
+        <Page title="SHOWTIMES | Admin UI">
             <Container>
-                <HeaderStack title={'Movies'} newOperator={'New Movie'} />
+                <HeaderStack title={'Showtimes'} newOperator={'New Showtime'} />
 
                 <Card>
                     <ListToolbar
@@ -137,7 +133,7 @@ export default function MoviesDashboard() {
                                 order={order}
                                 orderBy={orderBy}
                                 headLabel={TABLE_HEAD}
-                                rowCount={movies.length}
+                                rowCount={showtimes.length}
                                 numSelected={selected.length}
                                 onRequestSort={handleRequestSort}
                                 onSelectAllClick={handleSelectAllClick}
@@ -145,7 +141,7 @@ export default function MoviesDashboard() {
                             <TableBody>
                                 {filteredData
                                     .map((row) => {
-                                        const { id, title, status, duration, posterUrl, releaseDate, voteAverage } = row;
+                                        const { id, movie, theater, startTime, endTime, room } = row;
                                         const isItemSelected = selected.indexOf(id) !== -1;
 
                                         return (
@@ -164,36 +160,45 @@ export default function MoviesDashboard() {
                                                     />
                                                 </TableCell>
                                                 <TableCell component="th" scope="row" padding="none">
-                                                    <Stack direction="row" alignItems="center" spacing={2}>
-                                                        <Avatar alt={title} src={posterUrl} />
+                                                    <Stack direction="row" alignItems="center" spacing={1}>
                                                         <Typography variant="subtitle2" >
-                                                            {title}
+                                                            {movie.title}
                                                         </Typography>
                                                     </Stack>
                                                 </TableCell>
-                                                {/* <TableCell align="left">
-                                                    {genres.map((item, index) =>
-                                                        <Label
-                                                            key={index + item}
-                                                            variant="ghost"
-                                                            color={'default'}
-                                                        >
-                                                            {sentenceCase(item.name)}
-                                                        </Label>)}
-                                                </TableCell> */}
-                                                <TableCell align="left">{duration + ' minutes'}</TableCell>
-                                                <TableCell align="left">{new Date(releaseDate).toDateString()}</TableCell>
+                                                <TableCell align="left">{theater.name}</TableCell>
                                                 <TableCell align="left">
-                                                    <Rating name="read-only" value={voteAverage / 2} readOnly />
+                                                    <Label
+                                                        variant="filled"
+                                                        color={'success'}
+                                                    >
+                                                        {room}
+                                                    </Label>
                                                 </TableCell>
                                                 <TableCell align="left">
                                                     <Label
                                                         variant="filled"
-                                                        color={(status === 'UPCOMING' && 'warning') || (status === 'PLAYING' && 'success') || 'error'}
+                                                        color={'warning'}
                                                     >
-                                                        {sentenceCase(status)}
+                                                        {`${dateFormat(startTime, 'HH:MM')} ~ ${dateFormat(endTime, 'HH:MM')}`}
                                                     </Label>
                                                 </TableCell>
+                                                <TableCell align="left">
+                                                    <Label
+                                                        variant="filled"
+                                                        color={'default'}
+                                                    >
+                                                        {dateFormat(startTime, 'yyyy-mm-dd')}
+                                                    </Label>
+                                                </TableCell>
+                                                {/* <TableCell align="left">
+                                                    <Label
+                                                        variant="filled"
+                                                        color={ 'warning'}
+                                                    >
+                                                        {dateFormat(startTime, 'yyyy-mm-dd')}
+                                                    </Label>
+                                                </TableCell> */}
                                                 <TableCell align="right">
                                                     <IconButton aria-label="delete">
                                                         <IconEdit width={24} height={24} fillColor={'#637381'} />

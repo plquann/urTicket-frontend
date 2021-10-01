@@ -9,7 +9,7 @@ export const applySortFilter = (array, comparator, query) => {
     });
     if (query) {
         return filter(array, (_item) => {
-            const item = _item.userName ?? _item.title;
+            const item = _item.userName ?? _item.title ?? _item.movie.title;
             return item.toLowerCase().indexOf(query.toLowerCase()) !== -1
         });
     }

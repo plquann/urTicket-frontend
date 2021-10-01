@@ -28,6 +28,7 @@ const AppDashboard = lazy(() => import('containers/Admin/pages/AppDashboard/AppD
 const MoviesDashboard = lazy(() => import('containers/Admin/pages/MoviesDashboard/MoviesDashboard'));
 const UsersDashboard = lazy(() => import('containers/Admin/pages/UsersDashboard/UsersDashboard'));
 const NewsDashboard = lazy(() => import('containers/Admin/pages/NewsDashboard/NewsDashboard'));
+const ShowtimesDashboard = lazy(() => import('containers/Admin/pages/ShowtimesDashboard/ShowtimesDashboard'));
 
 
 const ScrollToTop = withRouter(({ children, location: { pathname } }) => {
@@ -153,6 +154,13 @@ const Routes = () => {
                             path="/admin/news"
                             layout={DashboardLayout}
                             component={NewsDashboard}
+                        />
+
+                        <ProtectedRoute
+                            exact
+                            path="/admin/showtimes"
+                            layout={DashboardLayout}
+                            component={ShowtimesDashboard}
                         />
 
                         {/* <ProtectedRoute

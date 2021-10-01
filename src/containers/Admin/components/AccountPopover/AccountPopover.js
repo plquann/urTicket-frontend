@@ -5,8 +5,6 @@ import { Button, Box, Divider, MenuItem, Typography, Avatar, IconButton } from '
 import { IconHome, IconSetting, IconUser } from 'components/Icons';
 import MenuPopover from '../MenuPopover/MenuPopover';
 
-import account from 'containers/Admin/_mocks_/account';
-
 const MENU_OPTIONS = [
   {
     label: 'Home',
