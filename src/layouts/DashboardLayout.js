@@ -4,6 +4,8 @@ import { experimentalStyled as styled } from '@material-ui/core/styles';
 import DashboardNavbar from 'containers/Admin/components/DashboardNavbar/DashboardNavbar';
 import DashboardSidebar from 'containers/Admin/components/DashboardSidebar/DashboardSidebar';
 import ThemeConfig from 'containers/Admin/theme';
+import { useSelector } from 'react-redux';
+
 
 const APP_BAR_MOBILE = 64;
 const APP_BAR_DESKTOP = 92;
@@ -32,11 +34,14 @@ export default function DashboardLayout(props) {
   const { children } = props;
   const [open, setOpen] = useState(false);
 
+  const { user } = useSelector(state => state.auth);
+ 
+
   return (
     <ThemeConfig>
       <RootStyle>
-        <DashboardNavbar onOpenSidebar={() => setOpen(true)} />
-        <DashboardSidebar isOpenSidebar={open} onCloseSidebar={() => setOpen(false)} />
+        <DashboardNavbar onOpenSidebar={() => setOpen(true)} user={user} />
+        <DashboardSidebar isOpenSidebar={open} onCloseSidebar={() => setOpen(false)}  user={user}/>
         <MainStyle>
           {children}
         </MainStyle>

@@ -104,8 +104,7 @@ export default function MoviesDashboard() {
     };
 
     const handleChangePage = (event, newPage) => {
-        console.log('🚀 ~ file: MoviesDashboard.js ~ line 108 ~ newPage', newPage);
-        // setPage(newPage);
+        // console.log('🚀 ~ file: MoviesDashboard.js ~ line 108 ~ newPage', newPage);
         setPagination({
             ...pagination,
             page: newPage + 1
@@ -146,7 +145,7 @@ export default function MoviesDashboard() {
                             <TableBody>
                                 {filteredData
                                     .map((row) => {
-                                        const { id, title, genres, status, duration, posterUrl, releaseDate, voteAverage } = row;
+                                        const { id, title, status, duration, posterUrl, releaseDate, voteAverage } = row;
                                         const isItemSelected = selected.indexOf(id) !== -1;
 
                                         return (

@@ -32,7 +32,7 @@ DashboardSidebar.propTypes = {
   onCloseSidebar: PropTypes.func
 };
 
-export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
+export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar, user }) {
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -56,10 +56,10 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
       <Box sx={{ mb: 5, mx: 2.5 }}>
         <Link underline="none" component={RouterLink} to="#">
           <AccountStyle>
-            <Avatar src={account.photoURL} alt="photoURL" />
+            <Avatar src={user.avatar ?? 'https://res.cloudinary.com/jackson-pham/image/upload/v1620351649/avatar_default.jpg'} alt="photoURL" />
             <Box sx={{ ml: 2 }}>
               <Typography variant="subtitle2" sx={{ color: 'text.primary' }}>
-                {account.displayName}
+                {user.userName}
               </Typography>
             </Box>
           </AccountStyle>

@@ -67,7 +67,7 @@ function Header(props) {
                         ? <div className="block">
                             <div className="flex items-center md:ml-6">
                                 <DropDownMenu
-                                    avatar = { 
+                                    avatar = { user.avatar ??
                                         'https://res.cloudinary.com/jackson-pham/image/upload/v1620351649/avatar_default.jpg'
                                         }
                                 />
