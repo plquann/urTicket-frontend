@@ -3,8 +3,6 @@ import { useEffect } from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { experimentalStyled as styled } from '@material-ui/core/styles';
 import { Box, Link, Drawer, Typography, Avatar } from '@material-ui/core';
-
-import account from 'containers/Admin/_mocks_/account';
 import NavSection from '../NavSection/NavSection';
 import sidebarConfig from '../SidebarConfig/SidebarConfig';
 import MHidden from '../MHidden/MHidden';

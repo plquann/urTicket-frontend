@@ -10,8 +10,8 @@ const getIcon = (name) => {
       return <IconMovie width={22} height={22} fillColor={'#dbe2fb'} />;
     case 'news':
       return <IconNews width={22} height={22} fillColor={'#dbe2fb'} />;
-    case 'cinema':
-      return <IconCinema width={22} height={22} fillColor={'#dbe2fb'} />;
+    // case 'cinema':
+    //   return <IconCinema width={22} height={22} fillColor={'#dbe2fb'} />;
     case 'showtimes':
       return <IconClock width={22} height={22} fillColor={'#dbe2fb'} />;
     default:
@@ -40,11 +40,11 @@ const sidebarConfig = [
     path: '/admin/news',
     icon: getIcon('news')
   },
-  {
-    title: 'Cinemas',
-    path: '/admin/cinemas',
-    icon: getIcon('cinema')
-  },
+  // {
+  //   title: 'Cinemas',
+  //   path: '/admin/cinemas',
+  //   icon: getIcon('cinema')
+  // },
   {
     title: 'showtimes',
     path: '/admin/showtimes',

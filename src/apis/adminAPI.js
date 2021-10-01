@@ -17,6 +17,9 @@ const adminAPI = {
         const url = '/news';
         return axiosClient.get(url, { params });
     },
-
+    getAllShowtimes: (params) => {
+        const url = '/showtime';
+        return axiosClient.get(url, { params });
+    },
 }
 export default adminAPI;

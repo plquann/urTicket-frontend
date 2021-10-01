@@ -5,7 +5,7 @@ import NewsSection from 'containers/Movie/components/NewsSection/NewsSection';
 import Schedule from 'containers/Movie/components/Schedule/Schedule';
 import BoxOffice from 'components/BoxOffice/BoxOffice';
 import Page from 'components/Page/Page';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import MovieHighlight from 'containers/Movie/components/MovieHighlight/MovieHighlight';
 import { fetchMoviesHighlight, fetchMoviesNowPlaying, fetchMoviesUpcoming } from 'containers/Movie/slices/homeSlice';
 
