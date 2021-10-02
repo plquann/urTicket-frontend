@@ -19,16 +19,14 @@ const Details = () => {
     const movieDetails = useSelector(state => state.movie.movieDetails);
 
     const dispatch = useDispatch();
-    console.log('🚀 ~ file: index.js ~ line 19 ~ movieDetails render');
 
     useEffect(() => {
-        console.log('fetching movie details');
         dispatch(fetchMovieDetails(movieId));
     }, [dispatch, movieId]);
 
     useEffect(() => {
-        console.log('dispatch fetch showtime')
         dispatch(fetchMovieShowtimes(movieId));
+        //dispatch(fetchMovieShowtimes({ movieId, date: '2021-09-02' }));
     }, [dispatch, movieId]);
 
     useEffect(() => {

@@ -141,7 +141,7 @@ const authSlice = createSlice({
                 state.error = '';
             })
             .addCase(refreshToken.rejected, (state, action) => {
-                console.log('🚀 ~ file: authSlice.js ~ line 144 ~ builder.addCase ~ action', action);
+                // console.log('🚀 ~ file: authSlice.js ~ line 144 ~ builder.addCase ~ action', action);
 
                 if (action.payload)
                     state.error = action.payload.message;

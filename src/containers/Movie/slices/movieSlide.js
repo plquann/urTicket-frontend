@@ -35,7 +35,7 @@ export const deleteReviewMovie = createAsyncThunk(
     async (reviewId, thunkAPI) => {
         const res = await reviewAPI.deleteReview(reviewId);
         await thunkAPI.dispatch(fetchMovieReviews(res));
-        
+
         return res;
     }
 );
@@ -44,7 +44,14 @@ export const fetchMovieShowtimes = createAsyncThunk(
     'movie/MOVIE_SHOWTIMES',
     async (movieId) => {
         const showtimes = await showtimeAPI.getShowtimesByMovieId(movieId);
-        // console.log('🚀 ~ file: movieSlide.js ~ line 33 ~ showtimes', showtimes);
+        return showtimes;
+    }
+);
+
+export const fetchMovieShowtimesByDate = createAsyncThunk(
+    'movie/MOVIE_SHOWTIMES_BY_DATE',
+    async ({ movieId, date }, thunkAPI) => {
+        const showtimes = await showtimeAPI.getShowtimesByMovieIdAndDate(movieId, {date});
         return showtimes;
     }
 );
@@ -155,10 +162,31 @@ const movieSlice = createSlice({
             state.movieShowtimes.error = '';
         });
         builder.addCase(fetchMovieShowtimes.rejected, (state, action) => {
-            console.log('🚀 ~ file: movieSlide.js ~ line 115 ~ fetchMovieShowtimes.rejected', action.error);
+            if (action.payload)
+                state.movieShowtimes.error = action.payload.message;
+            else
+                state.movieShowtimes.error = action.error.message;
             state.movieShowtimes.loading = false;
-            state.movieShowtimes.error = '';
         });
+
+        builder
+            .addCase(fetchMovieShowtimesByDate.pending, (state, action) => {
+                state.movieShowtimes.loading = true;
+            })
+            .addCase(fetchMovieShowtimesByDate.fulfilled, (state, action) => {
+                state.movieShowtimes.data = action.payload;
+                state.movieShowtimes.loading = false;
+                state.movieShowtimes.error = '';
+            })
+            .addCase(fetchMovieShowtimesByDate.rejected, (state, action) => {
+                // console.log('🚀 ~ file: movieSlide.js ~ line 130 ~ fetchMovieShowtimesByDate.rejected', action.error);
+                if (action.payload)
+                    state.movieShowtimes.error = action.payload.message;
+                else
+                    state.movieShowtimes.error = action.error.message;
+                state.movieShowtimes.loading = false;
+
+            });
 
     }
 })

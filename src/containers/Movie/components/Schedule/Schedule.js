@@ -83,7 +83,7 @@ export default function Schedule(props) {
                     <div className="schedule-section__content__showtimes__movie">
                         {
                             currentShowtime.loading
-                                ? <div className="loading-showtime">Loading</div>
+                                ? <div className="loading-showtime pl-4">Loading</div>
                                 : currentShowtime.data.length
                                     ? currentShowtime.data.map((movie, index) => (
                                         <div className="schedule-section__content__showtimes__movie__item" key={index + movie?.id}>
@@ -118,7 +118,7 @@ export default function Schedule(props) {
                                             </div>
                                         </div>
                                     ))
-                                    : <div className="loading-showtime">No Showtime</div>
+                                    : <div className="no-showtime text-center p-5 text-xl font-bold w-full h-full flex items-center justify-center">No Showtime</div>
                         }
                     </div>
                 </div>

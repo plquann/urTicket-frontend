@@ -5,7 +5,7 @@ export const listDay = () => {
 
     arrDays.push(new Date(dayFormat));
 
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 5; i++) {
         dayFormat.setDate(dayFormat.getDate() + 1);
         arrDays.push(new Date(dayFormat));
     }

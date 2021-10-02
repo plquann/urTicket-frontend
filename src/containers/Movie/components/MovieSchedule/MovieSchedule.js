@@ -4,15 +4,25 @@ import { listDay } from "utils/renderDate";
 import ShowtimeItem from "../ShowtimeItem/ShowtimeItem";
 import { LocationMarker } from "components/Icons";
 import { groupTheaterAPI } from "apis";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import dateFormat from "dateformat";
+import { fetchMovieShowtimesByDate } from "containers/Movie/slices/movieSlide";
 
-export default function MovieSchedule(props) {
+export default function MovieSchedule({ movieId, refProp }) {
     const [groupTheater, setGroupTheater] = useState([]);
     const [currentGroup, setCurrentGroup] = useState(null);
+    const [currentDay, setCurrentDay] = useState('2021-10-03');
+
+    const dispatch = useDispatch();
 
     const { data } = useSelector(state => state.movie.movieShowtimes);
-    console.log('🚀 ~ file: MovieSchedule.js ~ line 16 ~ movieShowtimes', data);
+
+    const handleDateChange = (date) => {
+        const dateString = dateFormat(date, "yyyy-mm-dd");
+        setCurrentDay(dateString);
+        dispatch(fetchMovieShowtimesByDate({ movieId, date: dateString }));
+    }
+    // console.log('🚀 ~ file: MovieSchedule.js ~ line 16 ~ movieShowtimes', data);
 
     useEffect(() => {
         const fetchGroupTheater = async () => {
@@ -30,7 +40,7 @@ export default function MovieSchedule(props) {
 
     return (
         <>
-            <h3 ref={props.refProp} className="uppercase text-2xl font-bold my-4">Movie Schedules</h3>
+            <h3 ref={refProp} className="uppercase text-2xl font-bold my-4">Movie Schedules</h3>
             <div className="movie-schedule my-10 " >
                 <ul className="movie-schedule__theater-list ">
                     {groupTheater.length && groupTheater.map((theaters, index) => {
@@ -49,12 +59,23 @@ export default function MovieSchedule(props) {
                 <div className="movie-schedule__showtimes">
                     <div className="movie-schedule__showtimes__date ">
                         {listDay().map((item, index) => {
+                            const activeDate = dateFormat(item, 'yyyy-mm-dd');
+                            if (activeDate === currentDay) {
+                                return (
+                                    <button className="item bg-gray-900 h-full active" key={index} onClick={() => handleDateChange(item)}>
+                                        <p>{new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(item)}</p>
+                                        <span className="mr-2">{item.getDate()}</span>
+                                        <span>{new Intl.DateTimeFormat('en-US', { month: 'long' }).format(item)}</span>
+                                    </button>
+                                )
+                            }
+
                             return (
-                                <div className="item" key={index}>
+                                <button className="item h-full" key={index} onClick={() => handleDateChange(item)}>
                                     <p>{new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(item)}</p>
                                     <span className="mr-2">{item.getDate()}</span>
                                     <span>{new Intl.DateTimeFormat('en-US', { month: 'long' }).format(item)}</span>
-                                </div>
+                                </button>
                             )
                         })}
                     </div>
@@ -87,8 +108,8 @@ export default function MovieSchedule(props) {
                                             </div>
                                         )
                                     })
-                                : <div className="py-2 pl-4 text-xl font-semibold">No Showtime</div>
-                            : ''
+                                : <div className="py-2 pl-4 text-xl font-semibold w-full h-full flex items-center justify-center">No Showtime</div>
+                            : <div className="py-2 pl-4 text-xl font-semibold w-full h-full flex items-center justify-center">No Showtime</div>
                         }
 
                     </div>
