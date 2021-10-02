@@ -77,7 +77,7 @@ const authSlice = createSlice({
             state.isAdmin = action.payload.roles === 'ADMIN';
         });
         builder.addCase(login.rejected, (state, action) => {
-            console.log('🚀 ~ file: authSlice.js ~ line 38 ~ builder.addCase ~ action', action);
+            // console.log('🚀 ~ file: authSlice.js ~ line 38 ~ builder.addCase ~ action', action);
 
             if (action.payload)
                 state.error = action.payload.message;
@@ -100,7 +100,7 @@ const authSlice = createSlice({
         }
         );
         builder.addCase(register.rejected, (state, action) => {
-            console.log('🚀 ~ file: authSlice.js ~ line 38 ~ builder.addCase ~ action', action);
+            // console.log('🚀 ~ file: authSlice.js ~ line 38 ~ builder.addCase ~ action', action);
 
             if (action.payload)
                 state.error = action.payload.message;
@@ -122,7 +122,7 @@ const authSlice = createSlice({
         });
 
         builder.addCase(logout.rejected, (state, action) => {
-            console.log('🚀 ~ file: authSlice.js ~ line 38 ~ builder.addCase ~ action', action);
+            // console.log('🚀 ~ file: authSlice.js ~ line 38 ~ builder.addCase ~ action', action);
 
             if (action.payload)
                 state.error = action.payload.message;

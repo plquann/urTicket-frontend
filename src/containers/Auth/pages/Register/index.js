@@ -1,12 +1,20 @@
+import React from 'react';
+import { useSelector } from 'react-redux';
 import Page from 'components/Page/Page'
 import { ACCOUNT_BG } from 'constants/image'
 import FormRegister from 'containers/Auth/components/FormRegister/FormRegister'
 import ThirdParty from 'containers/Auth/components/ThirdParty/ThirdParty'
-import React from 'react'
 import { Link } from 'react-router-dom'
+import Notify from 'components/Notify/Notify';
 import './Register.scss'
 
 export default function Register() {
+    const { loading, error } = useSelector(state => state.auth)
+    const status = {
+        loading: loading,
+        error: error,
+        message: error || '',
+    }
     return (
         <Page title="Register | UR-TICKET">
             <section className="register" style={{ backgroundImage: `url(${ACCOUNT_BG})` }}>
@@ -29,6 +37,7 @@ export default function Register() {
                     </div>
                 </div>
             </section>
+            <Notify status={status} />
         </Page>
     )
 }

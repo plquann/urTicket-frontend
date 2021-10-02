@@ -36,13 +36,14 @@ export default function MovieSearch() {
     const handleClickWithNoShowtime = () => {
         console.log('toast');
         toast.error('Please select showtime first !', {
-            position: "top-center",
+            position: 'top-center',
             autoClose: 3000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
+            theme: 'colored'
         });
     }
 
