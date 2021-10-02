@@ -1,35 +1,68 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { showtimeAPI } from 'apis';
+import dateFormat from 'dateformat';
 import './MovieSearch.scss';
 import SingleSelect from 'components/SingleSelect/SingleSelect';
+import {
+    changeCurrentShowtimeQuickBooking
+} from "containers/Movie/slices/homeSlice";
+import { Link } from 'react-router-dom';
 
-const movie = [
-    { value: 'Caption America', label: 'Caption America' },
-    { value: 'One Piece', label: 'One Piece' },
-    { value: 'Money Heist', label: 'Money Heist' }
-];
-
-const cinema = [
-    { value: 'cgv', label: 'cgv Tran Quang Khai' },
-    { value: 'lotte', label: 'lotte' },
-    { value: 'bhd', label: 'bhd' }
-];
-const date = [
-    { value: '08/04/2021', label: '08/04/2021' },
-    { value: '08/04/2021', label: '08/04/2021' },
-    { value: '08/04/2021', label: '08/04/2021' }
-];
-
-const showtimes = [
-    { value: '18:10', label: '18:10' },
-    { value: '18:10', label: '18:10' },
-    { value: '18:10', label: '18:10' }
-];
-
-const handleChange = () => {
-    console.log("Hii change ")
-}
 
 export default function MovieSearch() {
+    const { movieNowPlaying, currentShowtimeQuickBooking } = useSelector(state => state.home);
+
+    const [showtime, setShowtime] = useState([]);
+    const [cinema, setCinema] = useState([]);
+    const [cineplex, setCineplex] = useState([]);
+    const [schedule, setSchedule] = useState([]);
+
+    const [movieSelect, setMovieSelect] = useState('');
+    const [cineplexSelect, setCineplexSelect] = useState('');
+    const dispatch = useDispatch();
+
+    const handleChangeMovie = (data) => {
+        // console.log('🚀 ~ file: MovieSearch.js ~ line 30 ~ data', data);
+        setMovieSelect(data.value);
+    }
+
+    const handleChangeCineplex = (data) => {
+        setCineplexSelect(data.value);
+        setCinema(showtime.find(item => item.id === data.value)
+            .theaters.map(item => ({ value: item.id, label: item.name })));
+
+    }
+
+    const handleChangeCinema = (data) => {
+        setSchedule(showtime.find(item => item.id === cineplexSelect)
+            .theaters.find(item => item.id === data.value).showtimes.map(item =>
+                ({ value: item.id, label: `${dateFormat(item.startTime, 'HH:MM')}- Rom ${item.room}` }))
+        );
+    }
+
+    const handleChangeSchedule = (data) => {
+        // console.log('🚀 ~ file: MovieSearch.js ~ line 54 ~ data', data);
+        dispatch(changeCurrentShowtimeQuickBooking(data.value));
+
+    }
+
+    useEffect(() => {
+        const fetchShowtimeByMovie = async () => {
+            try {
+                if (movieSelect) {
+                    const res = await showtimeAPI.getShowtimesByMovieId(movieSelect);
+                    // console.log('🚀 ~ file: MovieSearch.js ~ line 43 ~ res', res);
+                    setShowtime(res);
+                    setCineplex(res.map(item => ({ value: item.id, label: item.name })));
+                }
+            } catch (err) {
+                console.log('🚀 ~ file: MovieSearch.js ~ line 40 ~ err', err);
+            }
+        };
+        fetchShowtimeByMovie();
+    }, [movieSelect]);
+
     return (
         <section className="search-ticket-section pt-20 mb-20 relative z-10">
             <div className="max-w-screen-lg mx-auto ">
@@ -42,7 +75,10 @@ export default function MovieSearch() {
                             <h3 className="title text-2xl font-bold uppercase text-white">what are you looking for</h3>
                         </div>
                         <div className="button-booking justify-self-end relative">
-                            <button className="btn-large">Booking Now</button>
+                            <button className="btn-large">
+                                <Link to={`/booking/${currentShowtimeQuickBooking}/seatplan`}>Booking Now
+                                </Link>
+                            </button>
                         </div>
                     </div>
                     <div className="tab-area p-8 relative border-t border-solid border-black mt-12 ">
@@ -50,30 +86,30 @@ export default function MovieSearch() {
                             <div className="ticket-search-form  grid grid-cols-5 gap-4">
                                 <div className="ticket-search-form__movie col-span-2">
                                     <SingleSelect
-                                        handleChange={handleChange}
-                                        options={movie}
+                                        handleChange={handleChangeMovie}
+                                        options={movieNowPlaying.map(item => ({ value: item.id, label: item.title }))}
                                         placeholder={"Select Movie"}
                                     />
                                 </div>
                                 <div className="ticket-search-form__cinema">
                                     <SingleSelect
-                                        onChange={handleChange}
-                                        options={cinema}
-                                        placeholder={"Cinema"}
+                                        onChange={handleChangeCineplex}
+                                        options={cineplex}
+                                        placeholder={"Cineplex"}
                                     />
                                 </div>
                                 <div className="ticket-search-form__date">
                                     <SingleSelect
-                                        onChange={handleChange}
-                                        options={date}
-                                        placeholder={"Date"}
+                                        onChange={handleChangeCinema}
+                                        options={cinema}
+                                        placeholder={"Theaters"}
                                     />
                                 </div>
                                 <div className="ticket-search-form__showtime">
                                     <SingleSelect
-                                        onChange={handleChange}
-                                        options={showtimes}
-                                        placeholder={"Time"}
+                                        onChange={handleChangeSchedule}
+                                        options={schedule}
+                                        placeholder={"Schedule"}
                                     />
                                 </div>
                             </div>

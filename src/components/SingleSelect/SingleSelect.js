@@ -18,7 +18,7 @@ const CustomValueContainer = ({ children, ...props }) => {
 
 
 const SingleSelect = (props) => {
-    const { handleChange, options, placeholder, maxMenuHeight = "300", backgroundColor} = props;
+    const { handleChange, options, placeholder, maxMenuHeight = 200, backgroundColor } = props;
     const colourStyles = {
         control: provided => ({
             ...provided,
@@ -36,7 +36,7 @@ const SingleSelect = (props) => {
             ...provided,
             backgroundColor: '#1a222a',
             border: '1px solid rgba(163, 177, 198, 0.151)',
-            textAlign: 'center',
+            // textAlign: 'center',
         }),
         valueContainer: (provided, state) => ({
             ...provided,
@@ -68,7 +68,7 @@ const SingleSelect = (props) => {
 
     return (
         <Select
-            onChange={handleChange}
+            onChange={(value) => handleChange(value)}
             options={options}
             placeholder={placeholder}
             components={{ ValueContainer: CustomValueContainer }}

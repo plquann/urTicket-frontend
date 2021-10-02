@@ -48,6 +48,7 @@ const initialHomePage = {
     movieUpcoming: [],
     movieHighlight: [],
     groupTheater: [],
+    currentShowtimeQuickBooking: '',
     currentTheaterSystem: '',
     currentListTheaters: [],
     currentTheater: '',
@@ -77,7 +78,10 @@ const homeSlice = createSlice({
         },
         changeCurrentTheater: (state, action) => {
             state.currentTheater = action.payload;
-        }
+        },
+        changeCurrentShowtimeQuickBooking: (state, action) => {
+            state.currentShowtimeQuickBooking = action.payload;
+        },
     },
     extraReducers: (builder) => {
         builder.addCase(fetchMoviesNowPlaying.pending, (state, action) => {
@@ -145,5 +149,5 @@ const homeSlice = createSlice({
 })
 
 const { reducer: homeReducer, actions } = homeSlice;
-export const { changeCurrentTheaterSystem, changeCurrentTheater } = actions;
+export const { changeCurrentTheaterSystem, changeCurrentTheater, changeCurrentShowtimeQuickBooking } = actions;
 export default homeReducer;

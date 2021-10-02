@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 function Header(props) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [hideOnScroll, setHideOnScroll] = useState(true);
-    const { isLoggedIn, user } = useSelector(state => state.auth);
+    const { isLoggedIn, user, isAdmin } = useSelector(state => state.auth);
 
     useScrollPosition(
         ({ prevPos, currPos }) => {
@@ -50,12 +50,12 @@ function Header(props) {
                             <NavLink activeClassName="active" className="header-label" to="/booking/:id/checkout">
                                 BOOKING
                             </NavLink>
-                            <NavLink activeClassName="active" className="header-label" to="/admin/dashboard">
-                                ADMIN
-                            </NavLink>
-                            <NavLink activeClassName="active" className="header-label" to="/profile/me">
+                            {isAdmin && <NavLink activeClassName="active" className="header-label" to="/admin/dashboard">
+                                DASHBOARD
+                            </NavLink>}
+                            {/* <NavLink activeClassName="active" className="header-label" to="/profile/me">
                                 PROFILE
-                            </NavLink>
+                            </NavLink> */}
                             {/* <NavLink activeClassName="active" className="header-label" to={`/movie/:${movieId}`}>
                                 
                             </NavLink> */}
@@ -67,9 +67,9 @@ function Header(props) {
                         ? <div className="block">
                             <div className="flex items-center md:ml-6">
                                 <DropDownMenu
-                                    avatar = { user.avatar ??
+                                    avatar={user.avatar ??
                                         'https://res.cloudinary.com/jackson-pham/image/upload/v1620351649/avatar_default.jpg'
-                                        }
+                                    }
                                 />
                             </div>
                         </div>

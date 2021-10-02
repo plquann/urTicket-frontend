@@ -14,7 +14,7 @@ const MENU_OPTIONS = [
   {
     label: 'Profile',
     icon: <IconUser width={22} height={22} fillColor={'#dbe2fb'} />,
-    linkTo: '#'
+    linkTo: '/profile/me'
   },
   {
     label: 'Settings',
