@@ -9,7 +9,6 @@ export default function BoxOffice() {
         const fetchData = async () => {
             try {
                 const result = await axios.get('https://imdb-api.com/en/API/BoxOffice/k_bs0grl31');
-                console.log('🚀 ~ file: BoxOffice.js ~ line 12 ~ fetchData ~ result', result.data.items);
                 setData(result.data.items);
             } catch (e) {
                 console.log("🚀 ~ error", e);

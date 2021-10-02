@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './FormReview.scss'
 import * as yup from "yup";
 import { useForm, Controller } from 'react-hook-form';

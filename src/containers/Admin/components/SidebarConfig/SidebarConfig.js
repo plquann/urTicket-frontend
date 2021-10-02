@@ -1,4 +1,4 @@
-import { IconCinema, IconClock, IconDashboard, IconMovie, IconNews, IconUser } from "components/Icons";
+import { IconClock, IconDashboard, IconMovie, IconNews, IconUser } from "components/Icons";
 
 const getIcon = (name) => {
   switch (name) {

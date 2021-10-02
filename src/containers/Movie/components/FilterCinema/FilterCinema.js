@@ -19,7 +19,7 @@ export default function FilterCinema(props) {
         });
 
         return () => subscription.unsubscribe();
-    }, [watch]);
+    }, [watch, onSubmit]);
 
     return (
         <div className="filter__cinema " >

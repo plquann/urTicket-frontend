@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { applySortFilter } from 'utils/applySortFilter';
 import { getComparator } from 'utils/getComparator';
 import {
@@ -18,27 +18,24 @@ import TableCell, { tableCellClasses } from '@material-ui/core/TableCell';
 import TableRow, { tableRowClasses } from '@material-ui/core/TableRow';
 import TableSortLabel, { tableSortLabelClasses } from '@material-ui/core/TableSortLabel';
 
-import Label from 'containers/Admin/components/Label/Label';
 import TablePaging from 'containers/Admin/components/TablePaging/TablePaging';
-import { sentenceCase } from 'change-case';
 import { makeStyles } from '@material-ui/styles';
 import { styled } from '@material-ui/core/styles';
 import { visuallyHidden } from '@material-ui/utils';
 
 import { reservations } from 'containers/Profile/_mocks_/profile';
 import { IconSearch } from 'components/Icons';
+import { reservationsAPI } from 'apis';
 
 
 const RESERVATIONS = reservations.map(({ movie: name, ...rest }) => ({ name, ...rest }));;
 
 const TABLE_HEAD = [
     { id: 'name', label: 'Movie', alignRight: false },
-    { id: 'cinema', label: 'Cinema', alignRight: false },
+    // { id: 'cinema', label: 'Cinema', alignRight: false },
     { id: 'room', label: 'Room', alignRight: false },
-    { id: 'seat', label: 'Seats', alignRight: false },
     { id: 'date', label: 'Date', alignRight: false },
     { id: 'price', label: 'Price', alignRight: false },
-    { id: 'status', label: 'Status', alignRight: false },
 ];
 
 const useStyles = makeStyles({
@@ -81,15 +78,15 @@ const StyledTableSortLabel = styled(TableSortLabel)(() => ({
 const SearchStyle = styled(OutlinedInput)(() => ({
     width: 240,
     color: '#DBE2FB',
-    margin:'10px 0 0 20px',
+    margin: '10px 0 0 20px',
     background: '#131516',
-    '&.Mui-focused': { 
+    '&.Mui-focused': {
         placeholder: { color: '#000' },
-        outlineColor :'#ffc033 !important',
+        outlineColor: '#ffc033 !important',
     },
 }));
 
-export default function MyReservation() {
+export default function MyReservation({ userId }) {
     const [page, setPage] = useState(0);
     const [order, setOrder] = useState('asc');
     const [orderBy, setOrderBy] = useState('name');
@@ -98,9 +95,19 @@ export default function MyReservation() {
 
     const classes = useStyles();
 
+    const [reservations, setReservations] = useState(RESERVATIONS);
+
+    useEffect(() => {
+        const fetchReservations = async () => {
+            const res = await reservationsAPI.getReservationsByUser(userId);
+            setReservations(res);
+        }
+        fetchReservations();
+    });
+
+
     const handleRequestSort = (event, property) => {
         const isAsc = orderBy === property && order === 'asc';
-        console.log('🚀 ~ file: MyReservation.js ~ line 79 ~ handleRequestSort ~ isAsc', isAsc);
         setOrder(isAsc ? 'desc' : 'asc');
         setOrderBy(property);
     };
@@ -118,9 +125,9 @@ export default function MyReservation() {
         setFilterName(event.target.value);
     };
 
-    const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - RESERVATIONS.length) : 0;
+    const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - reservations.length) : 0;
 
-    const filteredData = applySortFilter(RESERVATIONS, getComparator(order, orderBy), filterName);
+    const filteredData = applySortFilter(reservations, getComparator(order, orderBy), filterName);
     const isNotFound = filteredData.length === 0;
 
     return (
@@ -174,8 +181,7 @@ export default function MyReservation() {
                             {filteredData
                                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                                 .map((row, index) => {
-                                    const { id, name, cinema, room, posterUrl, seat, date, status, price } = row;
-
+                                    const {id, amount, showtime} = row;
                                     return (
                                         <StyledTableRow
                                             hover
@@ -187,26 +193,25 @@ export default function MyReservation() {
                                                 {`#${index + 1}`}
                                             </StyledTableCell>
                                             <StyledTableCell component="th" scope="row" padding="none">
-                                                <Stack direction="row" alignItems="center" spacing={2}>
-                                                    <Avatar alt={name} src={posterUrl} />
+                                                <Stack direction="row" alignItems="left" spacing={2}>
+                                                    <Avatar alt={showtime?.movie?.title} src={showtime?.movie?.posterUrl} />
                                                     <Typography noWrap>
-                                                        {name}
+                                                        {showtime?.movie?.title}
                                                     </Typography>
                                                 </Stack>
                                             </StyledTableCell>
-                                            <StyledTableCell align="left">{cinema}</StyledTableCell>
-                                            <StyledTableCell align="center">{room}</StyledTableCell>
-                                            <StyledTableCell align="left">{seat.join(' - ')}</StyledTableCell>
-                                            <StyledTableCell align="left">{date}</StyledTableCell>
-                                            <StyledTableCell align="left">{price}</StyledTableCell>
-                                            <StyledTableCell align="left">
+                                            {/* <StyledTableCell align="left">{theater?.name}</StyledTableCell> */}
+                                            <StyledTableCell align="left">{showtime?.room}</StyledTableCell>
+                                            <StyledTableCell align="left">{new Date(showtime?.startTime).toDateString()}</StyledTableCell>
+                                            <StyledTableCell align="left">${amount}</StyledTableCell>
+                                            {/* <StyledTableCell align="left">
                                                 <Label
                                                     variant="filled"
                                                     color={(status === 'expire' && 'error') || (status === 'alive' && 'success')}
                                                 >
                                                     {sentenceCase(status)}
                                                 </Label>
-                                            </StyledTableCell>
+                                            </StyledTableCell> */}
                                         </StyledTableRow>
                                     );
                                 })}
@@ -231,7 +236,7 @@ export default function MyReservation() {
                 </TableContainer>
                 <TablePaging
                     rowsPerPageOptions={[5, 10, 25]}
-                    count={RESERVATIONS.length}
+                    count={reservations.length}
                     rowsPerPage={rowsPerPage}
                     page={page}
                     onPageChange={handleChangePage}

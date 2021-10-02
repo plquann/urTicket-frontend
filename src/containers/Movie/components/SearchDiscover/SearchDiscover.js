@@ -29,7 +29,7 @@ export default function SearchDiscover(props) {
             }
         }
         fetchMovieSearch();
-    }, [searchTerm]);
+    }, [searchTerm, setIsVisible]);
 
     const handleSearchTermChange = (e) => {
         const value = e.target.value;

@@ -6,6 +6,11 @@ const groupTheaterAPI = {
 
         return axiosClient.get(url);
     },
+    getTheater: (id) => {
+        const url = `/theaters/${id}`;
+
+        return axiosClient.get(url);
+    },
 
 }
 export default groupTheaterAPI;

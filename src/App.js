@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
     dispatch(refreshToken());
-  }, [])
+  }, [dispatch])
 
   return (
     <div className="my__app">

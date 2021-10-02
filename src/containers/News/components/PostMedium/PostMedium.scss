@@ -7,7 +7,7 @@
     &__thumbnails {
       @apply h-2/3 overflow-hidden px-2.5 pt-2.5;
       img {
-        @apply w-full h-full transition duration-300 ease-in-out;
+        @apply w-full h-full transition duration-300 ease-in-out object-cover;
       }
       &:hover {
         img {

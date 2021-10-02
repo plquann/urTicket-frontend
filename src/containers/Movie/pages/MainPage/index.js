@@ -10,8 +10,6 @@ import MovieHighlight from 'containers/Movie/components/MovieHighlight/MovieHigh
 import { fetchMoviesHighlight, fetchMoviesNowPlaying, fetchMoviesUpcoming } from 'containers/Movie/slices/homeSlice';
 
 const MainPage = (props) => {
-    console.log('🚀 ~ file: index.js ~ line 48 ~ MainPage');
-
     const dispatch = useDispatch();
 
     useEffect(() => {

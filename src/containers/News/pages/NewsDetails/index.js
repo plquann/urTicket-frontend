@@ -3,8 +3,7 @@ import { newsAPI } from 'apis';
 import './NewsDetails.scss'
 import Page from 'components/Page/Page';
 import { useForm } from 'react-hook-form';
-import { news, categoryNews } from 'containers/News/_mocks_/newsData';
-import faker from 'faker';
+import { categoryNews } from 'containers/News/_mocks_/newsData';
 import Comment from 'containers/News/components/Comment/Comment';
 import NewTrailer from 'containers/News/components/NewsTrailers/NewsTrailer';
 import NewMostView from 'containers/News/components/PostMostView/PostMostView';

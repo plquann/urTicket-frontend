@@ -1,5 +1,4 @@
 import Medal from 'components/Medal/Medal'
-import dateFormat from 'dateformat';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './TopNewMedium.scss'

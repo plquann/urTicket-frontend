@@ -21,7 +21,6 @@ import Page from 'components/Page/Page';
 import HeaderStack from 'containers/Admin/components/HeaderStack/HeaderStack';
 import ListToolbar from 'containers/Admin/components/ListToolbar/ListToolbar';
 import ListHead from 'containers/Admin/components/ListHead/ListHead';
-import Label from 'containers/Admin/components/Label/Label';
 import SearchNotFound from 'containers/Admin/components/SearchNotFound/SearchNotFound';
 import TablePaging from 'containers/Admin/components/TablePaging/TablePaging';
 

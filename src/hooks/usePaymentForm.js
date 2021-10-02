@@ -1,5 +1,4 @@
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import { axiosClient } from "apis";
 
 function usePaymentForm(amountToCharge = 100) {
     const stripe = useStripe();
@@ -32,8 +31,8 @@ function usePaymentForm(amountToCharge = 100) {
         }
 
         const paymentMethodId = paymentMethod.id;
-        console.log('axios');
-
+        console.log('🚀 ~ file: usePaymentForm.js ~ line 34 ~ paymentMethodId', paymentMethodId);
+        
         // const chargeResponse = axiosClient.post(`${process.env.REACT_APP_API_URL}payment`, {
         //     paymentMethodId,
         //     amount: amountToCharge
@@ -46,8 +45,6 @@ function usePaymentForm(amountToCharge = 100) {
 
         //     await stripe?.confirmCardPayment(secret);
         // }
-
-
     };
 
     return {

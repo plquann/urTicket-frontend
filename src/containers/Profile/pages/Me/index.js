@@ -22,6 +22,7 @@ export default function Profile() {
     useEffect(() => {
         if (!isLoggedIn) {
             history.push('/login');
+            console.log('🚀 ~ file: index.js ~ line 25 ~ history', history);
         }
     }, [isLoggedIn, history]);
 
@@ -34,7 +35,7 @@ export default function Profile() {
                         style={{ backgroundImage: `url(${PROFILE_COVER})` }}
                     >
                         <div className="info__avatar">
-                            <img className=" rounded-full w-full h-full" src={user.avatar ?? 'https://res.cloudinary.com/jackson-pham/image/upload/v1620351649/avatar_default.jpg'} alt="avatar user" />
+                            <img className=" rounded-full w-full h-full" src={user?.avatar ?? 'https://res.cloudinary.com/jackson-pham/image/upload/v1620351649/avatar_default.jpg'} alt="avatar user" />
                         </div>
                         <div className="info__name">
                             <h1>{user?.userName}</h1>
