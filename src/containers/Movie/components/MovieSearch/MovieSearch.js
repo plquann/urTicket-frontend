@@ -8,6 +8,7 @@ import {
     changeCurrentShowtimeQuickBooking
 } from "containers/Movie/slices/homeSlice";
 import { Link } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 
 
 export default function MovieSearch() {
@@ -31,7 +32,18 @@ export default function MovieSearch() {
         setCineplexSelect(data.value);
         setCinema(showtime.find(item => item.id === data.value)
             .theaters.map(item => ({ value: item.id, label: item.name })));
-
+    }
+    const handleClickWithNoShowtime = () => {
+        console.log('toast');
+        toast.error('Please select showtime first !', {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
     }
 
     const handleChangeCinema = (data) => {
@@ -75,10 +87,17 @@ export default function MovieSearch() {
                             <h3 className="title text-2xl font-bold uppercase text-white">what are you looking for</h3>
                         </div>
                         <div className="button-booking justify-self-end relative">
-                            <button className="btn-large">
-                                <Link to={`/booking/${currentShowtimeQuickBooking}/seatplan`}>Booking Now
-                                </Link>
-                            </button>
+                            {currentShowtimeQuickBooking ?
+                                <button className="btn-large">
+                                    <Link to={`/booking/${currentShowtimeQuickBooking}/seatplan`}>Booking Now
+                                    </Link>
+                                </button>
+                                : <>
+                                    <button className="btn-large" onClick={handleClickWithNoShowtime}>
+                                        Booking Now
+                                    </button>
+                                    <ToastContainer limit={3}/>
+                                </>}
                         </div>
                     </div>
                     <div className="tab-area p-8 relative border-t border-solid border-black mt-12 ">

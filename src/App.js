@@ -4,6 +4,7 @@ import './App.scss';
 import "slick-carousel/slick/slick.css";
 import { useDispatch } from 'react-redux';
 import { refreshToken } from 'app/authSlice';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
