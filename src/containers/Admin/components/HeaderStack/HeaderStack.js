@@ -7,7 +7,7 @@ import {
 import { IconPlus } from 'components/Icons';
 
 export default function HeaderStack(props) {
-    const { title, newOperator } = props;
+    const { title, newOperator , handleDialogOpen} = props;
     return (
         <>
             <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
@@ -18,6 +18,7 @@ export default function HeaderStack(props) {
                     variant="contained"
                     to="#"
                     startIcon={<IconPlus width={22} height={22} fillColor={'#DBE2FB'} />}
+                    onClick={handleDialogOpen}
                 >
                     {newOperator}
                 </Button>

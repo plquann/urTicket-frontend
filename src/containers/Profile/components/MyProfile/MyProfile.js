@@ -33,16 +33,6 @@ export default function MyProfile(props) {
                         disabled
                     />
                 </div>
-                {/* <div className="fullname mb-4">
-                    <label htmlFor="fullName">Fullname</label><br></br>
-                    <input
-                        id="fullName"
-                        type="text"
-                        {...register('fullName', { maxLength: 80 })}
-                        disabled={!editInfo}
-                        className={editInfo ? 'border border-yellow-500' : ''}
-                    />
-                </div> */}
                 <div className="gender mb-4">
                     <label htmlFor="gender">Gender</label><br></br>
                     <select

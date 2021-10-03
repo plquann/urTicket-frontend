@@ -28,6 +28,7 @@ import { getComparator } from 'utils/getComparator';
 import { IconEdit, IconTrash } from 'components/Icons';
 import Page from 'components/Page/Page';
 import dateFormat from 'dateformat';
+import CreateShowtime from 'containers/Admin/components/DialogCreateShowtime/CreateShowtime';
 
 const TABLE_HEAD = [
     { id: 'movie', label: 'Movie', alignRight: false },
@@ -65,6 +66,13 @@ export default function ShowtimesDashboard() {
     });
 
     const [showtimes, setShowtimes] = useState([]);
+
+    const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+    const handleDialogOpen = () => {
+        console.log('handleDialogOpen');
+        setIsDialogOpen(!isDialogOpen);
+    };
 
     useEffect(() => {
         const fetchShowtimes = async () => {
@@ -117,8 +125,8 @@ export default function ShowtimesDashboard() {
     return (
         <Page title="SHOWTIMES | Admin UI">
             <Container>
-                <HeaderStack title={'Showtimes'} newOperator={'New Showtime'} />
-
+                <HeaderStack title={'Showtimes'} newOperator={'New Showtime'} handleDialogOpen={handleDialogOpen}/>
+                <CreateShowtime open={isDialogOpen} handleDialogOpen={handleDialogOpen}/>
                 <Card>
                     <ListToolbar
                         numSelected={selected.length}
