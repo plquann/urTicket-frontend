@@ -226,7 +226,7 @@ export default function MoviesDashboard() {
                     </TableContainer>
 
                     <TablePaging
-                        rowsPerPageOptions={[5, 10, 25]}
+                        rowsPerPageOptions={[6, 12, 24]}
                         count={totalRows}
                         rowsPerPage={pagination.limit}
                         page={pagination.page - 1}

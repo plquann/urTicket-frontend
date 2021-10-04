@@ -208,7 +208,7 @@ export default function UsersDashboard() {
                         </Table>
                     </TableContainer>
                     <TablePaging
-                        rowsPerPageOptions={[5, 10, 25]}
+                        rowsPerPageOptions={[6, 12, 24]}
                         count={users.length}
                         rowsPerPage={rowsPerPage}
                         page={page}
