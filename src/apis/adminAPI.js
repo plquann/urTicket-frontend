@@ -21,6 +21,10 @@ const adminAPI = {
         const url = '/showtime';
         return axiosClient.get(url, { params });
     },
+    createShowtime: (showtime) => {
+        const url = '/showtime';
+        return axiosClient.post(url, showtime);
+    },
     getAllReservations: (params) => {
         const url = '/reservations';
         return axiosClient.get(url, { params });

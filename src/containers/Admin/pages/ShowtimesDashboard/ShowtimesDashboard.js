@@ -70,7 +70,6 @@ export default function ShowtimesDashboard() {
     const [isDialogOpen, setIsDialogOpen] = useState(false);
 
     const handleDialogOpen = () => {
-        console.log('handleDialogOpen');
         setIsDialogOpen(!isDialogOpen);
     };
 

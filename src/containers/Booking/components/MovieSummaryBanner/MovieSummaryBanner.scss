@@ -8,7 +8,7 @@
     &__img{
         @apply w-full h-1/2 overflow-hidden;
         img{
-            @apply w-full h-full object-cover;
+            @apply w-full h-full object-cover object-left-top;
         }
     }
 

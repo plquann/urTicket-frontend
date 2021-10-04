@@ -12,7 +12,8 @@ import MenuItem from '@material-ui/core/MenuItem';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import dateFormat from 'dateformat';
-import { movieAPI, groupTheaterAPI } from 'apis';
+import { movieAPI, groupTheaterAPI, adminAPI } from 'apis';
+import { toast, ToastContainer } from 'react-toastify';
 
 const Dialog = withStyles({
     root: {
@@ -50,8 +51,6 @@ const useStyles = makeStyles({
     },
 });
 
-
-
 export default function CreateShowtime({ open, handleDialogOpen }) {
     const { handleSubmit, control } = useForm();
     const [movies, setMovies] = useState([]);
@@ -62,7 +61,41 @@ export default function CreateShowtime({ open, handleDialogOpen }) {
     const [selectedTheater, setSelectedTheater] = useState('');
     const classes = useStyles();
 
-    const onSubmit = (values) => console.log('🚀 ~ file: CreateShowtime.js ~ line 28 ~ values', values);
+    const onSubmit = async (values) => {
+        const newShowtime = {
+            movieId: values.movieId,
+            theaterId: values.theaterId,
+            room: values.room,
+            startTime: dateFormat(values.startTime, "yyyy-mm-dd HH:MM"),
+        };
+        try {
+            const res = await adminAPI.createShowtime(newShowtime);
+            console.log('🚀 ~ file: CreateShowtime.js ~ line 73 ~ res', res);
+            toast.success('Create Showtime Successfully!', {
+                position: 'top-center',
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored'
+            });
+            handleDialogOpen();
+        } catch (err) {
+            console.log('🚀 ~ file: CreateShowtime.js ~ line 86 ~ err', err);
+            toast.error(`${err.message}`, {
+                position: 'top-center',
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored'
+            });
+        }
+    };
 
     useEffect(() => {
         const fetchInitialValues = async () => {
@@ -220,7 +253,7 @@ export default function CreateShowtime({ open, handleDialogOpen }) {
                                         showTimeSelect
                                         filterTime={filterPassedTime}
                                         className=" bg-transparent border solid text-center cursor-pointer border-gray-600 px-1 py-3 rounded-md focus:outline-none focus:ring-1 focus:border-green-600 "
-                                        dateFormat="yyyy/mm/dd HH:MM"
+                                        dateFormat="MMMM d, yyyy HH:mm"
                                         placeholderText="Click to select a date"
                                     />
                                 )}
@@ -233,6 +266,7 @@ export default function CreateShowtime({ open, handleDialogOpen }) {
                     </DialogActions>
                 </form>
             </Dialog>
+            <ToastContainer limit={3} />
         </>
     );
 }
