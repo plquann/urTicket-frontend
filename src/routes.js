@@ -19,6 +19,7 @@ const NewsDetails = lazy(() => import('containers/News/pages/NewsDetails'));
 
 
 const Profile = lazy(() => import('containers/Profile/pages/Me'));
+const ChangePassword = lazy(() => import('containers/Profile/pages/ChangePassword/ChangePassword'));
 const SignIn = lazy(() => import('containers/Auth/pages/SignIn/SignIn'));
 const Register = lazy(() => import('containers/Auth/pages/Register'));
 
@@ -47,6 +48,7 @@ const Routes = () => {
                     <Switch>
                         <Route exact path="/login" component={SignIn} />
                         <Route exact path="/register" component={Register} />
+                        <Route exact path="/profile/change-password" component={ChangePassword} />
 
                         <WithLayoutRoute
                             exact
@@ -113,6 +115,7 @@ const Routes = () => {
                             layout={PublicLayout}
                             component={Profile}
                         />
+
 
                         {/* <WithLayoutRoute
                         exact

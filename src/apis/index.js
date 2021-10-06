@@ -8,3 +8,4 @@ export { default as ticketAPI } from './ticketAPI';
 export { default as adminAPI } from './adminAPI';
 export {default as newsAPI} from './newsAPI';
 export {default as reservationsAPI} from './reservationsAPI';
+export {default as userAPI} from './userAPI';

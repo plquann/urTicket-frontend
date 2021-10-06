@@ -12,6 +12,9 @@ export default function Notify({ status }) {
             {
                 status.error && handleToast(toast.TYPE.ERROR, status.message)
             }
+            {
+                status.success && handleToast(toast.TYPE.SUCCESS, status.message)
+            }
             <ToastContainer
                 position='top-center'
                 autoClose={3000}

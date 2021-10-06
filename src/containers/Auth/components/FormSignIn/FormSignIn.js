@@ -5,7 +5,6 @@ import InputField from 'components/InputField/InputField';
 import CheckBox from 'components/CheckBox/CheckBox';
 import ButtonSubmit from 'components/ButtonSubmit/ButtonSubmit';
 
-
 const validationSchema = yup.object().shape({
     email: yup.string()
         .required('Email is required')

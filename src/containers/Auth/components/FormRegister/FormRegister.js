@@ -23,7 +23,6 @@ const validationSchema = yup.object().shape({
         .required('Confirm Password is required'),
     acceptTerms: yup.bool()
         .isTrue('You must accept The Terms, Privacy Policy And Fees'),
-
 });
 
 export default function FormRegister() {
