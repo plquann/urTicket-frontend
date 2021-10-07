@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import BookingDirect from '../BookingDirect/BookingDirect';
 
 export default function MovieSummaryBanner({ showtime }) {
-    const pickedSeats = useSelector(state => state.booking.pickedSeats);
+    const { pickedSeats } = useSelector(state => state.booking);
     const { movie, theater } = showtime;
     return (
         <div className="movie-summary-banner">
@@ -17,7 +17,7 @@ export default function MovieSummaryBanner({ showtime }) {
                     {movie?.title}
                 </h4>
                 <p className=" text-center">{movie?.duration} minutes</p>
-                <div className="movie-summary-banner__content__theater mt-4">
+                <div className="movie-summary-banner__content__theater mt-1">
                     <div className="flex justify-between items-center font-medium text-lg">
                         <span className="flex items-center">{theater?.name}</span>
                         <span>Room {showtime?.room}</span>
@@ -52,6 +52,7 @@ export default function MovieSummaryBanner({ showtime }) {
                             }
                         </div>
                     </div>
+                   
                 </div>
                 <BookingDirect />
             </div>

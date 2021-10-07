@@ -7,8 +7,6 @@ const showtimeAPI = {
         return axiosClient.get(url);
     },
     getShowtimesByMovieIdAndDate: (movieId, params) => {
-        console.log('🚀 ~ file: showtimeAPI.js ~ line 10 ~ movieId', movieId);
-        console.log('🚀 ~ file: showtimeAPI.js ~ line 10 ~ params', params);
         const url = `/showtime/movie/${movieId}`;
 
         return axiosClient.get(url, { params });

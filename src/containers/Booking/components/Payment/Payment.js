@@ -7,9 +7,9 @@ import './Payment.scss';
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
 
-export default function Payment() {
+export default function Payment({paymentData}) {
     return (
-        <div className="payment checkout-widget checkout-card mb-0 border rounded-xl"
+        <div className="payment checkout-widget checkout-card mb-0 border rounded-xl "
             style={{
                 padding: '30px',
                 marginBottom: '30px',
@@ -46,7 +46,7 @@ export default function Payment() {
             </ul>
             <h6 className="subtitle mb-3.5 text-xl font-semibold">Enter Your Card Details </h6>
             <Elements stripe={stripePromise}>
-                <FormPayment />
+                <FormPayment payment={paymentData}/>
             </Elements>
         </div>
     )

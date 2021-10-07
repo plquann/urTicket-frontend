@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { CardElement } from '@stripe/react-stripe-js';
 import './FormPayment.scss';
 import usePaymentForm from 'hooks/usePaymentForm';
+import Notify from 'components/Notify/Notify';
+import { useHistory } from 'react-router';
 
-export default function FormPayment() {
-    const { handleSubmit } = usePaymentForm(200);
+export default function FormPayment({ payment }) {
+    const history = useHistory();
+    const { handleSubmit, status } = usePaymentForm();
+    // console.log('🚀 ~ file: FormPayment.js ~ line 8 ~ status', status);
+
+    useEffect(() => {
+        if (status.success) {
+            setTimeout(() => {
+                history.push('/');
+            }, 5000);
+        }
+    }, [status, history]);
 
     return (
-        <>
-            <form className="form__payment" onSubmit={handleSubmit}>
+        <div>
+            <form className="form__payment" onSubmit={e => handleSubmit(e, payment)}>
                 <CardElement
                     options={{
                         style: {
@@ -31,6 +43,7 @@ export default function FormPayment() {
                     <button type="submit" className="bg-btn-gradient">Payment Now</button>
                 </div>
             </form>
-        </>
+            <Notify status={status} />
+        </div>
     );
 }

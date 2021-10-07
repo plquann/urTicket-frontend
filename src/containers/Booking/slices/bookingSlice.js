@@ -24,6 +24,7 @@ const bookingSlice = createSlice({
     initialState: {
         showtimeInfo: {},
         pickedSeats: [],
+        products: [],
         loading: false,
         nextStep: '',
         status: '',
@@ -33,10 +34,32 @@ const bookingSlice = createSlice({
         handlePickedSeats: (state, action) => {
             const ticket = action.payload;
             const index = state.pickedSeats.findIndex(item => item.id === ticket.id);
+
             if (index === -1) {
                 state.pickedSeats.push(ticket);
             } else {
                 state.pickedSeats.splice(index, 1);
+            }
+        },
+        incrementFoodOrder: (state, action) => {
+            const product = action.payload;
+            const index = state.products.findIndex(item => item.id === product.id);
+
+            if (index === -1) {
+                state.products.push({ ...product, quantity: 1 });
+            } else {
+                state.products[index].quantity++;
+            }
+        },
+        decrementFoodOrder: (state, action) => {
+            const product = action.payload;
+            const index = state.products.findIndex(item => item.id === product.id);
+
+            if (index !== -1) {
+                state.products[index].quantity--;
+                if (state.products[index].quantity === 0) {
+                    state.products.splice(index, 1);
+                }
             }
         },
         checkPickedSeatsShowtime: (state, action) => {
@@ -80,5 +103,11 @@ const bookingSlice = createSlice({
 // export default bookingSlice.reducer;
 
 const { reducer: bookingReducer, actions } = bookingSlice;
-export const { handlePickedSeats, checkPickedSeatsShowtime,setStepBooking} = actions;
+export const {
+    handlePickedSeats,
+    checkPickedSeatsShowtime,
+    setStepBooking,
+    incrementFoodOrder,
+    decrementFoodOrder
+} = actions;
 export default bookingReducer;

@@ -1,19 +1,32 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import MovieSummaryBanner from 'containers/Booking/components/MovieSummaryBanner/MovieSummaryBanner'
 import BookingSeat from 'containers/Booking/components/BookingSeat/BookingSeat'
 import Page from 'components/Page/Page'
 import { useSelector, useDispatch } from 'react-redux'
-import { checkPickedSeatsShowtime, fetchShowtimeInfo, setStepBooking } from 'containers/Booking/slices/bookingSlice'
+import {
+    checkPickedSeatsShowtime,
+    fetchShowtimeInfo,
+    setStepBooking
+} from 'containers/Booking/slices/bookingSlice'
 import { useParams } from 'react-router-dom'
 import { ticketAPI } from 'apis'
-import { useState } from 'react'
+import { useHistory } from 'react-router-dom'
+
 
 export default function SeatPlan() {
     const showtimeInfo = useSelector(state => state.booking.showtimeInfo);
+    const auth = useSelector(state => state.auth);
     const [tickets, setTickets] = useState([]);
+    const history = useHistory();
 
     const dispatch = useDispatch();
     const { showtimeId } = useParams();
+
+    useEffect(() => {
+        if (!auth.isLoggedIn) {
+            history.push('/login');
+        }
+    }, [auth.isLoggedIn, history]);
 
     useEffect(() => {
         dispatch(fetchShowtimeInfo(showtimeId));
@@ -49,7 +62,6 @@ export default function SeatPlan() {
                     </div>
                     <div className="">
                         <MovieSummaryBanner showtime={showtimeInfo} />
-
                     </div>
 
                 </div>

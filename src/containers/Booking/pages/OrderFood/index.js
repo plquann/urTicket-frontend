@@ -17,10 +17,6 @@ export default function OrderFood() {
     return (
         <Page title="Order Food | UR-TICKET">
             <div className="order-food pb-10 mt-16 max-w-screen-xl mx-auto">
-                <div className="order-food__title">
-                    <h2>we have food</h2>
-                    <p className="text-lg">Pre-order Your Meal and Save More!</p>
-                </div>
                 <div className="order-food__wrapper  grid grid-cols-4 gap-6">
                     <div className="menu col-span-3">
                         <Food />

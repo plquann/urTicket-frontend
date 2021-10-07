@@ -22,7 +22,6 @@ export default function Profile() {
     useEffect(() => {
         if (!isLoggedIn) {
             history.push('/login');
-            console.log('🚀 ~ file: index.js ~ line 25 ~ history', history);
         }
     }, [isLoggedIn, history]);
 

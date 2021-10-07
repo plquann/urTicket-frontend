@@ -1,17 +1,31 @@
+import { useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import { reservationsAPI } from 'apis'
 
-function usePaymentForm(amountToCharge = 100) {
+function usePaymentForm() {
     const stripe = useStripe();
     const elements = useElements();
+    const [status, setStatus] = useState({
+        loading: false,
+        success: false,
+        error: false,
+        message: null
+    });
 
-    const handleSubmit = async (event) => {
+    const handleSubmit = async (event, data) => {
+        // console.log('🚀 ~ file: usePaymentForm.js ~ line 8 ~ data', data);
         event.preventDefault();
 
         const cardElement = elements?.getElement(CardElement);
-        console.log('🚀 ~ file: usePaymentForm.js ~ line 17 ~ CardElement', CardElement);
 
         if (!stripe || !elements || !cardElement) {
-            console.log('Stripe.js has not yet loaded.');
+            // console.log('Stripe.js has not yet loaded.');
+            setStatus({
+                loading: false,
+                success: false,
+                error: true,
+                message: 'Stripe.js has not yet loaded.'
+            });
             return;
         }
 
@@ -21,34 +35,56 @@ function usePaymentForm(amountToCharge = 100) {
         });
 
         const { error, paymentMethod } = stripeResponse;
-        console.log('🚀 ~ file: usePaymentForm.js ~ line 25 ~ stripeResponse', stripeResponse);
-        console.log('🚀 ~ file: usePaymentForm.js ~ line 28 ~ paymentMethod', paymentMethod);
-        console.log('🚀 ~ file: usePaymentForm.js ~ line 28 ~ error', error);
+        // console.log('🚀 ~ file: usePaymentForm.js ~ line 25 ~ stripeResponse', stripeResponse);
+        // console.log('🚀 ~ file: usePaymentForm.js ~ line 28 ~ paymentMethod', paymentMethod);
+        // console.log('🚀 ~ file: usePaymentForm.js ~ line 28 ~ error', error);
 
 
         if (error || !paymentMethod) {
+            setStatus({
+                loading: false,
+                success: false,
+                error: true,
+                message: error?.message
+            });
             return;
         }
 
         const paymentMethodId = paymentMethod.id;
-        console.log('🚀 ~ file: usePaymentForm.js ~ line 34 ~ paymentMethodId', paymentMethodId);
-        
-        // const chargeResponse = axiosClient.post(`${process.env.REACT_APP_API_URL}payment`, {
-        //     paymentMethodId,
-        //     amount: amountToCharge
-        // })
-        
+        // console.log('🚀 ~ file: usePaymentForm.js ~ line 34 ~ paymentMethodId', paymentMethodId);
 
-        // console.log('🚀 ~ file: usePaymentForm.js ~ line 36 ~ res', chargeResponse);
-        // if (chargeResponse.status !== 'succeeded') {
-        //     const secret = chargeResponse.client_secret;
+        try {
+            setStatus({
+                loading: true,
+                success: false,
+                error: false,
+                message: null
+            });
+            const response = await reservationsAPI.createReservation({
+                paymentMethodId,
+                ...data
+            });
 
-        //     await stripe?.confirmCardPayment(secret);
-        // }
+            console.log('🚀 ~ file: usePaymentForm.js ~ line 42 ~ response', response);
+            setStatus({
+                loading: false,
+                success: true,
+                error: false,
+                message: `You have successfully reservation!<br> Check out your email.`
+            });
+        } catch (error) {
+            setStatus({
+                loading: false,
+                success: false,
+                error: true,
+                message: error?.message
+            });
+        }
     };
 
     return {
-        handleSubmit
+        handleSubmit,
+        status
     }
 }
 

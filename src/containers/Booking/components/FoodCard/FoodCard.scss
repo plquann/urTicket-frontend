@@ -1,8 +1,13 @@
 @layer components {
   .food__card {
     @apply rounded-xl p-0.5 border cursor-pointer;
-    background: #1A222A;
+    background: #1a222a;
     border-color: #213a69;
+    &:hover {
+      h5 {
+        @apply text-green-400;
+      }
+    }
 
     &__img {
       @apply rounded-t-lg h-3/5 relative;
@@ -16,7 +21,7 @@
       }
     }
     &__wrapper {
-      @apply  h-2/5 px-4;
+      @apply h-2/5 px-4 mt-2;
       h5 {
         @apply text-center text-xl font-semibold mt-1 h-14 mb-1 overflow-hidden;
       }
@@ -25,7 +30,7 @@
         border-color: #11326f;
       }
       .order {
-        @apply w-4/6 h-5 grid grid-cols-4 mx-auto text-xl text-center;
+        @apply w-4/6 grid grid-cols-3 mx-auto text-xl text-center;
         button {
           @apply border py-1 focus:outline-none flex justify-center items-center;
           border-color: #11326f;
