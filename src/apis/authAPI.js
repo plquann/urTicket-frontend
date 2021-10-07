@@ -16,6 +16,14 @@ const authAPI = {
     refreshToken: async () => {
         return await axiosClient.get('/auth/refresh');
     },
+    forgotPassword: async (data) => {
+        const url = 'users/forgot-password';
+        return await axiosClient.post(url, data);
+    },
+    resetPassword: async (data) => {
+        const url = 'users/reset-password';
+        return await axiosClient.post(url, data);
+    },
 
 };
 export default authAPI;

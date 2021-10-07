@@ -22,6 +22,7 @@ const Profile = lazy(() => import('containers/Profile/pages/Me'));
 const ChangePassword = lazy(() => import('containers/Profile/pages/ChangePassword/ChangePassword'));
 const SignIn = lazy(() => import('containers/Auth/pages/SignIn/SignIn'));
 const Register = lazy(() => import('containers/Auth/pages/Register'));
+const ForgotPassword = lazy(() => import('containers/Auth/pages/ForgotPassword/ForgotPassword'));
 
 
 //Admin Dashboard
@@ -48,6 +49,7 @@ const Routes = () => {
                     <Switch>
                         <Route exact path="/login" component={SignIn} />
                         <Route exact path="/register" component={Register} />
+                        <Route exact path="/forgot-password" component={ForgotPassword} />
                         <Route exact path="/profile/change-password" component={ChangePassword} />
 
                         <WithLayoutRoute

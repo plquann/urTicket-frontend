@@ -4,7 +4,7 @@ import { ACCOUNT_BG } from 'constants/image';
 import FormSignin from 'containers/Auth/components/FormSignIn/FormSignIn';
 import ThirdParty from 'containers/Auth/components/ThirdParty/ThirdParty';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink, useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import './SignIn.scss';
 import { login } from 'app/authSlice';
 import Notify from 'components/Notify/Notify';
@@ -42,11 +42,11 @@ export default function SignIn() {
                     <div className="signin__wrapper__form">
                         <FormSignin onSubmit={onSubmit} />
                     </div>
-                    <a href="#0" className="forget-pass">Forget Password</a>
+                    <Link to="/forgot-password" className="forget-pass">Forget Password</Link>
 
                     <div className="signin__wrapper__option">
                         <div className="signin__redirect">
-                            Don't have an account? <NavLink to="/register">Sign up now</NavLink>
+                            Don't have an account? <Link to="/register">Sign up now</Link>
                         </div>
                         <div className="or"><span className="relative">OR</span></div>
                         <ThirdParty />
