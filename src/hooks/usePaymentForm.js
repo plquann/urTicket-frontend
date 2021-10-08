@@ -60,17 +60,17 @@ function usePaymentForm() {
                 error: false,
                 message: null
             });
-            const response = await reservationsAPI.createReservation({
+            await reservationsAPI.createReservation({
                 paymentMethodId,
                 ...data
             });
 
-            console.log('🚀 ~ file: usePaymentForm.js ~ line 42 ~ response', response);
+            // console.log('🚀 ~ file: usePaymentForm.js ~ line 42 ~ response', response);
             setStatus({
                 loading: false,
                 success: true,
                 error: false,
-                message: `You have successfully reservation!<br> Check out your email.`
+                message: `You have successfully reservation!`
             });
         } catch (error) {
             setStatus({
@@ -84,7 +84,8 @@ function usePaymentForm() {
 
     return {
         handleSubmit,
-        status
+        status,
+        setStatus
     }
 }
 

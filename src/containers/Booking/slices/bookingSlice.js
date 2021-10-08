@@ -68,8 +68,15 @@ const bookingSlice = createSlice({
         },
         setStepBooking: (state, action) => {
             state.nextStep = action.payload;
-        }
-
+        },
+        emptyBookingState: (state, action) => {
+            state.showtimeInfo = {};
+            state.pickedSeats = [];
+            state.products = [];
+            state.nextStep = '';
+            state.status = '';
+            state.error = null;
+        },
     },
     extraReducers: (builder) => {
         builder.addCase(fetchShowtimeInfo.pending, (state, action) => {
@@ -108,6 +115,7 @@ export const {
     checkPickedSeatsShowtime,
     setStepBooking,
     incrementFoodOrder,
-    decrementFoodOrder
+    decrementFoodOrder,
+    emptyBookingState
 } = actions;
 export default bookingReducer;

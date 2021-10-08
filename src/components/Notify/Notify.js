@@ -25,7 +25,7 @@ export default function Notify({ status }) {
                 pauseOnFocusLoss
                 draggable
                 pauseOnHover
-                limit={1}
+                limit={3}
                 theme={'colored'}
             />
         </div>

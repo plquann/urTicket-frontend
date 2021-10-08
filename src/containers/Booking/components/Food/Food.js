@@ -1,5 +1,4 @@
 import React from 'react'
-import { COMBO_FOOD } from 'constants/food'
 import { axiosClient } from 'apis'
 import Loading from 'components/Loading/Loading';
 import FoodCard from '../FoodCard/FoodCard';

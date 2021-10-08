@@ -4,19 +4,26 @@ import './FormPayment.scss';
 import usePaymentForm from 'hooks/usePaymentForm';
 import Notify from 'components/Notify/Notify';
 import { useHistory } from 'react-router';
+import { useDispatch } from 'react-redux';
+import { emptyBookingState } from 'containers/Booking/slices/bookingSlice';
 
 export default function FormPayment({ payment }) {
     const history = useHistory();
-    const { handleSubmit, status } = usePaymentForm();
-    // console.log('🚀 ~ file: FormPayment.js ~ line 8 ~ status', status);
+    const dispatch = useDispatch();
+    const { handleSubmit, status, setStatus } = usePaymentForm();
 
     useEffect(() => {
         if (status.success) {
+            setStatus({
+                success: true,
+                message: 'Reservations were sent to your email.'
+            })
+            dispatch(emptyBookingState());
             setTimeout(() => {
                 history.push('/');
             }, 5000);
         }
-    }, [status, history]);
+    }, [status, history, dispatch]);
 
     return (
         <div>

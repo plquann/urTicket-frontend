@@ -9,9 +9,10 @@ import dateFormat from "dateformat";
 import { fetchMovieShowtimesByDate } from "containers/Movie/slices/movieSlide";
 
 export default function MovieSchedule({ movieId, refProp }) {
+    const now = dateFormat(new Date(), "yyyy-mm-dd");
     const [groupTheater, setGroupTheater] = useState([]);
     const [currentGroup, setCurrentGroup] = useState(null);
-    const [currentDay, setCurrentDay] = useState('2021-10-03');
+    const [currentDay, setCurrentDay] = useState(now);
 
     const dispatch = useDispatch();
 

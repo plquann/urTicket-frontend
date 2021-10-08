@@ -16,14 +16,18 @@ $ npm install
 
 ### with Docker
 
- Building image
+Building image
+
 ```bash
 $ docker build . -t ur-ticket
 ```
+
 - Run the image
+
 ```bash
 $ docker run -p 49160:3000 -d ur-ticket
 ```
-Running on http://localhost:3000 
-[![Sparkline](https://stars.medv.io/quankhs/urticket-backend.svg)](https://stars.medv.io/quankhs/urticket-backend)
 
+Running on http://localhost:3000
+[![Sparkline](https://stars.medv.io/quankhs/urticket-backend.svg)](https://stars.medv.io/quankhs/urticket-backend)
+<img src="./public/images/ticket-bg01.jpg">
