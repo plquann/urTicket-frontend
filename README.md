@@ -90,7 +90,7 @@ https://github.com/QuanKhs/urTicket-backend
 
 ## 🏳‍🌈 Release
 
-1. ### Docker hub: [Docker image](https://hub.docker.com/r/quankhs/urticket-backend-dev)
+<!-- 1. ### Docker hub: [Docker image](https://hub.docker.com/r/quankhs/urticket-backend-dev) -->
 
 ## 🥇Contributors
 
