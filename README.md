@@ -47,6 +47,28 @@ https://github.com/QuanKhs/urTicket-backend
 
 ## 📸 Screenshots
 
+<details>
+<summary>📸 Screenshots</summary>
+
+![](Screenshots/home-page.png)
+![](Screenshots/discover.png)
+![](Screenshots/movie-details.png)
+![](Screenshots/movie-review.png)
+![](Screenshots/sign-in.png)
+![](Screenshots/register.png)
+![](Screenshots/seat-plan.png)
+![](Screenshots/food.png)
+![](Screenshots/payment.png)
+![](Screenshots/dashboard.png)
+![](Screenshots/dashboard-movie.png)
+
+
+</details>
+
+## 🎥 Video demo
+
+- Google Drive: [GoogleDriveLink](https://drive.google.com/drive/folders/1nC2TtROe4YyAV_xZcb-s3pb79jOtS9di?usp=sharing)
+
 ## ✨ Installations
 
 - ### With Docker
@@ -95,7 +117,6 @@ https://github.com/QuanKhs/urTicket-backend
 
 ## 🏳‍🌈 Release
 
-<!-- 1. ### Docker hub: [Docker image](https://hub.docker.com/r/quankhs/urticket-backend-dev) -->
 
 ## 🥇Contributors
 

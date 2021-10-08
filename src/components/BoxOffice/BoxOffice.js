@@ -27,8 +27,8 @@ export default function BoxOffice() {
                         {data.map((movie, index) => (
                             <li key={movie.id + index}>
                                 <i>{movie.rank}</i>
-                                <a href="http://www.imdb.com/title/tt1398426/?ref_=fn_al_tt_1" >
-                                    {movie.title}
+                                <a href="http://www.imdb.com/title/tt1398426/?ref_=fn_al_tt_1" className="line-clamp-1">
+                                    {movie.title.substring(0, 34)}
                                     <span>{movie.weekend.replace('M', '00.000')}</span>
                                 </a>
                             </li>
@@ -44,7 +44,7 @@ export default function BoxOffice() {
                             <li key={movie.id + index}>
                                 <i>{movie.rank}</i>
                                 <a href="http://www.imdb.com/title/tt1398426/?ref_=fn_al_tt_1" >
-                                    {movie.title}
+                                    {movie.title.substring(0, 34)}
                                     <span>{movie.weekend.replace('M', '00.000')}</span>
                                 </a>
                             </li>

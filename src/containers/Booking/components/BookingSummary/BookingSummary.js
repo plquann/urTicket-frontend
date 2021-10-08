@@ -44,7 +44,7 @@ export default function BookingSummary({ showtime, tickets, products }) {
             <div className="summary__amount" >
                 <div className="payment text-green-400 mt-3">
                     <span>AMOUNT PAYABLE</span>
-                    <span>${(totalProduct+ totalTicket)/100*110}</span>
+                    <span>${(totalProduct+ totalTicket)}</span>
                 </div>
             </div>
         </div>

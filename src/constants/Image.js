@@ -1,6 +1,5 @@
 import NotFoundBG from 'assets/images/404.png';
 import Logo from 'assets/images/favicon.png';
-import FooterLogo from 'assets/images/footer/footer-logo.png';
 
 
 import Tomato from 'assets/images/movie/tomato.png';
@@ -10,8 +9,6 @@ import CakeLG from 'assets/images/movie/cake2.png';
 import Heart from 'assets/images/icons/heart.png';
 import Book from 'assets/images/icons/book.png';
 import playBTN from 'assets/images/icons/play-button.png';
-import searchthums from 'assets/images/ticket/cinema.png';
-import searchBackground from 'assets/images/ticket/ticket-bg01.jpg';
 
 import prevArrow from 'assets/images/arrow/back-session.png';
 import nextArrow from 'assets/images/arrow/next-session.png';
@@ -64,7 +61,6 @@ export const SEAT = {
 }
 
 export const ACCOUNT_BG = account_bg;
-export const SEARCH_BG = searchBackground;
 export const MOVIE_EXPLORE = explore;
 export const SCREEN = Screen;
 export const IMAGE_BG = {
@@ -94,8 +90,6 @@ export const ICONS = {
     PLAY_BTN: playBTN,
 };
 
-export const THUMS = searchthums;
-
 export const CAST_PHOTO = [
     cast1,
     cast2,
@@ -109,7 +103,6 @@ export const CAST_PHOTO = [
 
 export const LOGO = {
     APP_LOGO: Logo,
-    FOOTER_LOGO: FooterLogo,
     CINEMA_LOGO: cinema,
 };
 
