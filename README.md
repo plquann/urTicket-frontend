@@ -112,6 +112,13 @@ https://github.com/QuanKhs/urTicket-backend
   </tr>
 </table>
 
+## 🙏 References
+
+- React official documents: [https://reactjs.org/](https://reactjs.org/)
+- Redux Tool-kit official documents: [https://redux-toolkit.js.org/](https://redux-toolkit.js.org/)
+- TailwindCSS official documents: [https://tailwindcss.com/](https://tailwindcss.com/)
+- Minimal UI Kit : [https://docs-minimals.vercel.app/](https://docs-minimals.vercel.app/)
+
 ## 🤝 Contacts and social networks
 
 [![Facebook](https://img.shields.io/badge/-quankhs-blue?style=flat-square&logo=Facebook&logoColor=white&link=https://www.facebook.com/quanphamluong)](https://facebook.com/quanphamluong)
