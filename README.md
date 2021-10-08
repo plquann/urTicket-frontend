@@ -34,6 +34,11 @@
 - Reading latest news
 - Admin manager
 
+## 🔨 In progress:
+
+- Responsive design
+- Complete admin manager
+
 ## 🚒 Check out my Backend side:
 
 ```
